@@ -40,6 +40,34 @@ class WebController extends Controller
     {
         return view('web.register');
     }
+    function loginUser()
+    {
+        return view('web.login');
+    }
+    function cart()
+    {
+        return view('web.cart');
+    }
+    function detailsPage()
+    {
+        return view('web.details_page');
+    }
+    function affliated_programs()
+    {
+        return view('web.affliated_programs');
+    }
+    function order_tracking()
+    {
+        return view('web.order_tracking');
+    }
+    function shoping()
+    {
+        return view('web.shoping');
+    }
+    function wallet()
+    {
+        return view('web.wallet');
+    }
 
     /**
      * Show the form for creating a new resource.
