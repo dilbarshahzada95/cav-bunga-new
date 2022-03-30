@@ -9,7 +9,7 @@
     <title>Cavabunga | Affiliate Program| A Lifestyle brand crafted with love by millennials, for millennials</title>
 
     <!--== Favicon ==-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('web/assets/img/favicon.png')}}" type="image/x-icon" />
 
     <!--== Google Fonts ==-->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface:400" rel="stylesheet">
@@ -21,29 +21,29 @@
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <!--== Bootstrap CSS ==-->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
     <!--== Font-awesome Icons CSS ==-->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/font-awesome.min.css')}}" rel="stylesheet" />
     <!--== Icofont Min Icons CSS ==-->
-    <link href="assets/css/icofont.min.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/icofont.min.css')}}" rel="stylesheet" />
     <!--== lastudioIcons CSS ==-->
-    <link href="assets/css/lastudioIcons.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/lastudioIcons.css')}}" rel="stylesheet" />
     <!--== Animate CSS ==-->
-    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/animate.css')}}" rel="stylesheet" />
     <!--== Aos CSS ==-->
-    <link href="assets/css/aos.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/aos.css')}}" rel="stylesheet" />
     <!--== FancyBox CSS ==-->
-    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/jquery.fancybox.min.css')}}" rel="stylesheet" />
     <!--== Slicknav CSS ==-->
-    <link href="assets/css/slicknav.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/slicknav.css')}}" rel="stylesheet" />
     <!--== Swiper CSS ==-->
-    <link href="assets/css/swiper.min.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/swiper.min.css')}}" rel="stylesheet" />
     <!--== Slick CSS ==-->
-    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/slick.css')}}" rel="stylesheet" />
     <!--== Main Style CSS ==-->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/cavabunga.css" rel="stylesheet" />
-    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/style.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/cavabunga.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/responsive.css')}}" rel="stylesheet" />
 </head>
 
 <!-- <body oncontextmenu="return false"> -->
@@ -75,10 +75,10 @@
                             <div class="header-align-left">
                                 <div class="header-logo-area">
                                     <a href="#">
-                                        <img class="logo-main d-none d-sm-block f-logo" src="assets/img/logo.png"
+                                        <img class="logo-main d-none d-sm-block f-logo" src="{{ asset('web/assets/img/logo.png')}}"
                                             alt="Logo" />
-                                        <img class="logo-main d-sm-none" src="assets/img/logo.png" alt="Logo" />
-                                        <img class="logo-light" src="assets/img/logo.png" alt="Logo" />
+                                        <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png')}}" alt="Logo" />
+                                        <img class="logo-light" src="{{ asset('web/assets/img/logo.png')}}" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="header-navigation-area d-none d-xl-block">
@@ -100,46 +100,46 @@
                                         <dropdown>
                                             <input id="toggle2" type="checkbox">
                                             <label for="toggle2" class="animate"><img
-                                                    src="assets/img/flags/uae.png" alt=""></label>
+                                                    src="{{ asset('web/assets/img/flags/uae.png')}}" alt=""></label>
                                             <ul class="animate m-0">
                                                 <li class="animate">
-                                                    <p>German</p><img src="assets/img/flags/german.png" alt="">
+                                                    <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png"
+                                                    <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="assets/img/flags/turkey.png" alt=" ">
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>German</p><img src="assets/img/flags/german.png" alt="">
+                                                    <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png"
+                                                    <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="assets/img/flags/turkey.png" alt=" ">
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
                                                 </li>
                                             </ul>
                                         </dropdown>
                                     </div>
                                     <div class="header-action-login">
                                         <button class="btn-login" onclick="window.location.href='login.html'">
-                                            <img src="assets/img/icons/user.png" class="img-fluid" alt="">
+                                            <img src="{{ asset('web/assets/img/icons/user.png')}}" class="img-fluid" alt="">
                                         </button>
                                     </div>
                                     <div class="header-action-cart">
                                         <button class="btn-cart cart-icon">
-                                            <img src="assets/img/icons/cart.png" class="img-fluid" alt="">
+                                            <img src="{{ asset('web/assets/img/icons/cart.png')}}" class="img-fluid" alt="">
                                             <span class="cart-count">0 items</span>
                                         </button>
                                     </div>
                                     <button class="btn-menu d-xl-none">
-                                        <img src="assets/img/icons/menu.png" class="img-fluid" alt="">
+                                        <img src="{{ asset('web/assets/img/icons/menu.png')}}" class="img-fluid" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@
                                         <li>Up to 10% on each sale</li>
                                     </ul>
                                     <div class="program__image">
-                                        <img src="assets/img/affiliate-program.png" alt="">
+                                        <img src="{{ asset('web/assets/img/affiliate-program.png')}}" alt="">
                                     </div>
                                     <div class="rouded__shape"></div>
                                 </div>
@@ -189,23 +189,23 @@
                                         <div class="col-md-3 col-sm-3">
                                             <label>Country</label>
                                             <div class="country__dropdown">
-                                                <div class="first__flag"><img src="assets/img/flags/uae.png"
+                                                <div class="first__flag"><img src="{{ asset('web/assets/img/flags/uae.png')}}"
                                                         class="down" /></div>
                                                 <ul>
                                                     <li class="country__option" data-value="1">
-                                                        <img src="assets/img/flags/turkey.png" alt="" />
+                                                        <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt="" />
                                                     </li>
                                                     <li class="country__option" data-value="2">
-                                                        <img src="assets/img/flags/german.png" alt="" />
+                                                        <img src="{{ asset('web/assets/img/flags/german.png')}}" alt="" />
                                                     </li>
                                                     <li class="country__option" data-value="3">
-                                                        <img src="assets/img/flags/bangaladesh.png" alt="" />
+                                                        <img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}" alt="" />
                                                     </li>
                                                     <li class="country__option" data-value="1">
-                                                        <img src="assets/img/flags/uae.png" alt="" />
+                                                        <img src="{{ asset('web/assets/img/flags/uae.png')}}" alt="" />
                                                     </li>
                                                     <li class="country__option" data-value="3">
-                                                        <img src="assets/img/flags/american.png" alt="" />
+                                                        <img src="{{ asset('web/assets/img/flags/american.png')}}" alt="" />
                                                     </li>
                                                 </ul>
                                                 <input type="hidden" class="option" name="namesubmit"
@@ -227,7 +227,7 @@
                                     </div>
                                     <div class="form-group text-right">
                                         <button type="submit" class="btn btn-signup">Sign up <img
-                                                src="assets/img/icons/next.png" alt=""></button>
+                                                src="{{ asset('web/assets/img/icons/next.png')}}" alt=""></button>
 
                                     </div>
 
@@ -254,7 +254,7 @@
                     <div class="row row-gutter-0">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="thumb">
-                                <img src="assets/img/shop/quick-view1.jpg" alt="Moren-Shop">
+                                <img src="{{ asset('web/assets/img/shop/quick-view1.jpg')}}" alt="Moren-Shop">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-12">
@@ -340,7 +340,7 @@
                         <div class="product-cart">
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="assets/img/shop/cart/1.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png')}}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">Men Black Shoe</a></h4>
@@ -359,7 +359,7 @@
                             <hr>
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="assets/img/shop/cart/2.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png')}}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">mario page wallet</a></h4>
@@ -378,7 +378,7 @@
                             <hr>
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="assets/img/shop/cart/3.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png')}}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">Lucy vanity kit</a></h4>
@@ -437,27 +437,27 @@
             <div class="header-action-flag">
                 <dropdown>
                     <input id="toggle3" type="checkbox">
-                    <label for="toggle3" class="animate"><img src="assets/img/flags/uae.png" alt=""></label>
+                    <label for="toggle3" class="animate"><img src="{{ asset('web/assets/img/flags/uae.png')}}" alt=""></label>
                     <ul class="animate m-0">
                         <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
+                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
                         </li>
                         <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
-                        </li>
-                        <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
+                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}" alt="">
                         </li>
                         <li class="animate">
                             <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
+                            <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
+                        </li>
+                        <li class="animate">
+                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
+                        </li>
+                        <li class="animate">
+                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}" alt="">
+                        </li>
+                        <li class="animate">
+                            <p>Turkey</p>
+                            <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
                         </li>
                     </ul>
                 </dropdown>
@@ -468,44 +468,44 @@
     <!--=======================Javascript============================-->
 
     <!--=== Modernizr Min Js ===-->
-    <script src="assets/js/modernizr.js"></script>
+    <script src="{{ asset('web/assets/js/modernizr.js')}}"></script>
     <!--=== jQuery Min Js ===-->
-    <script src="assets/js/jquery-main.js"></script>
+    <script src="{{ asset('web/assets/js/jquery-main.js')}}"></script>
     <!--=== jQuery Migration Min Js ===-->
-    <script src="assets/js/jquery-migrate.js"></script>
+    <script src="{{ asset('web/assets/js/jquery-migrate.js')}}"></script>
     <!--=== Popper Min Js ===-->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="{{ asset('web/assets/js/popper.min.js')}}"></script>
     <!--=== Bootstrap Min Js ===-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('web/assets/js/bootstrap.min.js')}}"></script>
     <!--=== jquery Appear Js ===-->
-    <script src="assets/js/jquery.appear.js"></script>
+    <script src="{{ asset('web/assets/js/jquery.appear.js')}}"></script>
     <!--=== jquery Swiper Min Js ===-->
-    <script src="assets/js/swiper.min.js"></script>
+    <script src="{{ asset('web/assets/js/swiper.min.js')}}"></script>
     <!--=== jquery Fancybox Min Js ===-->
-    <script src="assets/js/fancybox.min.js"></script>
+    <script src="{{ asset('web/assets/js/fancybox.min.js')}}"></script>
     <!--=== jquery Aos Min Js ===-->
-    <script src="assets/js/aos.min.js"></script>
+    <script src="{{ asset('web/assets/js/aos.min.js')}}"></script>
     <!--=== jquery Slicknav Js ===-->
-    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="{{ asset('web/assets/js/jquery.slicknav.js')}}"></script>
     <!--=== jquery Countdown Js ===-->
-    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="{{ asset('web/assets/js/jquery.countdown.min.js')}}"></script>
     <!--=== jquery Tippy Js ===-->
-    <script src="assets/js/tippy.all.min.js"></script>
+    <script src="{{ asset('web/assets/js/tippy.all.min.js')}}"></script>
     <!--=== Isotope Min Js ===-->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('web/assets/js/isotope.pkgd.min.js')}}"></script>
     <!--=== jquery Vivus Js ===-->
-    <script src="assets/js/vivus.js"></script>
+    <script src="{{ asset('web/assets/js/vivus.js')}}"></script>
     <!--=== Parallax Min Js ===-->
-    <script src="assets/js/parallax.min.js"></script>
+    <script src="{{ asset('web/assets/js/parallax.min.js')}}"></script>
     <!--=== Slick  Min Js ===-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{{ asset('web/assets/js/slick.min.js')}}"></script>
     <!--=== jquery Wow Min Js ===-->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="{{ asset('web/assets/js/wow.min.js')}}"></script>
     <!--=== jquery Zoom Min Js ===-->
-    <script src="assets/js/jquery-zoom.min.js"></script>
+    <script src="{{ asset('web/assets/js/jquery-zoom.min.js')}}"></script>
 
     <!--=== Custom Js ===-->
-    <script src="assets/js/custom.js"></script>
+    <script src="{{ asset('web/assets/js/custom.js')}}"></script>
     <script>
         $(function() {
             // Set
