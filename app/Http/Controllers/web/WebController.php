@@ -68,6 +68,10 @@ class WebController extends Controller
     {
         return view('web.wallet');
     }
+    function sideCart()
+    {
+        return view('web.sideCart');
+    }
 
     /**
      * Show the form for creating a new resource.
