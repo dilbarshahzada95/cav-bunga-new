@@ -1,0 +1,1611 @@
+@media only screen and (max-width: 600px) {
+    section.cavabunga__login.height-100.register_account {
+        padding: 36px;
+        padding-top: 90px;
+    }
+    .cavabunga__shop__section .gotoshop {
+        display: none;
+    }
+    .header-action-cart {
+        width: 66px !important;
+    }
+    .home-slider-area.slider-home3 .slider-content-area {
+        height: 93vh;
+    }
+    .banner__arrow .cavabunga__footer__arrows .cavabunga__bottom__arrow {
+        left: 13%;
+    }
+    .cavabunga__footer__section {
+        padding-bottom: 0;
+    }
+    .product__gallery .cavabunga__product__decription {
+        padding: 20px;
+        position: relative;
+    }
+    .product__gallery .pattern__left img {
+        width: 77%;
+        top: 66%;
+        height: auto;
+    }
+    .product__gallery .product__image img {
+        position: inherit;
+        z-index: 1;
+        top: 21px;
+    }
+    .section__about__cavabunga .about__cavabunga .about__image {
+        text-align: center;
+    }
+    .wallet__sec .product__image {
+        position: relative;
+        top: 42px;
+    }
+    .product__gallery .product__grid .product__image .bottom__rounded {
+        position: absolute;
+        top: 194%;
+        width: 200px;
+        height: 200px;
+        left: -57px;
+        background: rgb(148, 56, 17);
+        background: radial-gradient(circle, rgb(151 62 24) 20%, rgb(218 202 196) 100%);
+        opacity: .3;
+    }
+    .newsletter-content.content-footer .newsletter-form .btn-submit {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        padding: 10px 11px;
+        background: white;
+        border-radius: 0;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .product__image .bottom__rounded {
+        background-color: #fff;
+        position: absolute;
+        z-index: 0;
+        opacity: .1;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        left: -5%;
+        bottom: 15%;
+    }
+    .wallet__sec .pattern__right {
+        top: 5%;
+        height: 120px;
+        width: 374px;
+        opacity: .2;
+    }
+    .product__grid .rectangle__height {
+        width: 300px;
+        height: 431px;
+    }
+    .cavabunga__footer__section .rounded__rectangle {
+        width: 65%;
+        top: 23%;
+        height: 137px;
+    }
+    .product__gallery .product__grid {
+        flex-direction: column-reverse;
+        padding-bottom: 40px;
+    }
+    .column-reverse-sm-remove {
+        flex-direction: revert !important;
+    }
+    .product__gallery .cavabunga__product__decription .pattern__rounded {
+        display: none;
+    }
+    .vinity__kit__sec .pattern__rounded {
+        display: block !important;
+        bottom: 56%;
+        top: -37% !important;
+        width: 185px !important;
+        height: 83px !important;
+        left: 35% !important;
+    }
+    .vinity__kit__sec .product__grid .rectangle__height {
+        width: 152px;
+        height: 285px;
+        left: 76px;
+        opacity: .2;
+    }
+    .header-area .header-action-flag img {
+        display: none;
+    }
+    .image__highlight .cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .thumb.thumb-style {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        transition: 2s;
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -ms-transition: 2s;
+        -o-transition: 2s;
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .box-item h2.box-title {
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .box-item h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        color: #fff;
+        font-size: 16px;
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .box-item {
+        position: absolute;
+        bottom: 18%;
+        right: 20%;
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: initial;
+        right: 50px;
+        bottom: 55px !important;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .shape-layer-items .shape-layer-one {
+        position: absolute;
+        border-radius: 300px 0px 0px 300px;
+        padding: 20px;
+        width: 65%;
+        height: 71vh;
+        right: 0;
+        top: 13%;
+        z-index: -1;
+        animation-duration: 1.25s;
+        animation-fill-mode: both;
+        transition: all 2s ease 0s;
+        animation-fill-mode: both;
+        transition: 2s;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -ms-transition: 2s;
+        -o-transition: 2s;
+    }
+    /* LOGIN */
+    section.cavabunga__login {
+        padding: 36px;
+    }
+    .cart-payment .cart-subtotal {
+        background-color: #fff;
+        padding: 32px 37px 23px;
+    }
+    .cavabunga__login .logo {
+        position: absolute;
+        top: 28px;
+        left: 11%;
+    }
+    .sm-d-block {
+        display: block !important;
+    }
+    .cavabunga__login .social__login {
+        margin-bottom: 10px;
+    }
+    .cavabunga__login__bg {
+        margin-top: 30px;
+        width: 100%;
+        background-size: cover;
+        object-fit: cover;
+        min-height: 40vh;
+        display: flex;
+        align-items: end;
+        padding: 28px;
+    }
+    .cavabunga__login__bg .image__text {
+        margin: 0
+    }
+    /* REGISTER */
+    .cavabunga__login .form-group .btn-theme {
+        width: 50%;
+    }
+    /* DETAILS SINGLE PAGE */
+    .cavabunga__single__details .home-slider-item .box-item {
+        position: absolute;
+        bottom: 13% !important;
+        right: 13%;
+        left: 10%;
+    }
+    .cavabunga__user__profile .user__information__sec .btn-theme {
+        font-size: 14px;
+        padding: 12px 7px;
+        background: #fff;
+        color: #000;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .cavabunga__user__profile .pattern__two {
+        display: none;
+    }
+    .cavabunga__user__profile .user__information__sec .pattern__one {
+        left: 12%;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-4 {
+        width: 33.3333%;
+    }
+    .cart__items {
+        background-size: cover;
+        width: 100%;
+        background: linear-gradient(to right top, #8AA18E, #416E4F);
+        position: relative;
+        min-height: 82vh;
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-top: 115px;
+    }
+    .shop__details .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item .thumb.thumb-style {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        transition: 2s;
+        position: absolute;
+        left: 0% !important;
+        top: 19% !important;
+        -webkit-transition: 2s;
+        -moz-transition: 2s;
+        -ms-transition: 2s;
+        -o-transition: 2s;
+    }
+    .cart-payment {
+        margin: 0;
+        min-height: 58vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .cart-table table .pro-name {
+        width: 296px;
+        padding: 22px 0;
+    }
+    /* order */
+    .order-tracking::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: calc(100% - 21px);
+        background-color: #f7be16;
+        top: 10px;
+        position: absolute;
+        left: calc(-50% + 11px);
+        z-index: 0;
+    }
+    .order-tracking.completed .is-complete:after {
+        top: 0;
+    }
+    .order-tracking.completed p {
+        color: #000;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1;
+    }
+    .order-tracking p.time {
+        margin-top: 8px;
+        font-size: 10px !important;
+        color: #A4A4A4 !important;
+        font-weight: 500 !important;
+    }
+    .order__method span {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        color: #abaaaa;
+    }
+    .shipping__address span {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        color: #abaaaa;
+    }
+    .shipping__address h4 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .shipping__address .address {
+        width: 60%;
+    }
+    .shipping__address .shipping__to {
+        width: 60%;
+    }
+    .shipping__address .arrow {
+        text-align: center;
+        transform: rotate( 90deg);
+        margin: 26px 0;
+        position: relative;
+        right: 10%;
+    }
+    .shipping__address .arrow img {
+        width: 57%;
+    }
+    .order__tracking .order__tracking {
+        background: #f7f7f7;
+        min-height: 100vh;
+        padding: 50px;
+        padding-top: 110px;
+    }
+    .btn-remove {
+        background-color: #fff;
+        color: #6C8A74;
+        border-radius: 0;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 4px 18px;
+        text-transform: uppercase;
+        box-shadow: rgb(94 130 104) 0px 7px 29px 0px;
+    }
+    .order__summary .bottom__rounded {
+        display: none;
+    }
+    .order__summary .pattern__order {
+        background-color: #fff;
+        position: absolute;
+        z-index: 1;
+        opacity: .1;
+        border-radius: 200px;
+        padding: 20px;
+        width: 500px;
+        height: 131px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        left: 33%;
+        top: 53%;
+    }
+    .order__method {
+        padding: 15px 0;
+        justify-content: start;
+    }
+    .order__tracking .Method {
+        padding-left: 45px;
+    }
+    .order__summary {
+        min-height: 85vh;
+    }
+    .hh-grayBox {
+        padding: 0;
+    }
+    /* terms__condtions */
+    .terms__condtions .term__condition__content {
+        height: auto;
+        width: 100%;
+        overflow-y: hidden;
+    }
+    .terms__condtions .border-right hr {
+        color: #fff;
+        height: 3px;
+    }
+    .terms__condtions .border-right {
+        padding-left: 0;
+        border-right: none
+    }
+    section.terms__condtions {
+        padding-top: 94px;
+    }
+    .terms__condtions .nav-link {
+        padding-left: 0;
+    }
+    .terms__condtions #myTabContent1 {
+        padding: 0;
+        margin-top: 25px;
+    }
+    .terms__condtions .pattern__left img {
+        display: none;
+    }
+    .cavabunga__design__section .image__title {
+        margin-bottom: 60px;
+    }
+    .cavabunga__design__section .title h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 33px;
+        padding-bottom: 9px;
+        margin-top: 45px;
+    }
+    .section__about__cavabunga .about__cavabunga {
+        position: relative;
+        padding-top: 55px;
+        width: 96%;
+        margin: 0 auto;
+    }
+    .single-product-slider .single-product-thumb .thumb-item img {
+        padding-top: 43%;
+    }
+    .cavabunga__single__details .line__highlights {
+        height: 3px;
+        background: #ddd;
+        position: absolute;
+        width: 0;
+        margin: 0 0 0 auto;
+        left: 54%;
+        top: 50%;
+        z-index: 1;
+    }
+    .cavabunga__single__details .round {
+        background: #fff;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 50%;
+        bottom: 20px;
+        left: -14px;
+        border: 4px solid #9e9e9e78;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+    .cavabunga__inner .product-description-review .tab-content {
+        display: none;
+    }
+    .cavabunga__shop__section .bottom__color {
+        display: none;
+    }
+    .product-description-review {
+        padding-left: 10px;
+    }
+    .product-description-review .product-description-tab-menu .nav-item .nav-link {
+        font-size: 16px;
+        padding: 15px;
+        font-weight: 700;
+    }
+    .product-description-review .product-description-tab-menu .nav-item .nav-link.active {
+        font-size: 18px;
+        font-weight: 700 !important;
+        color: #798895;
+        background-color: #fff;
+    }
+    .cavabunga__login .home-slider-area.cavabunga__login.register {
+        display: none;
+    }
+    .home-slider-area.slider-home3 .slider-content-area .content .inner-content p {
+        line-height: 1.4;
+        font-size: 18px;
+    }
+    .home-slider-area.slider-home3 .home-slider-content .home-slider3-container .swiper-wrapper .swiper-slide-active .slider-content-area .content .inner-content img {
+        width: 80%;
+        padding: 5px 0;
+    }
+    .home-slider-area.slider-home3 .slider-content-area .content .inner-content h4 {
+        margin: 0;
+    }
+    .cavabunga__home__bottom__arrow {
+        position: absolute;
+        bottom: 160px;
+        z-index: 999;
+        transform: rotate( 269deg);
+        left: 0;
+    }
+    .header-area.sticky-header.sticky {
+        background-color: transparent !important;
+    }
+    .home-slider-area.slider-home3 .home-slider-content .swiper-pagination {
+        bottom: 15px;
+        display: none;
+    }
+    .cavabunga__home__bottom__arrow p {
+        padding: 0;
+    }
+    section.about__cavabunga .row {
+        flex-flow: column-reverse;
+        height: auto;
+    }
+    .cavabunga__home__bottom__arrow img {
+        position: relative;
+        left: 8px;
+        transform: rotate( 90deg);
+    }
+    .cavabunga__title h2 {
+        color: #fff;
+        padding-bottom: 30px;
+        padding-top: 15px;
+        max-width: 319px;
+        margin: 0 auto;
+    }
+    .product__gallery .cavabunga__product__decription h2 {
+        color: #fff;
+        font-size: 28px;
+        padding: 5px 0;
+    }
+    .header-area.header-default.header-style2 .header-align .header-align-left {
+        display: none;
+    }
+    .cavabunga__goto__arrow {
+        display: none;
+    }
+    .cavabunga__footer__arrows .cavabunga__bottom__arrow {
+        display: none;
+    }
+    .newsletter-content.content-footer {
+        padding: 0 0;
+    }
+    .cavabunga__design__section .bottom__color {
+        display: none;
+    }
+    .header-area.header-default.header-style2 .header-align {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        -webkit-align-items: center;
+        display: -webkit-flex;
+        -webkit-justify-content: end;
+        float: right;
+    }
+    .cavabunga__product__preview .bg__half {
+        background-color: #ffffffed;
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 50%;
+        left: 0;
+        top: 0;
+        opacity: 1;
+    }
+    .cavabunga__product__preview .notify__me {
+        display: flex;
+        align-items: start;
+        min-height: auto !important;
+        margin-top: 8px;
+    }
+    .single-product-slider {
+        margin-bottom: 0;
+        margin-top: 116px;
+    }
+    .single-product-slider .product-dec-slider-left {
+        margin-top: 0;
+    }
+    .single-product-slider .single-product-thumb .thumb-item img {
+        cursor: pointer;
+        width: 100%;
+        margin: 0 auto;
+    }
+    /* .single-product-slider .single-product-nav .nav-item img {
+                width: 70%;
+                margin: 0 auto;
+            } */
+    .single-product-slider .single-product-nav {
+        position: relative;
+        bottom: 28px;
+        left: 15%;
+    }
+    .single-product-slider .single-product-nav .nav-item {
+        margin-bottom: 0;
+    }
+    .cavabunga__product__preview .single-product-info {
+        justify-content: start;
+        min-height: auto !important;
+        z-index: 999;
+        padding: 22px;
+    }
+    .cavabunga__product__preview .product__details {
+        justify-content: space-between;
+        max-width: 75%;
+        margin-bottom: 0;
+        padding-bottom: 25px;
+    }
+    .cavabunga__product__preview .single-product-info .product-desc {
+        padding-bottom: 0;
+    }
+    .single-product-slider .product-dec-slider-right {
+        margin-top: 0px;
+    }
+    .cavabunga__product__preview .single-product-info .title {
+        font-size: 32px;
+    }
+    .cavabunga__product__preview .description.d-flex {
+        padding: 13px 0;
+        max-width: 89%;
+        justify-content: space-between;
+    }
+    .cavabunga__product__preview .product__details h4 {
+        color: #B7B7B7;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .product__gallery {
+        height: auto !important;
+        padding: 56px 0;
+    }
+    .cavabunga__about__content {
+        padding: 0 16px;
+    }
+    .product__gallery .product__grid {
+        padding-top: 0;
+    }
+    .product__gallery .cavabunga__product__decription p {
+        margin-bottom: 10px;
+    }
+    .cavabunga__product__decription {
+        padding-top: 0;
+    }
+    .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item {
+        height: 95vh;
+    }
+    .product-description-review .product-description-tab-menu {
+        justify-content: center;
+        padding-top: 20px;
+        margin-right: 0;
+    }
+    .product-description-review .left__pattern {
+        background-color: #fff;
+        position: absolute;
+        z-index: -1;
+        opacity: .1;
+        border-radius: 200px;
+        padding: 20px;
+        width: 93%;
+        height: 157px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        left: -18%;
+        top: auto;
+        bottom: 8%;
+    }
+    .product-description-review .right__pattern {
+        display: none;
+    }
+    .d-sm-block {
+        display: block !important;
+    }
+    .d-sm-none {
+        display: none !important;
+    }
+    .product-description-review .title h2 {
+        color: #ffff;
+        font-size: 34px;
+    }
+    .product-description-review .title {
+        color: #ffff;
+        text-align: center;
+        font-size: 45px;
+        padding-top: 64px;
+    }
+    .cavabunga__product__preview .bg__half {
+        display: none;
+    }
+    .sm__half__bg {
+        background-color: #ffffffed;
+        padding: 15px 0;
+        height: 90vh;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .header-area .header-action-flag {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-table tr {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .cart__items .shape__two {
+        display: none;
+    }
+    .cart-table thead {
+        display: none;
+    }
+    .cart-table table .pro-quantity {
+        width: 296px;
+        text-align: left;
+        padding: 13px 0;
+    }
+    .cart-table table tbody tr td .action-top .pro-qty-area .pro-qty {
+        position: relative;
+        text-align: center;
+        margin: auto;
+        width: 101px;
+        top: -9px;
+        left: -18px;
+    }
+    .cart-table table tbody tr td .action-top .pro-qty-area .pro-qty input {
+        color: #fff;
+        background: transparent;
+        font-weight: 700;
+    }
+    .cart-table table tbody tr td .action-top .pro-qty-area .pro-qty .qty-btn {
+        color: #547b5f;
+        position: absolute;
+        font-size: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: #fff;
+        font-weight: 700;
+        font-size: 17px;
+        width: 30px;
+    }
+    .cart-table table tbody tr td .action-top .pro-qty-area a.dec.qty-btn {
+        color: #547b5f;
+        position: absolute;
+        font-size: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: #fff;
+        font-weight: 700;
+        font-size: 22px;
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .cart-table table .pro-subtotal {
+        width: 127px;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        bottom: 13px;
+        font-size: 21px;
+    }
+    .cart__items .shape__one {
+        display: none;
+    }
+    .total__for__sm {
+        display: flex !important;
+        justify-content: space-between;
+        color: #fff;
+        width: 90%;
+        margin: 0 auto;
+        padding: 25px 0;
+    }
+    .total__for__sm h2 {
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .cart__listed__items {
+        border-bottom: 2px solid #fff;
+        margin-bottom: 17px;
+    }
+    .cart__listed__items h2 {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .user__information__sec {
+        height: auto !important;
+        padding-top: 90px;
+        padding-bottom: 40px
+    }
+    .wallet__sec {
+        background: linear-gradient(to right, #DED1CC, #943811);
+        background-size: cover;
+        width: 100%;
+        background: #943811;
+        background: -webkit-linear-gradient(to top, #943811 0%, #DED1CC 100%);
+        background: -moz-linear-gradient(to top, #943811 0%, #DED1CC 100%);
+        background: linear-gradient(to top, #943811 0%, #DED1CC 100%);
+    }
+    .cavabunga__user__profile .order__history {
+        padding: 32px;
+    }
+    .cavabunga__user__profile .order__history .col-md-10.pl-0.pr-0 {
+        width: 70%;
+    }
+    .cavabunga__user__profile .order__history .col-md-2 {
+        width: 30%;
+    }
+    .cavabunga__user__profile .user__information__sec .card-body span {
+        font-weight: 700;
+    }
+    .cavabunga__user__profile .order__history .dropdown1 {
+        border-top: 2px solid #455b71;
+    }
+    .profile .blue-gradident {
+        background: transparent;
+    }
+    .date__prize {
+        display: flex;
+        justify-content: space-between;
+    }
+    .section__about__cavabunga .about__cavabunga .about_pettern {
+        background-color: #fff;
+        position: absolute;
+        z-index: 0;
+        opacity: .4;
+        border-radius: 200px;
+        padding: 20px;
+        width: 76%;
+        height: 113px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        bottom: 18%;
+        right: -10px;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .user__information__sec {
+        height: auto !important;
+        padding: 25px;
+        padding-top: 90px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .modal-backdrop.show {
+        opacity: .5;
+        z-index: -9;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 1) {
+    .cavabunga__single__details .home-slider-item .box-item {
+        position: absolute;
+        bottom: 23% !important;
+        right: 13%;
+    }
+}
+
+@media screen and (min-device-width: 300px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) {
+    .sm__half__bg {
+        background-color: #ffffffed;
+        padding: 15px 0;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    .sm-product-slider-item {
+        height: 115vh !important;
+        display: flex;
+        justify-content: end;
+    }
+    .sm-product-slider-item .thumb.thumb-style .shop__image {
+        margin-top: 34% !important;
+    }
+    .single-product-slider .single-product-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 27px;
+    }
+    .single-product-slider {
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .single-product-slider .product-dec-slider-left {
+        width: 100%;
+        position: absolute;
+        bottom: 17%;
+        left: 28px;
+    }
+}
+
+@media screen and (min-device-width: 570px) and (max-device-width: 650px) and (-webkit-min-device-pixel-ratio: 1) {
+    .sm__half__bg {
+        background-color: #ffffffed;
+        padding: 15px 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .sm-product-slider-item .thumb.thumb-style .shop__image {
+        margin-top: 28% !important;
+    }
+    .sm-product-slider-item {
+        height: 100vh !important;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media screen and (min-device-width: 650px) and (max-device-width: 1700px) {
+    .single-product-slider .single-product-thumb .thumb-item img {
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        top: 120px;
+    }
+}
+
+@media only screen and (max-device-width: 600px) {
+    .order___tracking ul li {
+        width: 20%;
+    }
+    .order___tracking .line {
+        left: 24px;
+    }
+    .order___tracking li.active .line {
+        left: 37px;
+    }
+    .order___tracking li.not-complete .line {
+        position: relative;
+        width: 4px;
+        left: 23px;
+    }
+    .order___tracking li.is-complete:after {
+        display: none;
+    }
+    .order___tracking li.not-complete:after {
+        display: none;
+    }
+    .order___tracking ul li p {
+        font-size: 11px;
+        color: #000;
+        margin-bottom: 0;
+        line-height: 1.1;
+        margin-top: 25px;
+        margin-left: 0;
+    }
+    .order___tracking .time {
+        color: #C7C7C7;
+        font-size: 10px;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    .order___tracking .line {
+        height: 19px;
+    }
+    .order___tracking li.active:after {
+        width: 24px !important;
+        height: 24px !important;
+        top: -10px !important;
+        border: 6px solid #413c37;
+    }
+    .product__gallery .product__image .pattern__round {
+        background-color: #fff;
+        opacity: .1;
+        width: 170px;
+        height: 170px;
+        position: absolute;
+        right: 35px;
+        border-radius: 100%;
+        z-index: -1;
+        bottom: 0;
+    }
+    .product__gallery .product__grid .shadow-img {
+        position: absolute;
+        left: -7px;
+        bottom: 0;
+        top: 81%;
+        opacity: .3;
+    }
+    .product__image__slider {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .product__image__slider .imgBox {
+        overflow: hidden;
+        object-fit: cover;
+        width: 100%;
+        position: relative;
+        top: 160px;
+        pointer-events: inherit;
+    }
+    .product__image__slider ul.thumb {
+        display: inline-flex;
+        position: relative;
+        bottom: 100px;
+        z-index: 999;
+        margin: 0 auto;
+    }
+    .cavabunga__product__preview .back__arrow {
+        font-weight: 700;
+        padding-left: 30px;
+        position: absolute;
+        bottom: 2%;
+        left: 6px;
+    }
+    .cavabunga__product__preview {
+        background: rgb(54, 54, 54);
+        background: linear-gradient( 270deg, rgba(54, 54, 54, 1) 0%, rgba(92, 92, 92, 1) 100%);
+        height: 100%;
+        margin: 0 0 0 auto;
+    }
+    .image__highlight .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: initial;
+        right: 30%;
+        width: 16% !important;
+        bottom: 22% !important;
+        width: calc(var(--swiper-navigation-size)/ 44 * 27);
+        height: var(--swiper-navigation-size);
+        margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    }
+    .arrowTop .modal-body {
+        height: 68vh;
+        overflow-y: auto;
+    }
+    .product__overview__model .modal-body p {
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+    .product__overview__model .arrow__Top {
+        height: 100%;
+    }
+    .product__overview__model .arrow__Top p {
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: unset !important;
+        line-clamp: unset !important;
+        -webkit-box-orient: vertical;
+        overflow-y: auto !important;
+        height: 49vh;
+    }
+    .product__overview__model .arrowTop .modal-body p {
+        display: -webkit-box;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+    .arrow__Top .arrowimg .top {
+        display: none;
+    }
+    .product__overview__model .bottom {
+        display: none;
+    }
+    .arrow__Top .arrowimg .bottom {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 24px;
+        padding-top: 15px;
+    }
+    .product__overview__model .modal-header {
+        border: none;
+    }
+    .image__highlight .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+        left: 30%;
+        width: 16%;
+    }
+    .image__highlight .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-button-next:before {
+        display: none;
+    }
+    .image__highlight .home-slider-area.cava__shop .home-slider-content .cava__shop__details .swiper-button-prev:before {
+        display: none;
+    }
+    .image__highlight .home-slider-area,
+    .home-slider-area.slider-home3 {
+        position: relative;
+        max-height: 100vh;
+    }
+    .shop__details .swiper-button-prev {
+        bottom: 55px !important;
+    }
+    .shipping__address {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+    }
+    .col-lg-6.bg-sm-shop__Details {
+        background: rgb(54, 54, 54);
+        background: linear-gradient( 270deg, rgba(54, 54, 54, 1) 0%, rgba(92, 92, 92, 1) 100%);
+        z-index: 99;
+    }
+    .product__image__slider ul.thumb li {
+        list-style: none;
+        margin: 10px;
+        padding-top: 17px;
+        width: 80px;
+        height: 100px;
+        border: 3px solid transparent;
+        overflow: hidden;
+    }
+    .product__image__slider ul.thumb li.active {
+        list-style: none;
+        margin: 10px;
+        padding-top: 17px;
+        border: 3px solid #333;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-device-width: 650px) and (max-device-width: 1000px) {
+    .cavabunga__single__details .line__highlights {
+        width: 0%;
+    }
+}
+
+@media screen and (min-device-width: 400px) and (max-device-width: 450px) {
+    .order___tracking li.active .line {
+        left: 41px;
+    }
+}
+
+
+/* IPAD / TABLETS */
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .product__gallery .cavabunga__product__decription {
+        padding: 14px;
+    }
+    .header-area.sticky-header.sticky.header-style2 .header-logo-area .logo-light {
+        display: block;
+        padding-left: 61px;
+        width: 100%;
+    }
+    .header-area.sticky-header .logo-main.d-none.d-sm-block.f-logo {
+        width: 100%;
+        margin: auto;
+        padding-left: 41px;
+    }
+    .cavabunga__product__preview .bg__half {
+        background-color: #fff;
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 61%;
+        left: 0;
+        top: 0;
+    }
+    .product__image__slider .imgBox {
+        overflow: hidden;
+        object-fit: cover;
+        width: 347px;
+        position: relative;
+        top: 136px;
+        pointer-events: none;
+    }
+    .product__image__slider ul.thumb {
+        margin: 0;
+        padding: 0;
+        margin-left: 0;
+    }
+    .product__image__slider {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cavabunga__single__details .home-slider-area .home-slider-content .cava__shop__details .swiper-wrapper .swiper-slide .home-slider-item {
+        height: 69vh;
+        background: rgb(54, 54, 54);
+        background: linear-gradient( 270deg, rgba(54, 54, 54, 1) 0%, rgba(92, 92, 92, 1) 100%);
+        z-index: 999;
+    }
+    .cavabunga__product__preview .back__arrow {
+        display: none;
+    }
+    .cavabunga__product__preview .single-product-info {
+        position: relative;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 485px;
+        padding-top: 65px;
+    }
+    .product__image__slider .imgBox {
+        top: 134px;
+        pointer-events: inherit;
+    }
+    .bg-sm-shop__Details {
+        background: rgb(54, 54, 54);
+        background: linear-gradient( 270deg, rgba(54, 54, 54, 1) 0%, rgba(92, 92, 92, 1) 100%);
+        z-index: 99;
+    }
+    .section__about__cavabunga .about__cavabunga {
+        position: relative;
+        height: 85vh;
+    }
+    section.order__tracking .col-md-6 {
+        width: 100%;
+    }
+    .order__summary {
+        min-height: 58vh;
+    }
+    .order__tracking .order__tracking {
+        min-height: 64vh;
+    }
+    .order__summary .pattern__order {
+        border-radius: 200px;
+        padding: 20px;
+        width: 500px;
+        height: 177px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        left: 46%;
+        top: 20%;
+    }
+    section.cavabunga__login .col-md-6 {
+        width: 100%;
+    }
+    section.cavabunga__login .home-slider-area {
+        display: none;
+    }
+    section.cavabunga__login {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .section__about__cavabunga .about__cavabunga .about__image {
+        position: relative;
+        top: 55px;
+    }
+    .cavabunga__design__section .pattern__round {
+        display: none;
+    }
+    .terms__condtions .pattern__right {
+        display: none;
+    }
+    section.terms__condtions .headtitle h2 {
+        color: #ffff;
+        font-size: 25px;
+    }
+    section.terms__condtions .headtitle {
+        text-align: center;
+        color: #ffff;
+        margin-bottom: 13px;
+        margin-top: 32px;
+    }
+    .cavabunga__about .item__section .content {
+        padding: 30px;
+    }
+    .product__information {
+        height: auto;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        padding-top: 106px;
+    }
+    .cavabunga__about .contentFirst {
+        padding: 0;
+        margin-bottom: 23px;
+    }
+    .cavabunga__about .item__section {
+        min-height: 50vh;
+    }
+    .aboutrTwo {
+        text-align: left;
+    }
+    .cavabunga__design__section .design__section {
+        position: relative;
+        top: 0;
+        padding: 35px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .affiliate__program .bottom__color {
+        display: none;
+    }
+    .affiliate__program .affiliate__content .program__image {
+        display: none;
+    }
+    .affiliate__program .title h2 {
+        font-size: 30px;
+    }
+    .affiliate__program .title {
+        padding-bottom: 15px;
+    }
+    .cavabunga__content {
+        margin-top: 31%;
+    }
+    .affiliate__program .rounded-recta {
+        position: absolute;
+        background: #fff;
+        width: 130px;
+        height: 601px;
+        bottom: 127%;
+        left: 62%;
+        right: 0;
+        opacity: .1;
+        border-radius: 200px;
+        z-index: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    .affiliate__program {
+        height: auto;
+        padding-bottom: 50px;
+    }
+    .affiliate__program .affiliate__content .rouded__shape {
+        position: absolute;
+        background: #fff;
+        opacity: .1;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        left: -5%;
+        z-index: -1;
+        bottom: 0;
+        top: 29rem;
+    }
+    .affiliate__program .affiliate__content ul li {
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        list-style-type: disc;
+    }
+    .affiliate__program .affiliate__content ul {
+        padding-left: 19px;
+    }
+    .col-sm-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .col-sm-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .affiliate__program .affiliate_form label {
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    div.country__dropdown ul {
+        padding: 0;
+    }
+    .cavabunga__wallet .title h2 {
+        font-size: 30px;
+    }
+    .cavabunga__designer .designer__section .designer__description .brand__img {
+        min-height: 48px;
+    }
+    .cavabunga__designer .designer__section .designer__description .brand__Section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .millenial__talent__section {
+        padding: 0;
+        position: relative;
+    }
+    section.product-area.product-description-review-area.cavabunga__design__section {
+        padding-bottom: 0;
+    }
+    .cavabunga__partners .millenial__talent__section .millenial__talent h2 {
+        font-size: 21px;
+    }
+    .cavabunga__partners .millenial__talent__section .pattern img {
+        width: 100%;
+        /* height: 150px; */
+    }
+    .cavabunga__partners .millenial__talent__section .pattern {
+        position: absolute;
+        left: -9%;
+        z-index: -1;
+        opacity: .1;
+        bottom: 0;
+        top: -15px;
+    }
+    .sm__reverse {
+        flex-direction: column-reverse;
+        text-align: left !important;
+    }
+    .sm__reverse .millenial__talent__img img {
+        padding-top: 51px;
+    }
+    .cavabunga__partners .millenial__talent__section .pattern__one {
+        background-color: #fff;
+        position: absolute;
+        z-index: -1;
+        opacity: .1;
+        border-radius: 228px;
+        padding: 20px;
+        min-width: 111%;
+        height: 209px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        bottom: 27%;
+        right: -9%;
+    }
+    .cavabunga__partners .rouded__pattern {
+        background-color: #fff;
+        position: absolute;
+        z-index: 0;
+        opacity: .1;
+        padding: 20px;
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        left: 13%;
+        bottom: 0;
+        top: 31px;
+    }
+    .millenial__talent__img.text-right {
+        text-align: center !important;
+        padding-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cavabunga__designer .designer__section .designer__description hr {
+        height: 4px;
+        color: #ffff;
+        opacity: 1;
+        width: 83%;
+    }
+    .cavabunga__designer .pattern__one {
+        display: none;
+    }
+    .cavabunga__designer .pattern__two {
+        display: none;
+    }
+    .cavabunga__designer .designer__section .designer__description h4 {
+        font-family: "Montserrat", sans-serif;
+        color: #ffff;
+        font-weight: 700;
+        padding-bottom: 20px;
+        font-size: 21px;
+    }
+    .cavabunga__designer .designer__section .designer__image h2 {
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 30px;
+        padding-bottom: 18px;
+    }
+    .cavabunga__designer .designer__section .designer__description ul li {
+        list-style: none;
+        display: inline-block;
+        background: #ffffff38;
+        padding: 13px 0;
+        margin: auto;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 173px;
+    }
+    .cavabunga__designer .designer__section .designer__description ul {
+        width: 100%;
+    }
+    section.cavabunga__wallet {
+        background: linear-gradient(#DED1CC, #943811);
+    }
+    .brand__img {
+        flex: 0 0 auto;
+        width: 46%;
+        margin: 10px;
+    }
+    .brand__img:nth-child(4) {
+        width: 52%;
+    }
+    .brand__img:nth-child(9) {
+        width: 36%;
+    }
+    .cavabunga__designer .title h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 32px;
+    }
+    .cavabunga__designer .title {
+        padding-bottom: 22px;
+    }
+    .cavabunga__designer .designer__section .designer__image img {
+        width: 60%;
+    }
+    .cavabunga__designer .designer__section .designer__description p {
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .cavabunga__partners .title h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+    }
+    .cavabunga__partners .partners__section {
+        width: 88%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .shop-toolbar-wrap .shop-toolbar-right {
+        width: 85%;
+    }
+    .shop-toolbar-wrap .product-sorting-menu .current i {
+        font-size: 12px;
+        margin-left: 0px;
+        position: relative;
+        top: -1px;
+    }
+    .popularity {
+        min-width: 120px;
+    }
+    .cavabunga__designer .pattern__round {
+        display: none;
+    }
+    .container.designer__section {
+        width: 88%;
+    }
+    .product__image__slider .imgBox {
+        top: 140px;
+    }
+}
+
+
+/* FOR 1400 SCREEN */
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+    .cavabunga__wallet .wallet__width {
+        width: 77% !important;
+        margin: 0px auto;
+    }
+    .affiliate__program .bottom__color {
+        background-color: #fff;
+        width: 100%;
+        height: 19%;
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
+    }
+    .affiliate__program .affiliate__content .program__image {
+        position: absolute;
+        top: 33%;
+        right: -15%;
+    }
+}
+
+@media screen and (min-width: 1405px) and (max-width: 2000px) {
+    .cavabunga__wallet .wallet__width {
+        width: 86% !important;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .sm__half__bg {
+        height: 100vh !important;
+    }
+    .product__image__slider ul.thumb {
+        display: inline-flex;
+        position: relative;
+        bottom: 83px;
+        z-index: 999;
+        margin: 0 auto;
+        width: 92%;
+    }
+    .cavabunga__product__preview .btn-fill {
+        padding: 5px 9px;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 400px) and (orientation: portrait) {
+    .product__image__slider .imgBox {
+        top: 120px;
+    }
+    .product__image__slider ul.thumb {
+        bottom: 60px;
+    }
+}
