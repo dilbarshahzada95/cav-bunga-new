@@ -32,6 +32,14 @@ class WebController extends Controller
     {
         return view('web.terms_and_condition');
     }
+    function profile()
+    {
+        return view('web.profile');
+    }
+    function register()
+    {
+        return view('web.register');
+    }
 
     /**
      * Show the form for creating a new resource.

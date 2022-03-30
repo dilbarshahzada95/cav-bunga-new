@@ -25,6 +25,8 @@ Route::get('/about_us', [App\Http\Controllers\web\WebController::class, 'about_u
 Route::get('/design', [App\Http\Controllers\web\WebController::class, 'design'])->name('design');
 Route::get('/designer', [App\Http\Controllers\web\WebController::class, 'designer'])->name('designer');
 Route::get('/terms_and_condition', [App\Http\Controllers\web\WebController::class, 'terms_and_condition'])->name('terms_and_condition');
+Route::get('/profile', [App\Http\Controllers\web\WebController::class, 'profile'])->name('profile');
+Route::get('/register', [App\Http\Controllers\web\WebController::class, 'register'])->name('register');
 // ADMIN
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
