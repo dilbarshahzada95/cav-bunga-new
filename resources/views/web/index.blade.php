@@ -9,7 +9,7 @@
                         <!-- Start Slide Item -->
                         <div class="home-slider-item">
                             <div class="bg-thumb bg-img"
-                                data-bg-img="{{ asset('new/assets/img/slider/home-slider1.png') }}"></div>
+                                data-bg-img="{{ asset('web/assets/img/slider/home-slider1.png') }}"></div>
                             <div class="slider-content-area">
                                 <div class="content">
                                     <div class="inner-content">
@@ -17,7 +17,7 @@
                                         <img src="assets/img/pattern/logo-pattern.png" alt="">
                                         <p>A Lifestyle brand crafted with love by millennials, for millennials
                                         </p>
-                                        <a href="{{ url('shop_new') }}" class="btn-theme btn-black">Shop Now</a>
+                                        <a href="{{ url('shop_web') }}" class="btn-theme btn-black">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                         <!-- Start Slide Item -->
                         <div class="home-slider-item">
                             <div class="bg-thumb bg-img"
-                                data-bg-img="{{ asset('new/assets/img/slider/home-slider1.png') }}"></div>
+                                data-bg-img="{{ asset('web/assets/img/slider/home-slider1.png') }}"></div>
                             <div class="slider-content-area">
                                 <div class="content">
                                     <div class="inner-content">
@@ -49,10 +49,10 @@
                         <div class="cavabunga__home__bottom__arrow">
                             <div class="icon-down">
                                 <a href="#sectionN">
-                                    <img class="d-xl-none" src="{{ asset('new/assets/img/icons/home-arrow.png') }}"
+                                    <img class="d-xl-none" src="{{ asset('web/assets/img/icons/home-arrow.png') }}"
                                         alt="">
                                     <p>scroll down</p>
-                                    <img src="{{ asset('new/assets/img/icons/home-arrow.png') }}" alt="">
+                                    <img src="{{ asset('web/assets/img/icons/home-arrow.png') }}" alt="">
 
                                 </a>
                             </div>
@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row product__grid">
                 <div class="pattern__left">
-                    <img src="{{ asset('new/assets/img/pattern/pattern__left.png') }}" alt="">
+                    <img src="{{ asset('web/assets/img/pattern/pattern__left.png') }}" alt="">
                 </div>
                 <div class="col-md-6">
                     <div class="cavabunga__product__decription" data-aos="fade-right" data-aos-duration="1000">
@@ -84,9 +84,9 @@
                 <div class="col-md-6">
                     <div class="product__image" data-aos="fade-right" data-aos-duration="1000">
                         <div class="pattern__round"></div>
-                        <img src="{{ asset('new/assets/img/products/backpack__home__noSjadow.png') }}" alt="">
+                        <img src="{{ asset('web/assets/img/products/backpack__home__noSjadow.png') }}" alt="">
                         <img class="shadow-img"
-                            src="{{ asset('new/assets/img/products/backpack__home__sjadow.png') }}" alt="">
+                            src="{{ asset('web/assets/img/products/backpack__home__sjadow.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -94,14 +94,14 @@
                 <div class="cavabunga__footer__arrows">
                     <div class="cavabunga__bottom__arrow">
                         <div class="icon-down">
-                            <a href="#sectionOne"><img src="{{ asset('new/assets/img/pattern/arrow-down.png') }}"
+                            <a href="#sectionOne"><img src="{{ asset('web/assets/img/pattern/arrow-down.png') }}"
                                     alt=""></a>
                         </div>
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
                             <h4><a href="shop.html">go to shop</a></h4>
-                            <img src="{{ asset('new/assets/img/pattern/shop-arrow.png') }}" alt="">
+                            <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>
 
@@ -117,7 +117,7 @@
             <div class="row product__grid column-reverse-sm-remove">
                 <div class="col-md-6">
                     <div class="product__image">
-                        <img src="{{ asset('new/assets/img/products/wallet.png') }}" alt="" data-aos="fade-right"
+                        <img src="{{ asset('web/assets/img/products/wallet.png') }}" alt="" data-aos="fade-right"
                             data-aos-duration="1000">
                         <div class="bottom__rounded"></div>
                     </div>
@@ -138,14 +138,14 @@
                 <div class="cavabunga__footer__arrows">
                     <div class="cavabunga__bottom__arrow">
                         <div class="icon-down">
-                            <a href="#sectionTwo"> <img src="{{ asset('new/assets/img/pattern/arrow-down.png') }}"
+                            <a href="#sectionTwo"> <img src="{{ asset('web/assets/img/pattern/arrow-down.png') }}"
                                     alt=""></a>
                         </div>
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
                             <h4><a href="shop.html">go to shop</a></h4>
-                            <img src="{{ asset('new/assets/img/pattern/shop-arrow.png') }}" alt="">
+                            <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>
 
@@ -173,7 +173,7 @@
                 <div class="col-md-6">
                     <div class="rectangle__height"></div>
                     <div class="product__image" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="{{ asset('new/assets/img/products/mens-kit.png') }}" alt="">
+                        <img src="{{ asset('web/assets/img/products/mens-kit.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -181,13 +181,13 @@
                 <div class="cavabunga__footer__arrows">
                     <div class="cavabunga__bottom__arrow">
                         <div class="icon-down">
-                            <a href="#footer"><img src="{{ asset('new/assets/img/pattern/arrow-down.png') }}" alt=""></a>
+                            <a href="#footer"><img src="{{ asset('web/assets/img/pattern/arrow-down.png') }}" alt=""></a>
                         </div>
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
                             <h4><a href="{{ url('shop_new') }}">go to shop</a></h4>
-                            <img src="{{ asset('new/assets/img/pattern/shop-arrow.png') }}" alt="">
+                            <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>
 

@@ -80,21 +80,21 @@
                                     @if (url('login') == url()->current() || url('registerAccount') == url()->current())
                                         <a href="{{ url('/') }}">
                                             <img class="logo-main d-none d-sm-block f-logo"
-                                                src="{{ asset('new/assets/img/logo-dark.png') }}" alt="Logo" />
+                                                src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
                                             <img class="logo-main d-none d-sm-block f-logo"
-                                                src="{{ asset('new/assets/img/logo.png') }}" alt="Logo" />
+                                                src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
                                             <img class="logo-main d-sm-none"
-                                                src="{{ asset('new/assets/img/logo.png') }}" alt="Logo" />
-                                            <img class="logo-light" src="{{ asset('new/assets/img/logo.png') }}"
+                                                src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
+                                            <img class="logo-light" src="{{ asset('web/assets/img/logo.png') }}"
                                                 alt="Logo" />
                                         </a>
                                     @else
                                         <a href="{{ url('/') }}">
                                             <img class="logo-main d-none d-sm-block f-logo"
-                                                src="{{ asset('new/assets/img/logo.png') }}" alt="Logo" />
+                                                src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
                                             <img class="logo-main d-sm-none"
-                                                src="{{ asset('new/assets/img/logo.png') }}" alt="Logo" />
-                                            <img class="logo-light" src="{{ asset('new/assets/img/logo.png') }}"
+                                                src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
+                                            <img class="logo-light" src="{{ asset('web/assets/img/logo.png') }}"
                                                 alt="Logo" />
                                         </a>
                                     @endif
@@ -120,34 +120,34 @@
                                         <dropdown>
                                             <input id="toggle2" type="checkbox">
                                             <label for="toggle2" class="animate"><img
-                                                    src="{{ asset('new/assets/img/flags/uae.png') }}" alt=""></label>
+                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
                                             <ul class="animate m-0">
                                                 <li class="animate">
                                                     <p>German</p><img
-                                                        src="{{ asset('new/assets/img/flags/german.png') }}" alt="">
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>bangaladesh</p><img
-                                                        src="{{ asset('new/assets/img/flags/bangaladesh.png') }}"
+                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="{{ asset('new/assets/img/flags/turkey.png') }}"
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
                                                         alt=" ">
                                                 </li>
                                                 <li class="animate">
                                                     <p>German</p><img
-                                                        src="{{ asset('new/assets/img/flags/german.png') }}" alt="">
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>bangaladesh</p><img
-                                                        src="{{ asset('new/assets/img/flags/bangaladesh.png') }}"
+                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="{{ asset('new/assets/img/flags/turkey.png') }}"
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
                                                         alt=" ">
                                                 </li>
                                             </ul>
@@ -156,19 +156,19 @@
                                     <div class="header-action-login">
                                         <button class="btn-login"
                                             onclick="window.location.href='{{ url('login') }}'">
-                                            <img src="{{ asset('new/assets/img/icons/user.png') }}"
+                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
                                                 class="img-fluid" alt="">
                                         </button>
                                     </div>
                                     <div class="header-action-cart">
                                         <button class="btn-cart cart-icon">
-                                            <img src="{{ asset('new/assets/img/icons/cart.png') }}"
+                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
                                                 class="img-fluid" alt="">
                                             <span class="cart-count">0 items</span>
                                         </button>
                                     </div>
                                     <button class="btn-menu d-xl-none">
-                                        <img src="{{ asset('new/assets/img/icons/menu.png') }}"
+                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}"
                                             class="img-fluid" alt="">
                                     </button>
                                 </div>
