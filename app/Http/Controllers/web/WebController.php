@@ -72,6 +72,10 @@ class WebController extends Controller
     {
         return view('web.sideCart');
     }
+    function responsiblites()
+    {
+        return view('web.responsiblites');
+    }
 
     /**
      * Show the form for creating a new resource.

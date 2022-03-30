@@ -14,10 +14,10 @@
                                 <div class="content">
                                     <div class="inner-content">
                                         <h4>Welcome to</h4>
-                                        <img src="assets/img/pattern/logo-pattern.png" alt="">
+                                        <img src="{{ asset('web/assets/img/pattern/logo-pattern.png') }}" alt="">
                                         <p>A Lifestyle brand crafted with love by millennials, for millennials
                                         </p>
-                                        <a href="{{ url('shop_web') }}" class="btn-theme btn-black">Shop Now</a>
+                                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                         <img src="assets/img/pattern/logo-pattern.png" alt="">
                                         <p>A Lifestyle brand crafted with love by millennials, for millennials
                                         </p>
-                                        <a href="{{ url('shop_new') }}" class="btn-theme btn-black">Shop Now</a>
+                                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
                             libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
                             Atque natus amet, beatae sint fugit ipsam.</p>
-                        <a href="{{ url('shop_new') }}" class="btn-theme btn-black">Shop Now</a>
+                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -100,7 +100,7 @@
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
-                            <h4><a href="shop.html">go to shop</a></h4>
+                            <h4><a href="{{ url('wallet') }}">go to shop</a></h4>
                             <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>
@@ -130,7 +130,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
                             libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
                             Atque natus amet, beatae sint fugit ipsam.</p>
-                        <a href="{{ url('shop_new') }}" class="btn-theme btn-black">Shop Now</a>
+                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                     </div>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
-                            <h4><a href="shop.html">go to shop</a></h4>
+                            <h4><a href="{{ url('wallet') }}">go to shop</a></h4>
                             <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>
@@ -167,7 +167,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
                             libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
                             Atque natus amet, beatae sint fugit ipsam.</p>
-                        <a href="{{ url('shop_new') }}" class="btn-theme btn-black">Shop Now</a>
+                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -186,7 +186,7 @@
                     </div>
                     <div class="cavabunga__goto__arrow">
                         <div class="icon">
-                            <h4><a href="{{ url('shop_new') }}">go to shop</a></h4>
+                            <h4><a href="{{ url('wallet') }}">go to shop</a></h4>
                             <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                         </div>

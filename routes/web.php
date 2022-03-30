@@ -41,6 +41,7 @@ Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'o
 Route::get('/shoping', [App\Http\Controllers\web\WebController::class, 'shoping'])->name('shoping');
 Route::get('/wallet', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('wallet');
 Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCart'])->name('sideCart');
+Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
 // ADMIN
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

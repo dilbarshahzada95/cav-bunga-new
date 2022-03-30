@@ -74,10 +74,11 @@
                                             <li><a href="{{ url('about_us') }}">About Us</a></li>
                                             <li><a href="#">Our Team</a></li>
                                             <li><a href="{{ url('design') }}">Design</a></li>
-                                            <li><a href="#">Responsability</a></li>
+                                            <li><a href="{{ url('designer') }}">Our Designer</a></li>
+                                            <li><a href="{{ url('responsiblites') }}">Responsibility</a></li>
                                             <li><a href="{{ url('partners') }}">Our Partners</a></li>
                                             <li><a href="affiliate-program.html">Affiliate Program</a></li>
-                                            <li><a href="{{ url('designer') }}">Our Designer</a></li>
+
                                         </ul>
                                     </nav>
                                 </div>

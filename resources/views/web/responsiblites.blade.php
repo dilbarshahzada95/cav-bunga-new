@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Cavabunga | Wallet | A Lifestyle brand crafted with love by millennials, for millennials</title>
+    <title>Cavabunga | Product Informations | A Lifestyle brand crafted with love by millennials, for millennials
+    </title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{ asset('web/assets/img/favicon.png') }}" type="image/x-icon" />
@@ -20,7 +21,6 @@
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!--== Bootstrap CSS ==-->
     <link href="{{ asset('web/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!--== Font-awesome Icons CSS ==-->
     <link href="{{ asset('web/assets/css/font-awesome.min.css') }}" rel="stylesheet" />
@@ -46,12 +46,10 @@
     <link href="{{ asset('web/assets/css/responsive.css') }}" rel="stylesheet" />
 </head>
 
-<!-- <body oncontextmenu="return false"> -->
-
 <body>
 
     <!--wrapper start-->
-    <div class="wrapper products-single-wrapper">
+    <div class="wrapper home-default-wrapper">
 
         <!--== Start Preloader Content ==-->
         <div class="preloader-wrap">
@@ -67,171 +65,147 @@
         <!--== End Preloader Content ==-->
 
         <!--== Start Header Wrapper ==-->
-        @include('web.header')
-        <!--== End Header Wrapper ==-->
-
-        <main class="main-content site-wrapper-reveal">
-            <section class="cavabunga__wallet">
-                <div class="container">
-                    <div class="wallet__width">
-                        <div class="title">
-                            <h2>Bussiness Card Holder</h2>
-                        </div>
-                        <div class="row">
-                            <div class="inner-left-padding">
-                                <div class="shop-toolbar-wrap">
-                                    <div class="shop-toolbar-right">
-                                        <div class="popularity">
-                                            <h6>Sort :</h6>
-                                            <div class="product-sorting-menu product-view-count">
-
-                                                <span class="current">Popularity <i
-                                                        class="lastudioicon-down-arrow"></i></span>
-                                                <ul>
-                                                    <li class="active"><a href="#" class="active">What's
-                                                            New</a></li>
-                                                    <li><a href="#">Relevance</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="filter__section">
-                                            <h6>Filter :</h6>
-                                            <div class="section__filter">
-                                                <div class="product-sorting-menu product-view-count">
-
-                                                    <span class="current">Price <i
-                                                            class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
-                                                        <li class="active"><a href="#"
-                                                                class="active">Price low to high</a></li>
-                                                        <li><a href="#">Price high to low</a></li>
-                                                        <li><a href="#">Discount</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="product-sorting-menu product-sorting">
-                                                    <span class="current">Color <i
-                                                            class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
-                                                        <li class="active"><a href="#"
-                                                                class="active">Red</a></li>
-                                                        <li><a href="#">Yellow</a></li>
-                                                        <li><a href="#">green</a></li>
-                                                        <li><a href="#">Black</a></li>
-                                                        <li><a href="#">White</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div
-                                                    class="product-sorting-menu product-sorting d-sm-none d-lg-block d-md-block">
-                                                    <span class="current">Collection <i
-                                                            class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
-                                                        <li class="active"><a href="#"
-                                                                class="active">New Collection</a></li>
-                                                        <li><a href="#">Leather Type</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
+        <header class="header-area header-default header-style2 header-transparent sticky-header">
+            <div class="container-fluid">
+                <div class="row row-gutter-0 align-items-center">
+                    <div class="col-12">
+                        <div class="header-align">
+                            <div class="header-align-left">
+                                <div class="header-logo-area">
+                                    <a href="#">
+                                        <img class="logo-main d-none d-sm-block f-logo"
+                                            src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
+                                        <img class="logo-main d-sm-none" src="assets/img/logo.png" alt="Logo" />
+                                        <img class="logo-light" src="assets/img/logo.png" alt="Logo" />
+                                    </a>
                                 </div>
-
+                                @include('web.menu')
                             </div>
-                        </div>
-                        <div class="row product__grid">
-
-                            <div class="col-md-4">
-                                <div class="single__product first">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
+                            <div class="header-align-right">
+                                <div class="header-action-area">
+                                    <div class="header-action-search">
+                                        <button class="btn-search btn-search-menu">
+                                            <i class="lastudioicon-zoom-1"></i>
+                                        </button>
+                                    </div>
+                                    <div class="header-action-flag">
+                                        <dropdown>
+                                            <input id="toggle2" type="checkbox">
+                                            <label for="toggle2" class="animate"><img
+                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
+                                            <ul class="animate m-0">
+                                                <li class="animate">
+                                                    <p>German</p><img
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>bangaladesh</p><img
+                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
+                                                        alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>Turkey</p>
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>German</p><img
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png')}}"
+                                                        alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>Turkey</p>
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
+                                                </li>
+                                            </ul>
+                                        </dropdown>
+                                    </div>
+                                    <div class="header-action-login">
+                                        <button class="btn-login" onclick="window.location.href='login.html'">
+                                            <img src="{{ asset('web/assets/img/icons/user-dark.png') }}"
                                                 class="img-fluid" alt="">
-                                        </div>
+                                        </button>
                                     </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single__product second">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
+                                    <div class="header-action-cart" style="background: #63748614;">
+                                        <button class="btn-cart cart-icon">
+                                            <img src="{{ asset('web/assets/img/icons/cart-dark.png') }}"
                                                 class="img-fluid" alt="">
-                                        </div>
+                                            <span class="cart-count text-dark">0 items</span>
+                                        </button>
                                     </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <button class="btn-menu d-xl-none">
+                                        <img src="{{ asset('web/assets/img/icons/menu-dark.png') }}"
+                                            class="img-fluid" alt="">
+                                    </button>
                                 </div>
-
                             </div>
-
-                            <div class="col-md-4">
-                                <div class="single__product third">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="rounded__shape"></div>
                         </div>
                     </div>
-
                 </div>
-                <div class="rounded__shape_lg"></div>
-            </section>
+            </div>
+        </header>
+        <!--== End Header Wrapper ==-->
 
+        <main class="main-content">
+
+
+            <section class="cavabunga__about product__information">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item__section contentFirst">
+                                <div class="content">
+                                    <h2>proudly made in india</h2>
+                                    <p>India is the hub for creativity and passion. It was important for us to make the
+                                        country a staple in our work and design process. India’s artisans, above-grade
+                                        materials, outstanding roster of clientele, and overall
+                                        ebullience make it the perfect place for Cavabunga to call home.</p>
+                                    <p>As a brand we exude this same desire to express joy in all faucets of life. In
+                                        fact, you can say that’s how we got our name - Cavabunga. It’s this same
+                                        embodiment found in India that reminds us of why we decided to
+                                        begin this line in the first place.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 right__content">
+                            <div class="col-md-12 m-0">
+                                <div class="item__section aboutrOne">
+                                    <div class="content">
+                                        <h2>being responsible</h2>
+                                        <p>At Cavabunga, we use genuine and natural products that retain the lowest
+                                            levels of wastage when designing. As a new-age and forward thinking brand,
+                                            we’ve found ways to be aware of the impact we have on the planet.</p>
+                                        <a href="#" class="btn-theme btn-black">more info</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 m-0">
+                                <div class="item__section aboutrTwo">
+                                    <div class="content">
+                                        <h2>product choices</h2>
+                                        <p>Cavabunga goods are made using the finest of materials. We obtain everything
+                                            from bamboo pulp to recyclable leather to produce the same quality pieces
+                                            you’re used to – only this time in justifiable ways.</p>
+                                        <a href="#" class="btn-theme btn-black">more info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </main>
 
+        <!--== Scroll Top Button ==-->
+        <!-- <div class="scroll-to-top"><span class="icofont-arrow-up"></span></div> -->
 
-        <aside class="product-quick-view-modal">
+        <!--== Start Product Quick View ==-->
+        {{-- <aside class="product-quick-view-modal">
             <div class="product-quick-view-inner">
                 <div class="product-quick-view-content">
                     <button type="button" class="btn-close">
@@ -315,10 +289,36 @@
                 </div>
             </div>
             <div class="canvas-overlay"></div>
-        </aside>
+        </aside> --}}
+        <!--== End Product Quick View ==-->
+
+        <!--== Start Aside Search Menu ==-->
+        <div class="search-box-wrapper">
+            <div class="search-box-content-inner">
+                <div class="search-box-form-wrap">
+                    <div class="search-note">
+                        <p>Start typing and press Enter to search</p>
+                    </div>
+                    <form action="#" method="post">
+                        <div class="search-form position-relative">
+                            <label for="search-input" class="sr-only">Search</label>
+                            <input type="search" class="form-control" placeholder="Search" id="search-input">
+                            <button class="search-button"><i class="lastudioicon-zoom-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--== End Aside Search Menu ==-->
+            <a href="javascript:;" class="search-close"><i class="lastudioicon-e-remove"></i></a>
+        </div>
+        <!--== End Aside Search Menu ==-->
+
+        <!--== Start Sidebar Cart Menu ==-->
         @include('web.sideCart')
         <div class="sidebar-cart-overlay"></div>
+        <!--== End Sidebar Cart Menu ==-->
 
+        <!--== Start Side Menu ==-->
         <aside class="off-canvas-wrapper">
             <div class="off-canvas-inner">
                 <div class="off-canvas-overlay d-none"></div>
@@ -372,6 +372,8 @@
                 </dropdown>
             </div>
         </aside>
+        <!--== End Side Menu ==-->
+        @include('web.footer')
     </div>
 
     <!--=======================Javascript============================-->
@@ -415,6 +417,7 @@
 
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
+
 </body>
 
 </html>

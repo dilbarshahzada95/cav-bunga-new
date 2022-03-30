@@ -32,8 +32,8 @@
                              </div>
                              <div class="header-navigation-area d-none d-xl-block">
                                  <ul class="main-menu nav justify-content-center position-relative">
-                                     <li class="active"><a href="index.html">Home</a></li>
-                                     <li><a href="shop.html">Shop</a></li>
+                                     <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                                     <li><a href="{{ url('shoping') }}">Shop</a></li>
                                      <li><a href="{{ url('about_us') }}">About</a></li>
                                  </ul>
                              </div>

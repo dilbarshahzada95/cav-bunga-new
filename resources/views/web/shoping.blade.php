@@ -9,7 +9,7 @@
     <title>Cavabunga | SHOP | A Lifestyle brand crafted with love by millennials, for millennials</title>
 
     <!--== Favicon ==-->
-    <link rel="shortcut icon" href="{{ asset('web/assets/img/favicon.png')}}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('web/assets/img/favicon.png') }}" type="image/x-icon" />
 
     <!--== Google Fonts ==-->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface:400" rel="stylesheet">
@@ -21,29 +21,29 @@
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <!--== Bootstrap CSS ==-->
-    <link href="{{ asset('web/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!--== Font-awesome Icons CSS ==-->
-    <link href="{{ asset('web/assets/css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/font-awesome.min.css') }}" rel="stylesheet" />
     <!--== Icofont Min Icons CSS ==-->
-    <link href="{{ asset('web/assets/css/icofont.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/icofont.min.css') }}" rel="stylesheet" />
     <!--== lastudioIcons CSS ==-->
-    <link href="{{ asset('web/assets/css/lastudioIcons.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/lastudioIcons.css') }}" rel="stylesheet" />
     <!--== Animate CSS ==-->
-    <link href="{{ asset('web/assets/css/animate.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/animate.css') }}" rel="stylesheet" />
     <!--== Aos CSS ==-->
-    <link href="{{ asset('web/assets/css/aos.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/aos.css') }}" rel="stylesheet" />
     <!--== FancyBox CSS ==-->
-    <link href="{{ asset('web/assets/css/jquery.fancybox.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet" />
     <!--== Slicknav CSS ==-->
-    <link href="{{ asset('web/assets/css/slicknav.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/slicknav.css') }}" rel="stylesheet" />
     <!--== Swiper CSS ==-->
-    <link href="{{ asset('web/assets/css/swiper.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/swiper.min.css') }}" rel="stylesheet" />
     <!--== Slick CSS ==-->
-    <link href="{{ asset('web/assets/css/slick.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/slick.css') }}" rel="stylesheet" />
     <!--== Main Style CSS ==-->
-    <link href="{{ asset('web/assets/css/style.css')}}" rel="stylesheet" />
-    <link href="{{ asset('web/assets/css/cavabunga.css')}}" rel="stylesheet" />
-    <link href="{{ asset('web/assets/css/responsive.css')}}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/cavabunga.css') }}" rel="stylesheet" />
+    <link href="{{ asset('web/assets/css/responsive.css') }}" rel="stylesheet" />
     <style>
         .newbg {
             background: linear-gradient(317deg, #943811 0%, #DED1CC 100%);
@@ -88,19 +88,15 @@
                             <div class="header-align-left">
                                 <div class="header-logo-area">
                                     <a href="#">
-                                        <img class="logo-main d-none d-sm-block f-logo" src="{{ asset('web/assets/img/logo.png')}}"
+                                        <img class="logo-main d-none d-sm-block f-logo"
+                                            src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
+                                        <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png') }}"
                                             alt="Logo" />
-                                        <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png')}}" alt="Logo" />
-                                        <img class="logo-light" src="{{ asset('web/assets/img/logo.png')}}" alt="Logo" />
+                                        <img class="logo-light" src="{{ asset('web/assets/img/logo.png') }}"
+                                            alt="Logo" />
                                     </a>
                                 </div>
-                                <div class="header-navigation-area d-none d-xl-block">
-                                    <ul class="main-menu nav justify-content-center position-relative">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li class="active"><a href="shop.html">Shop</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                    </ul>
-                                </div>
+                                @include('web.menu')
                             </div>
                             <div class="header-align-right">
                                 <div class="header-action-area">
@@ -113,46 +109,55 @@
                                         <dropdown>
                                             <input id="toggle2" type="checkbox">
                                             <label for="toggle2" class="animate"><img
-                                                    src="{{ asset('web/assets/img/flags/uae.png')}}" alt=""></label>
+                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
                                             <ul class="animate m-0">
                                                 <li class="animate">
-                                                    <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
+                                                    <p>German</p><img
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}"
+                                                    <p>bangaladesh</p><img
+                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
+                                                    <p>German</p><img
+                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
                                                 </li>
                                                 <li class="animate">
-                                                    <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}"
+                                                    <p>bangaladesh</p><img
+                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
                                                         alt="">
                                                 </li>
                                                 <li class="animate">
                                                     <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
                                                 </li>
                                             </ul>
                                         </dropdown>
                                     </div>
                                     <div class="header-action-login">
                                         <button class="btn-login" onclick="window.location.href='login.html'">
-                                            <img src="{{ asset('web/assets/img/icons/user.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
+                                                class="img-fluid" alt="">
                                         </button>
                                     </div>
                                     <div class="header-action-cart">
                                         <button class="btn-cart cart-icon">
-                                            <img src="{{ asset('web/assets/img/icons/cart.png')}}" class="img-fluid" alt="">
+                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
+                                                class="img-fluid" alt="">
                                             <span class="cart-count">0 items</span>
                                         </button>
                                     </div>
                                     <button class="btn-menu d-xl-none">
-                                        <img src="{{ asset('web/assets/img/icons/menu.png')}}" class="img-fluid" alt="">
+                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}"
+                                            class="img-fluid" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -206,6 +211,17 @@
                                                                                 data-bs-target="#cavabunga__Businesscard"
                                                                                 type="button" role="tab"
                                                                                 aria-controls="cavabunga__shop__men"
+                                                                                aria-selected="true">
+                                                                                Wallets</button>
+                                                                        </li>
+                                                                        <li class="nav-item" role="presentation">
+                                                                            <button onclick="ChnageColor()"
+                                                                                class="nav-link active"
+                                                                                id="product-desc-tab"
+                                                                                data-bs-toggle="tab"
+                                                                                data-bs-target="#cavabunga__Businesscard"
+                                                                                type="button" role="tab"
+                                                                                aria-controls="cavabunga__shop__men"
                                                                                 aria-selected="true">Business card
                                                                                 holders</button>
                                                                         </li>
@@ -228,7 +244,7 @@
                                                                                 data-bs-target="#Backpacks"
                                                                                 type="button" role="tab"
                                                                                 aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Backpacks</button>
+                                                                                aria-selected="false">Bagpacks</button>
                                                                         </li>
                                                                         <li class="nav-item" role="presentation">
                                                                             <button onclick="ChnageColor()"
@@ -256,11 +272,33 @@
                                                                                 class="nav-link"
                                                                                 id="product-review-tab"
                                                                                 data-bs-toggle="tab"
+                                                                                data-bs-target="#cavabunga__Shoes"
+                                                                                type="button" role="tab"
+                                                                                aria-controls="cavabunga__shop__women"
+                                                                                aria-selected="false">Sunglass
+                                                                                Cases</button>
+                                                                        </li>
+                                                                        <li class="nav-item" role="presentation">
+                                                                            <button onclick="ChnageColor()"
+                                                                                class="nav-link"
+                                                                                id="product-review-tab"
+                                                                                data-bs-toggle="tab"
                                                                                 data-bs-target="#cavabunga__collections"
                                                                                 type="button" role="tab"
                                                                                 aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Our
-                                                                                collections</button>
+                                                                                aria-selected="false">
+                                                                                Cigar Case</button>
+                                                                        </li>
+                                                                        <li class="nav-item" role="presentation">
+                                                                            <button onclick="ChnageColor()"
+                                                                                class="nav-link"
+                                                                                id="product-review-tab"
+                                                                                data-bs-toggle="tab"
+                                                                                data-bs-target="#cavabunga__collections"
+                                                                                type="button" role="tab"
+                                                                                aria-controls="cavabunga__shop__women"
+                                                                                aria-selected="false">
+                                                                                Cocktail bar Case</button>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -269,38 +307,38 @@
                                                                     <div class="tab-pane fade show active"
                                                                         id="cavabunga__Businesscard" role="tabpanel"
                                                                         aria-labelledby="product-desc-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                     <div class="tab-pane fade"
                                                                         id="cavabunga__Vanitykits" role="tabpanel"
                                                                         aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
 
                                                                     <div class="tab-pane fade" id="Backpacks"
                                                                         role="tabpanel"
                                                                         aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                     <div class="tab-pane fade" id="Travel__Organizers"
                                                                         role="tabpanel"
                                                                         aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                     <div class="tab-pane fade" id="cavabunga__Shoes"
                                                                         role="tabpanel"
                                                                         aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                     <div class="tab-pane fade"
                                                                         id="cavabunga__collections" role="tabpanel"
                                                                         aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                 </div>
@@ -326,6 +364,7 @@
                                                                     <div class="col-md-5">
                                                                         <ul class="nav nav-tabs product-description-tab-menu"
                                                                             id="myTab1" role="tablist">
+
                                                                             <li class="nav-item"
                                                                                 role="presentation">
                                                                                 <button class="nav-link active"
@@ -342,11 +381,10 @@
                                                                                 <button class="nav-link"
                                                                                     id="product-review-tab"
                                                                                     data-bs-toggle="tab"
-                                                                                    data-bs-target="#cavabunga__Vanitykits1"
+                                                                                    data-bs-target="#Backpacks1"
                                                                                     type="button" role="tab"
                                                                                     aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Vanity
-                                                                                    kits</button>
+                                                                                    aria-selected="false">Bagpacks</button>
                                                                             </li>
                                                                             <li class="nav-item"
                                                                                 role="presentation">
@@ -356,8 +394,11 @@
                                                                                     data-bs-target="#Backpacks1"
                                                                                     type="button" role="tab"
                                                                                     aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Backpacks</button>
+                                                                                    aria-selected="false">Hand
+                                                                                    Bags</button>
                                                                             </li>
+
+
                                                                             <li class="nav-item"
                                                                                 role="presentation">
                                                                                 <button class="nav-link"
@@ -379,6 +420,8 @@
                                                                                     aria-controls="cavabunga__shop__women"
                                                                                     aria-selected="false">Shoes</button>
                                                                             </li>
+
+
                                                                             <li class="nav-item"
                                                                                 role="presentation">
                                                                                 <button class="nav-link"
@@ -387,8 +430,8 @@
                                                                                     data-bs-target="#cavabunga__collections1"
                                                                                     type="button" role="tab"
                                                                                     aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Our
-                                                                                    collections</button>
+                                                                                    aria-selected="false">Sunglass
+                                                                                    Cases</button>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
@@ -398,38 +441,38 @@
                                                                             id="cavabunga__Businesscard1"
                                                                             role="tabpanel"
                                                                             aria-labelledby="product-desc-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
                                                                         <div class="tab-pane fade"
                                                                             id="cavabunga__Vanitykits1" role="tabpanel"
                                                                             aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
 
                                                                         <div class="tab-pane fade" id="Backpacks1"
                                                                             role="tabpanel"
                                                                             aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
                                                                         <div class="tab-pane fade"
                                                                             id="Travel__Organizers1" role="tabpanel"
                                                                             aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
                                                                         <div class="tab-pane fade"
                                                                             id="cavabunga__Shoes1" role="tabpanel"
                                                                             aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
                                                                         <div class="tab-pane fade"
                                                                             id="cavabunga__collections1" role="tabpanel"
                                                                             aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png')}}"
+                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
                                                                                 class="img-fluid" alt="">
                                                                         </div>
                                                                     </div>
@@ -449,7 +492,8 @@
                     </div>
                 </div>
                 <div class="bottom__color"></div>
-                <div class="gotoshop"><a href="#">Go to shop <img src="{{ asset('web/assets/img/icons/next.png')}}" alt=""></a>
+                <div class="gotoshop"><a href="{{ url('wallet') }}">Go to shop <img
+                            src="{{ asset('web/assets/img/icons/next.png') }}" alt=""></a>
                 </div>
             </section>
 
@@ -466,7 +510,7 @@
                     <div class="row row-gutter-0">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="thumb">
-                                <img src="{{ asset('web/assets/img/shop/quick-view1.jpg')}}" alt="Moren-Shop">
+                                <img src="{{ asset('web/assets/img/shop/quick-view1.jpg') }}" alt="Moren-Shop">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-12">
@@ -552,7 +596,7 @@
                         <div class="product-cart">
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png')}}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png') }}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">Men Black Shoe</a></h4>
@@ -571,7 +615,7 @@
                             <hr>
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png')}}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png') }}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">mario page wallet</a></h4>
@@ -590,7 +634,7 @@
                             <hr>
                             <div class="product-cart-item">
                                 <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png')}}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png') }}" alt=""></a>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title"><a href="#">Lucy vanity kit</a></h4>
@@ -649,27 +693,28 @@
             <div class="header-action-flag">
                 <dropdown>
                     <input id="toggle3" type="checkbox">
-                    <label for="toggle3" class="animate"><img src="{{ asset('web/assets/img/flags/uae.png')}}" alt=""></label>
+                    <label for="toggle3" class="animate"><img
+                            src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
                     <ul class="animate m-0">
                         <li class="animate">
-                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
+                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
                         </li>
                         <li class="animate">
-                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
-                        </li>
-                        <li class="animate">
-                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png')}}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png')}}" alt="">
+                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}" alt="">
                         </li>
                         <li class="animate">
                             <p>Turkey</p>
-                            <img src="{{ asset('web/assets/img/flags/turkey.png')}}" alt=" ">
+                            <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
+                        </li>
+                        <li class="animate">
+                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
+                        </li>
+                        <li class="animate">
+                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}" alt="">
+                        </li>
+                        <li class="animate">
+                            <p>Turkey</p>
+                            <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
                         </li>
                     </ul>
                 </dropdown>
@@ -680,44 +725,44 @@
     <!--=======================Javascript============================-->
 
     <!--=== Modernizr Min Js ===-->
-    <script src="{{ asset('web/assets/js/modernizr.js')}}"></script>
+    <script src="{{ asset('web/assets/js/modernizr.js') }}"></script>
     <!--=== jQuery Min Js ===-->
-    <script src="{{ asset('web/assets/js/jquery-main.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery-main.js') }}"></script>
     <!--=== jQuery Migration Min Js ===-->
-    <script src="{{ asset('web/assets/js/jquery-migrate.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery-migrate.js') }}"></script>
     <!--=== Popper Min Js ===-->
-    <script src="{{ asset('web/assets/js/popper.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/popper.min.js') }}"></script>
     <!--=== Bootstrap Min Js ===-->
-    <script src="{{ asset('web/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/bootstrap.min.js') }}"></script>
     <!--=== jquery Appear Js ===-->
-    <script src="{{ asset('web/assets/js/jquery.appear.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery.appear.js') }}"></script>
     <!--=== jquery Swiper Min Js ===-->
-    <script src="{{ asset('web/assets/js/swiper.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/swiper.min.js') }}"></script>
     <!--=== jquery Fancybox Min Js ===-->
-    <script src="{{ asset('web/assets/js/fancybox.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/fancybox.min.js') }}"></script>
     <!--=== jquery Aos Min Js ===-->
-    <script src="{{ asset('web/assets/js/aos.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/aos.min.js') }}"></script>
     <!--=== jquery Slicknav Js ===-->
-    <script src="{{ asset('web/assets/js/jquery.slicknav.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery.slicknav.js') }}"></script>
     <!--=== jquery Countdown Js ===-->
-    <script src="{{ asset('web/assets/js/jquery.countdown.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery.countdown.min.js') }}"></script>
     <!--=== jquery Tippy Js ===-->
-    <script src="{{ asset('web/assets/js/tippy.all.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/tippy.all.min.js') }}"></script>
     <!--=== Isotope Min Js ===-->
-    <script src="{{ asset('web/assets/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/isotope.pkgd.min.js') }}"></script>
     <!--=== jquery Vivus Js ===-->
-    <script src="{{ asset('web/assets/js/vivus.js')}}"></script>
+    <script src="{{ asset('web/assets/js/vivus.js') }}"></script>
     <!--=== Parallax Min Js ===-->
-    <script src="{{ asset('web/assets/js/parallax.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/parallax.min.js') }}"></script>
     <!--=== Slick  Min Js ===-->
-    <script src="{{ asset('web/assets/js/slick.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/slick.min.js') }}"></script>
     <!--=== jquery Wow Min Js ===-->
-    <script src="{{ asset('web/assets/js/wow.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/wow.min.js') }}"></script>
     <!--=== jquery Zoom Min Js ===-->
-    <script src="{{ asset('web/assets/js/jquery-zoom.min.js')}}"></script>
+    <script src="{{ asset('web/assets/js/jquery-zoom.min.js') }}"></script>
 
     <!--=== Custom Js ===-->
-    <script src="{{ asset('web/assets/js/custom.js')}}"></script>
+    <script src="{{ asset('web/assets/js/custom.js') }}"></script>
     <script>
         function ChnageColor() {
             $('.cavabunga__shop__section').click(function() {
