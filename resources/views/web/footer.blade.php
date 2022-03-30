@@ -43,7 +43,7 @@
                                     <h4>service</h4>
                                     <nav class="widget-menu-wrap">
                                         <ul class="nav-menu nav">
-                                            <li><a href="order-tracking.html">Track My Order</a></li>
+                                            <li><a href="{{ url('order_tracking') }}">Track My Order</a></li>
                                             <li><a href="#">Returns</a></li>
                                             <li><a href="{{ url('terms_and_condition') }}">Shipping Terms</a></li>
                                             <li><a href="#">Payment Policy</a></li>
@@ -59,8 +59,8 @@
                                     <h4>account</h4>
                                     <nav class="widget-menu-wrap">
                                         <ul class="nav-menu nav">
-                                            <li><a href="register.html">Create Account</a></li>
-                                            <li><a href="profile.html">Accounts</a></li>
+                                            <li><a href="{{ url('register-user') }}">Create Account</a></li>
+                                            <li><a href="{{ url('profile') }}">Accounts</a></li>
                                             <li><a href="#">Contact Us</a></li>
                                         </ul>
                                     </nav>
