@@ -14,7 +14,23 @@ class WebController extends Controller
      */
     public function index()
     {
-        //
+        return view('web.index');
+    }
+    function about_us()
+    {
+        return view('web.about_us');
+    }
+    function design()
+    {
+        return view('web.design');
+    }
+    function designer()
+    {
+        return view('web.designer');
+    }
+    function terms_and_condition()
+    {
+        return view('web.terms_and_condition');
     }
 
     /**
