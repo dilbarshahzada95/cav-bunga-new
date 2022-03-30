@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Web\WebController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.index');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// WEB
+Route::get('/index', [App\Http\Controllers\WebController::class, 'index'])->name('index');
+// ADMIN
+Route::group(['middleware' => 'auth'], function () {
+        Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+);
+
