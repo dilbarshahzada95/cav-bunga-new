@@ -82,7 +82,7 @@
                                  </div>
                                  <div class="header-action-login">
                                      <button class="btn-login"
-                                         onclick="window.location.href='{{ url('login') }}'">
+                                         onclick="window.location.href='{{ url('login-user') }}'">
                                          <img src="{{ asset('web/assets/img/icons/user.png') }}"
                                              class="img-fluid" alt="">
                                      </button>
