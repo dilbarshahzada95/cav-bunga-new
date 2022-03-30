@@ -23,6 +23,5 @@ Auth::routes();
 Route::get('/index', [App\Http\Controllers\WebController::class, 'index'])->name('index');
 // ADMIN
 Route::group(['middleware' => 'auth'], function () {
-        Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-);
-
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+});
