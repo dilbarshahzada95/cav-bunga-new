@@ -6,7 +6,7 @@
                          <div class="header-align-left">
                              <div class="header-logo-area">
 
-                                 @if (url('login') == url()->current() || url('registerAccount') == url()->current())
+                                 @if (url('login-user') == url()->current() || url('registerAccount') == url()->current())
                                      <a href="{{ url('/') }}">
                                          <img class="logo-main d-none d-sm-block f-logo"
                                              src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
