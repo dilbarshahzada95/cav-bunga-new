@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -36,5 +44,47 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    function socialGmail()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+    function socialgmailRedirect()
+    {
+        $user = Socialite::driver('google')->user();
+        $finduser = User::where('email', $user->email)->first();
+        if ($finduser) {
+            Auth::login($finduser);
+            return redirect('/');
+        } else {
+            $newUser = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'password' => Hash::make($user->token),
+            ]);
+            Auth::login($newUser);
+            return redirect('/');
+        }
+    }
+    function socialFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+    function socialFacebookRedirect()
+    {
+        $user = Socialite::driver('facebook')->user();
+        $finduser = User::where('email', $user->email)->first();
+        if ($finduser) {
+            Auth::login($finduser);
+            return redirect('/');
+        } else {
+            $newUser = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'password' => Hash::make($user->token),
+            ]);
+            Auth::login($newUser);
+            return redirect('/');
+        }
     }
 }
