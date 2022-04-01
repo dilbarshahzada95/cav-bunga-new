@@ -56,7 +56,8 @@
                                             </div>
                                             <div class="social__login">
                                                 <a href="#">
-                                                    <img src="{{ asset('web/assets/img/icons/google.png') }}" alt=""> login
+                                                    <img src="{{ asset('web/assets/img/icons/google.png') }}" alt="">
+                                                    login
                                                     with
                                                     google
                                                 </a>
