@@ -99,185 +99,30 @@
                                         <h6 class="text-overflow text-muted mb-1 text-uppercase">Pages</h6>
                                     </div>
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
-                                        <span>Analytics Dashboard</span>
-                                    </a>
+                                   
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
-                                        <span>Help Center</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
-                                        <span>My account settings</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <div class="dropdown-header mt-2">
-                                        <h6 class="text-overflow text-muted mb-2 text-uppercase">Members</h6>
-                                    </div>
-
-                                    <div class="notification-list">
-                                        <!-- item -->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
-                                            <div class="d-flex">
-                                                <img src="{{ asset('admin/assets/images/users/avatar-2.jpg') }}"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
-                                                <div class="flex-1">
-                                                    <h6 class="m-0">Angela Bernier</h6>
-                                                    <span class="fs-11 mb-0 text-muted">Manager</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- item -->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
-                                            <div class="d-flex">
-                                                <img src="{{ asset('admin/assets/images/users/avatar-3.jpg') }}"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
-                                                <div class="flex-1">
-                                                    <h6 class="m-0">David Grasso</h6>
-                                                    <span class="fs-11 mb-0 text-muted">Web Designer</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- item -->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
-                                            <div class="d-flex">
-                                                <img src="{{ asset('admin/assets/images/users/avatar-5.jpg') }}"
-                                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
-                                                <div class="flex-1">
-                                                    <h6 class="m-0">Mike Bunch</h6>
-                                                    <span class="fs-11 mb-0 text-muted">React Developer</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                   
                                 </div>
 
-                                <div class="text-center pt-3 pb-1">
-                                    <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results
-                                        <i class="ri-arrow-right-line ms-1"></i></a>
-                                </div>
+                               
                             </div>
                         </form>
                     </div>
 
                     <div class="d-flex align-items-center">
 
-                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="bx bx-search fs-22"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                                aria-labelledby="page-header-search-dropdown">
-                                <form class="p-3">
-                                    <div class="form-group m-0">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
-                                                aria-label="Recipient's username">
-                                            <button class="btn btn-primary" type="submit"><i
-                                                    class="mdi mdi-magnify"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                     
 
-                        <div class="dropdown ms-1 topbar-head-dropdown header-item">
-
-                            <div class="dropdown-menu dropdown-menu-end">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
-                                    data-lang="en" title="English">
-                                    <img src="{{ asset('admin/assets/images/flags/us.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">English</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp"
-                                    title="Spanish">
-                                    <img src="{{ asset('admin/assets/images/flags/spain.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">Española</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr"
-                                    title="German">
-                                    <img src="{{ asset('admin/assets/images/flags/germany.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it"
-                                    title="Italian">
-                                    <img src="{{ asset('admin/assets/images/flags/italy.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">Italiana</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru"
-                                    title="Russian">
-                                    <img src="{{ asset('admin/assets/images/flags/russia.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">русский</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch"
-                                    title="Chinese">
-                                    <img src="{{ asset('admin/assets/images/flags/china.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">中国人</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr"
-                                    title="French">
-                                    <img src="{{ asset('admin/assets/images/flags/french.svg') }}" alt="user-image"
-                                        class="me-2 rounded" height="18">
-                                    <span class="align-middle">français</span>
-                                </a>
-                            </div>
-                        </div>
+                     
 
                         <div class="dropdown topbar-head-dropdown ms-1 header-item">
-                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class='bx bx-category-alt fs-22'></i>
-                            </button>
+                            
                             <div class="dropdown-menu dropdown-menu-lg p-0 dropdown-menu-end">
-                                <div class="p-3 border-top-0 border-start-0 border-end-0 border-dashed border">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="m-0 fw-semibold fs-15"> Web Apps </h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#!" class="btn btn-sm btn-soft-info"> View All Apps
-                                                <i class="ri-arrow-right-s-line align-middle"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="p-2">
                                     <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#!">
-                                                <img src="{{ asset('admin/assets/images/brands/github.png') }}"
-                                                    alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
+                                        
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#!">
                                                 <img src="{{ asset('admin/assets/images/brands/bitbucket.png') }}"
