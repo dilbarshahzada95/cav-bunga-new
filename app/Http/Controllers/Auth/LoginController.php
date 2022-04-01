@@ -52,8 +52,7 @@ class LoginController extends Controller
     function socialgmailRedirect()
     {
         $user = Socialite::driver('google')->user();
-        print_r($user);
-        die;
+
         $finduser = User::where('email', $user->email)->first();
 
         if ($finduser) {
@@ -64,6 +63,9 @@ class LoginController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'password' => Hash::make($user->token),
+                'google_id' => $user->id,
+                'role' => 'customer',
+
             ]);
             Auth::login($newUser);
             return redirect('/');
