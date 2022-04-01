@@ -75,7 +75,7 @@
                         <div class="header-align">
                             <div class="header-align-left">
                                 <div class="header-logo-area">
-                                    <a href="#">
+                                    <a href="{{ url('/') }}">
                                         <img class="logo-main d-none d-sm-block f-logo"
                                             src="{{ asset('web/assets/img/logo.png') }}" alt="Logo" />
                                         <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png') }}"
@@ -84,71 +84,15 @@
                                             alt="Logo" />
                                     </a>
                                 </div>
-                                @include('web.menu')
-                            </div>
-                            <div class="header-align-right profile__head">
-                                <div class="header-action-area blue-gradident">
-                                    <div class="header-action-search">
-                                        <button class="btn-search btn-search-menu">
-                                            <i class="lastudioicon-zoom-1"></i>
-                                        </button>
-                                    </div>
-                                    <div class="header-action-flag">
-                                        <dropdown>
-                                            <input id="toggle2" type="checkbox">
-                                            <label for="toggle2" class="animate"><img
-                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
-                                            <ul class="animate m-0">
-                                                <li class="animate">
-                                                    <p>German</p><img
-                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p><img
-                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>German</p><img
-                                                        src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p><img
-                                                        src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
-                                                </li>
-                                            </ul>
-                                        </dropdown>
-                                    </div>
-                                    <div class="header-action-login">
-                                        <button class="btn-login" onclick="window.location.href='login.html'">
-                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
-                                                class="img-fluid" alt="">
-                                        </button>
-                                    </div>
-                                    <div class="header-action-cart">
-                                        <button class="btn-cart cart-icon d-flex">
-                                            <img src="{{ asset('web/assets/img/icons/cart-dark.png') }}"
-                                                class="d-lg-block d-md-block d-sm-none img-fluid" alt="">
-                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
-                                                class="d-lg-none d-md-none d-sm-block img-fluid" alt="">
-                                            <span class="cart-count text-dark">0 items</span>
-                                        </button>
-                                    </div>
-                                    <button class="btn-menu d-xl-none">
-                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}" class="img-fluid"
-                                            alt="">
-                                    </button>
+                                <div class="header-navigation-area d-none d-xl-block">
+                                    <ul class="main-menu nav justify-content-center position-relative">
+                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li><a href="{{ url('shopping') }}">Shop</a></li>
+                                        <li><a href="{{ url('about_us') }}">About</a></li>
+                                    </ul>
                                 </div>
                             </div>
+                            @include('web.cartheader')
                         </div>
                     </div>
                 </div>
@@ -463,84 +407,7 @@
             </div>
             <div class="canvas-overlay"></div>
         </aside>
-        <aside class="sidebar-cart-modal">
-            <div class="sidebar-cart-inner">
-                <div class="sidebar-cart-content">
-                    <a class="cart-close" href="javascript:void(0);"><i class="lastudioicon-e-remove"></i></a>
-                    <div class="sidebar-cart">
-                        <h4 class="sidebar-cart-title">Shopping Cart</h4>
-                        <hr>
-                        <div class="product-cart">
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Men Black Shoe</a></h4>
-                                    <span class="info">Backpack</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$121.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">mario page wallet</a></h4>
-                                    <span class="info">Wallet</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$62.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Lucy vanity kit</a></h4>
-                                    <span class="info">Vanity kit</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$113.50</h4>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="cart-total">
-                            <hr>
-                            <h4>Total: <span class="money">$297.40</span></h4>
-                        </div>
-                        <div class="cart-checkout-btn">
-                            <a class="btn-theme" href="#">Continue shopping</a>
-                            <a class="btn-theme" href="#">Go to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        @include('web.sideCart')
         <div class="sidebar-cart-overlay"></div>
 
         <aside class="off-canvas-wrapper">
