@@ -117,4 +117,18 @@ class LoginController extends Controller
             return redirect('/');
         }
     }
+
+    function loginCustomer(Request $request)
+    {
+        print_r($request->all());
+        die;
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        } else {
+        }
+    }
 }

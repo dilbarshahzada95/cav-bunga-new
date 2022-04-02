@@ -150,13 +150,13 @@
                                                 <div
                                                     class="col-md-12 justify-content-lg-between d-flex mt-4 sm-d-block">
                                                     <div class="social__login">
-                                                        <a href="#">
+                                                        <a href="{{ url('login/facebook') }}">
                                                             <img src="{{ asset('web/assets/img/icons/facebook.png') }}"
                                                                 alt=""> login with facebook
                                                         </a>
                                                     </div>
                                                     <div class="social__login">
-                                                        <a href="#">
+                                                        <a href="{{ url('login/gmail') }}">
                                                             <img src="{{ asset('web/assets/img/icons/google.png') }}"
                                                                 alt=""> login with google
                                                         </a>
