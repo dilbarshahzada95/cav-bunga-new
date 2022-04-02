@@ -187,7 +187,8 @@
                                                                 <input type="email"
                                                                     class="form-control @error('email') is-invalid @enderror"
                                                                     id="email" name="email"
-                                                                    value="{{ old('email') }}" placeholder="Email">
+                                                                    value="{{ old('email') }}" placeholder="Email"
+                                                                    autocomplete="off">
                                                                 @error('email')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -201,8 +202,8 @@
                                                                 </label>
                                                                 <input type="password"
                                                                     class="form-control  @error('password') is-invalid @enderror"
-                                                                    id="password" name="password"
-                                                                    placeholder="Password">
+                                                                    id="password" name="password" placeholder="Password"
+                                                                    autocomplete="off">
                                                                 @error('password')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>

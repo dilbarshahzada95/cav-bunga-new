@@ -120,15 +120,20 @@ class LoginController extends Controller
 
     function loginCustomer(Request $request)
     {
-        print_r($request->all());
-        die;
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
+            return redirect()->back()->with(['error' => $validator->errors()]);
         } else {
+            $credentials = array('email' => $request->email, 'password' => $request->password, 'role' => 'customer');
+            if (Auth::attempt($credentials)) {
+                return redirect('/');
+            } else {
+                return redirect('login-user')->with('email', ['message' => 'Invalid Email or Password']);
+            }
         }
     }
 }
