@@ -136,4 +136,35 @@ class LoginController extends Controller
             }
         }
     }
+
+    function registerCustomer(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'confirm_password' => 'required|same:password',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with(['error' => $validator->errors()]);
+        } else {
+            $newUser = User::create([
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'role' => 'customer',
+            ]);
+            $newUserDetails = CustomerDetails::create([
+                'customer_id' => $newUser->id,
+                'name' => '',
+                'email' => $request->email,
+                'phone' => '',
+                'street' => '',
+                'mob' => '',
+                'city' => '',
+                'pincode' => '',
+                'country' => '',
+            ]);
+
+            return redirect('profile')->with('success', ['message' => 'Registration Successful']);
+        }
+    }
 }
