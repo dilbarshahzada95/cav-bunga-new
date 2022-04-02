@@ -279,6 +279,8 @@ section.cavabunga__footer__section h4 {
     color: #fff;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
+    position: relative;
+    z-index: 99;
 }
 
 .cavabunga__footer__section .nav li a {

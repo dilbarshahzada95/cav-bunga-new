@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="widget-item ml-51 ml-sm-0 mb-xs-50">
+                                <div class="widget-item  ml-sm-0 mb-xs-50">
                                     <h4>account</h4>
                                     <nav class="widget-menu-wrap">
                                         <ul class="nav-menu nav">
