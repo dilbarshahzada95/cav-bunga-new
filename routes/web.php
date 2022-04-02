@@ -47,7 +47,7 @@ Route::group(['middleware' =>  'isCustomer'], function () {
     Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
 });
 // ADMIN
-Route::group(['middleware' => 'auth', 'isAdmin'], function () {
+Route::group(['middleware' => 'isAdmin'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
 });
