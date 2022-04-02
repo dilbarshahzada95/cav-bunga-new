@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
+use App\Models\CustomerDetails;
 
 class LoginController extends Controller
 {
@@ -52,7 +53,6 @@ class LoginController extends Controller
     function socialgmailRedirect()
     {
         $user = Socialite::driver('google')->user();
-
         $finduser = User::where('email', $user->email)->first();
 
         if ($finduser) {
@@ -67,6 +67,19 @@ class LoginController extends Controller
                 'role' => 'customer',
 
             ]);
+            $newUserDetails = CustomerDetails::create([
+                'customer_id' => $newUser->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'phone' => '',
+                'street' => '',
+                'mob' => '',
+                'city' => '',
+                'pincode' => '',
+                'country' => '',
+            ]);
+
+
             Auth::login($newUser);
             return redirect('/');
         }
@@ -88,6 +101,18 @@ class LoginController extends Controller
                 'email' => $user->email,
                 'password' => Hash::make($user->token),
             ]);
+            $newUserDetails = CustomerDetails::create([
+                'customer_id' => $newUser->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'phone' => '',
+                'street' => '',
+                'mob' => '',
+                'city' => '',
+                'pincode' => '',
+                'country' => '',
+            ]);
+
             Auth::login($newUser);
             return redirect('/');
         }
