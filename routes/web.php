@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth', 'isAdmin'], function () {
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
     // SLIDER
     Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
-    Route::get('/admin/slider/inser', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/inser');
+    Route::post('/admin/slider/insert', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/insert');
     Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\admin\SliderController::class, 'edit'])->name('admin/slider/edit');
     Route::post('/admin/slider/update/{id}', [App\Http\Controllers\admin\SliderController::class, 'update'])->name('admin/slider/update');
     Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('admin/slider/delete');

@@ -29,7 +29,7 @@
     <!-- custom Css-->
     <link href="{{ asset('admin/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -1078,6 +1078,7 @@
 
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
+    <script src="{{asset('admin/assets/libs/prismjs/prism.js')}}"></script>
 </body>
 
 </html>

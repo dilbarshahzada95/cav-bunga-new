@@ -22,7 +22,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $data=Slider::all();
+        return view('Admin.slider.slider',compact('data'));
     }
 
     /**
@@ -43,33 +44,24 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+       
+       $data = new Slider;      
+       if($request->hasfile('image'))
+        {
+            $file=$request->file('image');
 
-        if ($validator->fails()) {
-            return response()->json(['status' => false, 'error' => $validator->errors()->toArray()]);
-        } else {
-            try {
-                $data = request()->all();
-                if ($files1 = $request->file('image')) {
-                    foreach ($files1 as $file1) {
-                        $name1 = time() . '-' . $file1->getClientOriginalName();
-                        $file1->move('slider_image', $name1);
-                        $images[] = $name1;
-                    }
-                }
-                $data['image'] = json_encode($images);
-                $data['created_at'] = Date::now();
-                $data['updated_at'] = Date::now();
-                $insert = Slider::create($data);
-                if ($insert) {
-                    return response()->json(['status' => true]);
-                }
-            } catch (\Throwable $th) {
-                return $th->getMessage();
-            }
+            $extension=$file->getClientOriginalExtension();
+            $filename=time().'.'.$extension;
+            $file->move('slider_image',$filename);
+            $data->image=$filename;    
         }
+        else{
+            return $request;
+            $data->$image='';
+        }
+
+         $data->save();
+             return redirect()->back()->with('message','Slider Added Successfully');
     }
 
     /**
@@ -91,7 +83,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Slider::findOrFail($id);
+         return view('Admin.slider.edit_slider',compact('data'));
     }
 
     /**
@@ -103,7 +96,21 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $data =Slider::findOrFail($id);
+         if($request->hasfile('image'))
+        {
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time().'.'.$extension;
+            $file->move('slider_image',$filename);
+            $data->image=$filename;    
+        }
+        else{
+            // return $request;
+            $data->image=$request->img_slider;
+        }
+        $data->save();
+             return redirect('/admin/slider')->with('message','Slider Updated Successfully');
     }
 
     /**
@@ -114,6 +121,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $del=Slider::findOrFail($id);
+         $del->delete();
+         return redirect()->back();
     }
 }
