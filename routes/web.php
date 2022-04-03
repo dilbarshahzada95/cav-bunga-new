@@ -58,24 +58,24 @@ Route::group(['middleware' =>  ['isCustomer']], function () {
     Route::get('/profile', [App\Http\Controllers\web\WebController::class, 'profile'])->name('profile');
     Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
 });
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
+// SLIDER
+Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
+Route::post('/admin/slider/insert', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/insert');
+Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\admin\SliderController::class, 'edit'])->name('admin/slider/edit');
+Route::post('/admin/slider/update/{id}', [App\Http\Controllers\admin\SliderController::class, 'update'])->name('admin/slider/update');
+Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('admin/slider/delete');
+// CATEGORY
+Route::get('/admin/category', [App\Http\Controllers\admin\CategoryController::class, 'index'])->name('admin/category');
+Route::post('/admin/category/insert', [App\Http\Controllers\admin\CategoryController::class, 'store'])->name('admin/category/insert');
+Route::get('/admin/category/edit/{id}', [App\Http\Controllers\admin\CategoryController::class, 'edit'])->name('admin/category/edit');
+Route::post('/admin/category/update/{id}', [App\Http\Controllers\admin\CategoryController::class, 'update'])->name('admin/category/update');
+Route::get('/admin/category/delete/{id}', [App\Http\Controllers\admin\CategoryController::class, 'destroy'])->name('admin/category/delete');
+// PURCHASE
+Route::get('/admin/purchase', [App\Http\Controllers\admin\PurchaseController::class, 'index'])->name('admin/purchase');
 // ADMIN
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {
-    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-    Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
-    // SLIDER
-    Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
-    Route::post('/admin/slider/insert', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/insert');
-    Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\admin\SliderController::class, 'edit'])->name('admin/slider/edit');
-    Route::post('/admin/slider/update/{id}', [App\Http\Controllers\admin\SliderController::class, 'update'])->name('admin/slider/update');
-    Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('admin/slider/delete');
-    // CATEGORY
-    Route::get('/admin/category', [App\Http\Controllers\admin\CategoryController::class, 'index'])->name('admin/category');
-    Route::post('/admin/category/insert', [App\Http\Controllers\admin\CategoryController::class, 'store'])->name('admin/category/insert');
-    Route::get('/admin/category/edit/{id}', [App\Http\Controllers\admin\CategoryController::class, 'edit'])->name('admin/category/edit');
-    Route::post('/admin/category/update/{id}', [App\Http\Controllers\admin\CategoryController::class, 'update'])->name('admin/category/update');
-    Route::get('/admin/category/delete/{id}', [App\Http\Controllers\admin\CategoryController::class, 'destroy'])->name('admin/category/delete');
-    // PURCHASE
-    Route::get('/admin/purchase', [App\Http\Controllers\admin\PurchaseController::class, 'index'])->name('admin/purchase');
 });
 
 // SOCIAL LOGIN
