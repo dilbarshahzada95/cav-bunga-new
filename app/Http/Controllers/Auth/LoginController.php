@@ -148,14 +148,16 @@ class LoginController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->with(['error' => $validator->errors()]);
         } else {
+
             $newUser = User::create([
+                'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'role' => 'customer',
             ]);
             $newUserDetails = CustomerDetails::create([
                 'customer_id' => $newUser->id,
-                'name' => '',
+                'name' => $request->name,
                 'email' => $request->email,
                 'phone' => '',
                 'street' => '',

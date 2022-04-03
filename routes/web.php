@@ -37,7 +37,7 @@ Route::get('/about_us', [App\Http\Controllers\web\WebController::class, 'about_u
 Route::get('/design', [App\Http\Controllers\web\WebController::class, 'design'])->name('design');
 Route::get('/designer', [App\Http\Controllers\web\WebController::class, 'designer'])->name('designer');
 Route::get('/terms_and_condition', [App\Http\Controllers\web\WebController::class, 'terms_and_condition'])->name('terms_and_condition');
-Route::get('/profile', [App\Http\Controllers\web\WebController::class, 'profile'])->name('profile');
+
 Route::get('/register-user', [App\Http\Controllers\web\WebController::class, 'register'])->name('register-user');
 Route::get('/cart', [App\Http\Controllers\web\WebController::class, 'cart'])->name('cart');
 Route::get('/details-page', [App\Http\Controllers\web\WebController::class, 'detailsPage'])->name('details-page');
@@ -50,12 +50,15 @@ Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partner
 // CUSTOMER LOGIN AND REGISTRATION
 Route::post('/login/customer', [App\Http\Controllers\Auth\LoginController::class, 'loginCustomer'])->name('login/customer');
 Route::post('/register/customer', [App\Http\Controllers\Auth\LoginController::class, 'registerCustomer'])->name('register/customer');
-Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
+
+
 // WEB
-Route::group(['middleware' =>  'isCustomer'], function () {
+Route::group(['middleware' =>  ['isCustomer']], function () {
+    Route::get('/profile', [App\Http\Controllers\web\WebController::class, 'profile'])->name('profile');
+    Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
 });
 // ADMIN
-Route::group(['middleware' => 'auth', 'isAdmin'], function () {
+Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
     // SLIDER

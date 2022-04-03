@@ -78,7 +78,9 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-8">
                                     <div class="login-form">
-                                        <form class="login-form-wrapper">
+                                        <form class="login-form-wrapper" action="{{ url('register/customer') }}"
+                                            method="POST">
+                                            @csrf
                                             <div class="row ">
                                                 <div class="col-lg-12">
                                                     <div class="title">
@@ -89,9 +91,17 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="UserName"
+                                                                    class="form-label">NAME</label>
+                                                                <input type="text" class="form-control" id="name"
+                                                                    placeholder="Name" name="name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="UserName"
                                                                     class="form-label">EMAIL</label>
-                                                                <input type="email" class="form-control" id="UserName"
-                                                                    placeholder="Email">
+                                                                <input type="email" class="form-control" id="email"
+                                                                    placeholder="Email" name="email">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -99,7 +109,8 @@
                                                                 <label for="password" class="form-label">Password
                                                                 </label>
                                                                 <input type="password" class="form-control"
-                                                                    id="password" placeholder="Password">
+                                                                    id="password" name="password"
+                                                                    placeholder="Password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -107,7 +118,8 @@
                                                                 <label for="password" class="form-label">Confirm
                                                                     Password </label>
                                                                 <input type="password" class="form-control"
-                                                                    id="password" placeholder="Confirm Password">
+                                                                    id="confirm_password" name="confirm_password"
+                                                                    placeholder="Confirm Password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -122,20 +134,25 @@
                                                 <div
                                                     class="col-md-12 justify-content-lg-between d-flex mt-4 sm-d-block">
                                                     <div class="social__login">
-                                                        <a href="#">
-                                                            <img src="assets/img/icons/facebook.png" alt=""> login with
+                                                        <a href="{{ url('login/facebook') }}">
+                                                            <img src="{{ asset('web/assets/img/icons/facebook.png') }}"
+                                                                alt=""> login
+                                                            with
                                                             facebook
                                                         </a>
                                                     </div>
                                                     <div class="social__login">
-                                                        <a href="#">
-                                                            <img src="assets/img/icons/google.png" alt=""> login with
+                                                        <a href="{{ url('login/gmail') }}">
+                                                            <img src="{{ asset('web/assets/img/icons/google.png') }}"
+                                                                alt=""> login
+                                                            with
                                                             google
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="register__link">
-                                                    <p>Already have an account? <a href="login.html">Log in!</a></p>
+                                                    <p>Already have an account? <a href="{{ url('login-user') }}">Log
+                                                            in!</a></p>
                                                 </div>
                                             </div>
                                         </form>
@@ -150,7 +167,7 @@
                                         <div class="top__rounded"></div>
                                         <div class="bottom__rounded"></div>
                                         <div class="image__text">
-                                            <img src="assets/img/pattern/logo-pattern.png" alt="">
+                                            <img src="{{ asset('web/assets/img/pattern/logo-pattern.png') }}" alt="">
                                             <h5 class="text-right">A lifestyle brand crafted with love by
                                                 millennials, for millennials.</h5>
                                         </div>
@@ -158,14 +175,16 @@
                                             <div class="swiper-slide ">
                                                 <!-- Start Slide Item -->
                                                 <div class="home-slider-item ">
-                                                    <img src="assets/img/products/register.png" alt="">
+                                                    <img src="{{ asset('web/assets/img/products/register.png') }}"
+                                                        alt="">
                                                 </div>
                                                 <!-- End Slide Item -->
                                             </div>
                                             <div class="swiper-slide ">
                                                 <!-- Start Slide Item -->
                                                 <div class="home-slider-item ">
-                                                    <img src="assets/img/products/register.png" alt="">
+                                                    <img src="{{ asset('web/assets/img/products/register.png') }}"
+                                                        alt="">
                                                 </div>
                                                 <!-- End Slide Item -->
                                             </div>
@@ -300,17 +319,7 @@
                             <div class="cart-total ">
                                 <h4>Subtotal: <span class="money ">AED 100.00</span></h4>
                             </div>
-                            <!-- <div class="shipping-info ">
-                                <div class="loading-bar ">
-                                    <div class="load-percent "></div>
-                                    <div class="label-free-shipping ">
-                                        <div class="free-shipping svg-icon-style ">
-                                            <span class="svg-icon " id="svg-icon-shipping " data-svg-icon="assets/img/icons/shop1.svg "></span>
-                                        </div>
-                                        <p>Spend £101.10 to get Free Shipping</p>
-                                    </div>
-                                </div>
-                            </div> -->
+
                             <div class="cart-checkout-btn ">
                                 <a class="btn-theme " href="# ">View cart</a>
                                 <a class="btn-theme " href="# ">Checkout</a>
