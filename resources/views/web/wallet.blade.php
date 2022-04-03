@@ -316,7 +316,7 @@
             </div>
             <div class="canvas-overlay"></div>
         </aside>
-        @include('web.sideCart')
+
         <div class="sidebar-cart-overlay"></div>
 
         <aside class="off-canvas-wrapper">

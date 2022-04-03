@@ -76,6 +76,10 @@ class WebController extends Controller
     {
         return view('web.responsiblites');
     }
+    function partners()
+    {
+        return view('web.partners');
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -46,12 +46,13 @@ Route::get('/shoping', [App\Http\Controllers\web\WebController::class, 'shoping'
 Route::get('/wallet', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('wallet');
 Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCart'])->name('sideCart');
 Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
+Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partners'])->name('partners');
 // CUSTOMER LOGIN AND REGISTRATION
 Route::post('/login/customer', [App\Http\Controllers\Auth\LoginController::class, 'loginCustomer'])->name('login/customer');
 Route::post('/register/customer', [App\Http\Controllers\Auth\LoginController::class, 'registerCustomer'])->name('register/customer');
+Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
 // WEB
 Route::group(['middleware' =>  'isCustomer'], function () {
-    Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
 });
 // ADMIN
 Route::group(['middleware' => 'auth', 'isAdmin'], function () {

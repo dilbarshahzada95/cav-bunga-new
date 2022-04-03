@@ -77,7 +77,7 @@
                                             <li><a href="{{ url('designer') }}">Our Designer</a></li>
                                             <li><a href="{{ url('responsiblites') }}">Responsibility</a></li>
                                             <li><a href="{{ url('partners') }}">Our Partners</a></li>
-                                            <li><a href="affiliate-program.html">Affiliate Program</a></li>
+                                            <li><a href="{{ url('affliated_programs') }}">Affiliate Program</a></li>
 
                                         </ul>
                                     </nav>
