@@ -68,14 +68,7 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
     Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\admin\SliderController::class, 'edit'])->name('admin/slider/edit');
     Route::post('/admin/slider/update/{id}', [App\Http\Controllers\admin\SliderController::class, 'update'])->name('admin/slider/update');
     Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('admin/slider/delete');
-    // CATEGORY
-    Route::get('/admin/category', [App\Http\Controllers\admin\CategoryController::class, 'index'])->name('admin/category');
-    Route::post('/admin/category/insert', [App\Http\Controllers\admin\CategoryController::class, 'store'])->name('admin/category/insert');
-    Route::get('/admin/category/edit/{id}', [App\Http\Controllers\admin\CategoryController::class, 'edit'])->name('admin/category/edit');
-    Route::post('/admin/category/update/{id}', [App\Http\Controllers\admin\CategoryController::class, 'update'])->name('admin/category/update');
-    Route::get('/admin/category/delete/{id}', [App\Http\Controllers\admin\CategoryController::class, 'destroy'])->name('admin/category/delete');
-    // PURCHASE
-    Route::get('/admin/purchase', [App\Http\Controllers\admin\PurchaseController::class, 'index'])->name('admin/purchase');
+  
 });
 
 // SOCIAL LOGIN
