@@ -9,12 +9,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Add Category</h4>
+                                <h4 class="mb-sm-0">Add Purchase</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                        <li class="breadcrumb-item active">Add Category</li>
+                                        <li class="breadcrumb-item active">Add Purchase</li>
                                     </ol>
                                 </div>
 
@@ -27,7 +27,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header align-items-center d-flex">
-                                    <h4 class="card-title mb-0 flex-grow-1">Category</h4>
+                                    <h4 class="card-title mb-0 flex-grow-1">Purchase</h4>
                                  
                                 </div><!-- end card header -->
                                 <div class="card-body">
@@ -38,7 +38,7 @@
                                             <!--end col-->
                                             <div class="col-md-6">
                                                         <div class="mb-3">
-                                                            <label for="ForminputState" class="form-label">Parent Category</label>
+                                                            <label for="ForminputState" class="form-label">Product Name</label>
                                                             <select id="ForminputState" class="form-select" data-choices data-choices-sorting="true" >
                                                                 <option selected>Choose...</option>
                                                                 <option>...</option>
@@ -48,46 +48,26 @@
 
                                             <div class="col-xxl-3 col-md-6">
                                                 <div>
-                                                    <label for="placeholderInput" class="form-label">Category Name</label>
+                                                    <label for="placeholderInput" class="form-label">Supplier</label>
                                                     <input type="text" class="form-control" id="placeholderInput"
-                                                        placeholder="Category Name">
+                                                        placeholder="Supplier">
                                                 </div>
                                             </div>
                                              <div class="col-xxl-3 col-md-6">
                                                 <div>
-                                                    <label for="labelInput" class="form-label">Image</label>
-                                                    <input type="file" class="form-control" id="labelInput">
-                                                </div>
-                                            </div>
-
-                                             <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="labelInput" class="form-label">Title</label>
-                                                    <input type="text" class="form-control" id="labelInput" placeholder="Title">
+                                                    <label for="labelInput" class="form-label">Date</label>
+                                                    <input type="date" class="form-control" id="labelInput">
                                                 </div>
                                             </div>
 
                                              <div class="col-xxl-3 col-md-6">
                                                 <div>
-                                                    <label for="exampleFormControlTextarea5" class="form-label">Description
-                                                        </label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea5" placeholder="Description"
-                                                        rows="3"></textarea>
+                                                    <label for="labelInput" class="form-label">Quantity</label>
+                                                    <input type="text" class="form-control" id="labelInput" placeholder="Quantity">
                                                 </div>
                                             </div>
 
-                                              <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label for="ForminputState" class="form-label">Layout</label>
-                                                            <select id="ForminputState" class="form-select" data-choices data-choices-sorting="true" >
-                                                                <option selected>Choose...</option>
-                                                                <option>...</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-
-                                              
+                                             
 
                                              <div class="col-lg-12">
                                                         <div class="text-end">
@@ -110,7 +90,7 @@
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-header align-items-center d-flex">
-                                        <h4 class="card-title mb-0 flex-grow-1">Category Listing</h4>
+                                        <h4 class="card-title mb-0 flex-grow-1">Purchase Listing</h4>
                                         <div class="flex-shrink-0">
                                           
                                         </div>
@@ -130,12 +110,10 @@
                                                                 </div>
                                                             </th>
                                                             <th scope="col">ID</th>
-                                                            <th scope="col">Parent Category</th>
-                                                            <th scope="col">Category Name</th>
-                                                            <th scope="col">Image</th>
-                                                            <th scope="col">Title</th>
-                                                            <th scope="col">Description</th>
-                                                            <th scope="col">Layout</th>
+                                                            <th scope="col">Product Name</th>
+                                                            <th scope="col">Supplier</th>
+                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Quantity</th>
                                                             <th scope="col">Action</th>
 
                                                         </tr>
@@ -150,25 +128,14 @@
                                                             </th>
                                                             <td><a href="#" class="fw-medium">#VZ2110</a></td>
                                                             <td>10 Oct, 14:47</td>
-                                                            <td class="text-success"><i class="ri-checkbox-circle-line fs-17 align-middle"></i> Paid</td>
-                                                            <td>
-                                                                <div class="d-flex gap-2 align-items-center">
-                                                                    <div class="flex-shrink-0">
-                                                                        <img src="{{asset('admin/assets/images/users/avatar-3.jpg')}}" alt="" class="avatar-xs rounded-circle" />
-                                                                    </div>
-                                                                    <div class="flex-grow-1">
-                                                                        Jordan Kennedy
-                                                                    </div>
-                                                                </div>
-                                                            </td>
+                                                           
                                                             <td>Mastering the grid</td>
                                                             <td>$9.98</td>
-                                                            <td>Mastering the grid</td>
-                                                                                                       <td>
-             <a href="" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-            
-             <a href=""><i class="fa fa-edit"></i></a>
-             </td>
+                                                            <td>45</td>
+                                                            <td>
+                                                            <a href="" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a href=""><i class="fa fa-edit"></i></a>
+                                                             </td>
                                                         </tr>
                                                      
                                                         
