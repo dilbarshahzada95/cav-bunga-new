@@ -408,29 +408,32 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Product</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarDashboards">
                                 <ul class="nav nav-sm flex-column">
+
                                     <li class="nav-item">
-                                        <a href="dashboard-analytics.html" class="nav-link"
-                                            data-key="t-analytics"> Analytics
+                                        <a href="{{ url('/admin/product') }}" class="nav-link"
+                                            data-key="t-crm">
+                                            Add
+                                            Product </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('/admin/manageProduct') }}" class="nav-link"
+                                            data-key="t-ecommerce"> Manage
+                                            Product
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="dashboard-crm.html" class="nav-link" data-key="t-crm"> CRM </a>
+                                        <a href="{{ url('/admin/category') }}" class="nav-link"
+                                            data-key="t-crypto">
+                                            Category </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="index.html" class="nav-link" data-key="t-ecommerce"> Ecommerce
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashboard-crypto.html" class="nav-link" data-key="t-crypto">
-                                            Crypto </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="dashboard-projects.html" class="nav-link" data-key="t-projects">
-                                            Projects </a>
+                                        <a href="{{ url('/admin/purchase') }}" class="nav-link"
+                                            data-key="t-projects">
+                                            Purchase </a>
                                     </li>
                                 </ul>
                             </div>
@@ -438,236 +441,28 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="ri-apps-2-line"></i> <span data-key="t-apps">Apps</span>
+                                <i class="ri-apps-2-line"></i> <span data-key="t-apps">Order</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarApps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="apps-calendar.html" class="nav-link" data-key="t-calendar">
-                                            Calendar </a>
+                                        <a href="{{ url('/admin/order') }}" class="nav-link"
+                                            data-key="t-calendar">
+                                            Orders </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
+                                        <a href="{{ url('/admin/orderHistory') }}" class="nav-link"
+                                            data-key="t-chat"> Order
+                                            History </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox">
-                                            Mailbox </a>
+                                        <a href="{{ url('/admin/custometList') }}" class="nav-link"
+                                            data-key="t-mailbox">
+                                            Customer </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarEcommerce"
-                                            data-key="t-ecommerce">
-                                            Ecommerce
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarEcommerce">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-products.html" class="nav-link"
-                                                        data-key="t-products"> Products </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-product-details.html"
-                                                        class="nav-link" data-key="t-product-Details"> Product
-                                                        Details </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-add-product.html" class="nav-link"
-                                                        data-key="t-create-product"> Create Product </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-orders.html" class="nav-link"
-                                                        data-key="t-orders">
-                                                        Orders </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-order-details.html" class="nav-link"
-                                                        data-key="t-order-details"> Order Details </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-customers.html" class="nav-link"
-                                                        data-key="t-customers"> Customers </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-cart.html" class="nav-link"
-                                                        data-key="t-shopping-cart"> Shopping Cart </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-checkout.html" class="nav-link"
-                                                        data-key="t-checkout"> Checkout </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-sellers.html" class="nav-link"
-                                                        data-key="t-sellers">
-                                                        Sellers </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-ecommerce-seller-details.html" class="nav-link"
-                                                        data-key="t-sellers-details"> Seller Details </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarProjects"
-                                            data-key="t-projects">
-                                            Projects
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarProjects">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-projects-list.html" class="nav-link"
-                                                        data-key="t-list"> List
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-projects-overview.html" class="nav-link"
-                                                        data-key="t-overview"> Overview </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-projects-create.html" class="nav-link"
-                                                        data-key="t-create-project"> Create Project </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarTasks"
-                                            data-key="t-tasks"> Tasks
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarTasks">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-tasks-kanban.html" class="nav-link"
-                                                        data-key="t-kanbanboard">
-                                                        Kanban Board </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-tasks-list-view.html" class="nav-link"
-                                                        data-key="t-list-view">
-                                                        List View </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-tasks-details.html" class="nav-link"
-                                                        data-key="t-task-details"> Task Details </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarCRM"
-                                            data-key="t-crm"> CRM
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarCRM">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-crm-contacts.html" class="nav-link"
-                                                        data-key="t-contacts">
-                                                        Contacts </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crm-companies.html" class="nav-link"
-                                                        data-key="t-companies">
-                                                        Companies </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crm-deals.html" class="nav-link"
-                                                        data-key="t-deals"> Deals
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crm-leads.html" class="nav-link"
-                                                        data-key="t-leads"> Leads
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarCrypto"
-                                            data-key="t-crypto"> Crypto
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarCrypto">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-transactions.html" class="nav-link"
-                                                        data-key="t-transactions"> Transactions </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-buy-sell.html" class="nav-link"
-                                                        data-key="t-buy-sell">
-                                                        Buy & Sell </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-orders.html" class="nav-link"
-                                                        data-key="t-orders">
-                                                        Orders </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-wallet.html" class="nav-link"
-                                                        data-key="t-my-wallet">
-                                                        My Wallet </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-ico.html" class="nav-link"
-                                                        data-key="t-ico-list"> ICO
-                                                        List </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-crypto-kyc.html" class="nav-link"
-                                                        data-key="t-kyc-application"> KYC Application </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarInvoices"
-                                            data-key="t-invoices">
-                                            Invoices
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarInvoices">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-invoices-list.html" class="nav-link"
-                                                        data-key="t-list-view">
-                                                        List View </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-invoices-details.html" class="nav-link"
-                                                        data-key="t-details">
-                                                        Details </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-invoices-create.html" class="nav-link"
-                                                        data-key="t-create-invoice"> Create Invoice </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse"
-                                            role="button" aria-expanded="false" aria-controls="sidebarTickets"
-                                            data-key="t-supprt-tickets">
-                                            Support Tickets
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarTickets">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="apps-tickets-list.html" class="nav-link"
-                                                        data-key="t-list-view">
-                                                        List View </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="apps-tickets-details.html" class="nav-link"
-                                                        data-key="t-ticket-details"> Ticket Details </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
+
+
+
                                 </ul>
                             </div>
                         </li>
@@ -675,39 +470,17 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarLayouts">
-                                <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span>
+                                <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Settings</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarLayouts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="layouts-horizontal.html" target="_blank" class="nav-link"
-                                            data-key="t-horizontal">Horizontal</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="layouts-detached.html" target="_blank" class="nav-link"
-                                            data-key="t-detached">Detached</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="layouts-two-column.html" target="_blank" class="nav-link"
-                                            data-key="t-two-column">Two Column</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link"
-                                            data-key="t-hovered">Hovered</a>
+                                        <a href="{{url('admin/slider')}}" target="_blank" class="nav-link"
+                                            data-key="t-horizontal">Slider</a>
                                     </li>
                                 </ul>
                             </div>
                         </li> <!-- end Dashboard Menu -->
-
-                       
-
-                      
-
-                        
-
-                       
-
-
                     </ul>
                 </div>
                 <!-- Sidebar -->

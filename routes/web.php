@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\WebController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\SliderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +55,12 @@ Route::group(['middleware' =>  'isCustomer'], function () {
 Route::group(['middleware' => 'auth', 'isAdmin'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
+    // SLIDER
+    Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
+    Route::get('/admin/slider/inser', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/inser');
+    Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\admin\SliderController::class, 'edit'])->name('admin/slider/edit');
+    Route::post('/admin/slider/update/{id}', [App\Http\Controllers\admin\SliderController::class, 'update'])->name('admin/slider/update');
+    Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\admin\SliderController::class, 'destroy'])->name('admin/slider/delete');
 });
 
 // SOCIAL LOGIN
