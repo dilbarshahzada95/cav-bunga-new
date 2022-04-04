@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class OrderDetails extends Model
 {
     use HasFactory;
+    protected $table = 'order_details';
+    protected $fillaable = ['order_id', 'product_id', 'product_price', 'qty', 'total'];
+
+    function productlist()
+    {
+        return $this->hasManyThrough(OrderDetails::class, Product::class, 'id', 'product_id', 'product_id', 'id');
+    }
 }

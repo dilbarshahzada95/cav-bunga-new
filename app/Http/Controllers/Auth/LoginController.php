@@ -170,4 +170,37 @@ class LoginController extends Controller
             return redirect('profile')->with('success',  'Registration Successful');
         }
     }
+    function updateCustomerData(Request $request, $id)
+    {
+
+        $validator = Validator::make($request->all(), [
+            // 'name' => 'required',
+            // 'email' => 'required|email',
+            // 'phone' => 'required',
+            // 'street' => 'required',
+            // 'city' => 'required',
+            // 'pincode' => 'required',
+            // 'country' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with(['error' => $validator->errors()]);
+        } else {
+
+            $user = User::where('id', $id)->first();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->save();
+            $userDetails = CustomerDetails::where('customer_id', $id)->first();
+            $userDetails->name = $request->name;
+            $userDetails->email = $request->email;
+            $userDetails->phone = $request->phone;
+            $userDetails->street = $request->street;
+            $userDetails->city = $request->city;
+            $userDetails->pincode = $request->pincode;
+            $userDetails->country = $request->country;
+            $userDetails->mob = $request->mob;
+            $userDetails->save();
+            return  response()->json(['success' => 'Data Updated Successfully', 'status' => 200]);
+        }
+    }
 }

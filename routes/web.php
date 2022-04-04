@@ -57,6 +57,8 @@ Route::post('/register/customer', [App\Http\Controllers\Auth\LoginController::cl
 Route::group(['middleware' =>  'isCustomer'], function () {
     Route::get('/profile', [App\Http\Controllers\web\WebController::class, 'profile'])->name('profile');
     Route::get('/order_tracking', [App\Http\Controllers\web\WebController::class, 'order_tracking'])->name('order_tracking');
+    Route::get('/getCustomerData/{id}', [App\Http\Controllers\web\WebController::class, 'getCustomerData'])->name('getCustomerData');
+    Route::post('/update/customer/details/{id}', [App\Http\Controllers\Auth\LoginController::class, 'updateCustomerData'])->name('update/customer/details');
 });
 
 // ADMIN

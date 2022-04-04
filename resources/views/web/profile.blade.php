@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,900,900i"
         rel="stylesheet">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -44,6 +44,7 @@
     <link href="{{ asset('web/assets/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/cavabunga.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/responsive.css') }}" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -85,40 +86,42 @@
                                         <h2>Personal Information</h2>
                                     </div>
                                     <div class="card">
-                                        <a class="btn-edit" data-toggle="modal" data-target="#editinformation">
+                                        <a class="btn-edit" data-toggle="modal"
+                                            onclick="customer_details({{ $profile['customer_details']['customer_id'] }})"
+                                            data-target="#editinformation">
                                             <img src="{{ asset('web/assets/img/icons/ediit.png') }}" alt="">
                                         </a>
-                                        <div class="card-body">
+                                        <div class="card-body" id="mydiv">
                                             <span>Name</span>
-                                            <h4>Dimitri Vandelyesk</h4>
+                                            <h4>{{ $profile['customer_details']['name'] }}</h4>
 
                                             <span>E-mail</span>
-                                            <h4>dimitri.vandelyesk@gmail.com</h4>
+                                            <h4>{{ $profile['customer_details']['email'] }}</h4>
                                             <span>Phone Number</span>
-                                            <h4>+1 (646) 555-4099</h4>
+                                            <h4>{{ $profile['customer_details']['phone'] }}</h4>
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
                                                     <span>Street</span>
-                                                    <h4>Avery Street</h4>
+                                                    <h4>{{ $profile['customer_details']['street'] }}</h4>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <span>Number</span>
-                                                    <h4>23</h4>
+                                                    <h4>{{ $profile['customer_details']['mob'] }}</h4>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
                                                     <span>City</span>
-                                                    <h4>New York</h4>
+                                                    <h4>{{ $profile['customer_details']['city'] }}</h4>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <span>Postal Code</span>
-                                                    <h4>10092</h4>
+                                                    <h4>{{ $profile['customer_details']['pincode'] }}</h4>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <span>Country</span>
-                                                    <h4>USA</h4>
+                                                    <h4>{{ $profile['customer_details']['country'] }}</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,46 +131,52 @@
                                     <div class="title mt-3">
                                         <h2>Current order</h2>
                                     </div>
-                                    <div class="personal__information__bg">
-                                        <div class="card bg-transparent">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-4 col-sm-6">
-                                                        <span>Order ID:</span>
-                                                        <h4>0382 182930</h4>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6">
-                                                        <span>Date:</span>
-                                                        <h4>12-10-2021</h4>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6">
-                                                        <span>price:</span>
-                                                        <h4>$133.50</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-md-8 col-sm-6">
-                                                <div class="dropdown">
-                                                    <a href="#" class="js-link">
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            view items <i class="fa fa-chevron-down"></i>
+                                    @foreach ($Order as $currentOrderList)
+                                        <div class="personal__information__bg">
+                                            <div class="card bg-transparent">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-sm-6">
+                                                            <span>Order ID:</span>
+                                                            <h4>{{ $currentOrderList['transaction_id'] }}</h4>
                                                         </div>
-                                                    </a>
-                                                    <ul class="js-dropdown-list">
-                                                        <li>Men Black Shoe
-                                                        </li>
-                                                        <li>Leather Men Shoe
-                                                        </li>
-                                                    </ul>
+                                                        <div class="col-md-4 col-sm-6">
+                                                            <span>Date:</span>
+                                                            <h4>{{ date('d-m-Y', strtotime($currentOrderList['order_date'])) }}
+                                                            </h4>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-6">
+                                                            <span>price:</span>
+                                                            <h4>{{ $currentOrderList['order_price'] }}</h4>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 col-sm-6 pl-0 text-center">
-                                                <div class="btn-theme">track order</div>
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8 col-sm-6">
+                                                    <div class="dropdown">
+                                                        <a href="#" class="js-link">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                view items <i class="fa fa-chevron-down"></i>
+                                                            </div>
+                                                        </a>
+                                                        <ul class="js-dropdown-list">
+                                                            @foreach ($currentOrderList['orderDetails.productlist'] as $listItem)
+                                                                <li>{{ $listItem['product_name'] }}
+                                                                </li>
+                                                            @endforeach
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-6 pl-0 text-center">
+                                                    <div class="btn-theme">track order</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
                             </div>
                         </div>
@@ -178,111 +187,48 @@
                                         <div class="title pl-0">
                                             <h2 class="text-dark">Order History</h2>
                                         </div>
-                                        <div class="date__prize d-flex justify-content-md-between">
+                                        {{-- <div class="date__prize d-flex justify-content-md-between">
                                             <h5>Today</h5>
                                             <h5>$201.00</h5>
-                                        </div>
+                                        </div> --}}
                                     </div>
-                                    <div class="row listed__items align-items-center">
-                                        <div class="history__list d-flex pl-0">
-                                            <div class="order__id">
-                                                <span>Order ID:</span>
-                                                <h4>0382 182930</h4>
+                                    @foreach ($orderHistory as $orderHistoryList)
+                                        <div class="row listed__items align-items-center">
+                                            <div class="history__list d-flex pl-0">
+                                                <div class="order__id">
+                                                    <span>Order ID:</span>
+                                                    <h4>{{ $orderHistoryList['transaction_id'] }}</h4>
+                                                </div>
+                                                <div class="order-date">
+                                                    <span>Date</span>
+                                                    <h4>{{ date('d-m-Y', strtotime($orderHistoryList['order_date'])) }}
+                                                    </h4>
+                                                </div>
                                             </div>
-                                            <div class="order-date">
-                                                <span>Date</span>
-                                                <h4>12-08-2021</h4>
+                                            <div class="col-md-10 pl-0 pr-0">
+                                                <div class="dropdown1">
+                                                    <a href="#" class="js-link1 pl-0">
+                                                        <div
+                                                            class="d-flex justify-content-between align-items-center w-100">
+                                                            view items <i class="fa fa-chevron-down"></i>
+                                                        </div>
+                                                    </a>
+                                                    <ul class="js-dropdown-list1">
+                                                        @foreach ($orderHistoryList['orderDetails.productlist'] as $listItemhistory)
+                                                            <li>{{ $listItemhistory['product_name'] }}
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-10 pl-0 pr-0">
-                                            <div class="dropdown1">
-                                                <a href="#" class="js-link1 pl-0">
-                                                    <div
-                                                        class="d-flex justify-content-between align-items-center w-100">
-                                                        view items <i class="fa fa-chevron-down"></i>
-                                                    </div>
-                                                </a>
-                                                <ul class="js-dropdown-list1">
-                                                    <li>Men Black Shoe
-                                                    </li>
-                                                    <li>Leather Men Shoe
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 pl-0">
-                                            <p><strong>$133.50</strong></p>
-                                        </div>
-                                    </div>
-                                    <div class="row listed__items align-items-center mt-3">
-                                        <div class="history__list d-flex pl-0">
-                                            <div class="order__id">
-                                                <span>Order ID:</span>
-                                                <h4>0382 182930</h4>
-                                            </div>
-                                            <div class="order-date">
-                                                <span>Date</span>
-                                                <h4>12-08-2021</h4>
+                                            <div class="col-md-2 pl-0">
+                                                <p><strong>$133.50</strong></p>
                                             </div>
                                         </div>
-                                        <div class="col-md-10 pl-0 pr-0">
-                                            <div class="dropdown1">
-                                                <a href="#" class="js-link1 pl-0">
-                                                    <div
-                                                        class="d-flex justify-content-between align-items-center w-100">
-                                                        view items <i class="fa fa-chevron-down"></i>
-                                                    </div>
-                                                </a>
-                                                <ul class="js-dropdown-list1">
-                                                    <li>Men Black Shoe
-                                                    </li>
-                                                    <li>Leather Men Shoe
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 pl-0">
-                                            <p><strong>$133.50</strong></p>
-                                        </div>
-                                    </div>
+                                    @endforeach
 
-                                    <div class="row mt-4">
-                                        <div class="date__prize d-flex justify-content-md-between">
-                                            <h5>10-08-2021</h5>
-                                            <h5>$185.00</h5>
-                                        </div>
-                                    </div>
-                                    <div class="row listed__items align-items-center">
-                                        <div class="history__list d-flex pl-0">
-                                            <div class="order__id">
-                                                <span>Order ID:</span>
-                                                <h4>0382 182930</h4>
-                                            </div>
-                                            <div class="order-date">
-                                                <span>Date</span>
-                                                <h4>12-08-2021</h4>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10 pl-0 pr-0">
-                                            <div class="dropdown1">
-                                                <a href="#" class="js-link1 pl-0">
-                                                    <div
-                                                        class="d-flex justify-content-between align-items-center w-100">
-                                                        view items <i class="fa fa-chevron-down"></i>
-                                                    </div>
-                                                </a>
-                                                <ul class="js-dropdown-list1">
-                                                    <li>Men Black Shoe
-                                                    </li>
-                                                    <li>Leather Men Shoe
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 pl-0">
-                                            <p><strong>$185.50</strong></p>
-                                        </div>
-                                    </div>
+
+
 
                                 </div>
                             </div>
@@ -293,7 +239,7 @@
 
         </main>
 
-        <aside class="product-quick-view-modal">
+        {{-- <aside class="product-quick-view-modal">
             <div class="product-quick-view-inner">
                 <div class="product-quick-view-content">
                     <button type="button" class="btn-close">
@@ -377,11 +323,11 @@
                 </div>
             </div>
             <div class="canvas-overlay"></div>
-        </aside>
+        </aside> --}}
         @include('web.sideCart')
         <div class="sidebar-cart-overlay"></div>
 
-        <aside class="off-canvas-wrapper">
+        {{-- <aside class="off-canvas-wrapper">
             <div class="off-canvas-inner">
                 <div class="off-canvas-overlay d-none"></div>
                 <!-- Start Off Canvas Content Wrapper -->
@@ -434,73 +380,84 @@
                     </ul>
                 </dropdown>
             </div>
-        </aside>
+        </aside> --}}
     </div>
     <!-- Edit Profile -->
-    <div class="modal fade" id="editinformation" tabindex="-1" role="dialog" aria-labelledby="editinformationTitle"
-        aria-hidden="true" class="modal hide" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="editinformation" tabindex="-1" role="dialog" aria-hidden="true"
+        class="modal hide" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content cabunga__model">
-                <div class="modal-body">
-                    <form>
+            <form action="{{ url('update/customer/details') }}" method="post" enctype="multipart/form-data"
+                id="editFormSubmit">
+
+                <div class="modal-content cabunga__model">
+                    <div class="modal-body">
+
                         <div class="row">
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" placeholder="Name">
+                                    <input type="text" class="form-control" placeholder="Name" id="name" name="name">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" class="form-control" placeholder="Email" id="email"
+                                        name="email">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="Number" class="form-control" placeholder="Phone Number">
+                                    <input type="Number" class="form-control" placeholder="Phone Number" id="phone"
+                                        name="phone">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Street</label>
-                                    <input type="text" class="form-control" placeholder="Street">
+                                    <input type="text" class="form-control" placeholder="Street" id="street"
+                                        name="street">
                                 </div>
                             </div>
+                            <input type="hidden" name="edit_id" id="edit_id">
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Number</label>
-                                    <input type="text" class="form-control" placeholder="Number">
+                                    <input type="text" class="form-control" placeholder="Number" id="mob" name="mob">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>City</label>
-                                    <input type="text" class="form-control" placeholder="City">
+                                    <input type="text" class="form-control" placeholder="City" id="city" name="city">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Postal Code</label>
-                                    <input type="text" class="form-control" placeholder="Postal Code">
+                                    <input type="text" class="form-control" placeholder="Postal Code" id="pincode"
+                                        name="pincode">
                                 </div>
                             </div>
                             <div class="col-md-6 p-1">
                                 <div class="form-group">
                                     <label>Country</label>
-                                    <input type="text" class="form-control" placeholder="Country">
+                                    <input type="text" class="form-control" placeholder="Country" id="country"
+                                        max="country">
                                 </div>
                             </div>
                         </div>
-                    </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" class="btn btn-secondary"
+                            data-dismiss="modal">Close</button>
+                        <button type="submit" data-dismiss="modal" aria-label="Close" class="btn btn-theme"
+                            onclick="checkite()">update</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                        class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-theme">update</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <!--=======================Javascript============================-->
@@ -544,6 +501,7 @@
 
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
+
     <script>
         $(function() {
             var list = $('.js-dropdown-list');
@@ -585,6 +543,90 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        function customer_details(id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: 'getCustomerData/' + id,
+                success: function(data) {
+
+                    if (data) {
+
+                        $('#name').val(data.customer_details.name);
+                        $('#email').val(data.customer_details.email);
+                        $('#phone').val(data.customer_details.phone);
+                        $('#city').val(data.customer_details.city);
+                        $('#pincode').val(data.customer_details.pincode);
+                        $('#street').val(data.customer_details.street);
+                        $('#country').val(data.customer_details.country);
+                        $('#mob').val(data.customer_details.mob);
+                        $('#edit_id').val(data.customer_details.customer_id);
+
+                    }
+
+                }
+
+            });
+        }
+    </script>
+    <script>
+        function checkite() {
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var phone = $('#phone').val();
+            var city = $('#city').val();
+            var pincode = $('#pincode').val();
+            var street = $('#street').val();
+            var country = $('#country').val();
+            var mob = $('#mob').val();
+            var edit_id = $('#edit_id').val();
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: 'update/customer/details/' + $('#edit_id').val(),
+                method: 'POST',
+                data: {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    city: city,
+                    pincode: pincode,
+                    street: street,
+                    country: country,
+                    mob: mob,
+
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status = 200) {
+                        swal({
+                            title: "",
+                            text: "Updated Successfully",
+                            icon: "success",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                            timer: 3000,
+                            icon: "success"
+                        });
+                        setTimeout(function() {
+                            $("#mydiv").load(location.href + " #mydiv");
+                        }, 3000);
+                    }
+                }
+            });
+        }
     </script>
 </body>
 

@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\User;
+use App\Models\CustomerDetails;
+use App\Models\Order;
+use App\Models\OrderStatus;
+use App\Models\OrderHistory;
+use App\Models\OrderDetails;
 
 class WebController extends Controller
 {
@@ -40,9 +46,16 @@ class WebController extends Controller
     }
     function profile()
     {
-        print_r(Auth::user());
-        die;
-        return view('web.profile');
+        $profile = User::with(['customer_details'])->where('id', Auth::user()->id)->first();
+        $Order = Order::with(['orderDetails.productlist'])->where('customer_id', Auth::user()->id)->get();
+
+        $orderHistory = OrderHistory::with(['orderDetails.productlist'])->where('customer_id', Auth::user()->id)->get();
+        return view('web.profile', compact('profile', 'Order', 'orderHistory'));
+    }
+    function getCustomerData($id)
+    {
+        $customer = User::with(['customer_details'])->where('id', $id)->first();
+        return response()->json($customer);
     }
     function register()
     {
