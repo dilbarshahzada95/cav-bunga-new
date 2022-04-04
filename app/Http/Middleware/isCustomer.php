@@ -18,8 +18,10 @@ class isCustomer
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role == 'customer' &&  Auth::user()->role != 'admin') {
-            return redirect('/');
+        if (Auth::check()) {
+            if (Auth::check() && Auth::user()->role == 'customer' &&  Auth::user()->role != 'admin') {
+                return $next($request);
+            }
         } else {
             return redirect('/login-user');
         }
