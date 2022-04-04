@@ -20,6 +20,7 @@ class CreateSubCategoryTable extends Migration
             $table->string('layout_id')->nullable();
             $table->string('sub_category_title')->nullable();
             $table->string('sub_category_description')->nullable();
+            $table->string('sub_category_image')->nullable();
             $table->timestamps();
         });
     }
