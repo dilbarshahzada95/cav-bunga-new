@@ -25,10 +25,7 @@ Route::get('/clear', function () {
     Artisan::call('view:clear');
     return "Cleared!";
 });
-Route::get('/', function () {
-
-    return view('web.index');
-});
+Route::get('/', [App\Http\Controllers\web\WebController::class, 'index'])->name('index');
 
 Auth::routes();
 Route::get('/login-user', [App\Http\Controllers\web\WebController::class, 'loginUser'])->name('login-user');
