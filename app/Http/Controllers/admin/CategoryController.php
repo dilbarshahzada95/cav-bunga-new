@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use DB;
+use File;
+use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
@@ -56,17 +58,22 @@ class CategoryController extends Controller
         $data->parent_category_id = $request->parent_category_id;
         $data->sub_category_name = $request->sub_category_name;
         $data->layout_id = $request->layout_id;
-        // if ($request->hasfile('sub_category_image')) {
-        //     $file = $request->file('sub_category_image');
+        if ($request->hasfile('sub_category_image')) {
 
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extension;
-        //     $file->move('category_image', $filename);
-        //     $data->sub_category_image = $filename;
-        // } else {
-        //     return $request;
-        //     $data->$sub_category_image = '';
-        // }
+            $image = $request->file('sub_category_image');
+            $image_name = uniqid() . '.' . $image->extension();
+            $thumbnailFilePath = public_path('/category_image/thumbnail');
+            $img = Image::make($image->path());
+            $img->resize(150, 150, function ($const) {
+                $const->aspectRatio();
+            })->save($thumbnailFilePath . '/' . $image_name);
+            $ImageFilePath = public_path('/category_image/');
+            $image->move($ImageFilePath, $image_name);
+            $data->sub_category_image = $image_name;
+        } else {
+            $data->sub_category_image = '';
+        }
+
         $data->sub_category_title = $request->sub_category_title;
         $data->sub_category_description = $request->sub_category_description;
 
@@ -118,15 +125,33 @@ class CategoryController extends Controller
         $data->sub_category_name = $request->sub_category_name;
         $data->layout_id = $request->layout_id;
         if ($request->hasfile('sub_category_image')) {
-            $file = $request->file('sub_category_image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('category_image', $filename);
-            $data->sub_category_image = $filename;
+            $file_path = public_path('category_image') . '/' . $data->image;
+            $file_path_thumb = public_path('category_image/thumbnail') . '/' . $data->image;
+            if (File::exists($file_path)) {
+                File::delete($file_path); //for deleting only file try this
+
+            }
+            if (File::exists($file_path_thumb)) {
+                File::delete($file_path_thumb); //for deleting only file try this
+
+            }
+
+            $image = $request->file('sub_category_image');
+            $image_name = uniqid() . '.' . $image->extension();
+            $thumbnailFilePath = public_path('/category_image/thumbnail');
+            $img = Image::make($image->path());
+            $img->resize(150, 150, function ($const) {
+                $const->aspectRatio();
+            })->save($thumbnailFilePath . '/' . $image_name);
+            $ImageFilePath = public_path('/category_image/');
+            $image->move($ImageFilePath, $image_name);
+            $data->sub_category_image = $image_name;
         } else {
-            // return $request;
+
             $data->sub_category_image = $request->img_cat;
         }
+
+
         $data->sub_category_title = $request->sub_category_title;
         $data->sub_category_description = $request->sub_category_description;
         $data->save();
@@ -142,6 +167,16 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $del = Category::findOrFail($id);
+        $file_path = public_path('category_image') . '/' . $del->sub_category_image;
+        $file_path_thumb = public_path('category_image/thumbnail') . '/' . $del->sub_category_image;
+        if (File::exists($file_path)) {
+            File::delete($file_path); //for deleting only file try this
+
+        }
+        if (File::exists($file_path_thumb)) {
+            File::delete($file_path_thumb); //for deleting only file try this
+
+        }
         $del->delete();
         return redirect()->back();
     }
