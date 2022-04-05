@@ -17,6 +17,7 @@ use App\Models\OrderStatus;
 use App\Models\OrderHistory;
 use App\Models\Slider;
 use App\Models\Category;
+
 class WebController extends Controller
 {
     /**
@@ -27,7 +28,7 @@ class WebController extends Controller
     public function index()
     {
         $slider = Slider::all();
-        $category=
+        $category = Category::all();
         return view('web.index', compact('slider'));
     }
     function about_us()
