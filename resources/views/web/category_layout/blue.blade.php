@@ -7,20 +7,17 @@
             <div class="col-md-6">
                 <div class="cavabunga__product__decription" data-aos="fade-right" data-aos-duration="1000">
 
-                    <h6>Backpacks</h6>
-                    <h2>Discover your new Travel Companion</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
-                        libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
-                        Atque natus amet, beatae sint fugit ipsam.</p>
+                    <h6>{{ $categorylist['sub_category_name'] }}</h6>
+                    <h2>{{ $categorylist['sub_category_title'] }}</h2>
+                    <p>{{ $categorylist['sub_category_description'] }}</p>
                     <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="product__image" data-aos="fade-right" data-aos-duration="1000">
                     <div class="pattern__round"></div>
-                    <img src="{{ asset('web/assets/img/products/backpack__home__noSjadow.png') }}" alt="">
-                    <img class="shadow-img"
-                        src="{{ asset('web/assets/img/products/backpack__home__sjadow.png') }}" alt="">
+                    <img src="{{ asset('/' . $categorylist['sub_category_image']) }}" alt="">
+                    <img class="shadow-img" src="{{ asset('/' . $categorylist['sub_category_image']) }}" alt="">
                 </div>
             </div>
         </div>

@@ -48,10 +48,13 @@
             </div>
         </div>
     </section>
-
-    @include('web.category_layout.blue')
-
-    @include('web.category_layout.brown')
-
-    @include('web.category_layout.pink')
+    @foreach ($category as $categorylist)
+        @if ($categorylist->layout_id == 1)
+            @include('web.category_layout.pink')
+        @elseif ($categorylist->layout_id == 2)
+            @include('web.category_layout.brown')
+        @else
+            @include('web.category_layout.blue')
+        @endif
+    @endforeach
 @endsection

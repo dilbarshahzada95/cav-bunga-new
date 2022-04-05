@@ -29,7 +29,7 @@ class WebController extends Controller
     {
         $slider = Slider::all();
         $category = Category::all();
-        return view('web.index', compact('slider'));
+        return view('web.index', compact('slider', 'category'));
     }
     function about_us()
     {
