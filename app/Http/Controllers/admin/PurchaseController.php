@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Purchase;
+use DB;
 
 class PurchaseController extends Controller
 {
@@ -14,7 +16,19 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        return view('admin.purchase.purchase');
+        $product=DB::table('product')
+                         ->select('product.*')
+                         ->get();
+        $supplier=DB::table('supplier')
+                         ->select('supplier.*')
+                         ->get();
+
+        $purchase=purchase::select('purchase.*','supplier.first_name','product.product_name')
+                          ->leftjoin('product','purchase.product_id','=','product.id')
+                          ->leftjoin('supplier','purchase.supplier_id','=','supplier.id')
+                          ->get();
+
+        return view('admin.purchase.purchase',compact('product','supplier','purchase'));
     }
 
     /**
@@ -35,7 +49,30 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+         $data = new Purchase;
+             $data->product_id=$request->product_id;
+             $data->supplier_id=$request->supplier_id;
+             $data->transaction_date=$request->transaction_date;
+             $data->qty=$request->qty;
+             $data->purchase_price=$request->purchase_price;
+             $data->save();
+
+        $check_atleast_one_exist=DB::table('product_stock_details')->select('id','qty')->where('product_id',$request->product_id)->first();
+
+       if (empty($check_atleast_one_exist)) {
+          $insert=  DB::table('product_stock_details')->insert([
+                'product_id' => $request->product_id,
+                'qty'=>$request->qty
+            ]);
+       }else{
+        $update= DB::table('product_stock_details')->where('product_id',$request->product_id)->update([
+                'qty'=>$request->qty+$check_atleast_one_exist->qty
+            ]);
+       }
+            
+             return redirect()->back()->with('message', 'Purchase Added Successfully');
+       
     }
 
     /**
@@ -80,6 +117,21 @@ class PurchaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+  
+        $stock_update=0;
+         $del=Purchase::findOrFail($id);
+     $current_qty=DB::table('product_stock_details')->select('qty')->where('product_id',$del->product_id)->first();
+
+            $stock_update=$current_qty->qty-$del->qty;
+    $update= DB::table('product_stock_details')->where('product_id',$del->product_id)->update([
+                'qty'=>$stock_update
+           ]);
+    if ($update) {
+      $del->delete();
+ 
+
+         return redirect()->back();
+    }
+        
     }
 }

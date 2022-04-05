@@ -18,7 +18,6 @@ class CreatePurchaseTable extends Migration
             $table->string('product_id')->nullable();
             $table->string('supplier_id')->nullable();
             $table->string('transaction_date')->nullable();
-            $table->string('first_name')->nullable();
             $table->string('qty')->nullable();
             $table->string('purchase_price')->nullable();
             $table->timestamps();
