@@ -15,7 +15,7 @@ use App\Models\CustomerDetails;
 use App\Models\Order;
 use App\Models\OrderStatus;
 use App\Models\OrderHistory;
-use App\Models\OrderDetails;
+use App\Models\Slider;
 
 class WebController extends Controller
 {
@@ -26,7 +26,8 @@ class WebController extends Controller
      */
     public function index()
     {
-        return view('web.index');
+        $slider = Slider::all();
+        return view('web.index', compact('slider'));
     }
     function about_us()
     {

@@ -5,44 +5,29 @@
         <div class="home-slider-content position-relative">
             <div class="swiper-container home-slider3-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <!-- Start Slide Item -->
-                        <div class="home-slider-item">
-                            <div class="bg-thumb bg-img"
-                                data-bg-img="{{ asset('web/assets/img/slider/home-slider1.png') }}"></div>
-                            <div class="slider-content-area">
-                                <div class="content">
-                                    <div class="inner-content">
-                                        <h4>Welcome to</h4>
-                                        <img src="{{ asset('web/assets/img/pattern/logo-pattern.png') }}" alt="">
-                                        <p>A Lifestyle brand crafted with love by millennials, for millennials
-                                        </p>
-                                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
+                    @foreach ($slider as $sliders)
+                        <div class="swiper-slide">
+                            <!-- Start Slide Item -->
+                            <div class="home-slider-item">
+                                <div class="bg-thumb bg-img" data-bg-img="{{ asset('slider_image/' . $sliders->image) }}">
+                                </div>
+                                <div class="slider-content-area">
+                                    <div class="content">
+                                        <div class="inner-content">
+                                            <h4>Welcome to</h4>
+                                            <img src="{{ asset('web/assets/img/pattern/logo-pattern.png') }}" alt="">
+                                            <p>A Lifestyle brand crafted with love by millennials, for millennials
+                                            </p>
+                                            <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- End Slide Item -->
                         </div>
-                        <!-- End Slide Item -->
-                    </div>
-                    <div class="swiper-slide">
-                        <!-- Start Slide Item -->
-                        <div class="home-slider-item">
-                            <div class="bg-thumb bg-img"
-                                data-bg-img="{{ asset('web/assets/img/slider/home-slider1.png') }}"></div>
-                            <div class="slider-content-area">
-                                <div class="content">
-                                    <div class="inner-content">
-                                        <h4>Welcome to</h4>
-                                        <img src="assets/img/pattern/logo-pattern.png" alt="">
-                                        <p>A Lifestyle brand crafted with love by millennials, for millennials
-                                        </p>
-                                        <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Slide Item -->
-                    </div>
+                    @endforeach
+
+
                 </div>
                 <div class="row position-relative banner__arrow">
                     <div class="cavabunga__footer__arrows">

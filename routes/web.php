@@ -26,7 +26,6 @@ Route::get('/clear', function () {
     return "Cleared!";
 });
 Route::get('/', function () {
-    Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
 
     return view('web.index');
 });
