@@ -162,6 +162,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach($data as $new)
                                                         <tr>
                                                             <th scope="row">
                                                                 <div class="form-check">
@@ -169,22 +170,13 @@
                                                                     <label class="form-check-label" for="responsivetableCheck01"></label>
                                                                 </div>
                                                             </th>
-                                                            <td><a href="#" class="fw-medium">#VZ2110</a></td>
-                                                            <td>10 Oct, 14:47</td>
-                                                            <td class="text-success"><i class="ri-checkbox-circle-line fs-17 align-middle"></i> Paid</td>
-                                                            <td>
-                                                                <div class="d-flex gap-2 align-items-center">
-                                                                    <div class="flex-shrink-0">
-                                                                        <img src="{{asset('admin/assets/images/users/avatar-3.jpg')}}" alt="" class="avatar-xs rounded-circle" />
-                                                                    </div>
-                                                                    <div class="flex-grow-1">
-                                                                        Jordan Kennedy
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>Mastering the grid</td>
-                                                            <td>$9.98</td>
-                                                            <td>Mastering the grid</td>
+                                                            <td><a href="#" class="fw-medium">{{@$i +=1}}</a></td>
+                                                            <td>{{$new->parent_category_id}}</td>
+                                                            <td>{{$new->sub_category_name}}</td>
+                                                            <td><img src="{{asset('/category_image/'.$new->sub_category_image)}}" height="50px"></td>
+                                                            <td>{{$new->sub_category_title}}</td>
+                                                            <td>{{$new->sub_category_description}}</td>
+                                                            <td>{{$new->layout_id}}</td>
                                                                                                        <td>
              <a href="" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
             
@@ -192,7 +184,7 @@
              </td>
                                                         </tr>
                                                      
-                                                        
+                                                        @endforeach
                                                     </tbody>
                                                   
                                                 </table>

@@ -25,12 +25,12 @@ class CategoryController extends Controller
                          ->select('layouts.*')
                          ->get();
 
-        $data=Kh_Purchase::select('sub_category.*','main_category.category_name','layouts.layout_name'               )
-                          ->join('transactions','transactions.order_id','=','kh_purchase.id')
-                          ->join('kh_web_register','kh_purchase.user_id','=','kh_web_register.id')
+        $data=Category::select('sub_category.*','main_category.category_name as parent_cat_name','layouts.layout_name'               )
+                          ->join('main_category','sub_category.parent_category_id','=','main_category.id')
+                          ->join('layouts','sub_category.layout_id','=','layouts.id')
                           ->get();
                                          
-        return view('admin.category.category',compact('parent_category','layout'));
+        return view('admin.category.category',compact('parent_category','layout','data'));
     }
 
     /**
