@@ -162,10 +162,10 @@
                                                             </div>
                                                         </a>
                                                         <ul class="js-dropdown-list">
-                                                            @foreach ($currentOrderList['orderDetails.productlist'] as $listItem)
+                                                            {{-- @foreach ($currentOrderList['orderDetails.productlist'] as $listItem)
                                                                 <li>{{ $listItem['product_name'] }}
                                                                 </li>
-                                                            @endforeach
+                                                            @endforeach --}}
 
                                                         </ul>
                                                     </div>
@@ -214,10 +214,10 @@
                                                         </div>
                                                     </a>
                                                     <ul class="js-dropdown-list1">
-                                                        @foreach ($orderHistoryList['orderDetails.productlist'] as $listItemhistory)
+                                                        {{-- @foreach ($orderHistoryList['orderDetails.productlist'] as $listItemhistory)
                                                             <li>{{ $listItemhistory['product_name'] }}
                                                             </li>
-                                                        @endforeach
+                                                        @endforeach --}}
                                                     </ul>
                                                 </div>
                                             </div>

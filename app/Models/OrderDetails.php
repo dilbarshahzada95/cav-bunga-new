@@ -11,8 +11,8 @@ class OrderDetails extends Model
     protected $table = 'order_details';
     protected $fillaable = ['order_id', 'product_id', 'product_price', 'qty', 'total'];
 
-    function productlist()
-    {
-        return $this->hasManyThrough(Product::class,  'product_id');
-    }
+    // function productlist()
+    // {
+    //     return $this->belongsTo(Product::class,  'product_id', 'id');
+    // }
 }
