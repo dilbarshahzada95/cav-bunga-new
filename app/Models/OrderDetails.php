@@ -13,6 +13,6 @@ class OrderDetails extends Model
 
     function productlist()
     {
-        return $this->hasManyThrough(OrderDetails::class, Product::class, 'id', 'product_id', 'product_id', 'id');
+        return $this->hasManyThrough(Product::class,  'product_id');
     }
 }

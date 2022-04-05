@@ -166,7 +166,7 @@ class LoginController extends Controller
                 'pincode' => '',
                 'country' => '',
             ]);
-
+            Auth::login($newUser);
             return redirect('profile')->with('success',  'Registration Successful');
         }
     }
