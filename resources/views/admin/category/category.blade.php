@@ -162,7 +162,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach($data as $new)
+                                                        @foreach($result as $dat)
                                                         <tr>
                                                             <th scope="row">
                                                                 <div class="form-check">
@@ -171,16 +171,16 @@
                                                                 </div>
                                                             </th>
                                                             <td><a href="#" class="fw-medium">{{@$i +=1}}</a></td>
-                                                            <td>{{$new->parent_category_id}}</td>
-                                                            <td>{{$new->sub_category_name}}</td>
-                                                            <td><img src="{{asset('/category_image/'.$new->sub_category_image)}}" height="50px"></td>
-                                                            <td>{{$new->sub_category_title}}</td>
-                                                            <td>{{$new->sub_category_description}}</td>
-                                                            <td>{{$new->layout_id}}</td>
+                                                            <td>{{$dat->category_name}}</td>
+                                                            <td>{{$dat->sub_category_name}}</td>
+                                                            <td><img src="{{asset('/category_image/'.$dat->sub_category_image)}}" height="50px"></td>
+                                                            <td>{{$dat->sub_category_title}}</td>
+                                                            <td>{{$dat->sub_category_description}}</td>
+                                                            <td>{{$dat->layout_name}}</td>
                                                                                                        <td>
-             <a href="" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+             <a href="{{route('admin/category/delete',$dat->id)}}" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
             
-             <a href=""><i class="fa fa-edit"></i></a>
+             <a href="{{url('/admin/category/edit',$dat->id)}}"><i class="fa fa-edit"></i></a>
              </td>
                                                         </tr>
                                                      

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
-    use HasFactory;
+    protected $table = 'purchase';
+    protected $fillaable = ['product_id', 'supplier_id', 'transaction_date', 'qty', 'purchase_price '];
 }
