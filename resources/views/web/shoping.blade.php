@@ -94,21 +94,20 @@
                                     <h2>categories</h2>
                                 </div>
                                 <ul class="nav nav-tabs product-description-tab-menu" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
-                                            data-bs-target="#cavabunga__shop__men" type="button" role="tab"
-                                            aria-controls="cavabunga__shop__men" aria-selected="true">Men</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
-                                            data-bs-target="#cavabunga__shop__women" type="button" role="tab"
-                                            aria-controls="cavabunga__shop__women" aria-selected="false">Women</button>
-                                    </li>
+                                    @foreach ($main_category as $main_cat)
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
+                                                data-bs-target="#{{ $main_cat->category_name }}" type="button"
+                                                role="tab" aria-controls="{{ $main_cat->category_name }}"
+                                                aria-selected="true">{{ $main_cat->category_name }}</button>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                                 <div class="tab-content product-description-tab-content" id="myTabContent">
                                     <div class="left__pattern"></div>
-                                    <div class="tab-pane fade show active" id="cavabunga__shop__men" role="tabpanel"
-                                        aria-labelledby="product-desc-tab">
+                                    <div class="tab-pane fade show active" id="{{ $main_cat->category_name }}"
+                                        role="tabpanel" aria-labelledby="product-desc-tab">
                                         <div class="product-area product-description-review-area pt-0 cavabunga__inner">
                                             <div class="container">
                                                 <div class="row">

@@ -3,19 +3,17 @@
         <div class="row product__grid column-reverse-sm-remove">
             <div class="col-md-6">
                 <div class="product__image">
-                    <img src="{{ asset('web/assets/img/products/wallet.png') }}" alt="" data-aos="fade-right"
-                        data-aos-duration="1000">
+                    <img src="{{ asset('category_image/' . $categorylist['sub_category_image']) }}" alt=""
+                        data-aos="fade-right" data-aos-duration="1000">
                     <div class="bottom__rounded"></div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="cavabunga__product__decription" data-aos="fade-right" data-aos-duration="1000">
                     <div class="pattern__right"></div>
-                    <h6>Wallets</h6>
-                    <h2>everything you need in your back pocket</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
-                        libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
-                        Atque natus amet, beatae sint fugit ipsam.</p>
+                    <h6>{{ $categorylist['sub_category_name'] }}</h6>
+                    <h2>{{ $categorylist['sub_category_title'] }}</h2>
+                    <p>{{ $categorylist['sub_category_description'] }}</p>
                     <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                 </div>
             </div>

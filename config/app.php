@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -233,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

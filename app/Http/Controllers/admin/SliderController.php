@@ -12,6 +12,7 @@ use  DB;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Validator;
 use File;
+use Intervention\Image\Facades\Image;
 
 class SliderController extends Controller
 {
@@ -44,22 +45,34 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data = new Slider;
-        if ($request->hasfile('image')) {
-            $file = $request->file('image');
-
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('slider_image', $filename);
-            $data->image = $filename;
+        $validator = Validator::make($request->all(), [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        if ($validator->fails()) {
+            return  redirect()->back()->with('error', $validator->errors());
         } else {
-            return $request;
-            $data->$image = '';
-        }
+            try {
+                if ($request->hasfile('image')) {
 
-        $data->save();
-        return redirect()->back()->with('message', 'Slider Added Successfully');
+                    $image = $request->file('image');
+                    $image_name = uniqid() . '.' . $image->extension();
+                    $thumbnailFilePath = public_path('/slider_image/thumbnail');
+                    $img = Image::make($image->path());
+                    $img->resize(150, 150, function ($const) {
+                        $const->aspectRatio();
+                    })->save($thumbnailFilePath . '/' . $image_name);
+                    $ImageFilePath = public_path('/slider_image/');
+                    $image->move($ImageFilePath, $image_name);
+                }
+                $data = new Slider();
+                $data->image = $image_name;
+                $data->save();
+
+                return redirect()->back()->with('message', 'Slider Added Successfully');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Something went wrong');
+            }
+        }
     }
 
     /**
@@ -82,7 +95,7 @@ class SliderController extends Controller
     public function edit($id)
     {
         $data = Slider::findOrFail($id);
-        return view('admin.edit_slider', compact('data'));
+        return view('admin.slider.edit_slider', compact('data'));
     }
 
     /**
@@ -94,19 +107,49 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Slider::findOrFail($id);
-        if ($request->hasfile('image')) {
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('slider_image', $filename);
-            $data->image = $filename;
+        $validator = Validator::make($request->all(), [
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        if ($validator->fails()) {
+            return  redirect('admin/slider/edit/' . $id)->with('error', $validator->errors());
         } else {
-            // return $request;
-            $data->image = $request->img_slider;
+            try {
+                $data = Slider::findOrFail($id);
+                if ($request->hasfile('image')) {
+                    $file_path = public_path('slider_image') . '/' . $data->image;
+                    $file_path_thumb = public_path('slider_image/thumbnail') . '/' . $data->image;
+                    if (File::exists($file_path)) {
+                        File::delete($file_path); //for deleting only file try this
+
+                    }
+                    if (File::exists($file_path_thumb)) {
+                        File::delete($file_path_thumb); //for deleting only file try this
+
+                    }
+
+                    $image = $request->file('image');
+                    $image_name = uniqid() . '.' . $image->extension();
+                    $thumbnailFilePath = public_path('/slider_image/thumbnail');
+                    $img = Image::make($image->path());
+                    $img->resize(150, 150, function ($const) {
+                        $const->aspectRatio();
+                    })->save($thumbnailFilePath . '/' . $image_name);
+                    $ImageFilePath = public_path('/slider_image/');
+                    $image->move($ImageFilePath, $image_name);
+                    $data->image = $image_name;
+                } else {
+
+                    $data->image = $request->img_slider;
+                }
+
+
+                $data->save();
+
+                return redirect('/admin/slider')->with('message', 'Slider Updated Successfully');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Something went wrong');
+            }
         }
-        $data->save();
-        return redirect('/admin/slider')->with('message', 'Slider Updated Successfully');
     }
 
     /**
@@ -118,6 +161,16 @@ class SliderController extends Controller
     public function destroy($id)
     {
         $del = Slider::findOrFail($id);
+        $file_path = public_path('slider_image') . '/' . $del->image;
+        $file_path_thumb = public_path('slider_image/thumbnail') . '/' . $del->image;
+        if (File::exists($file_path)) {
+            File::delete($file_path); //for deleting only file try this
+
+        }
+        if (File::exists($file_path_thumb)) {
+            File::delete($file_path_thumb); //for deleting only file try this
+
+        }
         $del->delete();
         return redirect()->back();
     }

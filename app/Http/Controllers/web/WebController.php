@@ -87,7 +87,8 @@ class WebController extends Controller
     }
     function shoping()
     {
-        return view('web.shoping');
+        $main_category = DB::table('main_category')->get();
+        return view('web.shoping', compact('main_category'));
     }
     function wallet()
     {

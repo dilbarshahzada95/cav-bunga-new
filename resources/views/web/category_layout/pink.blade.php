@@ -4,18 +4,16 @@
             <div class="col-md-6">
                 <div class="cavabunga__product__decription" data-aos="fade-right" data-aos-duration="1000">
                     <div class="pattern__rounded"></div>
-                    <h6 class="text-pink">men’s vanity kits</h6>
-                    <h2>all the essentials available on the go</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus optio eaque explicabo
-                        libero, quam voluptas cumque earum vitae, ipsa maiores doloribus sit perferendis.
-                        Atque natus amet, beatae sint fugit ipsam.</p>
+                    <h6 class="text-pink">{{ $categorylist['sub_category_name'] }}</h6>
+                    <h2>{{ $categorylist['sub_category_title'] }}</h2>
+                    <p>{{ $categorylist['sub_category_description'] }}</p>
                     <a href="{{ url('shoping') }}" class="btn-theme btn-black">Explore Now</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="rectangle__height"></div>
                 <div class="product__image" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="{{ asset('web/assets/img/products/mens-kit.png') }}" alt="">
+                    <img src="{{ asset('category_image/' . $categorylist['sub_category_image']) }}" alt="">
                 </div>
             </div>
         </div>

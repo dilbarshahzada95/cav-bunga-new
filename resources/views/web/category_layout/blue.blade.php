@@ -16,8 +16,9 @@
             <div class="col-md-6">
                 <div class="product__image" data-aos="fade-right" data-aos-duration="1000">
                     <div class="pattern__round"></div>
-                    <img src="{{ asset('/' . $categorylist['sub_category_image']) }}" alt="">
-                    <img class="shadow-img" src="{{ asset('/' . $categorylist['sub_category_image']) }}" alt="">
+                    <img src="{{ asset('category_image/' . $categorylist['sub_category_image']) }}" alt="">
+                    <img class="shadow-img"
+                        src="{{ asset('category_image/' . $categorylist['sub_category_image']) }}" alt="">
                 </div>
             </div>
         </div>

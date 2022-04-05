@@ -17,20 +17,20 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $parent_category=DB::table('main_category')
-                         ->select('main_category.*')
-                         ->get();
+        $parent_category = DB::table('main_category')
+            ->select('main_category.*')
+            ->get();
 
-        $layout=DB::table('layouts')
-                         ->select('layouts.*')
-                         ->get();
+        $layout = DB::table('layouts')
+            ->select('layouts.*')
+            ->get();
 
-        $result=Category::select('sub_category.*','main_category.category_name','layouts.layout_name')
-                          ->leftjoin('main_category','sub_category.parent_category_id','=','main_category.id')
-                          ->leftjoin('layouts','sub_category.layout_id','=','layouts.id')
-                          ->get();
-                          // print_r($data[0]['category_name']);exit();
-        return view('admin.category.category',compact('parent_category','layout','result'));
+        $result = Category::select('sub_category.*', 'main_category.category_name', 'layouts.layout_name')
+            ->leftjoin('main_category', 'sub_category.parent_category_id', '=', 'main_category.id')
+            ->leftjoin('layouts', 'sub_category.layout_id', '=', 'layouts.id')
+            ->get();
+        // print_r($data[0]['category_name']);exit();
+        return view('admin.category.category', compact('parent_category', 'layout', 'result'));
     }
 
     /**
@@ -51,27 +51,27 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-             $data = new Category;
-             $data->parent_category_id=$request->parent_category_id;
-             $data->sub_category_name=$request->sub_category_name;
-             $data->layout_id=$request->layout_id;
-             if($request->hasfile('sub_category_image'))
-        {
-            $file=$request->file('sub_category_image');
 
-            $extension=$file->getClientOriginalExtension();
-            $filename=time().'.'.$extension;
-            $file->move('category_image',$filename);
-            $data->sub_category_image=$filename;    
-        }
-        else{
-            return $request;
-            $data->$sub_category_image='';
-        }
-             $data->sub_category_title=$request->sub_category_title;
-             $data->sub_category_description=$request->sub_category_description;
-             $data->save();
-             return redirect()->back()->with('message', 'Category Added Successfully');
+        $data = new Category;
+        $data->parent_category_id = $request->parent_category_id;
+        $data->sub_category_name = $request->sub_category_name;
+        $data->layout_id = $request->layout_id;
+        // if ($request->hasfile('sub_category_image')) {
+        //     $file = $request->file('sub_category_image');
+
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time() . '.' . $extension;
+        //     $file->move('category_image', $filename);
+        //     $data->sub_category_image = $filename;
+        // } else {
+        //     return $request;
+        //     $data->$sub_category_image = '';
+        // }
+        $data->sub_category_title = $request->sub_category_title;
+        $data->sub_category_description = $request->sub_category_description;
+
+        $data->save();
+        return redirect()->back()->with('message', 'Category Added Successfully');
     }
 
     /**
@@ -93,15 +93,15 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $parent_category=DB::table('main_category')
-                         ->select('main_category.*')
-                         ->get();
+        $parent_category = DB::table('main_category')
+            ->select('main_category.*')
+            ->get();
 
-        $layout=DB::table('layouts')
-                         ->select('layouts.*')
-                         ->get();
+        $layout = DB::table('layouts')
+            ->select('layouts.*')
+            ->get();
         $data = Category::findOrFail($id);
-        return view('admin.category.edit_category',compact('data','parent_category','layout'));
+        return view('admin.category.edit_category', compact('data', 'parent_category', 'layout'));
     }
 
     /**
@@ -113,26 +113,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data =Category::findOrFail($id);
-             $data->parent_category_id=$request->parent_category_id;
-             $data->sub_category_name=$request->sub_category_name;
-             $data->layout_id=$request->layout_id;
-             if($request->hasfile('sub_category_image'))
-        {
-            $file=$request->file('sub_category_image');
-            $extension=$file->getClientOriginalExtension();
-            $filename=time().'.'.$extension;
-            $file->move('category_image',$filename);
-            $data->sub_category_image=$filename;    
-        }
-           else{
+        $data = Category::findOrFail($id);
+        $data->parent_category_id = $request->parent_category_id;
+        $data->sub_category_name = $request->sub_category_name;
+        $data->layout_id = $request->layout_id;
+        if ($request->hasfile('sub_category_image')) {
+            $file = $request->file('sub_category_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('category_image', $filename);
+            $data->sub_category_image = $filename;
+        } else {
             // return $request;
-           $data->sub_category_image=$request->img_cat;
+            $data->sub_category_image = $request->img_cat;
         }
-            $data->sub_category_title=$request->sub_category_title;
-            $data->sub_category_description=$request->sub_category_description;
-            $data->save();
-            return redirect('/admin/category')->with('message', 'Category Updated Successfully');
+        $data->sub_category_title = $request->sub_category_title;
+        $data->sub_category_description = $request->sub_category_description;
+        $data->save();
+        return redirect('/admin/category')->with('message', 'Category Updated Successfully');
     }
 
     /**
@@ -143,8 +141,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-         $del=Category::findOrFail($id);
-         $del->delete();
-         return redirect()->back();
+        $del = Category::findOrFail($id);
+        $del->delete();
+        return redirect()->back();
     }
 }
