@@ -169,7 +169,7 @@
                                                             <td>{{$response->purchase_price}}</td>
                                                             <td>
                                                             <a href="{{route('admin/purchase/delete',$response->id)}}" class="productDelete"><i class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            <a href=""><i class="fa fa-edit"></i></a>
+                                                            <a href="{{ url('/admin/purchase/edit', $response->id) }}"><i class="fa fa-edit"></i></a>
                                                              </td>
                                                         </tr>
                                                        @endforeach

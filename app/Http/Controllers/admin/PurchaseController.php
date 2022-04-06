@@ -94,7 +94,15 @@ class PurchaseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=DB::table('product')
+                         ->select('product.*')
+                         ->get();
+        $supplier=DB::table('supplier')
+                         ->select('supplier.*')
+                         ->get();
+
+        $data=purchase::findOrFail($id);
+        return view('admin.purchase.edit_purchase',compact('data','supplier','product'));                
     }
 
     /**
@@ -106,7 +114,29 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+             $data =Purchase::findOrFail($id);
+             $data->product_id=$request->product_id;
+             $data->supplier_id=$request->supplier_id;
+             $data->transaction_date=$request->transaction_date;
+             $data->qty=$request->qty;
+             $data->purchase_price=$request->purchase_price;
+             $data->save();
+
+        $check_atleast_one_exist=DB::table('product_stock_details')->select('id','qty')->where('product_id',$request->product_id)->first();
+
+       if (empty($check_atleast_one_exist)) {
+          $insert=  DB::table('product_stock_details')->insert([
+                'product_id' => $request->product_id,
+                'qty'=>$request->qty
+            ]);
+       }else{
+        $update= DB::table('product_stock_details')->where('product_id',$request->product_id)->update([
+                'qty'=>$request->qty+$check_atleast_one_exist->qty
+            ]);
+       }
+            
+             return redirect('admin/purchase')->with('message', 'Purchase Updated Successfully');
     }
 
     /**
