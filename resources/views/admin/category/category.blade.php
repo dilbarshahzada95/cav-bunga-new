@@ -49,7 +49,7 @@
                                     <div class="row gy-4 col-md-12">
 
                                         <!--end col-->
-                                        <div class="col-md-6">
+                                        <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="ForminputState" class="form-label">Parent Category</label>
                                                 <select id="ForminputState" class="form-select" data-choices
@@ -64,38 +64,28 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-xxl-3 col-md-6">
+                                        <div class="col-md-2">
                                             <div>
                                                 <label for="placeholderInput" class="form-label">Category Name</label>
                                                 <input type="text" name="sub_category_name" class="form-control"
                                                     placeholder="Category Name">
                                             </div>
                                         </div>
-                                        <div class="col-xxl-3 col-md-6">
+                                        <div class=" col-md-2">
                                             <div>
                                                 <label for="labelInput" class="form-label">Image</label>
                                                 <input type="file" name="sub_category_image" class="form-control">
                                             </div>
                                         </div>
 
-                                        <div class="col-xxl-3 col-md-6">
+                                        <div class="col-md-3">
                                             <div>
                                                 <label for="labelInput" class="form-label">Title</label>
                                                 <input type="text" name="sub_category_title" class="form-control"
                                                     id="labelInput" placeholder="Title">
                                             </div>
                                         </div>
-
-                                        <div class="col-xxl-3 col-md-6">
-                                            <div>
-                                                <label for="exampleFormControlTextarea5" class="form-label">Description
-                                                </label>
-                                                <textarea class="form-control" name="sub_category_description" id="exampleFormControlTextarea5"
-                                                    placeholder="Description" rows="3"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="mb-3">
                                                 <label for="ForminputState" class="form-label">Layout</label>
                                                 <select id="ForminputState" name="layout_id" class="form-select"
@@ -109,6 +99,16 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-12">
+                                            <div>
+                                                <label for="exampleFormControlTextarea5" class="form-label">Description
+                                                </label>
+                                                <textarea class="form-control" name="sub_category_description" id="exampleFormControlTextarea5"
+                                                    placeholder="Description" rows="3"></textarea>
+                                            </div>
+                                        </div>
+
 
 
 
