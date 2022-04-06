@@ -94,20 +94,22 @@
                                     <h2>categories</h2>
                                 </div>
                                 <ul class="nav nav-tabs product-description-tab-menu" id="myTab" role="tablist">
-                                    @foreach ($main_category as $main_cat)
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
-                                                data-bs-target="#{{ $main_cat->category_name }}" type="button"
-                                                role="tab" aria-controls="{{ $main_cat->category_name }}"
-                                                aria-selected="true">{{ $main_cat->category_name }}</button>
-                                        </li>
-                                    @endforeach
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
+                                            data-bs-target="#cavabunga__shop__men" type="button" role="tab"
+                                            aria-controls="cavabunga__shop__men" aria-selected="true">Men</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
+                                            data-bs-target="#cavabunga__shop__women" type="button" role="tab"
+                                            aria-controls="cavabunga__shop__women" aria-selected="false">Women</button>
+                                    </li>
 
                                 </ul>
                                 <div class="tab-content product-description-tab-content" id="myTabContent">
                                     <div class="left__pattern"></div>
-                                    <div class="tab-pane fade show active" id="{{ $main_cat->category_name }}"
-                                        role="tabpanel" aria-labelledby="product-desc-tab">
+                                    <div class="tab-pane fade show active" id="cavabunga__shop__men" role="tabpanel"
+                                        aria-labelledby="product-desc-tab">
                                         <div class="product-area product-description-review-area pt-0 cavabunga__inner">
                                             <div class="container">
                                                 <div class="row">
@@ -117,103 +119,21 @@
                                                                 <div class="col-md-5">
                                                                     <ul class="nav nav-tabs product-description-tab-menu"
                                                                         id="myTab1" role="tablist">
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link active"
-                                                                                id="product-desc-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__Businesscard"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__men"
-                                                                                aria-selected="true">
-                                                                                Wallets</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link active"
-                                                                                id="product-desc-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__Businesscard"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__men"
-                                                                                aria-selected="true">Business card
-                                                                                holders</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__Vanitykits"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Vanity
-                                                                                kits</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#Backpacks"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Bagpacks</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#Travel__Organizers"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Travel
-                                                                                Organizers</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__Shoes"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Shoes</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__Shoes"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">Sunglass
-                                                                                Cases</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__collections"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">
-                                                                                Cigar Case</button>
-                                                                        </li>
-                                                                        <li class="nav-item" role="presentation">
-                                                                            <button onclick="ChnageColor()"
-                                                                                class="nav-link"
-                                                                                id="product-review-tab"
-                                                                                data-bs-toggle="tab"
-                                                                                data-bs-target="#cavabunga__collections"
-                                                                                type="button" role="tab"
-                                                                                aria-controls="cavabunga__shop__women"
-                                                                                aria-selected="false">
-                                                                                Cocktail bar Case</button>
-                                                                        </li>
+                                                                        @foreach ($men_category as $men_cat)
+                                                                            <li class="nav-item"
+                                                                                role="presentation">
+                                                                                <button
+                                                                                    onclick="ChnageColor();getValue({{ $men_cat->parent_category_id }}, {{ $men_cat->id }})"
+                                                                                    class="nav-link active"
+                                                                                    id="product-desc-tab"
+                                                                                    data-bs-toggle="tab"
+                                                                                    data-bs-target="#cavabunga__Businesscard"
+                                                                                    type="button" role="tab"
+                                                                                    aria-controls="cavabunga__shop__men"
+                                                                                    aria-selected="true">
+                                                                                    {{ $men_cat->sub_category_name }}</button>
+                                                                            </li>
+                                                                        @endforeach
                                                                     </ul>
                                                                 </div>
                                                                 <div class="col-md-7 tab-content product-description-tab-content"
@@ -278,75 +198,20 @@
                                                                     <div class="col-md-5">
                                                                         <ul class="nav nav-tabs product-description-tab-menu"
                                                                             id="myTab1" role="tablist">
-
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link active"
-                                                                                    id="product-desc-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#cavabunga__Businesscard1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__men"
-                                                                                    aria-selected="true">Business card
-                                                                                    holders</button>
-                                                                            </li>
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link"
-                                                                                    id="product-review-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#Backpacks1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Bagpacks</button>
-                                                                            </li>
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link"
-                                                                                    id="product-review-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#Backpacks1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Hand
-                                                                                    Bags</button>
-                                                                            </li>
-
-
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link"
-                                                                                    id="product-review-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#Travel__Organizers1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Travel
-                                                                                    Organizers</button>
-                                                                            </li>
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link"
-                                                                                    id="product-review-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#cavabunga__Shoes1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Shoes</button>
-                                                                            </li>
-
-
-                                                                            <li class="nav-item"
-                                                                                role="presentation">
-                                                                                <button class="nav-link"
-                                                                                    id="product-review-tab"
-                                                                                    data-bs-toggle="tab"
-                                                                                    data-bs-target="#cavabunga__collections1"
-                                                                                    type="button" role="tab"
-                                                                                    aria-controls="cavabunga__shop__women"
-                                                                                    aria-selected="false">Sunglass
-                                                                                    Cases</button>
-                                                                            </li>
+                                                                            @foreach ($woman_category as $woman_cat)
+                                                                                <li class="nav-item"
+                                                                                    role="presentation">
+                                                                                    <button class="nav-link active"
+                                                                                        onclick="getValue({{ $woman_cat->parent_category_id }}, {{ $woman_cat->id }})"
+                                                                                        id="product-desc-tab"
+                                                                                        data-bs-toggle="tab"
+                                                                                        data-bs-target="#cavabunga__Businesscard1"
+                                                                                        type="button" role="tab"
+                                                                                        aria-controls="cavabunga__shop__men"
+                                                                                        aria-selected="true">{{ $woman_cat->sub_category_name }}
+                                                                                    </button>
+                                                                                </li>
+                                                                            @endforeach
                                                                         </ul>
                                                                     </div>
                                                                     <div class="col-md-7 tab-content product-description-tab-content"
@@ -465,6 +330,10 @@
                 $(this).toggleClass('newbg');
             });
         };
+
+        function getValue(pid, id) {
+
+        }
     </script>
 
 

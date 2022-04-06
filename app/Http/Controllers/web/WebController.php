@@ -88,7 +88,9 @@ class WebController extends Controller
     function shoping()
     {
         $main_category = DB::table('main_category')->get();
-        return view('web.shoping', compact('main_category'));
+        $men_category = Category::where('parent_category_id', '=', 1)->get();
+        $woman_category = Category::where('parent_category_id', '=', 2)->get();
+        return view('web.shoping', compact('main_category', 'men_category', 'woman_category'));
     }
     function wallet()
     {

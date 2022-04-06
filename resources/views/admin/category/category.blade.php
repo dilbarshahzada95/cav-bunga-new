@@ -46,7 +46,7 @@
                                     enctype="multipart/form-data">
 
                                     {{ csrf_field() }}
-                                    <div class="row gy-4">
+                                    <div class="row gy-4 col-md-12">
 
                                         <!--end col-->
                                         <div class="col-md-6">
