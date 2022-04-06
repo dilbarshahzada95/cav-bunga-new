@@ -105,13 +105,13 @@
                                         <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__men" type="button" role="tab"
                                             aria-controls="cavabunga__shop__men" aria-selected="true"
-                                            onclick="getMaincat({{ $men_category[0]->parent_category_id }})">Men</button>
+                                            onclick="getMaincat({{ $men_category[0]->id }})">Men</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__women" type="button" role="tab"
                                             aria-controls="cavabunga__shop__women" aria-selected="false"
-                                            onclick="getMaincat({{ $woman_category[0]->parent_category_id }})">Women</button>
+                                            onclick="getMaincat({{ $woman_category[0]->id }})">Women</button>
                                     </li>
 
                                 </ul>
@@ -146,9 +146,9 @@
                                                                     </ul>
                                                                 </div>
                                                                 <input type="hidden" id="men_default"
-                                                                    value="{{ $men_category[0]->parent_category_id }}">
+                                                                    value="{{ $men_category[0]->id }}">
                                                                 <input type="hidden" id="woman_default"
-                                                                    value="{{ $woman_category[0]->parent_category_id }}">
+                                                                    value="{{ $woman_category[0]->id }}">
                                                                 <div class="col-md-7 tab-content product-description-tab-content"
                                                                     id="myTabContent1">
                                                                     <div class="tab-pane fade show active"
@@ -339,8 +339,8 @@
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
     <script>
         $(document).ready(function() {
-
-            getMaincat();
+            var id = $('#men_default').val();
+            getMaincat(id);
         });
 
         function ChnageColor(val) {
