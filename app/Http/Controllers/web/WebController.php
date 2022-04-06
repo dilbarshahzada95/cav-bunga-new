@@ -92,9 +92,10 @@ class WebController extends Controller
         $woman_category = Category::where('parent_category_id', '=', 2)->get();
         return view('web.shoping', compact('main_category', 'men_category', 'woman_category'));
     }
-    function wallet()
+    function wallet($id)
     {
-        return view('web.wallet');
+        $category = Category::find($id);
+        return view('web.wallet', compact('category'));
     }
     function sideCart()
     {

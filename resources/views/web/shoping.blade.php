@@ -104,12 +104,14 @@
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__men" type="button" role="tab"
-                                            aria-controls="cavabunga__shop__men" aria-selected="true">Men</button>
+                                            aria-controls="cavabunga__shop__men" aria-selected="true"
+                                            onclick="getMaincat({{ $men_category[0]->parent_category_id }})">Men</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__women" type="button" role="tab"
-                                            aria-controls="cavabunga__shop__women" aria-selected="false">Women</button>
+                                            aria-controls="cavabunga__shop__women" aria-selected="false"
+                                            onclick="getMaincat({{ $woman_category[0]->parent_category_id }})">Women</button>
                                     </li>
 
                                 </ul>
@@ -143,6 +145,10 @@
                                                                         @endforeach
                                                                     </ul>
                                                                 </div>
+                                                                <input type="hidden" id="men_default"
+                                                                    value="{{ $men_category[0]->parent_category_id }}">
+                                                                <input type="hidden" id="woman_default"
+                                                                    value="{{ $woman_category[0]->parent_category_id }}">
                                                                 <div class="col-md-7 tab-content product-description-tab-content"
                                                                     id="myTabContent1">
                                                                     <div class="tab-pane fade show active"
@@ -332,14 +338,12 @@
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
     <script>
-        // $(document).ready(function() {
+        $(document).ready(function() {
 
-        //     ChnageColor(val);
-
-        // });
+            getMaincat();
+        });
 
         function ChnageColor(val) {
-            alert(val);
             if (val == 1) {
                 $('.cavabunga__shop__section').click(function() {
                     $(this).toggleClass('newbg1');
@@ -361,7 +365,15 @@
         };
 
         function getValue(pid, id) {
+            var url = "{{ url('filter/wallet/') }}" + '/' + id;
 
+            $('.gotoshop').find('a').html('<a href="' + url + '">Go to shop</a>');
+        }
+
+        function getMaincat(id) {
+            var url = "{{ url('filter/wallet/') }}" + '/' + id;
+
+            $('.gotoshop').find('a').html('<a href="' + url + '">Go to shop</a>');
         }
     </script>
 

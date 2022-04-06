@@ -75,7 +75,7 @@
                 <div class="container">
                     <div class="wallet__width">
                         <div class="title">
-                            <h2>Bussiness Card Holder</h2>
+                            <h2>{{ $category->sub_category_name }}</h2>
                         </div>
                         <div class="row">
                             <div class="inner-left-padding">

@@ -40,7 +40,7 @@ Route::get('/cart', [App\Http\Controllers\web\WebController::class, 'cart'])->na
 Route::get('/details-page', [App\Http\Controllers\web\WebController::class, 'detailsPage'])->name('details-page');
 Route::get('/affliated_programs', [App\Http\Controllers\web\WebController::class, 'affliated_programs'])->name('affliated_programs');
 Route::get('/shoping', [App\Http\Controllers\web\WebController::class, 'shoping'])->name('shoping');
-Route::get('/wallet', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('wallet');
+Route::get('/filter/wallet/{id}', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('filter/wallet');
 Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCart'])->name('sideCart');
 Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
 Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partners'])->name('partners');
