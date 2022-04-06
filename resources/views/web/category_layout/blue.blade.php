@@ -32,7 +32,7 @@
                 </div>
                 <div class="cavabunga__goto__arrow">
                     <div class="icon">
-                        <h4><a href="{{ url('wallet') }}">go to shop</a></h4>
+                        <h4><a href="{{ url('filter/wallet/' . $categorylist->id) }}">go to shop</a></h4>
                         <img src="{{ asset('web/assets/img/pattern/shop-arrow.png') }}" alt="">
 
                     </div>
