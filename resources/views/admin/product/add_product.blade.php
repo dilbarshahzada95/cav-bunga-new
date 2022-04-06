@@ -30,69 +30,149 @@
                                     <h4 class="card-title mb-0 flex-grow-1">Product</h4>
                                  
                                 </div><!-- end card header -->
-                                <div class="card-body">
-                                    <div class="live-preview">
-                                        <div class="row gy-4">
-                                           
-                                          
-                                            <!--end col-->
-                                            <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="placeholderInput" class="form-label">Category Name</label>
-                                                    <input type="text" class="form-control" id="placeholderInput"
-                                                        placeholder="Placeholder">
-                                                </div>
-                                            </div>
-                                             <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="labelInput" class="form-label">Image</label>
-                                                    <input type="file" class="form-control" id="labelInput">
-                                                </div>
-                                            </div>
-
-                                               <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="labelInput" class="form-label">Layout</label>
-                                                    <input type="text" class="form-control" id="labelInput">
-                                                </div>
-                                            </div>
-
-                                             <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="labelInput" class="form-label">Title</label>
-                                                    <input type="text" class="form-control" id="labelInput">
-                                                </div>
-                                            </div>
-
-                                               <div class="col-xxl-3 col-md-6">
-                                                <div>
-                                                    <label for="exampleFormControlTextarea5" class="form-label">Description
-                                                        </label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                        rows="3"></textarea>
-                                                </div>
-                                            </div>
-
-                                             <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label for="ForminputState" class="form-label">Parent Category</label>
-                                                            <select id="ForminputState" class="form-select" data-choices data-choices-sorting="true" >
-                                                                <option selected>Choose...</option>
-                                                                <option>...</option>
-                                                            </select>
-                                                        </div>
+                                <div class="card">
+                                        <div class="card-header">
+                                            <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#addproduct-general-info"
+                                                        role="tab">
+                                                        General Info
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#addproduct-metadata"
+                                                        role="tab">
+                                                        Advanced
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- end card header -->
+                                        <div class="card-body">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="addproduct-general-info" role="tabpanel">
+                                                    <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Product Name</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Product Name">
                                                     </div>
 
-                                             <div class="col-lg-12">
-                                                        <div class="text-end">
-                                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                                        </div>
+                                                        <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">product category</label>
+                                                        <select id="ForminputState" name="layout_id" class="form-select"
+                                                    data-choices data-choices-sorting="true">
+                                                    <option selected>Choose...</option>
+                                                   <option>acdef</option>
+                                                   </select>
                                                     </div>
-                                          
-                                      </div>
+                                                                   <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Slogan</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Slogan">
+                                                    </div>
+
+
+                                                     <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">sku</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="sku">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Tags</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Tags">
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Volume</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Tags">
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Weight</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Tags">
+                                                    </div>
+
+                                                       <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">layout</label>
+                                                        <select id="ForminputState" name="layout_id" class="form-select"
+                                                    data-choices data-choices-sorting="true">
+                                                    <option selected>Choose...</option>
+                                                   <option>acdef</option>
+                                                   </select>
+                                                    </div>
+                                                       
+                                                     <div class="col-md-12" >
+                                                        <label class="form-label" for="meta-description-input">Product Description</label>
+                                                        <textarea class="form-control" id="meta-description-input" placeholder="Product Description" rows="4"></textarea>
+                                                    </div>
+
+                                                    
+                                                     <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Price</label>
+                                                        <input type="text" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Price">
+                                                    </div>
+                                                   
+                                                     <div class="col-md-3">
+                                                        <label class="form-label" for="manufacturer-name-input">Product gallery</label>
+                                                        <input type="file" class="form-control" id="manufacturer-name-input"
+                                                            placeholder="Image">
+                                                    </div>
+
+                                             </div>
+                                      
+                                                    <!-- end row -->
+                                                </div>
+                                                <!-- end tab-pane -->
+
+                                                <div class="tab-pane" id="addproduct-metadata" role="tabpanel">
+                                                        <div class="row">
+        <div class="card-body">
+                                        <label for="SelectImage">featured product data</label>
+                                        <div class="row" x-data="handler()">
+                                            <table class="table table-bordered table-striped" id="vehicle_table">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Sl No</th>
+                                                        <th>Title</th>
+                                                        <th>Description</th>
+                                                        <th>Image</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="8" class="text-right"><button type="button"
+                                                                class="btn btn-info" onclick="addNewField(1)"><i
+                                                                    class="las la-plus"></i> Add Data</button>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+
                                     </div>
 
-                                </div>
+
+                                                  
+
+                                             </div>
+                                                    <!-- end row -->
+
+                                                <!-- end tab pane -->
+                                            </div>
+                                            <!-- end tab content -->
+                                        </div>
+                                        <!-- end card body -->
+                                    </div>
                             </div>
                         </div>
                         <!--end col-->
