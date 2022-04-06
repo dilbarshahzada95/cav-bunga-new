@@ -53,8 +53,15 @@
         }
 
         .newbg1 {
-            background: linear-gradient(317deg, #41586E 0%, #8A96A1 100%);
+            background: linear-gradient(to right, #DED1CC, #C4A498);
+            background-size: cover;
+            width: 100%;
+            position: relative;
         }
+
+        /* .newbg1 {
+            background: linear-gradient(317deg, #41586E 0%, #8A96A1 100%);
+        } */
 
     </style>
 </head>
@@ -123,7 +130,7 @@
                                                                             <li class="nav-item"
                                                                                 role="presentation">
                                                                                 <button
-                                                                                    onclick="ChnageColor();getValue({{ $men_cat->parent_category_id }}, {{ $men_cat->id }})"
+                                                                                    onclick="ChnageColor({{ $men_cat->layout_id }});getValue({{ $men_cat->parent_category_id }}, {{ $men_cat->id }})"
                                                                                     class="nav-link active"
                                                                                     id="product-desc-tab"
                                                                                     data-bs-toggle="tab"
@@ -202,7 +209,7 @@
                                                                                 <li class="nav-item"
                                                                                     role="presentation">
                                                                                     <button class="nav-link active"
-                                                                                        onclick="getValue({{ $woman_cat->parent_category_id }}, {{ $woman_cat->id }})"
+                                                                                        onclick="ChnageColor({{ $woman_cat->layout_id }});getValue({{ $woman_cat->parent_category_id }}, {{ $woman_cat->id }})"
                                                                                         id="product-desc-tab"
                                                                                         data-bs-toggle="tab"
                                                                                         data-bs-target="#cavabunga__Businesscard1"
@@ -325,10 +332,32 @@
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
     <script>
-        function ChnageColor() {
-            $('.cavabunga__shop__section').click(function() {
-                $(this).toggleClass('newbg');
-            });
+        // $(document).ready(function() {
+
+        //     ChnageColor(val);
+
+        // });
+
+        function ChnageColor(val) {
+            alert(val);
+            if (val == 1) {
+                $('.cavabunga__shop__section').click(function() {
+                    $(this).toggleClass('newbg1');
+                });
+            } else if (val == 2) {
+                $('.cavabunga__shop__section').click(function() {
+                    $(this).toggleClass('newbg');
+                });
+            } else if (val == 3) {
+                $('.cavabunga__shop__section').click(function() {
+
+                });
+            } else {
+                $('.cavabunga__shop__section').click(function() {
+                    $(this).toggleClass('newbg');
+                });
+            }
+
         };
 
         function getValue(pid, id) {
