@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SupplierTableSeeder::class,
             CategoryTableSeeder::class,
             LayoutSeeder::class,
+            OrderStatusSeeder::class,
         ]);
     }
 }

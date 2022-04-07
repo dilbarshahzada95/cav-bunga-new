@@ -41,36 +41,27 @@
                                                             <th class="sort" data-sort="status">Sale Amount</th>
                                                             <th class="sort" data-sort="status">Sale Type</th>
                                                             <th class="sort" data-sort="status">Status</th>
-                                                            <th class="sort" data-sort="action">Action</th>
+                                                           
                                                             </tr>
                                                     </thead>
                                                     <tbody class="list form-check-all">
+                                                        @foreach($order as $response)
                                                         <tr>
                                                             <td>1</td>
-                                                            <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                            <td class="customer_name">Mary Cousar</td>
-                                                            <td class="email">marycousar@velzon.com</td>
+                                                            <td >5</td>
+                                                            <td > {{$response->order_date}}</td>
+                                                            <td >{{$response->order_status_id}}</td>
+                                                            <td >{{$response->name}}</td>
+                                                            <td >06 Apr, 2021</td>
+                                                            <td ></td>
+                                                            <td ><li></li></td>
+                                                            <td class="phone">{{$response->order_price}}</td>
+                                                            <td class="phone">{{$response->payment_type}}</td>
                                                             <td class="phone">580-464-4694</td>
-                                                            <td class="date">06 Apr, 2021</td>
-                                                            <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
-                                                            <td class="phone">580-464-4694</td>
-                                                            <td class="phone">580-464-4694</td>
-                                                            <td class="phone">580-464-4694</td>
-                                                            <td class="phone">580-464-4694</td>
-                                                            <td class="phone">580-464-4694</td>
-                                                            <td>
-                                                                <div class="d-flex gap-2">
-                                                                    <div class="edit">
-                                                                        <button class="btn btn-sm btn-success edit-item-btn"
-                                                                        data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
-                                                                    </div>
-                                                                    <div class="remove">
-                                                                        <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
+                                                            
+                                                            
                                                         </tr>
-                              
+                              @endforeach
                                             
                                                         
                                                         

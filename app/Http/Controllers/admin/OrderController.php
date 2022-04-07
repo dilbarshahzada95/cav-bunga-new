@@ -4,6 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Models\CustomerDetails;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -14,7 +17,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('admin.order.order');
+
+        $order=Order::select('order.*', 'customer_details.name')
+            ->leftjoin('customer_details', 'order.customer_id', '=', 'customer_details.id')
+            
+            ->get();
+        return view('admin.order.order',compact('order'));
     }
 
     /**
