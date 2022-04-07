@@ -76,14 +76,14 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Product
                                                         Name</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="product_name" value="{{old('product_name')}}"  class="form-control" id="manufacturer-name-input"
                                                         placeholder="Product Name">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">product
                                                         category</label>
-                                                    <select id="ForminputState" name="layout_id" class="form-select"
+                                                    <select id="ForminputState" name="product_category_id" value="{{old('product_category_id')}}" class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option selected>Choose...</option>
                                                         <option>acdef</option>
@@ -92,41 +92,41 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Slogan</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="slogan"  value="{{old('slogan')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Slogan">
                                                 </div>
 
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">sku</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="sku" value="{{old('sku')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="sku">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Tags</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="tags" value="{{old('tags')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="volume" value="{{old('volume')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Weight</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="wieght" value="{{old('wieght')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">layout</label>
-                                                    <select id="ForminputState" name="layout_id" class="form-select"
+                                                    <select id="ForminputState" name="layout_id" value="{{old('layout_id')}}" class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option selected>Choose...</option>
                                                         <option>acdef</option>
@@ -136,21 +136,21 @@
                                                 <div class="col-md-12">
                                                     <label class="form-label" for="meta-description-input">Product
                                                         Description</label>
-                                                    <textarea class="form-control" id="meta-description-input" placeholder="Product Description" rows="4"></textarea>
+                                                    <textarea name="product_description" value="{{old('product_description')}}" class="form-control" id="meta-description-input" placeholder="Product Description" rows="4"></textarea>
                                                 </div>
 
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>
-                                                    <input type="text" class="form-control" id="manufacturer-name-input"
+                                                    <input type="text" name="price" value="{{old('price')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Price">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Product
                                                         gallery</label>
-                                                    <input type="file" class="form-control" id="manufacturer-name-input"
+                                                    <input type="file" name="product_gallery" value="{{old('product_gallery')}}" class="form-control" id="manufacturer-name-input"
                                                         placeholder="Image">
                                                 </div>
 
