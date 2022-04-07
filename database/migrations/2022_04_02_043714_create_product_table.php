@@ -24,7 +24,7 @@ class CreateProductTable extends Migration
             $table->string('wieght')->nullable();
             $table->string('layout_id')->nullable();
             $table->text('product_description')->nullable();
-            $table->string('featured_title')->nullable();
+            $table->string('price')->nullable();
             $table->string('product_gallery')->nullable();
             $table->timestamps();
         });
