@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\ProductFeatured;
 use DB;
-use Image;
+use Intervention\Image\Facades\Image;
 use File;
 use Session;
 use Auth;
@@ -69,14 +69,14 @@ class ProductController extends Controller
         } else {
             try {
                 $data = $request->all();
-                // $featured = array();
-                // $featured = $request->featured;
-                // if (empty($featured)) {
-                //     return redirect('admin/product')->with('error', 'Please select featured ');
-                // }
+                $featured = array();
+                $featured = $request->featured;
+                if (empty($featured)) {
+                    return redirect('admin/product')->with('error', 'Please select featured ');
+                }
                 if ($request->hasfile('product_gallery')) {
                     foreach ($request->file('product_gallery') as $image) {
-                        $image = $request->file('product_gallery');
+
                         $image_name = uniqid() . '.' . $image->extension();
                         $thumbnailFilePath = public_path('/product_image/thumbnail');
                         $img = Image::make($image->path());
@@ -85,33 +85,36 @@ class ProductController extends Controller
                         })->save($thumbnailFilePath . '/' . $image_name);
                         $ImageFilePath = public_path('/product_image/');
                         $image->move($ImageFilePath, $image_name);
-                        $data['product_gallery'] = $image_name;
-                        $insert = Product::create($data);
+                        $images[] = $image_name;
                     }
                 }
+                $data['product_gallery'] = json_encode($images);
+                $insert = Product::create($data);
+                if ($insert && !empty($featured)) {
+                    foreach ($featured as $key => $value) {
+                        $featured_data = array();
+                        $featured_data['product_id'] = $insert->id;
+                        $featured_data['title'] = $value['title'];
+                        $featured_data['description'] = $value['description'];
+                        if ($request->value['image'][$key]) {
+                            if ($request->hasfile('image')) {
 
-                // if ($insert && !empty($featured)) {
-                //     foreach ($featured as $key => $value) {
-                //         $featured_data = array();
-                //         $featured_data['product_id'] = $insert->id;
-                //         $featured_data['title'] = $value['title'];
-                //         $featured_data['description'] = $value['description'];
-                //         if ($request->hasfile('image')) {
+                                $image = $request->file('image');
+                                $image_name = uniqid() . '.' . $image->extension();
+                                $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
+                                $img = Image::make($image->path());
+                                $img->resize(150, 150, function ($const) {
+                                    $const->aspectRatio();
+                                })->save($thumbnailFilePath . '/' . $image_name);
+                                $ImageFilePath = public_path('/featured_product_image/');
+                                $image->move($ImageFilePath, $image_name);
+                            }
+                        }
 
-                //             $image = $request->file('image');
-                //             $image_name = uniqid() . '.' . $image->extension();
-                //             $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
-                //             $img = Image::make($image->path());
-                //             $img->resize(150, 150, function ($const) {
-                //                 $const->aspectRatio();
-                //             })->save($thumbnailFilePath . '/' . $image_name);
-                //             $ImageFilePath = public_path('/featured_product_image/');
-                //             $image->move($ImageFilePath, $image_name);
-                //         }
-                //         $featured_data['image'] = $image_name;
-                //         ProductFeatured::create($featured_data);
-                //     }
-                // }
+                        $featured_data['image'] = $image_name;
+                        ProductFeatured::create($featured_data);
+                    }
+                }
 
 
                 return redirect()->back()->with('message', 'product Added Successfully');
