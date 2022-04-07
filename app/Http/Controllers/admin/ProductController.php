@@ -23,7 +23,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.product.add_product');
+        $layout = DB::table('layouts')
+            ->select('layouts.*')
+            ->get();
+        $category = Category::all();
+        return view('admin.product.add_product', compact('layout', 'category'));
     }
 
     /**
@@ -65,6 +69,11 @@ class ProductController extends Controller
         } else {
             try {
                 $data = $request->all();
+                // $featured = array();
+                // $featured = $request->featured;
+                // if (empty($featured)) {
+                //     return redirect('admin/product')->with('error', 'Please select featured ');
+                // }
                 if ($request->hasfile('product_gallery')) {
                     foreach ($request->file('product_gallery') as $image) {
                         $image = $request->file('product_gallery');
@@ -76,13 +85,36 @@ class ProductController extends Controller
                         })->save($thumbnailFilePath . '/' . $image_name);
                         $ImageFilePath = public_path('/product_image/');
                         $image->move($ImageFilePath, $image_name);
+                        $data['product_gallery'] = $image_name;
+                        $insert = Product::create($data);
                     }
                 }
-                $insert = Product::create($data);
-                if ($insert) {
-                }
 
-                return redirect()->back()->with('message', 'Slider Added Successfully');
+                // if ($insert && !empty($featured)) {
+                //     foreach ($featured as $key => $value) {
+                //         $featured_data = array();
+                //         $featured_data['product_id'] = $insert->id;
+                //         $featured_data['title'] = $value['title'];
+                //         $featured_data['description'] = $value['description'];
+                //         if ($request->hasfile('image')) {
+
+                //             $image = $request->file('image');
+                //             $image_name = uniqid() . '.' . $image->extension();
+                //             $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
+                //             $img = Image::make($image->path());
+                //             $img->resize(150, 150, function ($const) {
+                //                 $const->aspectRatio();
+                //             })->save($thumbnailFilePath . '/' . $image_name);
+                //             $ImageFilePath = public_path('/featured_product_image/');
+                //             $image->move($ImageFilePath, $image_name);
+                //         }
+                //         $featured_data['image'] = $image_name;
+                //         ProductFeatured::create($featured_data);
+                //     }
+                // }
+
+
+                return redirect()->back()->with('message', 'product Added Successfully');
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Something went wrong');
             }

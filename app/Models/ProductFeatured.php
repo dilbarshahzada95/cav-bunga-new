@@ -9,5 +9,5 @@ class ProductFeatured extends Model
 {
     use HasFactory;
     protected $table = 'product_featured';
-    protected $fillaable = ['product_id', 'tile', 'description', 'image'];
+    protected $fillable = ['product_id', 'tile', 'description', 'image'];
 }
