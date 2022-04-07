@@ -13,6 +13,7 @@ use File;
 use Session;
 use Auth;
 use Illuminate\Support\Facades\Validator;
+
 class ProductController extends Controller
 {
     /**
@@ -47,9 +48,20 @@ class ProductController extends Controller
             'product_name' => 'required',
             'product_category_id' => 'required',
             'slogan' => 'required',
+            'tags' => 'required',
+            'volume' => 'required',
+            'wieght' => 'required',
+            'layout_id' => 'required',
+            'product_description' => 'required',
+            'price' => 'required',
+            'product_gallery' => 'required',
+
+
         ]);
         if ($validator->fails()) {
-            return  redirect()->back()->with('error', $validator->errors());
+            return redirect('admin/product')
+                ->withErrors($validator)
+                ->withInput();
         } else {
             try {
                 if ($request->hasfile('image')) {
