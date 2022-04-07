@@ -169,11 +169,15 @@
 
                                         </div>
                                         <!-- end row -->
-
+                                   <div class="col-md-12 pull-right">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
                                         <!-- end tab pane -->
                                     </div>
+
                                     <!-- end tab content -->
                                 </div>
+
                                 <!-- end card body -->
                             </div>
                         </div>
