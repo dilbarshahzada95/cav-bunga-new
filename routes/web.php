@@ -61,6 +61,7 @@ Route::group(['middleware' =>  'isCustomer'], function () {
 Route::group(['middleware' =>  'isAdmin'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
+    Route::post('/admin/product/store', [App\Http\Controllers\admin\ProductController::class, 'store'])->name('admin/product/store');
     // SLIDER
     Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
     Route::post('/admin/slider/insert', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/insert');

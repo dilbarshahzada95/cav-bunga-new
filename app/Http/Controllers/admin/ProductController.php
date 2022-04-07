@@ -4,6 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\ProductFeatured;
+use DB;
+use Image;
+use File;
+use Session;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -35,7 +43,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
