@@ -70,9 +70,9 @@ class PurchaseController extends Controller
                 'qty'=>$request->qty+$check_atleast_one_exist->qty
             ]);
        }
-            
+
              return redirect()->back()->with('message', 'Purchase Added Successfully');
-       
+
     }
 
     /**
@@ -102,7 +102,7 @@ class PurchaseController extends Controller
                          ->get();
 
         $data=purchase::findOrFail($id);
-        return view('admin.purchase.edit_purchase',compact('data','supplier','product'));                
+        return view('admin.purchase.edit_purchase',compact('data','supplier','product'));
     }
 
     /**
@@ -114,7 +114,7 @@ class PurchaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
              $data =Purchase::findOrFail($id);
              $data->product_id=$request->product_id;
              $data->supplier_id=$request->supplier_id;
@@ -131,11 +131,12 @@ class PurchaseController extends Controller
                 'qty'=>$request->qty
             ]);
        }else{
+
         $update= DB::table('product_stock_details')->where('product_id',$request->product_id)->update([
                 'qty'=>$request->qty+$check_atleast_one_exist->qty
             ]);
        }
-            
+
              return redirect('admin/purchase')->with('message', 'Purchase Updated Successfully');
     }
 
@@ -147,7 +148,7 @@ class PurchaseController extends Controller
      */
     public function destroy($id)
     {
-  
+
         $stock_update=0;
          $del=Purchase::findOrFail($id);
      $current_qty=DB::table('product_stock_details')->select('qty')->where('product_id',$del->product_id)->first();
@@ -158,10 +159,10 @@ class PurchaseController extends Controller
            ]);
     if ($update) {
       $del->delete();
- 
+
 
          return redirect()->back();
     }
-        
+
     }
 }
