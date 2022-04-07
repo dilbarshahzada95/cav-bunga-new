@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProductFeatured extends Model
 {
     use HasFactory;
+    protected $table = 'product_featured';
+    protected $fillaable = ['product_id', 'tile', 'description', 'image'];
 }
