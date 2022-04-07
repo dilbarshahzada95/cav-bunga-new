@@ -12,7 +12,7 @@ use Image;
 use File;
 use Session;
 use Auth;
-
+use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
     /**
@@ -43,7 +43,36 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'product_name' => 'required',
+            'product_category_id' => 'required',
+            'slogan' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return  redirect()->back()->with('error', $validator->errors());
+        } else {
+            try {
+                if ($request->hasfile('image')) {
 
+                    $image = $request->file('image');
+                    $image_name = uniqid() . '.' . $image->extension();
+                    $thumbnailFilePath = public_path('/slider_image/thumbnail');
+                    $img = Image::make($image->path());
+                    $img->resize(150, 150, function ($const) {
+                        $const->aspectRatio();
+                    })->save($thumbnailFilePath . '/' . $image_name);
+                    $ImageFilePath = public_path('/slider_image/');
+                    $image->move($ImageFilePath, $image_name);
+                }
+                $data = new Slider();
+                $data->image = $image_name;
+                $data->save();
+
+                return redirect()->back()->with('message', 'Slider Added Successfully');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Something went wrong');
+            }
+        }
     }
 
     /**
