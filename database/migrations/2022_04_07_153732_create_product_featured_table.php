@@ -16,7 +16,7 @@ class CreateProductFeaturedTable extends Migration
         Schema::create('product_featured', function (Blueprint $table) {
             $table->id();
             $table->string('product_id')->nullable();
-            $table->string('tile')->nullable();
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

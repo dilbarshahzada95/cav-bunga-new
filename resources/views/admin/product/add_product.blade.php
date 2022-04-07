@@ -169,9 +169,9 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Product
                                                         gallery</label>
-                                                    <input type="file" name="product_gallery"
+                                                    <input type="file" name="product_gallery[]"
                                                         value="{{ old('product_gallery') }}" class="form-control"
-                                                        id="manufacturer-name-input" placeholder="Image">
+                                                        id="manufacturer-name-input" placeholder="Image" multiple>
                                                 </div>
 
                                             </div>
