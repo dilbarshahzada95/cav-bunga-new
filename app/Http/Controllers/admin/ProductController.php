@@ -96,18 +96,21 @@ class ProductController extends Controller
                         $featured_data['product_id'] = $insert->id;
                         $featured_data['title'] = $value['title'];
                         $featured_data['description'] = $value['description'];
-                        if ($request->hasfile('image')) {
+                        if ($request->value['image'][$key]) {
+                            if ($request->hasfile('image')) {
 
-                            $image = $request->file('image');
-                            $image_name = uniqid() . '.' . $image->extension();
-                            $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
-                            $img = Image::make($image->path());
-                            $img->resize(150, 150, function ($const) {
-                                $const->aspectRatio();
-                            })->save($thumbnailFilePath . '/' . $image_name);
-                            $ImageFilePath = public_path('/featured_product_image/');
-                            $image->move($ImageFilePath, $image_name);
+                                $image = $request->file('image');
+                                $image_name = uniqid() . '.' . $image->extension();
+                                $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
+                                $img = Image::make($image->path());
+                                $img->resize(150, 150, function ($const) {
+                                    $const->aspectRatio();
+                                })->save($thumbnailFilePath . '/' . $image_name);
+                                $ImageFilePath = public_path('/featured_product_image/');
+                                $image->move($ImageFilePath, $image_name);
+                            }
                         }
+
                         $featured_data['image'] = $image_name;
                         ProductFeatured::create($featured_data);
                     }
