@@ -1079,6 +1079,7 @@
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
     <script src="{{asset('admin/assets/libs/prismjs/prism.js')}}"></script>
+    @yield('script')
 </body>
 
 </html>
