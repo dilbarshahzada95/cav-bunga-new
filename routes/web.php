@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\PurchaseController;
+use App\Http\Controllers\admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,8 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     Route::get('/admin/purchase/edit/{id}', [App\Http\Controllers\admin\PurchaseController::class, 'edit'])->name('admin/purchase/edit');
     Route::post('/admin/purchase/update/{id}', [App\Http\Controllers\admin\PurchaseController::class, 'update'])->name('admin/purchase/update');
     Route::get('/admin/purchase/delete/{id}', [App\Http\Controllers\admin\PurchaseController::class, 'destroy'])->name('admin/purchase/delete');
+    // ORDER
+    Route::get('/admin/order', [App\Http\Controllers\admin\OrderController::class, 'index'])->name('admin/order');
 });
 
 // SOCIAL LOGIN
