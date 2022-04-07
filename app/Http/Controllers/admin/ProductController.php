@@ -64,21 +64,23 @@ class ProductController extends Controller
                 ->withInput();
         } else {
             try {
-                if ($request->hasfile('image')) {
-
-                    $image = $request->file('image');
-                    $image_name = uniqid() . '.' . $image->extension();
-                    $thumbnailFilePath = public_path('/slider_image/thumbnail');
-                    $img = Image::make($image->path());
-                    $img->resize(150, 150, function ($const) {
-                        $const->aspectRatio();
-                    })->save($thumbnailFilePath . '/' . $image_name);
-                    $ImageFilePath = public_path('/slider_image/');
-                    $image->move($ImageFilePath, $image_name);
+                $data = $request->all();
+                if ($request->hasfile('product_gallery')) {
+                    foreach ($request->file('product_gallery') as $image) {
+                        $image = $request->file('product_gallery');
+                        $image_name = uniqid() . '.' . $image->extension();
+                        $thumbnailFilePath = public_path('/product_image/thumbnail');
+                        $img = Image::make($image->path());
+                        $img->resize(150, 150, function ($const) {
+                            $const->aspectRatio();
+                        })->save($thumbnailFilePath . '/' . $image_name);
+                        $ImageFilePath = public_path('/product_image/');
+                        $image->move($ImageFilePath, $image_name);
+                    }
                 }
-                $data = new Slider();
-                $data->image = $image_name;
-                $data->save();
+                $insert = Product::create($data);
+                if ($insert) {
+                }
 
                 return redirect()->back()->with('message', 'Slider Added Successfully');
             } catch (\Exception $e) {
