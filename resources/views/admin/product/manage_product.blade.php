@@ -1,68 +1,81 @@
 @extends('layouts.admin.master')
 @section('title', 'Admin | Dashboard')
 @section('content')
-
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-<div class="page-content">
+    <div class="page-content">
         <div class="container-fluid">
+
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xl-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title mb-0">Customer List</h4>
+                        <div class="card-header align-items-center d-flex">
+                            <h4 class="card-title mb-0 flex-grow-1">Manage Product</h4>
+                            <div class="flex-shrink-0">
+
+                            </div>
                         </div><!-- end card header -->
 
                         <div class="card-body">
-                            <div id="customerList">
-                              <div class="table-responsive table-card mt-3 mb-1">
-      <table id="myTable">
-      <thead>
-        <tr>
-          <th scope="col">SL.NO </th>
-          <th scope="col">TITLE </th>
-          <th scope="col">DESCRIPTION</th>
-          <th scope="col">PRIORITY</th>
-          <th scope="col">DELETE</th>
-          <th scope="col">EDIT</th>
-          </tr>
-      </thead>
-      <tbody>
-   
-         
-          <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          </tr>
-       
-        </tbody>
-    </table>
-                                    
+
+                            <div class="live-preview">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-nowrap mb-0" id="example">
+                                        <thead class="table-light">
+                                            <tr>
+
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Parent Category</th>
+                                                <th scope="col">Category Name</th>
+                                                <th scope="col">Image</th>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Layout</th>
+                                                <th scope="col">Action</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tbody>
+
+                                    </table>
+                                    <!-- end table -->
                                 </div>
-
-                                
+                                <!-- end table responsive -->
                             </div>
-                        </div><!-- end card -->
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end col -->
+
+                        </div><!-- end card-body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
             </div>
-            <!-- end row -->
         </div>
-        <!-- container-fluid -->
     </div>
-
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+@endsection
+@section('script')
     <script>
-    $(document).ready( function () {
-      $('#myTable').DataTable();
-    });
+        $(document).ready(function() {
+            alert()
+            var manageTable = $('#example').DataTable();
+            manageTable = $("#gallery-table").DataTable({
+                "ajax": {
+                    "url": 'FetchBanner',
+                    'type': "GET",
+                },
+                "order": [
+                    [0, 'asc']
+                ],
+                lengthMenu: [
+                    [10, 25, 50, 100, -1],
+                    ['10', '25', '50', '100', 'All']
+                ],
+            });
+        });
     </script>
-
 @endsection
