@@ -89,9 +89,15 @@
                                                          class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
-                                                        @foreach ($category as $cat)
-                                                            <option value="{{ $cat->id }}">
+                                                        
+                                                         @foreach ($category as $cat)
+                                                            <?php if($cat->sub_category_name !='all') {
+                                                             ?>
+                                                            <option <?php if ($product->product_category_id == $cat->id) {
+                                                                echo 'selected';
+                                                            } ?> value="{{ $cat->id }}">
                                                                 {{ $cat->sub_category_name }}</option>
+                                                            <?php } ?>
                                                         @endforeach
 
                                                     </select>
@@ -99,7 +105,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Slogan</label>
-                                                    <input type="text" name="slogan" value="{{ old('slogan') }}"
+                                                    <input type="text" name="slogan" value="{{$product->slogan}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Slogan">
                                                 </div>
@@ -107,14 +113,14 @@
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">sku</label>
-                                                    <input type="text" name="sku" value="{{ old('sku') }}"
+                                                    <input type="text" name="sku" value="{{$product->sku}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="sku">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Tags</label>
-                                                    <input type="text" name="tags" value="{{ old('tags') }}"
+                                                    <input type="text" name="tags" value="{{$product->tags}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
@@ -122,7 +128,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="text" name="volume" value="{{ old('volume') }}"
+                                                    <input type="text" name="volume" value="{{$product->volume}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
@@ -130,7 +136,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Weight</label>
-                                                    <input type="text" name="wieght" value="{{ old('wieght') }}"
+                                                    <input type="text" name="wieght" value="{{$product->wieght}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
@@ -142,9 +148,15 @@
                                                         value="{{ old('layout_id') }}" class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
+                                                        
                                                         @foreach ($layout as $lay)
-                                                            <option value="{{ $lay->id }}">
+                                                            <?php if($lay->layout_name !='all') {
+                                                             ?>
+                                                            <option <?php if ($product->layout_id == $lay->id) {
+                                                                echo 'selected';
+                                                            } ?> value="{{ $lay->id }}">
                                                                 {{ $lay->layout_name }}</option>
+                                                            <?php } ?>
                                                         @endforeach
 
                                                     </select>
@@ -153,16 +165,16 @@
                                                 <div class="col-md-12">
                                                     <label class="form-label" for="meta-description-input">Product
                                                         Description</label>
-                                                    <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
+                                                    <textarea name="product_description"  class="form-control"
                                                         id="meta-description-input" placeholder="Product Description"
-                                                        rows="4"></textarea>
+                                                        rows="4">{{$product->product_description}}</textarea>
                                                 </div>
 
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>
-                                                    <input type="text" name="price" value="{{ old('price') }}"
+                                                    <input type="text" name="price" value="{{$product->price}}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Price">
                                                 </div>
@@ -175,7 +187,8 @@
                                                         id="manufacturer-name-input" placeholder="Image" multiple>
                                                     @foreach ($product_images as $value)
                                                         <td>
-                                                            <img src="{{ asset('product_image/' . $value) }}" alt="">
+                                                            <img src="{{ asset('product_image/' . $value) }}" alt="" height="100px" width="150px">
+                                                            <button class="btn btn-danger">Delete</button>
                                                         </td>
                                                     @endforeach
                                                 </div>
