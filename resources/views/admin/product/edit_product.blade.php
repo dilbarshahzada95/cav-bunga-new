@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Add Product</h4>
+                        <h4 class="mb-sm-0">Edit Product</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                <li class="breadcrumb-item active">Add Product</li>
+                                <li class="breadcrumb-item active">Edit Product</li>
                             </ol>
                         </div>
 
@@ -67,7 +67,8 @@
                                 </ul>
                             </div>
                             <!-- end card header -->
-                            <form action="{{ url('admin/product/store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('admin/product/update', $product->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
                                     <div class="tab-content">
@@ -172,6 +173,11 @@
                                                     <input type="file" name="product_gallery[]"
                                                         value="{{ old('product_gallery') }}" class="form-control"
                                                         id="manufacturer-name-input" placeholder="Image" multiple>
+                                                    @foreach ($product_images as $value)
+                                                        <td>
+                                                            <img src="{{ asset('product_image/' . $value) }}" alt="">
+                                                        </td>
+                                                    @endforeach
                                                 </div>
 
                                             </div>
@@ -196,7 +202,53 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @php
+                                                                    $i = 1;
+                                                                @endphp
+                                                                @foreach ($featured as $featuredlist)
+                                                                    <tr class="var_row">
+                                                                        <td>
+                                                                            <div class="form-group">{{ $i }}
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group"><input type="text"
+                                                                                    name="featured[{{ $i }}][title]"
+                                                                                    class="form-control"
+                                                                                    autocomplete="off"
+                                                                                    placeholder="Enter Title" required
+                                                                                    value="{{ $featuredlist->title }}">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <textarea name="featured[{{ $i }}][description]" class="form-control" required
+                                                                                    value="{{ $featuredlist->description }}">{{ $featuredlist->description }}</textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="form-group"><input type="file"
+                                                                                    name="featured[{{ $i }}][image]"
+                                                                                    class="form-control">
+                                                                                <img src="{{ asset('featured_product_image/' . $featuredlist->image) }}"
+                                                                                    width="100px" height="100px">
+                                                                                <input type="hidden"
+                                                                                    name="featured[{{ $i }}][hidden_image]"
+                                                                                    value="{{ $featuredlist->image }}">
+                                                                            </div>
+                                                                        </td>
 
+                                                                        <td> <a type="button"
+                                                                                class="btn bg-gradient-danger btn-sm"
+                                                                                onclick="editremoveField(this,{{ $featuredlist->id }})">Close</a><input
+                                                                                type="hidden" name="row_count"
+                                                                                value="{{ $i }}"></td>
+                                                                    </tr>
+
+                                                                    @php
+                                                                        $i++;
+                                                                    @endphp
+                                                                @endforeach
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
