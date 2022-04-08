@@ -282,9 +282,11 @@ class ProductController extends Controller
     }
     function delete_product_image($id, $image_id)
     {
+        $images = '';
         $delete = Product::find($id);
-        $file_path = public_path('product_image') . '/' . $delete->product_gallery;
-        $file_path_thumb = public_path('product_image/thumbnail') . '/' . $delete->product_gallery;
+        $image = json_decode($delete->product_gallery, true, 4);
+        $file_path = public_path('product_image') . '/' .  $image[$image_id];
+        $file_path_thumb = public_path('product_image/thumbnail') . '/' .  $image[$image_id];
         if (File::exists($file_path)) {
             File::delete($file_path); //for deleting only file try this
 
@@ -293,7 +295,18 @@ class ProductController extends Controller
             File::delete($file_path_thumb); //for deleting only file try this
 
         }
-        $delete->delete();
+        unset($image[$image_id]);
+        if (!empty($image)) {
+            foreach ($image as $old_img) {
+                $images[] = $old_img;
+            }
+        } else {
+            $images = '';
+        }
+
+        $delete['product_gallery'] = json_encode($images);
+        $delete->save();
+
         return redirect()->back()->with('message', 'Product Image Deleted Successfully');
     }
 }
