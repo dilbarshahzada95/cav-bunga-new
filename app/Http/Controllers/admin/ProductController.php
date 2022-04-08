@@ -31,6 +31,11 @@ class ProductController extends Controller
         return view('admin.product.add_product', compact('layout', 'category'));
     }
 
+    public function fetchproduct()
+    {
+        return view('admin.product.manage_product');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
