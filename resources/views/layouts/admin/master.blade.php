@@ -1079,6 +1079,16 @@
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
     <script src="{{asset('admin/assets/libs/prismjs/prism.js')}}"></script>
+    <script src="{{ asset('admin/assets/libs/list.js/list.min.js')}}"></script>
+    <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
+     <script src="{{ asset('admin/assets/libs/list.js/list.min.js')}}"></script>
+        <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
+
+        <!-- listjs init -->
+        <script src="{{ asset('admin/assets/js/pages/listjs.init.js')}}"></script>
+
+        <!-- listjs init -->
+        <script src="{{ asset('admin/assets/js/pages/listjs.init.js')}}"></script>
     @yield('script')
 </body>
 
