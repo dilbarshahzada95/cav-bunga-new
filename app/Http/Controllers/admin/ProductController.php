@@ -147,7 +147,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.product.edit_product');
+        $layout = DB::table('layouts')
+            ->select('layouts.*')
+            ->get();
+        $category = Category::all();
+        $product = Product::find($id);
+        $featured = ProductFeatured::where('product_id', $id)->get();
+        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured'));
     }
 
     /**
