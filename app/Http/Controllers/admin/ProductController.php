@@ -263,6 +263,16 @@ class ProductController extends Controller
     function delete_featured($id)
     {
         $delete = ProductFeatured::find($id);
+        $file_path = public_path('featured_product_image') . '/' . $delete->image;
+        $file_path_thumb = public_path('featured_product_image/thumbnail') . '/' . $delete->image;
+        if (File::exists($file_path)) {
+            File::delete($file_path); //for deleting only file try this
+
+        }
+        if (File::exists($file_path_thumb)) {
+            File::delete($file_path_thumb); //for deleting only file try this
+
+        }
         $delete->delete();
     }
 }

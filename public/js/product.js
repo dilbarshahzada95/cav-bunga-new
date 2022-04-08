@@ -36,6 +36,7 @@ function editremoveField(val, id) {
     $.ajax({
 
         url: 'admin/product/delete_featured/' + id,
+        method: 'get',
         dataType: 'json',
         success: function (response) {
             return true;
