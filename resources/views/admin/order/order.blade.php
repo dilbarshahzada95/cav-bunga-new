@@ -46,7 +46,7 @@
                                             @php
                                                 $i = 1;
                                             @endphp
-                                            @foreach ($order as $response)
+                                            @foreach ($order as $key => $response)
                                                 <tr>
                                                     <td>{{ $i }}</td>
                                                     <td>{{ date('d-m-Y', strtotime($response->order_date)) }}</td>
@@ -66,7 +66,10 @@
                                                     <td>{{ $response['CustomerDetails']->name }}</td>
                                                     <td>{{ $response['CustomerDetails']->phone }}</td>
                                                     <td>{{ $response->payment_type }}</td>
-                                                    <td>-
+                                                    <td>
+                                                        @foreach ($response->orderDetails->productlist as $product)
+                                                            <li>{{ $product->product_name }}</li>
+                                                        @endforeach
                                                     </td>
                                                     <td>{{ $response->order_price }}</td>
 
