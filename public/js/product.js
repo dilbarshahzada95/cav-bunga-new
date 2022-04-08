@@ -35,7 +35,7 @@ function editremoveField(val, id) {
     $(val).closest('.var_row').remove();
     $.ajax({
 
-        url: 'admin/product/delete_featured/' + id,
+        url: '/admin/product/delete_featured/' + id,
         method: 'get',
         dataType: 'json',
         success: function (response) {
