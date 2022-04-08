@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
 </head>
 
 <body>
@@ -421,7 +422,7 @@
                                             Product </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('/admin/manageProduct') }}" class="nav-link"
+                                        <a href="{{ url('/admin/product/fetch') }}" class="nav-link"
                                             data-key="t-ecommerce"> Manage
                                             Product
                                         </a>

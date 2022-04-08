@@ -78,7 +78,7 @@
                                                         Name</label>
                                                     <input type="text" name="product_name"
                                                         value="{{ old('product_name') }}" class="form-control"
-                                                        id="manufacturer-name-input" placeholder="Product Name">
+                                                        id="manufacturer-name-input" placeholder="Product Name" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -100,38 +100,38 @@
                                                         for="manufacturer-name-input">Slogan</label>
                                                     <input type="text" name="slogan" value="{{ old('slogan') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Slogan">
+                                                        placeholder="Slogan" autocomplete="off">
                                                 </div>
 
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">sku</label>
-                                                    <input type="text" name="sku" value="{{ old('sku') }}"
+                                                    <input type="number" name="sku" value="{{ old('sku') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="sku">
+                                                        placeholder="sku" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Tags</label>
-                                                    <input type="text" name="tags" value="{{ old('tags') }}"
+                                                    <input type="number" name="tags" value="{{ old('tags') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags">
+                                                        placeholder="Tags" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="text" name="volume" value="{{ old('volume') }}"
+                                                    <input type="number" name="volume" value="{{ old('volume') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags">
+                                                        placeholder="Tags" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Weight</label>
-                                                    <input type="text" name="wieght" value="{{ old('wieght') }}"
+                                                    <input type="number" name="wieght" value="{{ old('wieght') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags">
+                                                        placeholder="Tags" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -154,16 +154,16 @@
                                                         Description</label>
                                                     <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
                                                         id="meta-description-input" placeholder="Product Description"
-                                                        rows="4"></textarea>
+                                                        rows="4" autocomplete="off"></textarea>
                                                 </div>
 
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>
-                                                    <input type="text" name="price" value="{{ old('price') }}"
+                                                    <input type="number" name="price" value="{{ old('price') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Price">
+                                                        placeholder="Price" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
