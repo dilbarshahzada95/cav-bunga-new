@@ -280,4 +280,20 @@ class ProductController extends Controller
         }
         $delete->delete();
     }
+    function delete_product_image($id)
+    {
+        $delete = Product::find($id);
+        $file_path = public_path('product_image') . '/' . $delete->product_gallery;
+        $file_path_thumb = public_path('product_image/thumbnail') . '/' . $delete->product_gallery;
+        if (File::exists($file_path)) {
+            File::delete($file_path); //for deleting only file try this
+
+        }
+        if (File::exists($file_path_thumb)) {
+            File::delete($file_path_thumb); //for deleting only file try this
+
+        }
+        $delete->delete();
+        return redirect()->back()->with('message', 'Product Image Deleted Successfully');
+    }
 }
