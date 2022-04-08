@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\PurchaseController;
 use App\Http\Controllers\admin\OrderController;
+use App\Http\Controllers\admin\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +94,6 @@ Route::get('/login/gmail', [App\Http\Controllers\Auth\LoginController::class, 's
 Route::get('/login/gmail/redircet', [App\Http\Controllers\Auth\LoginController::class, 'socialgmailRedirect'])->name('login/gmail/redircet');
 Route::get('/login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'socialFacebook'])->name('login/facebook');
 Route::get('/login/facebook/redircet', [App\Http\Controllers\Auth\LoginController::class, 'socialfacebookRedirect'])->name('login/facebook/redircet');
+
+
+  Route::get('/admin/custometList', [App\Http\Controllers\admin\CustomerController::class, 'index'])->name('/admin/custometList');
