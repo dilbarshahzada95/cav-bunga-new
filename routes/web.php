@@ -62,6 +62,7 @@ Route::group(['middleware' =>  'isCustomer'], function () {
 // ADMIN
 Route::group(['middleware' =>  'isAdmin'], function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+    // PRODUCT
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
     Route::post('/admin/product/store', [App\Http\Controllers\admin\ProductController::class, 'store'])->name('admin/product/store');
     // SLIDER
@@ -87,6 +88,8 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     Route::post('/admin/order/changeStatus', [App\Http\Controllers\admin\OrderController::class, 'changeStatus'])->name('admin/order/changeStatus');
     Route::get('/admin/orderHistory', [App\Http\Controllers\admin\OrderController::class, 'orderHistory'])->name('admin/orderHistory');
     Route::post('/admin/order/delieveryDate', [App\Http\Controllers\admin\OrderController::class, 'delieveryDate'])->name('admin/order/delieveryDate');
+    // CUSTOMER
+    Route::get('/admin/custometList', [App\Http\Controllers\admin\CustomerController::class, 'index'])->name('/admin/custometList');
 });
 
 // SOCIAL LOGIN
@@ -94,6 +97,3 @@ Route::get('/login/gmail', [App\Http\Controllers\Auth\LoginController::class, 's
 Route::get('/login/gmail/redircet', [App\Http\Controllers\Auth\LoginController::class, 'socialgmailRedirect'])->name('login/gmail/redircet');
 Route::get('/login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'socialFacebook'])->name('login/facebook');
 Route::get('/login/facebook/redircet', [App\Http\Controllers\Auth\LoginController::class, 'socialfacebookRedirect'])->name('login/facebook/redircet');
-
-
-  Route::get('/admin/custometList', [App\Http\Controllers\admin\CustomerController::class, 'index'])->name('/admin/custometList');
