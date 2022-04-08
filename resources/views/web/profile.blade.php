@@ -172,7 +172,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6 pl-0 text-center">
-                                                    <div class="btn-theme">track order</div>
+                                                    <a href="{{ url('order_tracking') }}">
+                                                        <div class="btn-theme">track order</div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

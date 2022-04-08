@@ -30,6 +30,7 @@ class CreateOrderTable extends Migration
             $table->string('order_price')->nullable();
             $table->string('coupon_code')->nullable();
             $table->string('transaction_id')->nullable();
+            $table->string('delievery_date')->nullable();
             $table->string('payment_type')->nullable();
             $table->timestamps();
         });

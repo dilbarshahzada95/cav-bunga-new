@@ -38,7 +38,7 @@
                                                 <th class="sort" data-sort="status">Customer Type</th>
                                                 <th class="sort" data-sort="status">Products</th>
                                                 <th class="sort" data-sort="status">Sale Amount</th>
-
+                                                <th class="sort" data-sort="status">Expected Delivery </th>
 
                                             </tr>
                                         </thead>
@@ -74,7 +74,10 @@
                                                         @endforeach
                                                     </td>
                                                     <td>{{ $response->order_price }}</td>
-
+                                                    <td><input type="date" value="{{ $response['delievery_date'] }}"
+                                                            class="form-control"
+                                                            onchange="delieveryDate(this.value,{{ $response->transaction_id }})">
+                                                    </td>
 
                                                     @php
                                                         $i++;
@@ -147,6 +150,39 @@
                     if (abc.status == 'success') {
 
                         swal("Status Updated Successfully!", {
+                            icon: "success",
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        return false;
+                    }
+                }
+            });
+        }
+
+        function delieveryDate(val, id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: "order/delieveryDate",
+                method: "POST",
+                data: {
+                    date: val,
+                    id: id,
+
+                },
+                success: function(response) {
+                    var abc = JSON.parse(response);
+
+                    if (abc.status == 'success') {
+
+                        swal("Delivery Date Updated Successfully!", {
                             icon: "success",
                         });
                         setTimeout(function() {

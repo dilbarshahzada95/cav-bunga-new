@@ -9,6 +9,7 @@ use App\Models\CustomerDetails;
 use App\Models\Product;
 use DB;
 use App\Models\OrderHistory;
+use App\Models\OrderStatusHistory;
 
 class OrderController extends Controller
 {
@@ -30,9 +31,25 @@ class OrderController extends Controller
         $order = Order::where('transaction_id', '=', $request->id)->first();
         $order->order_status_id = $request->status;
         $order->save();
+
+        OrderStatusHistory::create([
+            'order_id' => $request->id,
+            'order_status' => $request->status,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+
         if ($request->status == 6) {
             OrderHistory::create($order->toArray());
         }
+        return json_encode(['status' => 'success']);
+    }
+    function delieveryDate(Request $request)
+    {
+        $order = Order::where('transaction_id', '=', $request->id)->first();
+        $order->delievery_date = $request->date;
+        $order->save();
         return json_encode(['status' => 'success']);
     }
 

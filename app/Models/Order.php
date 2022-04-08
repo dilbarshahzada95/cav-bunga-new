@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     protected $table = 'order';
-    protected $fillaable = ['customer_id', 'billing_first_name', 'billing_last_name', 'billing_phone', 'billing_mob', 'billing_street_aadress', 'billing_city', 'billing_postcode', 'billing_state', 'billing_country', 'order_date', 'order_status_id', 'order_price', 'coupon_code', 'transaction_id', 'payment_type'];
+    protected $fillaable = ['delievery_date', 'customer_id', 'billing_first_name', 'billing_last_name', 'billing_phone', 'billing_mob', 'billing_street_aadress', 'billing_city', 'billing_postcode', 'billing_state', 'billing_country', 'order_date', 'order_status_id', 'order_price', 'coupon_code', 'transaction_id', 'payment_type'];
 
     function orderDetails()
     {
