@@ -30,7 +30,7 @@ class OrderController extends Controller
         $order = Order::where('transaction_id', '=', $request->id)->first();
         $order->order_status_id = $request->status;
         $order->save();
-        echo json_encode(['status' => 'success']);
+        return json_encode(['status' => 'success']);
     }
 
     /**

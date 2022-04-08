@@ -118,7 +118,7 @@
 @endsection
 
 @section('script')
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function chanageStatus(status, id) {
@@ -137,12 +137,16 @@
 
                 },
                 success: function(response) {
-                    alert(JSON.parse(response));
-                    if (JSON.parse(response.status) == 'success') {
+                    var abc = JSON.parse(response);
+
+                    if (abc.status == 'success') {
 
                         swal("Status Updated Successfully!", {
                             icon: "success",
                         });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
                     } else {
                         return false;
                     }
@@ -150,4 +154,5 @@
             });
         }
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 @endsection
