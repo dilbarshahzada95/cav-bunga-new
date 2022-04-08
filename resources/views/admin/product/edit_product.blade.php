@@ -78,15 +78,15 @@
                                                     <label class="form-label" for="manufacturer-name-input">Product
                                                         Name</label>
                                                     <input type="text" name="product_name"
-                                                        value="{{ old('product_name') }}" class="form-control"
-                                                        id="manufacturer-name-input" placeholder="Product Name">
+                                                        value="{{$product->product_name}}" class="form-control"
+                                                        id="manufacturer-name-input" placeholder="Product Name" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">product
                                                         category</label>
                                                     <select id="ForminputState" name="product_category_id"
-                                                        value="{{ old('product_category_id') }}" class="form-select"
+                                                         class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($category as $cat)
