@@ -31,7 +31,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+
 </head>
 
 <body>
@@ -1091,8 +1093,10 @@
 
     <!-- listjs init -->
     <script src="{{ asset('admin/assets/js/pages/listjs.init.js') }}"></script>
-
-    @yield('script')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+ @yield('script')
 </body>
 
 </html>

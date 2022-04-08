@@ -280,7 +280,7 @@ class ProductController extends Controller
         }
         $delete->delete();
     }
-    function delete_product_image($id)
+    function delete_product_image($id, $image_id)
     {
         $delete = Product::find($id);
         $file_path = public_path('product_image') . '/' . $delete->product_gallery;
