@@ -91,25 +91,24 @@ class ProductController extends Controller
                 $data['product_gallery'] = json_encode($images);
                 $insert = Product::create($data);
                 if ($insert && !empty($featured)) {
+
                     foreach ($featured as $key => $value) {
                         $featured_data = array();
                         $featured_data['product_id'] = $insert->id;
                         $featured_data['title'] = $value['title'];
                         $featured_data['description'] = $value['description'];
-                        if ($request->value['image'][$key]) {
-                            if ($request->hasfile('image')) {
-
-                                $image = $request->file('image');
-                                $image_name = uniqid() . '.' . $image->extension();
-                                $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
-                                $img = Image::make($image->path());
-                                $img->resize(150, 150, function ($const) {
-                                    $const->aspectRatio();
-                                })->save($thumbnailFilePath . '/' . $image_name);
-                                $ImageFilePath = public_path('/featured_product_image/');
-                                $image->move($ImageFilePath, $image_name);
-                            }
+                        if ($request->hasfile('image') && !empty($value['image'])) {
+                            $image = $request->file('image');
+                            $image_name = uniqid() . '.' . $image->extension();
+                            $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
+                            $img = Image::make($image->path());
+                            $img->resize(150, 150, function ($const) {
+                                $const->aspectRatio();
+                            })->save($thumbnailFilePath . '/' . $image_name);
+                            $ImageFilePath = public_path('/featured_product_image/');
+                            $image->move($ImageFilePath, $image_name);
                         }
+
 
                         $featured_data['image'] = $image_name;
                         ProductFeatured::create($featured_data);
