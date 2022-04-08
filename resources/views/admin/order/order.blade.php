@@ -67,8 +67,10 @@
                                                     <td>{{ $response['CustomerDetails']->phone }}</td>
                                                     <td>{{ $response->payment_type }}</td>
                                                     <td>
-                                                        @foreach ($response->orderDetails->productlist as $product)
-                                                            <li>{{ $product->product_name }}</li>
+
+                                                        @foreach ($response['OrderDetails'] as $key1 => $products)
+                                                            <li>{{ $response['OrderDetails'][$key1]['productlist']['product_name'] }}
+                                                            </li>
                                                         @endforeach
                                                     </td>
                                                     <td>{{ $response->order_price }}</td>

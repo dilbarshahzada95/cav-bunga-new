@@ -19,9 +19,9 @@ class OrderController extends Controller
     public function index()
     {
 
-        $order = Order::with(['CustomerDetails', 'orderDetails.productlist'])->where('order_status_id', '!=', 6)->get();
-        print_r($order);
-        die;
+        $order = Order::with(['CustomerDetails', 'OrderDetails', 'orderDetails.productlist'])->where('order_status_id', '!=', 6)->get();
+        // print_r($order[0]['orderDetails'][0]['productlist']['product_name']);
+        // die;
         $order_status = DB::table('order_status')->get();
         return view('admin.order.order', compact('order', 'order_status'));
     }
