@@ -30,3 +30,18 @@ function removeField(val) {
     $(val).closest('.var_row').remove();
 
 }
+
+function editremoveField(val, id) {
+    $(val).closest('.var_row').remove();
+    $.ajax({
+
+        url: 'admin/product/delete_featured/' + id,
+        method: 'get',
+        dataType: 'json',
+        success: function (response) {
+            return true;
+
+        }
+    });
+
+}
