@@ -13,6 +13,7 @@ use File;
 use Session;
 use Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\http\UploadedFile;
 
 class ProductController extends Controller
 {
@@ -71,6 +72,9 @@ class ProductController extends Controller
                 $data = $request->all();
                 $featured = array();
                 $featured = $request->featured;
+                // print_r($featured);
+                // die;
+
                 if (empty($featured)) {
                     return redirect('admin/product')->with('error', 'Please select featured ');
                 }
@@ -97,8 +101,10 @@ class ProductController extends Controller
                         $featured_data['product_id'] = $insert->id;
                         $featured_data['title'] = $value['title'];
                         $featured_data['description'] = $value['description'];
-                        if ($request->hasfile('image')[$key] && !empty($value['image'][$key])) {
-                            $image = $request->file('image')[$key];
+                        print_r($value['image']);
+                        if ($value['image']) {
+
+                            $image = $value['image'];
                             $image_name = uniqid() . '.' . $image->extension();
                             $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
                             $img = Image::make($image->path());
@@ -109,9 +115,8 @@ class ProductController extends Controller
                             $image->move($ImageFilePath, $image_name);
                         }
 
-
-                        $featured_data['image'] = $image_name;
-                        ProductFeatured::create0($featured_data);
+                        $featured_data['image'] =  $image_name;
+                        ProductFeatured::create($featured_data);
                     }
                 }
 
@@ -142,7 +147,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $layout = DB::table('layouts')
+            ->select('layouts.*')
+            ->get();
+        $category = Category::all();
+        $product = Product::find($id);
+        $featured = ProductFeatured::where('product_id', $id)->get();
+        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured'));
     }
 
     /**
