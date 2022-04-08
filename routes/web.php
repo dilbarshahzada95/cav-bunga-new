@@ -65,6 +65,11 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     // PRODUCT
     Route::get('/admin/product', [App\Http\Controllers\admin\ProductController::class, 'index'])->name('admin/product');
     Route::post('/admin/product/store', [App\Http\Controllers\admin\ProductController::class, 'store'])->name('admin/product/store');
+    Route::get('/admin/product/edit/{id}', [App\Http\Controllers\admin\ProductController::class, 'edit'])->name('admin/product/edit');
+    Route::post('/admin/product/update/{id}', [App\Http\Controllers\admin\ProductController::class, 'update'])->name('admin/product/update');
+    Route::get('/admin/product/delete/{id}', [App\Http\Controllers\admin\ProductController::class, 'delete'])->name('admin/product/delete');
+    Route::get('/admin/product/fetch', [App\Http\Controllers\admin\ProductController::class, 'fetchproduct'])->name('admin/product/fetch');
+
     // SLIDER
     Route::get('/admin/slider', [App\Http\Controllers\admin\SliderController::class, 'index'])->name('admin/slider');
     Route::post('/admin/slider/insert', [App\Http\Controllers\admin\SliderController::class, 'store'])->name('admin/slider/insert');
