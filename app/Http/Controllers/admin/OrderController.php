@@ -20,8 +20,6 @@ class OrderController extends Controller
     {
 
         $order = Order::with(['CustomerDetails', 'OrderDetails', 'orderDetails.productlist'])->where('order_status_id', '!=', 6)->get();
-        // print_r($order[0]['orderDetails'][0]['productlist']['product_name']);
-        // die;
         $order_status = DB::table('order_status')->get();
         return view('admin.order.order', compact('order', 'order_status'));
     }
@@ -39,10 +37,12 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function orderHistory()
     {
-        //
+        $order = Order::with(['CustomerDetails', 'OrderDetails', 'orderDetails.productlist'])->where('order_status_id', '=', 6)->get();
+        return view('admin.order.order_history', compact('order'));
     }
+
 
     /**
      * Store a newly created resource in storage.

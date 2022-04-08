@@ -84,6 +84,7 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     // ORDER
     Route::get('/admin/order', [App\Http\Controllers\admin\OrderController::class, 'index'])->name('admin/order');
     Route::post('/admin/order/changeStatus', [App\Http\Controllers\admin\OrderController::class, 'changeStatus'])->name('admin/order/changeStatus');
+    Route::get('/admin/orderHistory', [App\Http\Controllers\admin\OrderController::class, 'orderHistory'])->name('admin/orderHistory');
 });
 
 // SOCIAL LOGIN
