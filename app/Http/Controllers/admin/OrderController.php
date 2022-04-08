@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\CustomerDetails;
 use App\Models\Product;
+use DB;
 
 class OrderController extends Controller
 {
@@ -18,11 +19,18 @@ class OrderController extends Controller
     public function index()
     {
 
-        $order=Order::select('order.*', 'customer_details.name')
-            ->leftjoin('customer_details', 'order.customer_id', '=', 'customer_details.id')
-            
-            ->get();
-        return view('admin.order.order',compact('order'));
+        $order = Order::with(['CustomerDetails'])->where('order_status_id', '!=', 6)->get();
+        $order_status = DB::table('order_status')->get();
+
+        return view('admin.order.order', compact('order', 'order_status'));
+    }
+
+    function changeStatus(Request $request)
+    {
+        $order = Order::where('transaction_id', '=', $request->id)->first();
+        $order->order_status_id = $request->status;
+        $order->save();
+        echo json_encode(['status' => 'success']);
     }
 
     /**

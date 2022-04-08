@@ -83,6 +83,7 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     Route::get('/admin/purchase/delete/{id}', [App\Http\Controllers\admin\PurchaseController::class, 'destroy'])->name('admin/purchase/delete');
     // ORDER
     Route::get('/admin/order', [App\Http\Controllers\admin\OrderController::class, 'index'])->name('admin/order');
+    Route::post('/admin/order/changeStatus', [App\Http\Controllers\admin\OrderController::class, 'changeStatus'])->name('admin/order/changeStatus');
 });
 
 // SOCIAL LOGIN

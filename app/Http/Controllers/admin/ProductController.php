@@ -97,8 +97,8 @@ class ProductController extends Controller
                         $featured_data['product_id'] = $insert->id;
                         $featured_data['title'] = $value['title'];
                         $featured_data['description'] = $value['description'];
-                        if ($request->hasfile('image') && !empty($value['image'])) {
-                            $image = $request->file('image');
+                        if ($request->hasfile('image')[$key] && !empty($value['image'][$key])) {
+                            $image = $request->file('image')[$key];
                             $image_name = uniqid() . '.' . $image->extension();
                             $thumbnailFilePath = public_path('/featured_product_image/thumbnail');
                             $img = Image::make($image->path());
@@ -111,7 +111,7 @@ class ProductController extends Controller
 
 
                         $featured_data['image'] = $image_name;
-                        ProductFeatured::create($featured_data);
+                        ProductFeatured::create0($featured_data);
                     }
                 }
 

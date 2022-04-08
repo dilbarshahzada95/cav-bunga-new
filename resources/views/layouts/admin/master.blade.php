@@ -10,7 +10,7 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.ico') }}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- jsvectormap css -->
     <link href="{{ asset('admin/assets/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet"
         type="text/css" />
@@ -29,7 +29,8 @@
     <!-- custom Css-->
     <link href="{{ asset('admin/assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -475,7 +476,7 @@
                             <div class="collapse menu-dropdown" id="sidebarLayouts">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{url('admin/slider')}}" target="_blank" class="nav-link"
+                                        <a href="{{ url('admin/slider') }}" target="_blank" class="nav-link"
                                             data-key="t-horizontal">Slider</a>
                                     </li>
                                 </ul>
@@ -1078,17 +1079,18 @@
 
     <!-- App js -->
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
-    <script src="{{asset('admin/assets/libs/prismjs/prism.js')}}"></script>
-    <script src="{{ asset('admin/assets/libs/list.js/list.min.js')}}"></script>
-    <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
-     <script src="{{ asset('admin/assets/libs/list.js/list.min.js')}}"></script>
-        <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js')}}"></script>
+    <script src="{{ asset('admin/assets/libs/prismjs/prism.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/list.js/list.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/list.js/list.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/list.pagination.js/list.pagination.min.js') }}"></script>
 
-        <!-- listjs init -->
-        <script src="{{ asset('admin/assets/js/pages/listjs.init.js')}}"></script>
+    <!-- listjs init -->
+    <script src="{{ asset('admin/assets/js/pages/listjs.init.js') }}"></script>
 
-        <!-- listjs init -->
-        <script src="{{ asset('admin/assets/js/pages/listjs.init.js')}}"></script>
+    <!-- listjs init -->
+    <script src="{{ asset('admin/assets/js/pages/listjs.init.js') }}"></script>
+
     @yield('script')
 </body>
 
