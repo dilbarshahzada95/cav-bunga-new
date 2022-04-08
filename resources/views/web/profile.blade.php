@@ -162,10 +162,11 @@
                                                             </div>
                                                         </a>
                                                         <ul class="js-dropdown-list">
-                                                            {{-- @foreach ($currentOrderList['orderDetails.productlist'] as $listItem)
-                                                                <li>{{ $listItem['product_name'] }}
+                                                            @foreach ($currentOrderList['OrderDetails'] as $key1 => $products)
+                                                                <li>{{ $currentOrderList['OrderDetails'][$key1]['productlist']['product_name'] }}
                                                                 </li>
-                                                            @endforeach --}}
+                                                            @endforeach
+
 
                                                         </ul>
                                                     </div>
@@ -214,15 +215,15 @@
                                                         </div>
                                                     </a>
                                                     <ul class="js-dropdown-list1">
-                                                        {{-- @foreach ($orderHistoryList['orderDetails.productlist'] as $listItemhistory)
-                                                            <li>{{ $listItemhistory['product_name'] }}
+                                                        @foreach ($orderHistoryList['OrderDetails'] as $key1 => $products)
+                                                            <li>{{ $orderHistoryList['OrderDetails'][$key1]['productlist']['product_name'] }}
                                                             </li>
-                                                        @endforeach --}}
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 pl-0">
-                                                <p><strong>$133.50</strong></p>
+                                                <p><strong>AED {{ $orderHistoryList['order_price'] }}</strong></p>
                                             </div>
                                         </div>
                                     @endforeach

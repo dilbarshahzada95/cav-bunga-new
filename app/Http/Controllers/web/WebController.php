@@ -50,10 +50,10 @@ class WebController extends Controller
     function profile()
     {
         $profile = User::with(['customer_details'])->where('id', Auth::user()->id)->first();
-        $Order = Order::with(['orderDetails'])
-            ->where('order.customer_id', Auth::user()->id)->get();
+        $Order = Order::with(['CustomerDetails', 'OrderDetails', 'orderDetails.productlist'])
+            ->where('order.customer_id', Auth::user()->id)->where('order.order_status_id', '!=', 6)->get();
 
-        $orderHistory = OrderHistory::where('customer_id', Auth::user()->id)->get();
+        $orderHistory = OrderHistory::with(['OrderDetails', 'orderDetails.productlist'])->where('customer_id', Auth::user()->id)->get();
         return view('web.profile', compact('profile', 'Order', 'orderHistory'));
     }
     function getCustomerData($id)
