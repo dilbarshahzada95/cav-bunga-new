@@ -23,6 +23,8 @@ class CreateProductTable extends Migration
             $table->string('volume')->nullable();
             $table->string('wieght')->nullable();
             $table->string('layout_id')->nullable();
+            $table->string('variation_id')->nullable();
+            $table->string('collection_id')->nullable();
             $table->text('product_description')->nullable();
             $table->string('price')->nullable();
             $table->string('product_gallery')->nullable();

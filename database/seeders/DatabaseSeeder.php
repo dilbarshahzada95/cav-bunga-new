@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             CategoryTableSeeder::class,
             LayoutSeeder::class,
             OrderStatusSeeder::class,
+            VariationTableSeeder::class,
+            CollectionTableSeeder::class,
         ]);
     }
 }
