@@ -78,7 +78,8 @@
                                                         Name</label>
                                                     <input type="text" name="product_name"
                                                         value="{{ old('product_name') }}" class="form-control"
-                                                        id="manufacturer-name-input" placeholder="Product Name" autocomplete="off">
+                                                        id="manufacturer-name-input" placeholder="Product Name"
+                                                        autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -106,14 +107,14 @@
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">sku</label>
-                                                    <input type="number" name="sku" value="{{ old('sku') }}"
+                                                    <input type="text" name="sku" value="{{ old('sku') }}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="sku" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">Tags</label>
-                                                    <input type="number" name="tags" value="{{ old('tags') }}"
+                                                    <input type="text" name="tags" value="{{ old('tags') }}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags" autocomplete="off">
                                                 </div>
@@ -123,7 +124,7 @@
                                                         for="manufacturer-name-input">Volume</label>
                                                     <input type="number" name="volume" value="{{ old('volume') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags" autocomplete="off">
+                                                        placeholder="Volume" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -131,7 +132,7 @@
                                                         for="manufacturer-name-input">Weight</label>
                                                     <input type="number" name="wieght" value="{{ old('wieght') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags" autocomplete="off">
+                                                        placeholder="wieght" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">

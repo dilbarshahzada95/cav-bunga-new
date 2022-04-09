@@ -128,7 +128,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="text" name="volume" value="{{ $product->volume }}"
+                                                    <input type="number" name="volume" value="{{ $product->volume }}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
@@ -136,7 +136,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Weight</label>
-                                                    <input type="text" name="wieght" value="{{ $product->wieght }}"
+                                                    <input type="number" name="wieght" value="{{ $product->wieght }}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Tags">
                                                 </div>
@@ -174,7 +174,7 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>
-                                                    <input type="text" name="price" value="{{ $product->price }}"
+                                                    <input type="number" name="price" value="{{ $product->price }}"
                                                         class="form-control" id="manufacturer-name-input"
                                                         placeholder="Price">
                                                 </div>
@@ -195,6 +195,8 @@
                                                                     height="100px" width="150px">
                                                                 <a href="{{ url('admin/product/delete_product_image/' . $product->id . '/' . $k) }}"
                                                                     class="btn btn-danger">Delete</a>
+                                                                <input type="hidden" name="old_product_image[]"
+                                                                    value="{{ $value }}">
                                                             </td>
                                                             @php
                                                                 $k++;
@@ -259,6 +261,9 @@
                                                                                 <input type="hidden"
                                                                                     name="featured[{{ $i }}][hidden_image]"
                                                                                     value="{{ $featuredlist->image }}">
+                                                                                <input type="hidden"
+                                                                                    name="featured[{{ $i }}][row_id]"
+                                                                                    value="{{ $featuredlist->id }}">
                                                                             </div>
                                                                         </td>
 
