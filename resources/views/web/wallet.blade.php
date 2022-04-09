@@ -116,14 +116,9 @@
                                                     <ul>
 
                                                         @foreach ($variation as $var)
-                                                            @if ($var[0]->variation_name)
-                                                                <li class="active"> <a href="#"
-                                                                        class="active">{{ $var->variation_name }}</a>
-                                                                </li>
-                                                            @endif
-                                                            @if ($var[0] != 0)
-                                                                <li><a href="#">{{ $var->variation_name }}</a></li>
-                                                            @endif
+                                                            <li class="active"> <a
+                                                                    href="#">{{ $var->variation_name }}</a>
+                                                            </li>
                                                         @endforeach
 
                                                     </ul>
@@ -133,9 +128,11 @@
                                                     <span class="current">Collection <i
                                                             class="lastudioicon-down-arrow"></i></span>
                                                     <ul>
-                                                        <li class="active"><a href="#"
-                                                                class="active">New Collection</a></li>
-                                                        <li><a href="#">Leather Type</a></li>
+                                                        @foreach ($collection as $col)
+                                                            <li class="active"><a href="#"
+                                                                    class="active">{{ $col->collection_name }}</a>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
