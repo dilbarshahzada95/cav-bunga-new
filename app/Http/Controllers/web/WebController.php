@@ -95,7 +95,9 @@ class WebController extends Controller
     function wallet($id)
     {
         $category = Category::find($id);
-        return view('web.wallet', compact('category'));
+        $variation = DB::table('variation')->select('*')->get();
+        $collection = DB::table('collection')->select('*')->get();
+        return view('web.wallet', compact('category', 'variation', 'collection'));
     }
     function sideCart()
     {

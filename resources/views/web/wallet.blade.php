@@ -114,12 +114,18 @@
                                                     <span class="current">Color <i
                                                             class="lastudioicon-down-arrow"></i></span>
                                                     <ul>
-                                                        <li class="active"><a href="#"
-                                                                class="active">Red</a></li>
-                                                        <li><a href="#">Yellow</a></li>
-                                                        <li><a href="#">green</a></li>
-                                                        <li><a href="#">Black</a></li>
-                                                        <li><a href="#">White</a></li>
+
+                                                        @foreach ($variation as $var)
+                                                            @if ($var[0]->variation_name)
+                                                                <li class="active"> <a href="#"
+                                                                        class="active">{{ $var->variation_name }}</a>
+                                                                </li>
+                                                            @endif
+                                                            @if ($var[0] != 0)
+                                                                <li><a href="#">{{ $var->variation_name }}</a></li>
+                                                            @endif
+                                                        @endforeach
+
                                                     </ul>
                                                 </div>
                                                 <div
