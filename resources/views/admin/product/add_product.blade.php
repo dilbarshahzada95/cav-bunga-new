@@ -150,15 +150,7 @@
                                                     </select>
                                                 </div>
 
-                                                <div class="col-md-12">
-                                                    <label class="form-label" for="meta-description-input">Product
-                                                        Description</label>
-                                                    <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
-                                                        id="meta-description-input" placeholder="Product Description"
-                                                        rows="4" autocomplete="off"></textarea>
-                                                </div>
-
-
+                                                
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>
@@ -174,6 +166,45 @@
                                                         value="{{ old('product_gallery') }}" class="form-control"
                                                         id="manufacturer-name-input" placeholder="Image" multiple>
                                                 </div>
+
+                                                  <div class="col-md-3">
+                                                    <label class="form-label" for="manufacturer-name-input">variation</label>
+                                                    <select id="ForminputState" name="variation_id"
+                                                        value="{{ old('variation_id') }}" class="form-select"
+                                                        data-choices data-choices-sorting="true">
+                                                        <option value="">Choose...</option>
+                                                        @foreach ($variation as $cat)
+                                                            <option value="{{ $cat->id }}">
+                                                                {{ $cat->variation_name }}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+
+
+                                                     <div class="col-md-3">
+                                                    <label class="form-label" for="manufacturer-name-input">collection</label>
+                                                    <select id="ForminputState" name="collection_id"
+                                                        value="{{ old('collection_id') }}" class="form-select"
+                                                        data-choices data-choices-sorting="true">
+                                                        <option value="">Choose...</option>
+                                                        @foreach ($collection as $cat)
+                                                            <option value="{{ $cat->id }}">
+                                                                {{ $cat->collection_name }}</option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+
+
+                                                <div class="col-md-12">
+                                                    <label class="form-label" for="meta-description-input">Product
+                                                        Description</label>
+                                                    <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
+                                                        id="meta-description-input" placeholder="Product Description"
+                                                        rows="4" autocomplete="off"></textarea>
+                                                </div>
+
 
                                             </div>
                                             <!-- end row -->
