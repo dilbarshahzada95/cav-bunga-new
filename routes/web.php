@@ -67,7 +67,7 @@ Route::group(['middleware' =>  'isAdmin'], function () {
     Route::post('/admin/product/store', [App\Http\Controllers\admin\ProductController::class, 'store'])->name('admin/product/store');
     Route::get('/admin/product/edit/{id}', [App\Http\Controllers\admin\ProductController::class, 'edit'])->name('admin/product/edit');
     Route::post('/admin/product/update/{id}', [App\Http\Controllers\admin\ProductController::class, 'update'])->name('admin/product/update');
-    Route::get('/admin/product/delete/{id}', [App\Http\Controllers\admin\ProductController::class, 'delete'])->name('admin/product/delete');
+    Route::get('/admin/product/delete/{id}', [App\Http\Controllers\admin\ProductController::class, 'destroy'])->name('admin/product/delete');
     Route::get('/admin/product/fetch', [App\Http\Controllers\admin\ProductController::class, 'fetchproduct'])->name('admin/product/fetch');
     Route::get('/admin/product/delete_featured/{id}', [App\Http\Controllers\admin\ProductController::class, 'delete_featured'])->name('admin/product/delete_featured');
     Route::get('/admin/product/delete_product_image/{id}/{image_id}', [App\Http\Controllers\admin\ProductController::class, 'delete_product_image'])->name('admin/product/delete_product_image');

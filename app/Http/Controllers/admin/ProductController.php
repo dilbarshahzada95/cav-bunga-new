@@ -33,7 +33,10 @@ class ProductController extends Controller
 
     public function fetchproduct()
     {
-        return view('admin.product.manage_product');
+        $data = Product::with(['category', 'stock'])->get();
+        // print_r($data);
+        // die;
+        return view('admin.product.manage_product', compact('data'));
     }
 
     /**
@@ -263,7 +266,45 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = ProductFeatured::where('product_id', $id);
+        if ($delete) {
+            $file_path = public_path('featured_product_image') . '/' . $delete->image;
+            $file_path_thumb = public_path('featured_product_image/thumbnail') . '/' . $delete->image;
+            if (File::exists($file_path)) {
+                File::delete($file_path); //for deleting only file try this
+
+            }
+            if (File::exists($file_path_thumb)) {
+                File::delete($file_path_thumb); //for deleting only file try this
+
+            }
+        }
+
+        $delete->delete();
+
+        $delete1 = Product::find($id);
+        if (!empty($delete1->product_gallery)) {
+            $image = json_decode($delete1->product_gallery, true, 4);
+        }
+
+        if (!empty($image)) {
+            foreach ($image as $key => $value) {
+                $file_path = public_path('product_image') . '/' . $value;
+                $file_path_thumb = public_path('product_image/thumbnail') . '/' . $value;
+                if (File::exists($file_path)) {
+                    File::delete($file_path); //for deleting only file try this
+
+                }
+                if (File::exists($file_path_thumb)) {
+                    File::delete($file_path_thumb); //for deleting only file try this
+
+                }
+            }
+        }
+
+
+        $delete1->delete();
+        return redirect()->back()->with('message', 'Featured Product Deleted Successfully');
     }
     function delete_featured($id)
     {

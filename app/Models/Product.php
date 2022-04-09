@@ -11,4 +11,13 @@ class Product extends Model
 
     protected $table = 'product';
     protected $fillable = ['product_name', 'product_category_id', 'slogan', 'sku', 'tags', 'volume', 'wieght', 'layout_id', 'product_description', 'price', 'product_gallery'];
+
+    function category()
+    {
+        return $this->belongsTo('App\Models\Category',  'product_category_id', 'id');
+    }
+    function stock()
+    {
+        return $this->hasOne('App\Models\Stock', 'product_id', 'id');
+    }
 }

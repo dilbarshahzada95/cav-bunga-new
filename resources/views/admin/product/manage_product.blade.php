@@ -23,28 +23,41 @@
                                             <tr>
 
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Parent Category</th>
-                                                <th scope="col">Category Name</th>
-                                                <th scope="col">Image</th>
-                                                <th scope="col">Title</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Layout</th>
+                                                <th scope="col">Product name</th>
+                                                <th scope="col">Category </th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Stock</th>
                                                 <th scope="col">Action</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                                $i = 1;
+                                            @endphp
+                                            @foreach ($data as $dat)
+                                                <tr>
+                                                    <td>{{ $i }}</td>
+                                                    <td>{{ $dat->product_name }}</td>
+                                                    <td>{{ $dat->category['sub_category_name'] ? $dat->category['sub_category_name'] : '' }}
+                                                    </td>
+                                                    <td>{{ $dat->price }}</td>
+                                                    <td>{{ $dat->stock['qty'] ? $dat->stock['qty'] : 0 }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin/product/delete', $dat->id) }}"
+                                                            class="productDelete"><i
+                                                                class="fa fa-trash"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                            <tr>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                                <td>1</td>
-                                            </tr>
+                                                        <a href="{{ url('/admin/product/edit', $dat->id) }}"><i
+                                                                class="fa fa-edit"></i></a>
+
+
+                                                </tr>
+                                                @php
+                                                    $i++;
+                                                @endphp
+                                            @endforeach
+
                                         </tbody>
 
                                     </table>
@@ -63,21 +76,9 @@
 @section('script')
     <script>
         $(document).ready(function() {
-            alert()
+
             var manageTable = $('#example').DataTable();
-            manageTable = $("#gallery-table").DataTable({
-                "ajax": {
-                    "url": 'FetchBanner',
-                    'type': "GET",
-                },
-                "order": [
-                    [0, 'asc']
-                ],
-                lengthMenu: [
-                    [10, 25, 50, 100, -1],
-                    ['10', '25', '50', '100', 'All']
-                ],
-            });
+
         });
     </script>
 @endsection
