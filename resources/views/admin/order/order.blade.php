@@ -63,15 +63,15 @@
 
                                                         </select>
                                                     </td>
-                                                    <td>{{ $response['CustomerDetails']->name ? $response['CustomerDetails']->name : '' }}
+                                                    <td>{{ isset($response['CustomerDetails']->name) ? $response['CustomerDetails']->name : '' }}
                                                     </td>
-                                                    <td>{{ $response['CustomerDetails']->phone ? $response['CustomerDetails']->phone : '' }}
+                                                    <td>{{ isset($response['CustomerDetails']->phone) ? $response['CustomerDetails']->phone : '' }}
                                                     </td>
                                                     <td>{{ $response->payment_type }}</td>
                                                     <td>
 
                                                         @foreach ($response['OrderDetails'] as $key1 => $products)
-                                                            <li>{{ $response['OrderDetails'][$key1]['productlist']['product_name']? $response['OrderDetails'][$key1]['productlist']['product_name']: '' }}
+                                                            <li>{{ isset($response['OrderDetails'][$key1]['productlist']['product_name'])? $response['OrderDetails'][$key1]['productlist']['product_name']: '' }}
                                                             </li>
                                                         @endforeach
                                                     </td>
