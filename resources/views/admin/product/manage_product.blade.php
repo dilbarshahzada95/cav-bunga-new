@@ -39,10 +39,10 @@
                                                 <tr>
                                                     <td>{{ $i }}</td>
                                                     <td>{{ $dat->product_name }}</td>
-                                                    <td>{{ $dat->category['sub_category_name'] ? $dat->category['sub_category_name'] : '' }}
+                                                    <td>{{ isset($dat->category['sub_category_name']) ? $dat->category['sub_category_name'] : '' }}
                                                     </td>
                                                     <td>{{ $dat->price }}</td>
-                                                    <td>{{ $dat->stock['qty'] ? $dat->stock['qty'] : 0 }}</td>
+                                                    <td>{{ isset($dat->stock['qty']) ? $dat->stock['qty'] : 0 }}</td>
                                                     <td>
                                                         <a href="{{ route('admin/product/delete', $dat->id) }}"
                                                             class="productDelete"><i
