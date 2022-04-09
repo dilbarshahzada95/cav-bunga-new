@@ -28,8 +28,14 @@ class ProductController extends Controller
         $layout = DB::table('layouts')
             ->select('layouts.*')
             ->get();
+        $collection = DB::table('collection')
+            ->select('collection.*')
+            ->get();  
+        $variation = DB::table('variation')
+            ->select('variation.*')
+            ->get();      
         $category = Category::all();
-        return view('admin.product.add_product', compact('layout', 'category'));
+        return view('admin.product.add_product', compact('layout', 'category','collection','variation'));
     }
 
     public function fetchproduct()
@@ -160,12 +166,19 @@ class ProductController extends Controller
         $layout = DB::table('layouts')
             ->select('layouts.*')
             ->get();
+
+          $collection = DB::table('collection')
+            ->select('collection.*')
+            ->get();  
+        $variation = DB::table('variation')
+            ->select('variation.*')
+            ->get();      
         $category = Category::all();
         $product = Product::find($id);
         $product_images = json_decode($product->product_gallery, true, 4);
 
         $featured = ProductFeatured::where('product_id', $id)->get();
-        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured', 'product_images'));
+        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured', 'product_images','collection','variation'));
     }
 
     /**
