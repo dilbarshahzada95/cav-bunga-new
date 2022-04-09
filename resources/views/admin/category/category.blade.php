@@ -145,16 +145,10 @@
 
                             <div class="live-preview">
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-nowrap mb-0">
+                                    <table class="table align-middle table-nowrap mb-0" id="example">
                                         <thead class="table-light">
                                             <tr>
-                                                <th scope="col" style="width: 42px;">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            id="responsivetableCheck">
-                                                        <label class="form-check-label" for="responsivetableCheck"></label>
-                                                    </div>
-                                                </th>
+
                                                 <th scope="col">ID</th>
                                                 <th scope="col">Parent Category</th>
                                                 <th scope="col">Category Name</th>
@@ -169,14 +163,7 @@
                                         <tbody>
                                             @foreach ($result as $dat)
                                                 <tr>
-                                                    <th scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="responsivetableCheck01">
-                                                            <label class="form-check-label"
-                                                                for="responsivetableCheck01"></label>
-                                                        </div>
-                                                    </th>
+
                                                     <td><a href="#" class="fw-medium">{{ @$i += 1 }}</a></td>
                                                     <td>{{ $dat->category_name }}</td>
                                                     <td>{{ $dat->sub_category_name }}</td>
@@ -212,4 +199,13 @@
         </div>
         <!-- container-fluid -->
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            var manageTable = $('#example').DataTable();
+
+        });
+    </script>
 @endsection
