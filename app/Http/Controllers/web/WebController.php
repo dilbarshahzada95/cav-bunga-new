@@ -17,6 +17,7 @@ use App\Models\OrderStatus;
 use App\Models\OrderHistory;
 use App\Models\Slider;
 use App\Models\Category;
+use App\Models\Product;
 
 class WebController extends Controller
 {
@@ -94,10 +95,15 @@ class WebController extends Controller
     }
     function wallet($id)
     {
+        if ($id == 0) {
+            return redirect()->back();
+        }
         $category = Category::find($id);
         $variation = DB::table('variation')->select('*')->get();
         $collection = DB::table('collection')->select('*')->get();
-        return view('web.wallet', compact('category', 'variation', 'collection'));
+        $product = Product::where('product_category_id', $id)->get();
+
+        return view('web.wallet', compact('category', 'variation', 'collection', 'product'));
     }
     function sideCart()
     {

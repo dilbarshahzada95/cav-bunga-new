@@ -111,7 +111,7 @@
                                         <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__women" type="button" role="tab"
                                             aria-controls="cavabunga__shop__women" aria-selected="false"
-                                            onclick="getMaincat({{ $woman_category[0]->id }})">Women</button>
+                                            onclick="getMaincat({{ isset($woman_category[0]->id) ? $woman_category[0]->id : 0 }})">Women</button>
                                     </li>
 
                                 </ul>
@@ -148,7 +148,7 @@
                                                                 <input type="hidden" id="men_default"
                                                                     value="{{ $men_category[0]->id }}">
                                                                 <input type="hidden" id="woman_default"
-                                                                    value="{{ $woman_category[0]->id }}">
+                                                                    value="{{ isset($woman_category[0]->id) ? $woman_category[0]->id : '' }}">
                                                                 <div class="col-md-7 tab-content product-description-tab-content"
                                                                     id="myTabContent1">
                                                                     <div class="tab-pane fade show active"

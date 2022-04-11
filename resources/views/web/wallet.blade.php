@@ -87,11 +87,11 @@
 
                                                 <span class="current">Popularity <i
                                                         class="lastudioicon-down-arrow"></i></span>
-                                                <ul>
-                                                    <li class="active"><a href="#" class="active">What's
-                                                            New</a></li>
-                                                    <li><a href="#">Relevance</a></li>
-                                                </ul>
+                                                <select class="active popularity">
+                                                    <option value="whats_new"><a href="#" class="active">What's
+                                                            New</a></option>
+                                                    <option value="relevence"><a href="#">Relevance</a></option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -103,37 +103,42 @@
 
                                                     <span class="current">Price <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
-                                                        <li class="active"><a href="#"
+                                                    <select class="active price">
+                                                        <option value="low_to_high">Price low to high</option>
+                                                        <option value="high_to_low">Price high to low</option>
+                                                        <option value="discount">Discount</option>
+                                                    </select>
+                                                    {{-- <ul>
+                                                        <li class="active"><a href="#" onclick="getFilter()"
                                                                 class="active">Price low to high</a></li>
-                                                        <li><a href="#">Price high to low</a></li>
-                                                        <li><a href="#">Discount</a></li>
-                                                    </ul>
+                                                        <li><a href="#" onclick="getFilter()">Price high to low</a></li>
+                                                        <li><a href="#" onclick="getFilter()">Discount</a></li>
+                                                    </ul> --}}
                                                 </div>
                                                 <div class="product-sorting-menu product-sorting">
                                                     <span class="current">Color <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
 
+                                                    <select class="active variation">
                                                         @foreach ($variation as $var)
-                                                            <li class="active"> <a
-                                                                    href="#">{{ $var->variation_name }}</a>
-                                                            </li>
+                                                            <option value="{{ $var->id }}" <a href="#">
+                                                                {{ $var->variation_name }}</a>
+                                                            </option>
                                                         @endforeach
+                                                    </select>
 
-                                                    </ul>
                                                 </div>
                                                 <div
                                                     class="product-sorting-menu product-sorting d-sm-none d-lg-block d-md-block">
                                                     <span class="current">Collection <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <ul>
+                                                    <select class="active collcetion">
                                                         @foreach ($collection as $col)
-                                                            <li class="active"><a href="#"
+                                                            <option value="{{ $col->id }}"><a href="#"
                                                                     class="active">{{ $col->collection_name }}</a>
-                                                            </li>
+                                                            </option>
                                                         @endforeach
-                                                    </ul>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -145,83 +150,38 @@
                             </div>
                         </div>
                         <div class="row product__grid">
+                            @foreach ($product as $prod)
+                                <div class="col-md-4">
+                                    <div class="single__product first">
+                                        <div class="wallet__section">
+                                            <div class="imagage__sec">
+                                                <img src="{{ asset('web/assets/img/wallet.png') }}"
+                                                    class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="product__content">
+                                            <div class="product__description">
+                                                <h3>{{ isset($prod->product_name) ? $prod->product_name : '' }}</h3>
+                                                <h5>luxury leather wallet</h5>
+                                                <h4>AED {{ isset($prod->price) ? $prod->price : '' }}</h4>
+                                            </div>
+                                            <div class="more__info">
+                                                <a href="{{ url('details-page') }}" class="btn-info">more
+                                                    info</a>
+                                                <a href="#" class="cart-btn">
+                                                    <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
+                                                        alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-4">
-                                <div class="single__product first">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
+                            @endforeach
 
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single__product second">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
 
-                            <div class="col-md-4">
-                                <div class="single__product third">
-                                    <div class="wallet__section">
-                                        <div class="imagage__sec">
-                                            <img src="{{ asset('web/assets/img/wallet.png') }}"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="product__content">
-                                        <div class="product__description">
-                                            <h3>Mario page wallet</h3>
-                                            <h5>luxury leather wallet</h5>
-                                            <h4>$65.50</h4>
-                                        </div>
-                                        <div class="more__info">
-                                            <a href="{{ url('details-page') }}" class="btn-info">more info</a>
-                                            <a href="#" class="cart-btn">
-                                                <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
                             <div class="rounded__shape"></div>
                         </div>
                     </div>
@@ -234,147 +194,9 @@
         </main>
 
 
-        <aside class="product-quick-view-modal">
-            <div class="product-quick-view-inner">
-                <div class="product-quick-view-content">
-                    <button type="button" class="btn-close">
-                        <span class="close-icon"><i class="lastudioicon-e-remove"></i></span>
-                    </button>
-                    <div class="row row-gutter-0">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="thumb">
-                                <img src="assets/img/shop/quick-view1.jpg" alt="Moren-Shop">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="single-product-info">
-                                <h4 class="title">Product Simple</h4>
-                                <div class="product-rating">
-                                    <div class="review">
-                                        <p><span></span>99 in stock</p>
-                                    </div>
-                                </div>
-                                <div class="prices">
-                                    <span class="price">£49.90</span>
-                                </div>
-                                <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt
-                                    integer. Sed adipiscing vehicula.</p>
-                                <div class="quick-product-action">
-                                    <div class="action-top">
-                                        <div class="pro-qty-area">
-                                            <div class="pro-qty">
-                                                <input type="text" id="quantity" title="Quantity" value="1">
-                                                <a href="#" class="inc qty-btn">+</a><a href="#"
-                                                    class="dec qty-btn">-</a>
-                                            </div>
-                                        </div>
-                                        <a class="btn-theme btn-black" href="#">Add to cart</a>
-                                    </div>
-                                    <div class="action-bottom">
-                                        <a class="btn-wishlist" href="#"><i
-                                                class="labtn-icon labtn-icon-wishlist"></i>Add to wishlist</a>
-                                        <a class="btn-compare" href="#"><i
-                                                class="labtn-icon labtn-icon-compare"></i>Add to compare</a>
-                                    </div>
-                                </div>
-                                <div class="product-ratting">
-                                    <div class="product-sku">
-                                        SKU: <span>REF. LA-276</span>
-                                    </div>
-                                </div>
-                                <div class="product-categorys">
-                                    <div class="product-category">
-                                        Category: <span>Uncategorized</span>
-                                    </div>
-                                </div>
-                                <div class="widget">
-                                    <h3 class="title">Tags:</h3>
-                                    <div class="widget-tags">
-                                        <ul>
-                                            <li><a href="#">Blazer,</a></li>
-                                            <li><a href="#">Fashion,</a></li>
-                                            <li><a href="#">wordpress,</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-social-info">
-                                    <a href="#"><span class="lastudioicon-b-facebook"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-twitter"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-linkedin"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-pinterest"></span></a>
-                                </div>
-                                <div class="product-nextprev">
-                                    <a href="#">
-                                        <i class="lastudioicon-arrow-left"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="lastudioicon-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas-overlay"></div>
-        </aside>
-
         <div class="sidebar-cart-overlay"></div>
 
-        <aside class="off-canvas-wrapper">
-            <div class="off-canvas-inner">
-                <div class="off-canvas-overlay d-none"></div>
-                <!-- Start Off Canvas Content Wrapper -->
-                <div class="off-canvas-content">
-                    <!-- Off Canvas Header -->
-                    <div class="off-canvas-header">
-                        <div class="close-action">
-                            <button class="btn-close"><i class="icofont-close-line"></i></button>
-                        </div>
-                    </div>
 
-                    <div class="off-canvas-item">
-                        <!-- Start Mobile Menu Wrapper -->
-                        <div class="res-mobile-menu">
-                            <!-- Note Content Auto Generate By Jquery From Main Menu -->
-                        </div>
-                        <!-- End Mobile Menu Wrapper -->
-                    </div>
-                    <!-- Off Canvas Footer -->
-                    <div class="off-canvas-footer"></div>
-                </div>
-                <!-- End Off Canvas Content Wrapper -->
-            </div>
-            <div class="header-action-flag">
-                <dropdown>
-                    <input id="toggle3" type="checkbox">
-                    <label for="toggle3" class="animate"><img src="assets/img/flags/uae.png" alt=""></label>
-                    <ul class="animate m-0">
-                        <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
-                        </li>
-                        <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
-                        </li>
-                    </ul>
-                </dropdown>
-            </div>
-        </aside>
     </div>
 
     <!--=======================Javascript============================-->
@@ -418,6 +240,34 @@
 
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
+
+    <script>
+        $('.price').on('change', function() {
+            var popularity = $('.popularity').val();
+            var variation = $('.variation').val();
+            var collection = $('.collection').val();
+            var price = $('.price').val();
+        });
+        $('.popularity').on('change', function() {
+            var popularity = $('.popularity').val();
+            var variation = $('.variation').val();
+            var collection = $('.collection').val();
+            var price = $('.price').val();
+        });
+        $('.variation').on('change', function() {
+            var popularity = $('.popularity').val();
+            var variation = $('.variation').val();
+            var collection = $('.collection').val();
+            var price = $('.price').val();
+        });
+        $('.collection').on('change', function() {
+            var popularity = $('.popularity').val();
+            var variation = $('.variation').val();
+            var collection = $('.collection').val();
+            var price = $('.price').val();
+
+        });
+    </script>
 </body>
 
 </html>

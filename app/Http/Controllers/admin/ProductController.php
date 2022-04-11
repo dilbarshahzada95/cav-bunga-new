@@ -30,12 +30,12 @@ class ProductController extends Controller
             ->get();
         $collection = DB::table('collection')
             ->select('collection.*')
-            ->get();  
+            ->get();
         $variation = DB::table('variation')
             ->select('variation.*')
-            ->get();      
+            ->get();
         $category = Category::all();
-        return view('admin.product.add_product', compact('layout', 'category','collection','variation'));
+        return view('admin.product.add_product', compact('layout', 'category', 'collection', 'variation'));
     }
 
     public function fetchproduct()
@@ -167,18 +167,18 @@ class ProductController extends Controller
             ->select('layouts.*')
             ->get();
 
-          $collection = DB::table('collection')
+        $collection = DB::table('collection')
             ->select('collection.*')
-            ->get();  
+            ->get();
         $variation = DB::table('variation')
             ->select('variation.*')
-            ->get();      
+            ->get();
         $category = Category::all();
         $product = Product::find($id);
         $product_images = json_decode($product->product_gallery, true, 4);
 
         $featured = ProductFeatured::where('product_id', $id)->get();
-        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured', 'product_images','collection','variation'));
+        return view('admin.product.edit_product', compact('layout', 'category', 'product', 'featured', 'product_images', 'collection', 'variation'));
     }
 
     /**
@@ -235,12 +235,17 @@ class ProductController extends Controller
                         $images[] = $image_name;
                     }
                 }
-                foreach (json_decode($update['product_gallery'], true, 4) as $old_img) {
-                    $images[] = $old_img;
+                if (!empty($update['product_gallery'])) {
+                    foreach (json_decode($update['product_gallery'], true, 4) as $old_img) {
+                        $images[] = $old_img;
+                    }
                 }
 
+                if (!empty($images)) {
 
-                $data['product_gallery'] = json_encode($images);
+                    $data['product_gallery'] = json_encode($images);
+                }
+
                 $insert  = $update->fill($data)->save();
                 if ($insert && !empty($featured)) {
 
@@ -395,11 +400,13 @@ class ProductController extends Controller
             foreach ($image as $old_img) {
                 $images[] = $old_img;
             }
+            $delete['product_gallery'] = json_encode($images);
         } else {
             $images = '';
+            $delete['product_gallery'] = '';
         }
 
-        $delete['product_gallery'] = json_encode($images);
+
         $delete->save();
 
         return redirect()->back()->with('message', 'Product Image Deleted Successfully');
