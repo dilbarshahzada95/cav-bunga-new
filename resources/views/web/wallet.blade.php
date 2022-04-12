@@ -110,10 +110,11 @@
 
                                                 <span class="current">Popularity <i
                                                         class="lastudioicon-down-arrow"></i></span>
-                                                <select class="active popularity form-control">
-                                                    <option value="whats_new"><a href="#" class="active">What's
-                                                            New</a></option>
-                                                    <option value="relevence"><a href="#">Relevance</a></option>
+                                                <select class="active popularity form-control" id="popularity"
+                                                    onchange="filterItem(1)">
+                                                    <option value="whats_new">What's
+                                                        New</option>
+                                                    <option value="relevence">Relevance</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -126,7 +127,8 @@
 
                                                     <span class="current">Price <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active price form-control">
+                                                    <select class="active price form-control" id="price"
+                                                        onchange="filterItem(2)">
                                                         <option value="low_to_high">Price low to high</option>
                                                         <option value="high_to_low">Price high to low</option>
                                                         <option value="discount">Discount</option>
@@ -142,10 +144,11 @@
                                                     <span class="current">Color <i
                                                             class="lastudioicon-down-arrow"></i></span>
 
-                                                    <select class="active variation form-control">
+                                                    <select class="active variation form-control" id="variation"
+                                                        onchange="filterItem(3)">
                                                         @foreach ($variation as $var)
-                                                            <option value="{{ $var->id }}" <a href="#">
-                                                                {{ $var->variation_name }}</a>
+                                                            <option value="{{ $var->id }}">
+                                                                {{ $var->variation_name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -155,10 +158,11 @@
                                                     class="product-sorting-menu product-sorting d-sm-none d-lg-block d-md-block">
                                                     <span class="current">Collection <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active collcetion form-control">
+                                                    <select class="active collection form-control" id="collection"
+                                                        onchange="filterItem(4)">
                                                         @foreach ($collection as $col)
-                                                            <option value="{{ $col->id }}"><a href="#"
-                                                                    class="active">{{ $col->collection_name }}</a>
+                                                            <option value="{{ $col->id }}">
+                                                                {{ $col->collection_name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -203,9 +207,6 @@
                             @endforeach
 
 
-
-
-                            <div class="rounded__shape"></div>
                         </div>
                     </div>
 
@@ -265,52 +266,27 @@
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-        $('.price').on('change', function() {
-            var popularity = $('.popularity').val();
-            var variation = $('.variation').val();
-            var collection = $('.collection').val();
-            var price = $('.price').val();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+        function filterItem(val) {
+            var popularity = $('#popularity').val();
+            var variation = $('#variation').val();
+            var collection = $('#collection').val();
+            var price = $('#price').val();
+            var url = "{{ url('/walletfilter') }}";
             $.ajax({
-                    url: 'wallet/filter/',
-                    method: 'POST',
-                    data: {
-                        popularity: popularity,
-                        variation: variation,
-                        collection: collection,
-                        price: price
-                    },
-
+                type: "GET",
+                url: url,
+                data: {
+                    'popularity': popularity,
+                    'variation': variation,
+                    'collection': collection,
+                    'price': price
                 },
-                dataType: 'json',
                 success: function(data) {
-
+                    $('.product__grid').html(data);
                 }
             });
-        });
-        $('.popularity').on('change', function() {
-            var popularity = $('.popularity').val();
-            var variation = $('.variation').val();
-            var collection = $('.collection').val();
-            var price = $('.price').val();
-        });
-        $('.variation').on('change', function() {
-            var popularity = $('.popularity').val();
-            var variation = $('.variation').val();
-            var collection = $('.collection').val();
-            var price = $('.price').val();
-        });
-        $('.collection').on('change', function() {
-            var popularity = $('.popularity').val();
-            var variation = $('.variation').val();
-            var collection = $('.collection').val();
-            var price = $('.price').val();
 
-        });
+        }
     </script>
 </body>
 

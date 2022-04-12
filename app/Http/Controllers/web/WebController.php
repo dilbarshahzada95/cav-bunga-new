@@ -105,6 +105,33 @@ class WebController extends Controller
 
         return view('web.wallet', compact('category', 'variation', 'collection', 'product'));
     }
+    function walletfilter(Request $request)
+    {
+        $getFilterData = Product::orderBy('id', 'asc');
+        if (!empty($request->popularity)) {
+            if ($request->popularity == 'whats_new') {
+                $getFilterData->orderBy('id', 'desc');
+            }
+            if ($request->popularity == 'relevence') {
+                # code...
+            }
+        }
+        if (!empty($request->variation)) {
+            $getFilterData->where('variation_id', $request->variation);
+        }
+        if (!empty($request->collection)) {
+            $getFilterData->where('collection_id', $request->collection);
+        }
+        if (!empty($request->price)) {
+            if ($request->price == 'high_to_low') {
+                $getFilterData->orderBy('price', 'desc');
+            } else {
+                $getFilterData->orderBy('price', 'asc');
+            }
+        }
+        $getFilterData = $getFilterData->get();
+        return $getFilterData;
+    }
     function sideCart()
     {
         return view('web.sideCart');

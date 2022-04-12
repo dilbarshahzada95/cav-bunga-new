@@ -43,6 +43,7 @@ Route::get('/details-page', [App\Http\Controllers\web\WebController::class, 'det
 Route::get('/affliated_programs', [App\Http\Controllers\web\WebController::class, 'affliated_programs'])->name('affliated_programs');
 Route::get('/shoping', [App\Http\Controllers\web\WebController::class, 'shoping'])->name('shoping');
 Route::get('/filter/wallet/{id}', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('filter/wallet');
+Route::get('/walletfilter', [App\Http\Controllers\web\WebController::class, 'walletfilter'])->name('walletfilter');
 Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCart'])->name('sideCart');
 Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
 Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partners'])->name('partners');
