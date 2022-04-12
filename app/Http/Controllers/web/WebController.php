@@ -131,34 +131,8 @@ class WebController extends Controller
         }
         $getFilterData = $getFilterData->get();
         $html = '';
-        foreach ($getFilterData as $data) {
-            $html .= ' <div class="col-md-4">
-                                    <div class="single__product first">
-                                        <div class="wallet__section">
-                                            <div class="imagage__sec">
-                                                <img src="{{ asset("web/assets/img/wallet.png") }}"
-                                                    class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="product__content">
-                                            <div class="product__description">
-                                                <h3>{{ isset($prod->product_name) ? $prod->product_name : "" }}</h3>
-                                                <h5>luxury leather wallet</h5>
-                                                <h4>AED {{ isset($prod->price) ? $prod->price : "" }}</h4>
-                                            </div>
-                                            <div class="more__info">
-                                                <a href="{{ url("details-page/" . $prod->id) }}"
-                                                    class="btn-info">more
-                                                    info</a>
-                                                <a href="#" class="cart-btn">
-                                                    <img src="{{ asset("web/assets/img/icons/wallet-cart.png") }}"
-                                                        alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>';
+        foreach ($getFilterData as $prod) {
+            $html = print '';
         }
         return $html;
     }
