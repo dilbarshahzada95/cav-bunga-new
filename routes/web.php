@@ -39,7 +39,7 @@ Route::get('/terms_and_condition', [App\Http\Controllers\web\WebController::clas
 
 Route::get('/register-user', [App\Http\Controllers\web\WebController::class, 'register'])->name('register-user');
 Route::get('/cart', [App\Http\Controllers\web\WebController::class, 'cart'])->name('cart');
-Route::get('/details-page', [App\Http\Controllers\web\WebController::class, 'detailsPage'])->name('details-page');
+Route::get('/details-page/{id}', [App\Http\Controllers\web\WebController::class, 'detailsPage'])->name('details-page');
 Route::get('/affliated_programs', [App\Http\Controllers\web\WebController::class, 'affliated_programs'])->name('affliated_programs');
 Route::get('/shoping', [App\Http\Controllers\web\WebController::class, 'shoping'])->name('shoping');
 Route::get('/filter/wallet/{id}', [App\Http\Controllers\web\WebController::class, 'wallet'])->name('filter/wallet');

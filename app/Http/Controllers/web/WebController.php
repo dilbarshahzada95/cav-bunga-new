@@ -74,7 +74,7 @@ class WebController extends Controller
     {
         return view('web.cart');
     }
-    function detailsPage()
+    function detailsPage($id)
     {
         return view('web.details_page');
     }

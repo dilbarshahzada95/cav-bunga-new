@@ -193,7 +193,8 @@
                                                 <h4>AED {{ isset($prod->price) ? $prod->price : '' }}</h4>
                                             </div>
                                             <div class="more__info">
-                                                <a href="{{ url('details-page') }}" class="btn-info">more
+                                                <a href="{{ url('details-page/' . $prod->id) }}"
+                                                    class="btn-info">more
                                                     info</a>
                                                 <a href="#" class="cart-btn">
                                                     <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
