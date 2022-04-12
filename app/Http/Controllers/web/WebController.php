@@ -134,6 +134,41 @@ class WebController extends Controller
             }
         }
         $getFilterData = $getFilterData->get();
+        $html='';
+         foreach ($getFilterData as $key => $prod) {
+                          $html=" <div class='col-md-4'>
+                                    <div class='single__product first'>
+                                        <div class='wallet__section'>
+                                            <div class='imagage__sec'>
+                                        
+                                                        <img src='{{ asset('') }}'
+                                                            class='img-fluid' alt=''>
+                                            
+
+                                            </div>
+                                        </div>
+                                        <div class='product__content'>
+                                            <div class='product__description'>
+                                                <h3>ffffff</h3>
+                                                <h5>luxury leather wallet</h5>
+                                                <h4>AED fffff</h4>
+                                            </div>
+                                            <div class='more__info'>
+                                                <a href='#'
+                                                    class='btn-info'>more
+                                                    info</a>
+                                                <a href='#' class='cart-btn'>
+                                                    <img src='{{ asset('web/assets/img/icons/wallet-cart.png') }}'
+                                                        alt=''>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>";
+
+         }
+
         return $html;
     }
     function sideCart()
