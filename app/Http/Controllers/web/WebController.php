@@ -77,14 +77,10 @@ class WebController extends Controller
     }
     function detailsPage($id)
     {
-<<<<<<< HEAD
-        $data=Product::findOrFail($id);
+      $data=Product::findOrFail($id);
          $featured_product =ProductFeatured::where('product_id',$id)->get();
         return view('web.details_page',compact('data','featured_product'));
-=======
-        $data = Product::findOrFail($id);
-        return view('web.details_page', compact('data'));
->>>>>>> 711387df71aea27b567561bc328ee80212b37a7b
+
     }
     function affliated_programs()
     {
