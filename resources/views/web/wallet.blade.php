@@ -44,6 +44,29 @@
     <link href="{{ asset('web/assets/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/cavabunga.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/responsive.css') }}" rel="stylesheet" />
+    <style>
+        select::-ms-expand {
+            display: none;
+        }
+
+        select {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0.5em 2em 0.5em 0.5em;
+            border: 1px solid #eee;
+            font: inherit;
+            line-height: inherit;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+            background-position: right 15px top 1em, right 10px top 1em;
+            background-size: 5px 5px, 5px 5px;
+        }
+
+    </style>
 </head>
 
 <!-- <body oncontextmenu="return false"> -->
@@ -87,7 +110,7 @@
 
                                                 <span class="current">Popularity <i
                                                         class="lastudioicon-down-arrow"></i></span>
-                                                <select class="active popularity">
+                                                <select class="active popularity form-control">
                                                     <option value="whats_new"><a href="#" class="active">What's
                                                             New</a></option>
                                                     <option value="relevence"><a href="#">Relevance</a></option>
@@ -103,7 +126,7 @@
 
                                                     <span class="current">Price <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active price">
+                                                    <select class="active price form-control">
                                                         <option value="low_to_high">Price low to high</option>
                                                         <option value="high_to_low">Price high to low</option>
                                                         <option value="discount">Discount</option>
@@ -119,7 +142,7 @@
                                                     <span class="current">Color <i
                                                             class="lastudioicon-down-arrow"></i></span>
 
-                                                    <select class="active variation">
+                                                    <select class="active variation form-control">
                                                         @foreach ($variation as $var)
                                                             <option value="{{ $var->id }}" <a href="#">
                                                                 {{ $var->variation_name }}</a>
@@ -132,7 +155,7 @@
                                                     class="product-sorting-menu product-sorting d-sm-none d-lg-block d-md-block">
                                                     <span class="current">Collection <i
                                                             class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active collcetion">
+                                                    <select class="active collcetion form-control">
                                                         @foreach ($collection as $col)
                                                             <option value="{{ $col->id }}"><a href="#"
                                                                     class="active">{{ $col->collection_name }}</a>
@@ -240,13 +263,34 @@
 
     <!--=== Custom Js ===-->
     <script src="{{ asset('web/assets/js/custom.js') }}"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
         $('.price').on('change', function() {
             var popularity = $('.popularity').val();
             var variation = $('.variation').val();
             var collection = $('.collection').val();
             var price = $('.price').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                    url: 'wallet/filter/',
+                    method: 'POST',
+                    data: {
+                        popularity: popularity,
+                        variation: variation,
+                        collection: collection,
+                        price: price
+                    },
+
+                },
+                dataType: 'json',
+                success: function(data) {
+
+                }
+            });
         });
         $('.popularity').on('change', function() {
             var popularity = $('.popularity').val();
