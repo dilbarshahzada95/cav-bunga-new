@@ -77,10 +77,10 @@ class WebController extends Controller
     }
     function detailsPage($id)
     {
-      $data=Product::findOrFail($id);
-         $featured_product =ProductFeatured::where('product_id',$id)->get();
-        return view('web.details_page',compact('data','featured_product'));
-
+        $data = Product::findOrFail($id);
+        $product_image = json_decode($data->product_gallery);
+        $featured_product = ProductFeatured::where('product_id', $id)->get();
+        return view('web.details_page', compact('data', 'featured_product', 'product_image'));
     }
     function affliated_programs()
     {
