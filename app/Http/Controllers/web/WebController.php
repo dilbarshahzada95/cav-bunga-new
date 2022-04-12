@@ -130,6 +130,8 @@ class WebController extends Controller
             }
         }
         $getFilterData = $getFilterData->get();
+        $html = '';
+
         return $getFilterData;
     }
     function sideCart()
