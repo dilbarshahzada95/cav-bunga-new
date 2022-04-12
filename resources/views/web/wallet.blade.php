@@ -178,11 +178,14 @@
                         </div>
                         <div class="row product__grid">
                             @foreach ($product as $prod)
+                                @php
+                                    $image = json_decode($prod->product_gallery);
+                                @endphp
                                 <div class="col-md-4">
                                     <div class="single__product first">
                                         <div class="wallet__section">
                                             <div class="imagage__sec">
-                                                <img src="{{ asset('web/assets/img/wallet.png') }}"
+                                                <img src="{{ asset('product_image/' . $image[0]) }}"
                                                     class="img-fluid" alt="">
                                             </div>
                                         </div>
