@@ -76,8 +76,8 @@ class WebController extends Controller
     }
     function detailsPage($id)
     {
-        $data=Product::findOrFail($id);
-        return view('web.details_page',compact('data'));
+        $data = Product::findOrFail($id);
+        return view('web.details_page', compact('data'));
     }
     function affliated_programs()
     {
@@ -131,10 +131,6 @@ class WebController extends Controller
             }
         }
         $getFilterData = $getFilterData->get();
-        $html = '';
-        foreach ($getFilterData as $prod) {
-            $html = print '';
-        }
         return $html;
     }
     function sideCart()
