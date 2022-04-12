@@ -112,6 +112,7 @@
                                                         class="lastudioicon-down-arrow"></i></span>
                                                 <select class="active popularity form-control" id="popularity"
                                                     onchange="filterItem(1)">
+                                                    <option value="">please select</option>
                                                     <option value="whats_new">What's
                                                         New</option>
                                                     <option value="relevence">Relevance</option>
@@ -129,6 +130,7 @@
                                                             class="lastudioicon-down-arrow"></i></span>
                                                     <select class="active price form-control" id="price"
                                                         onchange="filterItem(2)">
+                                                        <option value="">please select</option>
                                                         <option value="low_to_high">Price low to high</option>
                                                         <option value="high_to_low">Price high to low</option>
                                                         <option value="discount">Discount</option>
@@ -146,6 +148,7 @@
 
                                                     <select class="active variation form-control" id="variation"
                                                         onchange="filterItem(3)">
+                                                        <option value="">please select</option>
                                                         @foreach ($variation as $var)
                                                             <option value="{{ $var->id }}">
                                                                 {{ $var->variation_name }}
@@ -160,6 +163,7 @@
                                                             class="lastudioicon-down-arrow"></i></span>
                                                     <select class="active collection form-control" id="collection"
                                                         onchange="filterItem(4)">
+                                                        <option value="">please select</option>
                                                         @foreach ($collection as $col)
                                                             <option value="{{ $col->id }}">
                                                                 {{ $col->collection_name }}
@@ -187,7 +191,7 @@
                                             <div class="imagage__sec">
                                                 @if (isset($image))
                                                     @if (!empty($image[0]))
-                                                        <img src="{{ asset('product_image/' . $image[0]) }}"
+                                                        <img src="{{ asset('product_image/thumbnail/' . $image[0]) }}"
                                                             class="img-fluid" alt="">
                                                     @endif
                                                 @endif
@@ -276,10 +280,21 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
         function filterItem(val) {
-            var popularity = $('#popularity').val();
-            var variation = $('#variation').val();
-            var collection = $('#collection').val();
-            var price = $('#price').val();
+
+            if (val == 1) {
+                var popularity = $('#popularity').val();
+            }
+            if (val == 3) {
+                var variation = $('#variation').val();
+
+            }
+            if (val == 4) {
+                var collection = $('#collection').val();
+            }
+            if (val == 2) {
+                var price = $('#price').val();
+            }
+
             var url = "{{ url('/walletfilter') }}";
             $.ajax({
                 type: "GET",

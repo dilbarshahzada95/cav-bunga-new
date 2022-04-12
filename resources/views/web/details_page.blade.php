@@ -59,7 +59,99 @@
         </div>
         <!--== End Preloader Content ==-->
         <!--== Start Header Wrapper ==-->
-        @include('web.header')
+
+        <header class="header-area header-default header-style2 header-transparent sticky-header">
+            <div class="container-fluid">
+                <div class="row row-gutter-0 align-items-center">
+                    <div class="col-12">
+                        <div class="header-align">
+                            <div class="header-align-left">
+                                <div class="header-logo-area">
+                                    <a href="#">
+                                        <img class="logo-main d-none d-sm-block f-logo"
+                                            src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
+                                        <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png') }}"
+                                            alt="Logo" />
+                                        <img class="logo-light" src="{{ asset('web/assets/img/logo.png') }}"
+                                            alt="Logo" />
+                                    </a>
+                                </div>
+                                @include('web.menu')
+                            </div>
+                            <div class="header-align-right">
+                                <div class="header-action-area">
+                                    <div class="header-action-search">
+                                        <button class="btn-search btn-search-menu">
+                                            <i class="lastudioicon-zoom-1"></i>
+                                        </button>
+                                    </div>
+                                    <div class="header-action-flag">
+                                        <dropdown>
+                                            <input id="toggle2" type="checkbox">
+                                            <label for="toggle2" class="animate"><img
+                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
+                                            <ul class="animate m-0">
+                                                <li class="animate">
+                                                    <p>German</p>
+                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>bangaladesh</p>
+                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
+                                                        alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>Turkey</p>
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>German</p>
+                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>bangaladesh</p>
+                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
+                                                        alt="">
+                                                </li>
+                                                <li class="animate">
+                                                    <p>Turkey</p>
+                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
+                                                        alt=" ">
+                                                </li>
+                                            </ul>
+                                        </dropdown>
+                                    </div>
+                                    <div class="header-action-login">
+                                        <button class="btn-login" onclick="window.location.href='login.html'">
+                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
+                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
+                                            <img src="assets/img/icons/user-dark.png')}}"
+                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="header-action-cart">
+                                        <button class="btn-cart cart-icon">
+                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
+                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
+                                            <img src="{{ asset('web/assets/img/icons/cart-dark.png') }}"
+                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
+                                            <span class="cart-count">0 items</span>
+                                        </button>
+                                    </div>
+                                    <button class="btn-menu d-xl-none">
+                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}"
+                                            class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
+                                        <img src="{{ asset('web/assets/img/icons/menu-dark.png') }}"
+                                            class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <!--== End Header Wrapper ==-->
         <main class="main-content site-wrapper-reveal cavabunga__single__details">
             <section class="cavabunga__product__preview">
@@ -77,7 +169,7 @@
                                         @if (!empty($product_image))
                                             @foreach ($product_image as $product)
                                                 <li class="active">
-                                                    <a href="{{ asset('product_image/' . $product) }}"
+                                                    <a href="{{ asset('product_image/thumbnail/' . $product) }}"
                                                         target="imgBox">
                                                         <img src="{{ asset('product_image/' . $product) }}"
                                                             alt="Cavabunga product image">
@@ -94,7 +186,7 @@
                                     <div class="imgBox">
                                         <a href="#">
                                             @if (!empty($product_image[0]))
-                                                <img src="{{ asset('product_image/' . $product_image[0]) }}"
+                                                <img src="{{ asset('product_image/thumbnail/' . $product_image[0]) }}"
                                                     alt="Cavabunga product image">
                                             @endif
 
@@ -104,7 +196,7 @@
                                     </div>
                                 </div>
                                 <div class="back__arrow">
-                                    <a href="shop-details.html">
+                                    <a href="{{ url('shoping') }}">
                                         <img src="{{ asset('web/assets/img/icons/back-black.png') }}" alt=""> go back
                                     </a>
                                 </div>
@@ -168,82 +260,43 @@
                 <div class="home-slider-content">
                     <div class="swiper-container cava__shop__details">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide slider__background">
-                                <!-- Start Slide Item -->
-                                <div class="home-slider-item sm-product-slider-item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="thumb thumb-style">
-                                                    <img class="shop__image"
-                                                        src="{{ asset('web/assets/img/shop/shop-details/shop1.png') }}"
-                                                        alt="Moren-Image">
-                                                    <div class="line__highlights">
-                                                        <div class="round"></div>
+                            @foreach ($featured_product as $featured)
+                                <div class="swiper-slide slider__background">
+                                    <!-- Start Slide Item -->
+                                    <div class="home-slider-item sm-product-slider-item">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div class="thumb thumb-style">
+                                                        <img class="shop__image"
+                                                            src="{{ asset('featured_product_image/' . $featured->image) }}"
+                                                            alt="Moren-Image">
+                                                        <div class="line__highlights">
+                                                            <div class="round"></div>
+                                                        </div>
+                                                        <div class="shadow__img">
+                                                            <img src="{{ asset('featured_product_image/' . $featured->image) }}"
+                                                                alt="">
+                                                        </div>
                                                     </div>
-                                                    <div class="shadow__img">
-                                                        <img src="{{ asset('web/assets/img/shop/shop-details/shop1-shadow.png') }}"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="box-item">
-                                                    <div class="box-content d-sm-none d-lg-block">
-                                                        <h4>{{ $data->title }}</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                            diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                                            justo duo dolores
-                                                            et ea rebum.
-                                                        </p>
+                                                    <div class="box-item">
+                                                        <div class="box-content d-sm-none d-lg-block">
+                                                            <h4>{{ $featured->title }}</h4>
+                                                            <p>{{ $featured->description }}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="shape-layer-items">
-                                        <div class="details__shape"></div>
-                                    </div>
-                                </div>
-                                <!-- End Slide Item -->
-                            </div>
-                            <div class="swiper-slide slider__background">
-                                <!-- Start Slide Item -->
-                                <div class="home-slider-item sm-product-slider-item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="thumb thumb-style">
-                                                    <img class="shop__image"
-                                                        src="{{ asset('web/assets/img/shop/shop-details/shop1.png') }}"
-                                                        alt="Moren-Image">
-                                                    <div class="line__highlights">
-                                                        <div class="round"></div>
-                                                    </div>
-                                                    <div class="shadow__img">
-                                                        <img src="{{ asset('web/assets/img/shop/shop-details/shop1-shadow.png') }}"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="box-item">
-                                                    <div class="box-content d-sm-none d-lg-block">
-                                                        <h4>Detachable Front Pocket</h4>
-                                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                                            diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                            aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                                            justo duo dolores
-                                                            et ea rebum.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="shape-layer-items">
+                                            <div class="details__shape"></div>
                                         </div>
                                     </div>
-                                    <div class="shape-layer-items">
-                                        <div class="details__shape"></div>
-                                    </div>
+                                    <!-- End Slide Item -->
                                 </div>
-                                <!-- End Slide Item -->
-                            </div>
+                            @endforeach
+
                         </div>
                         <!-- Add Arrows -->
                         <div class="swiper-button-next">
@@ -258,244 +311,8 @@
             </section>
         </main>
         <!-- Modal -->
-        <div class="product__overview__model">
-            <div class="product modal fade d-lg-none" id="exampleModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detachable Front Pocket</h5>
-                            <a class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">close</span>
-                            </a>
-                        </div>
-                        <div class="modal-body">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et justo duo dolores et ea rebum.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <aside class="product-quick-view-modal">
-            <div class="product-quick-view-inner">
-                <div class="product-quick-view-content">
-                    <button type="button" class="btn-close">
-                        <span class="close-icon"><i class="lastudioicon-e-remove"></i></span>
-                    </button>
-                    <div class="row row-gutter-0">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="thumb">
-                                <img src="{{ asset('web/assets/img/shop/quick-view1.jpg') }}" alt="Moren-Shop">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="single-product-info">
-                                <h4 class="title">Product Simple</h4>
-                                <div class="product-rating">
-                                    <div class="review">
-                                        <p><span></span>99 in stock</p>
-                                    </div>
-                                </div>
-                                <div class="prices">
-                                    <span class="price">£49.90</span>
-                                </div>
-                                <p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Fringilla quis ipsum enim viverra. Enim in morbi tincidunt ante luctus tincidunt
-                                    integer. Sed adipiscing vehicula.</p>
-                                <div class="quick-product-action">
-                                    <div class="action-top">
-                                        <div class="pro-qty-area">
-                                            <div class="pro-qty">
-                                                <input type="text" id="quantity" title="Quantity" value="1">
-                                                <a href="#" class="inc qty-btn">+</a><a href="#"
-                                                    class="dec qty-btn">-</a>
-                                            </div>
-                                        </div>
-                                        <a class="btn-theme btn-black" href="#">Add to cart</a>
-                                    </div>
-                                    <div class="action-bottom">
-                                        <a class="btn-wishlist" href="#"><i
-                                                class="labtn-icon labtn-icon-wishlist"></i>Add to wishlist</a>
-                                        <a class="btn-compare" href="#"><i
-                                                class="labtn-icon labtn-icon-compare"></i>Add to compare</a>
-                                    </div>
-                                </div>
-                                <div class="product-ratting">
-                                    <div class="product-sku">
-                                        SKU: <span>REF. LA-276</span>
-                                    </div>
-                                </div>
-                                <div class="product-categorys">
-                                    <div class="product-category">
-                                        Category: <span>Uncategorized</span>
-                                    </div>
-                                </div>
-                                <div class="widget">
-                                    <h3 class="title">Tags:</h3>
-                                    <div class="widget-tags">
-                                        <ul>
-                                            <li><a href="#">Blazer,</a></li>
-                                            <li><a href="#">Fashion,</a></li>
-                                            <li><a href="#">wordpress,</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-social-info">
-                                    <a href="#"><span class="lastudioicon-b-facebook"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-twitter"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-linkedin"></span></a>
-                                    <a href="#"><span class="lastudioicon-b-pinterest"></span></a>
-                                </div>
-                                <div class="product-nextprev">
-                                    <a href="#">
-                                        <i class="lastudioicon-arrow-left"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="lastudioicon-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas-overlay"></div>
-        </aside>
-        <aside class="sidebar-cart-modal">
-            <div class="sidebar-cart-inner">
-                <div class="sidebar-cart-content">
-                    <a class="cart-close" href="javascript:void(0);"><i class="lastudioicon-e-remove"></i></a>
-                    <div class="sidebar-cart">
-                        <h4 class="sidebar-cart-title">Shopping Cart</h4>
-                        <hr>
-                        <div class="product-cart">
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Men Black Shoe</a></h4>
-                                    <span class="info">Backpack</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$121.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">mario page wallet</a></h4>
-                                    <span class="info">Wallet</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$62.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Lucy vanity kit</a></h4>
-                                    <span class="info">Vanity kit</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$113.50</h4>
-                                </div>
-                            </div>
 
-                        </div>
 
-                        <div class="cart-total">
-                            <hr>
-                            <h4>Total: <span class="money">$297.40</span></h4>
-                        </div>
-                        <div class="cart-checkout-btn">
-                            <a class="btn-theme" href="#">Continue shopping</a>
-                            <a class="btn-theme" href="#">Go to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <div class="sidebar-cart-overlay"></div>
-        <aside class="off-canvas-wrapper">
-            <div class="off-canvas-inner">
-                <div class="off-canvas-overlay d-none"></div>
-                <!-- Start Off Canvas Content Wrapper -->
-                <div class="off-canvas-content">
-                    <!-- Off Canvas Header -->
-                    <div class="off-canvas-header">
-                        <div class="close-action">
-                            <button class="btn-close"><i class="icofont-close-line"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="off-canvas-item">
-                        <!-- Start Mobile Menu Wrapper -->
-                        <div class="res-mobile-menu">
-                            <!-- Note Content Auto Generate By Jquery From Main Menu -->
-                        </div>
-                        <!-- End Mobile Menu Wrapper -->
-                    </div>
-                    <!-- Off Canvas Footer -->
-                    <div class="off-canvas-footer"></div>
-                </div>
-                <!-- End Off Canvas Content Wrapper -->
-            </div>
-            <div class="header-action-flag">
-                <dropdown>
-                    <input id="toggle3" type="checkbox">
-                    <label for="toggle3" class="animate"><img
-                            src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
-                    <ul class="animate m-0">
-                        <li class="animate">
-                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
-                        </li>
-                        <li class="animate">
-                            <p>German</p><img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="{{ asset('web/assets/img/flags/turkey.png') }}" alt=" ">
-                        </li>
-                    </ul>
-                </dropdown>
-            </div>
-        </aside>
     </div>
     <!--=======================Javascript============================-->
     <!--=== Modernizr Min Js ===-->

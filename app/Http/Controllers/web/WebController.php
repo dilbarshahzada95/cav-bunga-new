@@ -80,6 +80,7 @@ class WebController extends Controller
         $data = Product::findOrFail($id);
         $product_image = json_decode($data->product_gallery);
         $featured_product = ProductFeatured::where('product_id', $id)->get();
+
         return view('web.details_page', compact('data', 'featured_product', 'product_image'));
     }
     function affliated_programs()
@@ -134,31 +135,37 @@ class WebController extends Controller
             }
         }
         $getFilterData = $getFilterData->get();
-        $html='';
-         foreach ($getFilterData as $key => $prod) {
-                          $html=" <div class='col-md-4'>
+        $html = '';
+        foreach ($getFilterData as $key => $prod) {
+            $product_name = isset($prod->product_name) ? $prod->product_name : '';
+            $price = isset($prod->price) ? $prod->price : '';
+            $image = json_decode($prod->product_gallery);
+            $product_image = '';
+            if (isset($image)) {
+                if (!empty($image[0])) {
+                    $product_image = " <img src='" . asset('product_image/thumbnail/' . $image[0]) . "' class='img-fluid' alt=''>";
+                }
+            }
+            $html = " <div class='col-md-4'>
                                     <div class='single__product first'>
                                         <div class='wallet__section'>
                                             <div class='imagage__sec'>
-                                        
-                                                        <img src='{{ asset('') }}'
-                                                            class='img-fluid' alt=''>
-                                            
 
-                                            </div>
+                                                     " . $product_image . "
+                                     </div>
                                         </div>
                                         <div class='product__content'>
                                             <div class='product__description'>
-                                                <h3>ffffff</h3>
+                                                <h3>" . $product_name . "</h3>
                                                 <h5>luxury leather wallet</h5>
-                                                <h4>AED fffff</h4>
+                                                <h4>AED " . $price . "</h4>
                                             </div>
                                             <div class='more__info'>
-                                                <a href='#'
+                                                <a href='" . url('details-page/' . $prod->id) . "'
                                                     class='btn-info'>more
                                                     info</a>
                                                 <a href='#' class='cart-btn'>
-                                                    <img src='{{ asset('web/assets/img/icons/wallet-cart.png') }}'
+                                                    <img src='" . asset('web/assets/img/icons/wallet-cart.png') . "'
                                                         alt=''>
                                                 </a>
                                             </div>
@@ -166,8 +173,7 @@ class WebController extends Controller
                                     </div>
 
                                 </div>";
-
-         }
+        }
 
         return $html;
     }
