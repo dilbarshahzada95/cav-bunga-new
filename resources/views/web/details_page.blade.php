@@ -59,98 +59,7 @@
         </div>
         <!--== End Preloader Content ==-->
         <!--== Start Header Wrapper ==-->
-        <header class="header-area header-default header-style2 header-transparent sticky-header">
-            <div class="container-fluid">
-                <div class="row row-gutter-0 align-items-center">
-                    <div class="col-12">
-                        <div class="header-align">
-                            <div class="header-align-left">
-                                <div class="header-logo-area">
-                                    <a href="#">
-                                        <img class="logo-main d-none d-sm-block f-logo"
-                                            src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
-                                        <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png') }}"
-                                            alt="Logo" />
-                                        <img class="logo-light" src="{{ asset('web/assets/img/logo.png') }}"
-                                            alt="Logo" />
-                                    </a>
-                                </div>
-                                @include('web.menu')
-                            </div>
-                            <div class="header-align-right">
-                                <div class="header-action-area">
-                                    <div class="header-action-search">
-                                        <button class="btn-search btn-search-menu">
-                                            <i class="lastudioicon-zoom-1"></i>
-                                        </button>
-                                    </div>
-                                    <div class="header-action-flag">
-                                        <dropdown>
-                                            <input id="toggle2" type="checkbox">
-                                            <label for="toggle2" class="animate"><img
-                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
-                                            <ul class="animate m-0">
-                                                <li class="animate">
-                                                    <p>German</p>
-                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p>
-                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
-                                                        alt=" ">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>German</p>
-                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p>
-                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
-                                                        alt=" ">
-                                                </li>
-                                            </ul>
-                                        </dropdown>
-                                    </div>
-                                    <div class="header-action-login">
-                                        <button class="btn-login" onclick="window.location.href='login.html'">
-                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
-                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                            <img src="assets/img/icons/user-dark.png')}}"
-                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                        </button>
-                                    </div>
-                                    <div class="header-action-cart">
-                                        <button class="btn-cart cart-icon">
-                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
-                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                            <img src="{{ asset('web/assets/img/icons/cart-dark.png') }}"
-                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                            <span class="cart-count">0 items</span>
-                                        </button>
-                                    </div>
-                                    <button class="btn-menu d-xl-none">
-                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}"
-                                            class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                        <img src="{{ asset('web/assets/img/icons/menu-dark.png') }}"
-                                            class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('web.header')
         <!--== End Header Wrapper ==-->
         <main class="main-content site-wrapper-reveal cavabunga__single__details">
             <section class="cavabunga__product__preview">
@@ -161,35 +70,34 @@
                             <div class="col-lg-6 sm__half__bg">
                                 <div class="product__image__slider">
                                     <ul class="thumb">
-                                        <li class="active">
-                                            <a href="{{ asset('web/assets/img/shop/shop-details/shop1-withshadow.png') }}"
-                                                target="imgBox">
-                                                <img src="{{ asset('web/assets/img/shop/shop-details/shop1-withshadow.png') }}"
-                                                    alt="Cavabunga product image">
-                                            </a>
-                                        </li>
+                                        @php
+                                            $i = 1;
+                                            $thumbImage = '';
+                                        @endphp
+                                        @if (!empty($product_image))
+                                            @foreach ($product_image as $product)
+                                                <li class="active">
+                                                    <a href="{{ asset('product_image/' . $product) }}"
+                                                        target="imgBox">
+                                                        <img src="{{ asset('product_image/' . $product) }}"
+                                                            alt="Cavabunga product image">
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                            @php
+                                                $i++;
+                                            @endphp
+                                        @endif
 
-                                        <li>
-                                            <a href="{{ asset('web/assets/img/shop/shop-details/shop2.png') }}"
-                                                target="imgBox">
-                                                <img src="{{ asset('web/assets/img/shop/shop-details/shop2.png') }}"
-                                                    alt="Cavabunga product image">
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ asset('web/assets/img/shop/shop-details/shop1-withshadow.png') }}"
-                                                target="imgBox">
-                                                <img src="{{ asset('web/assets/img/shop/shop-details/shop1-withshadow.png') }}"
-                                                    alt="Cavabunga product image">
-                                            </a>
-                                        </li>
                                     </ul>
 
                                     <div class="imgBox">
-                                        <a href="image__highlight.html">
-                                            <img src="{{ asset('web/assets/img/shop/shop-details/shop1-withshadow.png') }}"
-                                                alt="Cavabunga product image">
+                                        <a href="#">
+                                            @if (!empty($product_image[0]))
+                                                <img src="{{ asset('product_image/' . $product_image[0]) }}"
+                                                    alt="Cavabunga product image">
+                                            @endif
+
                                         </a>
 
 
@@ -204,29 +112,37 @@
                             <div class="col-lg-6 bg-sm-shop__Details">
                                 <div class="single-product-info">
                                     <h5>on the radar</h5>
-                                    <h4 class="title">{{$data->product_name}}</h4>
-                                    <p class="product-desc mb-30 ">{{$data->product_description}}
+                                    <h4 class="title">{{ $data->product_name }}</h4>
+                                    <p class="product-desc mb-30 ">{{ $data->product_description }}
                                     </p>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="product__details d-flex">
                                                 <div class="volume">
                                                     <span>volume</span>
-                                                    <h4>{{$data->volume}} L</h4>
+                                                    <h4>{{ $data->volume }} L</h4>
                                                 </div>
                                                 <div class="height">
                                                     <span>height</span>
-                                                    <h4>{{$data->wieght}} cm</h4>
+                                                    <h4>{{ $data->wieght }} cm</h4>
                                                 </div>
                                             </div>
                                             <div class="description d-flex">
+                                                @php
+                                                    $tags = [];
+                                                    $tags = explode(',', $data->tags);
+
+                                                @endphp
+
                                                 <div class="bottom__content">
-                                                    <p>detachable pockets
+                                                    <p>{{ isset($tags[0]) ? $tags[0] : '' }}
                                                     </p>
                                                 </div>
                                                 <div class="bottom__content">
-                                                    <p>Matanee Bovine Stitching</p>
+                                                    <p>{{ isset($tags[1]) ? $tags[1] : '' }}
+                                                    </p>
                                                 </div>
+
                                             </div>
                                         </div>
                                         {{-- <div class="col-md-6">
@@ -272,7 +188,7 @@
                                                 </div>
                                                 <div class="box-item">
                                                     <div class="box-content d-sm-none d-lg-block">
-                                                        <h4>{{$data->title}}</h4>
+                                                        <h4>{{ $data->title }}</h4>
                                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                             diam nonumy eirmod tempor invidunt ut labore et dolore magna
                                                             aliquyam erat, sed diam voluptua. At vero eos et accusam et
