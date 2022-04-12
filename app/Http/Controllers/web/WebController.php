@@ -76,7 +76,8 @@ class WebController extends Controller
     }
     function detailsPage($id)
     {
-        return view('web.details_page');
+        $data=Product::findOrFail($id);
+        return view('web.details_page',compact('data'));
     }
     function affliated_programs()
     {

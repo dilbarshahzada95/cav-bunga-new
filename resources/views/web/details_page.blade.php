@@ -204,24 +204,19 @@
                             <div class="col-lg-6 bg-sm-shop__Details">
                                 <div class="single-product-info">
                                     <h5>on the radar</h5>
-                                    <h4 class="title">arno backpack</h4>
-                                    <p class="product-desc mb-30 ">Lorem ipsum dolor sit amet, consetetur sadipscing
-                                        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                                        rebum. Stet
-                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.
+                                    <h4 class="title">{{$data->product_name}}</h4>
+                                    <p class="product-desc mb-30 ">{{$data->product_description}}
                                     </p>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="product__details d-flex">
                                                 <div class="volume">
                                                     <span>volume</span>
-                                                    <h4>32.5 L</h4>
+                                                    <h4>{{$data->volume}} L</h4>
                                                 </div>
                                                 <div class="height">
                                                     <span>height</span>
-                                                    <h4>62 cm</h4>
+                                                    <h4>{{$data->wieght}} cm</h4>
                                                 </div>
                                             </div>
                                             <div class="description d-flex">
