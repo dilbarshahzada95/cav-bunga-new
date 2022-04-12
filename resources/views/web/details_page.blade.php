@@ -272,7 +272,7 @@
                                                 </div>
                                                 <div class="box-item">
                                                     <div class="box-content d-sm-none d-lg-block">
-                                                        <h4>Detachable Front Pocket</h4>
+                                                        <h4>{{$data->title}}</h4>
                                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                                                             diam nonumy eirmod tempor invidunt ut labore et dolore magna
                                                             aliquyam erat, sed diam voluptua. At vero eos et accusam et

@@ -18,6 +18,7 @@ use App\Models\OrderHistory;
 use App\Models\Slider;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductFeatured;
 
 class WebController extends Controller
 {
@@ -77,7 +78,8 @@ class WebController extends Controller
     function detailsPage($id)
     {
         $data=Product::findOrFail($id);
-        return view('web.details_page',compact('data'));
+         $featured_product =ProductFeatured::where('product_id',$id)->get();
+        return view('web.details_page',compact('data','featured_product'));
     }
     function affliated_programs()
     {
