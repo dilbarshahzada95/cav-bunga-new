@@ -185,8 +185,13 @@
                                     <div class="single__product first">
                                         <div class="wallet__section">
                                             <div class="imagage__sec">
-                                                <img src="{{ asset('product_image/' . $image[0]) }}"
-                                                    class="img-fluid" alt="">
+                                                @if (isset($image))
+                                                    @if (!empty($image[0]))
+                                                        <img src="{{ asset('product_image/' . $image[0]) }}"
+                                                            class="img-fluid" alt="">
+                                                    @endif
+                                                @endif
+
                                             </div>
                                         </div>
                                         <div class="product__content">
