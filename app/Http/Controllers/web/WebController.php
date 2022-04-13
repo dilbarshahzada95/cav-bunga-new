@@ -189,6 +189,15 @@ class WebController extends Controller
     {
         return view('web.partners');
     }
+    function category_image($id)
+    {
+        $category = Category::find($id);
+        $category_image = $category->sub_category_image;
+        $html = '';
+        $html = '  <img src="' . asset('category_image/' . $category_image) . '" class="img-fluid men_cat_img" alt="">';
+
+        return $html;
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -47,6 +47,8 @@ Route::get('/walletfilter', [App\Http\Controllers\web\WebController::class, 'wal
 Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCart'])->name('sideCart');
 Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
 Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partners'])->name('partners');
+Route::get('/category/image/{id}', [App\Http\Controllers\web\WebController::class, 'category_image'])->name('category/image');
+
 // CUSTOMER LOGIN AND REGISTRATION
 Route::post('/login/customer', [App\Http\Controllers\Auth\LoginController::class, 'loginCustomer'])->name('login/customer');
 Route::post('/register/customer', [App\Http\Controllers\Auth\LoginController::class, 'registerCustomer'])->name('register/customer');

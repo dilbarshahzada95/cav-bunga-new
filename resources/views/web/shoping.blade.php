@@ -59,9 +59,13 @@
             position: relative;
         }
 
-        /* .newbg1 {
+        .bluebg {
+
             background: linear-gradient(317deg, #41586E 0%, #8A96A1 100%);
-        } */
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
 
     </style>
 </head>
@@ -105,13 +109,13 @@
                                         <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__men" type="button" role="tab"
                                             aria-controls="cavabunga__shop__men" aria-selected="true"
-                                            onclick="getMaincat({{ $men_category[0]->id }})">Men</button>
+                                            onclick="getMaincat({{ $men_category[0]->id }});ChnageColorMen({{ $men_category[0]->layout_id }})">Men</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__women" type="button" role="tab"
                                             aria-controls="cavabunga__shop__women" aria-selected="false"
-                                            onclick="getMaincat({{ isset($woman_category[0]->id) ? $woman_category[0]->id : 0 }})">Women</button>
+                                            onclick="getMaincat({{ isset($woman_category[0]->id) ? $woman_category[0]->id : 0 }});ChnageColorWoman({{ $woman_category[0]->layout_id }})">Women</button>
                                     </li>
 
                                 </ul>
@@ -132,7 +136,7 @@
                                                                             <li class="nav-item"
                                                                                 role="presentation">
                                                                                 <button
-                                                                                    onclick="ChnageColor({{ $men_cat->layout_id }});getValue({{ $men_cat->parent_category_id }}, {{ $men_cat->id }})"
+                                                                                    onclick="ChnageColorMen({{ $men_cat->layout_id }});getValue({{ $men_cat->parent_category_id }}, {{ $men_cat->id }})"
                                                                                     class="nav-link active"
                                                                                     id="product-desc-tab"
                                                                                     data-bs-toggle="tab"
@@ -145,6 +149,8 @@
                                                                         @endforeach
                                                                     </ul>
                                                                 </div>
+                                                                <input type="hidden" id="men_default_layout"
+                                                                    value="{{ $men_category[0]->layout_id }}">
                                                                 <input type="hidden" id="men_default"
                                                                     value="{{ $men_category[0]->id }}">
                                                                 <input type="hidden" id="woman_default"
@@ -154,40 +160,15 @@
                                                                     <div class="tab-pane fade show active"
                                                                         id="cavabunga__Businesscard" role="tabpanel"
                                                                         aria-labelledby="product-desc-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                    <div class="tab-pane fade"
-                                                                        id="cavabunga__Vanitykits" role="tabpanel"
-                                                                        aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                            class="img-fluid" alt="">
+                                                                        <div class="men_cat_img">
+                                                                            @if (!empty($men_category[0]->sub_category_image))
+                                                                                <img src="{{ asset('category_image/' . $men_category[0]->sub_category_image) }}"
+                                                                                    class="img-fluid " alt="">
+                                                                            @endif
+                                                                        </div>
+
                                                                     </div>
 
-                                                                    <div class="tab-pane fade" id="Backpacks"
-                                                                        role="tabpanel"
-                                                                        aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                    <div class="tab-pane fade" id="Travel__Organizers"
-                                                                        role="tabpanel"
-                                                                        aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                    <div class="tab-pane fade" id="cavabunga__Shoes"
-                                                                        role="tabpanel"
-                                                                        aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                    <div class="tab-pane fade"
-                                                                        id="cavabunga__collections" role="tabpanel"
-                                                                        aria-labelledby="product-review-tab">
-                                                                        <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
                                                                 </div>
                                                             </div>
 
@@ -215,7 +196,7 @@
                                                                                 <li class="nav-item"
                                                                                     role="presentation">
                                                                                     <button class="nav-link active"
-                                                                                        onclick="ChnageColor({{ $woman_cat->layout_id }});getValue({{ $woman_cat->parent_category_id }}, {{ $woman_cat->id }})"
+                                                                                        onclick="ChnageColorWoman({{ $woman_cat->layout_id }});getValuewomain({{ $woman_cat->parent_category_id }}, {{ $woman_cat->id }})"
                                                                                         id="product-desc-tab"
                                                                                         data-bs-toggle="tab"
                                                                                         data-bs-target="#cavabunga__Businesscard1"
@@ -227,46 +208,24 @@
                                                                             @endforeach
                                                                         </ul>
                                                                     </div>
+                                                                    <input type="hidden" id="woman_default_layout"
+                                                                        value="{{ $woman_category[0]->layout_id }}">
                                                                     <div class="col-md-7 tab-content product-description-tab-content"
                                                                         id="myTabContent1">
                                                                         <div class="tab-pane fade show active"
                                                                             id="cavabunga__Businesscard1"
                                                                             role="tabpanel"
                                                                             aria-labelledby="product-desc-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                                class="img-fluid" alt="">
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="cavabunga__Vanitykits1" role="tabpanel"
-                                                                            aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                                class="img-fluid" alt="">
+                                                                            <div class="woman_cat_img">
+                                                                                @if (!empty($woman_category[0]->sub_category_image))
+                                                                                    <img src="{{ asset('category_image/' . $woman_category[0]->sub_category_image) }}"
+                                                                                        class="img-fluid " alt="">
+                                                                                @endif
+                                                                            </div>
+
+
                                                                         </div>
 
-                                                                        <div class="tab-pane fade" id="Backpacks1"
-                                                                            role="tabpanel"
-                                                                            aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
-                                                                                class="img-fluid" alt="">
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="Travel__Organizers1" role="tabpanel"
-                                                                            aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                                class="img-fluid" alt="">
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="cavabunga__Shoes1" role="tabpanel"
-                                                                            aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop2.png') }}"
-                                                                                class="img-fluid" alt="">
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="cavabunga__collections1" role="tabpanel"
-                                                                            aria-labelledby="product-review-tab">
-                                                                            <img src="{{ asset('web/assets/img/shop/shop.png') }}"
-                                                                                class="img-fluid" alt="">
-                                                                        </div>
                                                                     </div>
                                                                 </div>
 
@@ -340,31 +299,112 @@
     <script>
         $(document).ready(function() {
             var id = $('#men_default').val();
+            var men_default_layout = $('#men_default_layout').val();
+
             getMaincat(id);
+            ChnageColorMen(men_default_layout);
+
         });
 
-        function ChnageColor(val) {
+        function ChnageColorMen(val) {
+
             if (val == 1) {
-                $('.cavabunga__shop__section').click(function() {
-                    $(this).toggleClass('newbg1');
-                });
+
+                $('.cavabunga__shop__section').toggleClass('newbg1');
+                $('.cavabunga__shop__section').removeClass('newbg');
+                $('.cavabunga__shop__section').removeClass('bluebg');
+
+
             } else if (val == 2) {
-                $('.cavabunga__shop__section').click(function() {
-                    $(this).toggleClass('newbg');
-                });
+
+                $('.cavabunga__shop__section').toggleClass('newbg');
+                $('.cavabunga__shop__section').removeClass('bluebg');
+                $('.cavabunga__shop__section').removeClass('newbg1');
+
             } else if (val == 3) {
-                $('.cavabunga__shop__section').click(function() {
 
-                });
-            } else {
-                $('.cavabunga__shop__section').click(function() {
-                    $(this).toggleClass('newbg');
-                });
+                $('.cavabunga__shop__section').toggleClass('bluebg');
+                $('.cavabunga__shop__section').removeClass('newbg1');
+                $('.cavabunga__shop__section').removeClass('newbg');
+
+
             }
+            //  else {
 
-        };
+            //     $('.cavabunga__shop__section').toggleClass('bluebg');
+            //     $('.cavabunga__shop__section').removeClass('newbg1');
+            //     $('.cavabunga__shop__section').removeClass('newbg');
+
+            // }
+
+        }
+
+        function ChnageColorWoman(val) {
+
+            if (val == 1) {
+
+                $('.cavabunga__shop__section').toggleClass('newbg1');
+                $('.cavabunga__shop__section').removeClass('newbg');
+                $('.cavabunga__shop__section').removeClass('bluebg');
+
+
+            } else if (val == 2) {
+
+                $('.cavabunga__shop__section').toggleClass('newbg');
+                $('.cavabunga__shop__section').removeClass('bluebg');
+                $('.cavabunga__shop__section').removeClass('newbg1');
+
+            } else if (val == 3) {
+
+                $('.cavabunga__shop__section').toggleClass('bluebg');
+                $('.cavabunga__shop__section').removeClass('newbg1');
+                $('.cavabunga__shop__section').removeClass('newbg');
+
+
+            }
+            //  else {
+
+            //     $('.cavabunga__shop__section').toggleClass('bluebg');
+            //     $('.cavabunga__shop__section').removeClass('newbg1');
+            //     $('.cavabunga__shop__section').removeClass('newbg');
+
+            // }
+
+        }
 
         function getValue(pid, id) {
+
+            var url = "{{ url('/category/image') }}" + '/' + id;
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: "html",
+                success: function(data) {
+
+                    $('.men_cat_img').html(data);
+                }
+            });
+
+
+
+            var url = "{{ url('filter/wallet/') }}" + '/' + id;
+
+            $('.gotoshop').find('a').html('<a href="' + url + '">Go to shop</a>');
+        }
+
+        function getValuewomain(pid, id) {
+
+            var url = "{{ url('/category/image') }}" + '/' + id;
+            $.ajax({
+                type: "GET",
+                url: url,
+                success: function(data) {
+                    $('.woman_cat_img').html(data);
+                }
+            });
+
+
+
             var url = "{{ url('filter/wallet/') }}" + '/' + id;
 
             $('.gotoshop').find('a').html('<a href="' + url + '">Go to shop</a>');

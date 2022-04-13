@@ -67,6 +67,30 @@
         }
 
     </style>
+    <style>
+        .newbg {
+            background: linear-gradient(317deg, #943811 0%, #DED1CC 100%);
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+        .newbg1 {
+            background: linear-gradient(to right, #DED1CC, #C4A498);
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+        .bluebg {
+
+            background: linear-gradient(317deg, #41586E 0%, #8A96A1 100%);
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+    </style>
 </head>
 
 <!-- <body oncontextmenu="return false"> -->
@@ -119,7 +143,6 @@
                                                 </select>
                                             </div>
                                         </div>
-
 
                                         <div class="filter__section">
                                             <h6>Filter :</h6>
@@ -180,6 +203,11 @@
 
                             </div>
                         </div>
+                        @if (!empty($category->layout_id))
+                            <input type="hidden" id="men_default" value="{{ $category->layout_id }}">
+                        @endif
+
+
                         <div class="row product__grid">
                             @foreach ($product as $prod)
                                 @php
@@ -312,7 +340,32 @@
 
         }
     </script>
+    <script>
+        $(document).ready(function() {
+            var val = $('#men_default').val();
 
+            if (val == 1) {
+
+                $('.cavabunga__wallet').toggleClass('newbg1');
+            } else if (val == 2) {
+
+                $('.cavabunga__wallet').toggleClass('newbg');
+
+
+            } else if (val == 3) {
+
+                $('.cavabunga__wallet').toggleClass('bluebg');
+
+
+
+            } else {
+
+                $('.cavabunga__wallet').toggleClass('bluebg');
+
+
+            }
+        });
+    </script>
 
 </body>
 
