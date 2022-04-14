@@ -109,13 +109,13 @@
                                         <button class="nav-link active" id="product-desc-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__men" type="button" role="tab"
                                             aria-controls="cavabunga__shop__men" aria-selected="true"
-                                            onclick="getMaincat({{ $men_category[0]->id }});ChnageColorMen({{ $men_category[0]->layout_id }})">Men</button>
+                                            onclick="getMaincat({{isset( $men_category[0]->id) ?  $men_category[0]->id : 0 }});ChnageColorMen({{ isset($men_category[0]->layout_id) ? $men_category[0]->layout_id : 0 }})">Men</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="product-review-tab" data-bs-toggle="tab"
                                             data-bs-target="#cavabunga__shop__women" type="button" role="tab"
                                             aria-controls="cavabunga__shop__women" aria-selected="false"
-                                            onclick="getMaincat({{ isset($woman_category[0]->id) ? $woman_category[0]->id : 0 }});ChnageColorWoman({{ $woman_category[0]->layout_id }})">Women</button>
+                                            onclick="getMaincat({{ isset($woman_category[0]->id) ? $woman_category[0]->id : 0 }});ChnageColorWoman({{ isset($woman_category[0]->layout_id) ? $woman_category[0]->layout_id : 0 }})">Women</button>
                                     </li>
 
                                 </ul>
@@ -150,9 +150,9 @@
                                                                     </ul>
                                                                 </div>
                                                                 <input type="hidden" id="men_default_layout"
-                                                                    value="{{ $men_category[0]->layout_id }}">
+                                                                    value="{{ isset($men_category[0]->layout_id) ? $men_category[0]->layout_id : 0 }}">
                                                                 <input type="hidden" id="men_default"
-                                                                    value="{{ $men_category[0]->id }}">
+                                                                    value="{{ isset($men_category[0]->id) ? $men_category[0]->id : 0 }}">
                                                                 <input type="hidden" id="woman_default"
                                                                     value="{{ isset($woman_category[0]->id) ? $woman_category[0]->id : '' }}">
                                                                 <div class="col-md-7 tab-content product-description-tab-content"
@@ -209,7 +209,7 @@
                                                                         </ul>
                                                                     </div>
                                                                     <input type="hidden" id="woman_default_layout"
-                                                                        value="{{ $woman_category[0]->layout_id }}">
+                                                                        value="{{ isset($woman_category[0]->layout_id) ? $woman_category[0]->layout_id : 0 }}">
                                                                     <div class="col-md-7 tab-content product-description-tab-content"
                                                                         id="myTabContent1">
                                                                         <div class="tab-pane fade show active"

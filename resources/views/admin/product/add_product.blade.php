@@ -129,10 +129,10 @@
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
-                                                        for="manufacturer-name-input">Weight</label>
+                                                        for="manufacturer-name-input">Height</label>
                                                     <input type="number" name="wieght" value="{{ old('wieght') }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="wieght" autocomplete="off">
+                                                        placeholder="Height" autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -150,7 +150,7 @@
                                                     </select>
                                                 </div>
 
-                                                
+
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Price</label>

@@ -203,7 +203,7 @@
                             </div>
                             <div class="col-lg-6 bg-sm-shop__Details">
                                 <div class="single-product-info">
-                                    <h5>on the radar</h5>
+                                    <h5>{{ $data->slogan }}</h5>
                                     <h4 class="title">{{ $data->product_name }}</h4>
                                     <p class="product-desc mb-30 ">{{ $data->product_description }}
                                     </p>

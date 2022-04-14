@@ -135,10 +135,10 @@
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
-                                                        for="manufacturer-name-input">Weight</label>
+                                                        for="manufacturer-name-input">Height</label>
                                                     <input type="number" name="wieght" value="{{ $product->wieght }}"
                                                         class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags">
+                                                        placeholder="Height">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -340,7 +340,7 @@
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-12 pull-right">
-                                                <button class="btn btn-primary" type="submit">Submit</button>
+                                                <input class="btn btn-primary" type="submit" value="Submit"/>
                                             </div>
                                             <!-- end tab pane -->
                                         </div>
