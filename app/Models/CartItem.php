@@ -9,5 +9,10 @@ class CartItem extends Model
 {
     use HasFactory;
     protected $table = 'cart_items';
-    protected $fillable = ['customer_id', 'product_id', 'qty', 'price'];
+    protected $fillable = ['customer_id', 'product_id', 'qty', 'price', 'is_order'];
+
+    function product()
+    {
+        return $this->belongsTo('App\Models\Product', 'product_id');
+    }
 }

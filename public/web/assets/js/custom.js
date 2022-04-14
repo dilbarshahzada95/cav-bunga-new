@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
 
     "use strict";
 
@@ -8,16 +8,16 @@
     }
 
     // Background Image
-    $('[data-bg-img]').each(function() {
+    $('[data-bg-img]').each(function () {
         $(this).css('background-image', 'url(' + $(this).data("bg-img") + ')');
     });
 
     // Off Canvas JS
     var canvasWrapper = $(".off-canvas-wrapper");
-    $(".btn-menu").on('click', function() {
+    $(".btn-menu").on('click', function () {
         canvasWrapper.addClass('active');
     });
-    $(".close-action > .btn-close, .off-canvas-overlay").on('click', function() {
+    $(".close-action > .btn-close, .off-canvas-overlay").on('click', function () {
         canvasWrapper.removeClass('active');
     });
 
@@ -32,33 +32,33 @@
 
     // Off Canvas JS
     var quickViewModal = $(".product-quick-view-modal");
-    $(".product-action .action-quick-view").on('click', function() {
+    $(".product-action .action-quick-view").on('click', function () {
         quickViewModal.addClass('active');
         $("body").addClass('fix');
     });
-    $(".btn-close, .canvas-overlay").on('click', function() {
+    $(".btn-close, .canvas-overlay").on('click', function () {
         quickViewModal.removeClass('active');
         $("body").removeClass('fix');
     });
 
     // Off Canvas JS
     var sidebarCartModal = $(".sidebar-cart-modal");
-    $(".cart-icon").on('click', function() {
+    $(".cart-icon").on('click', function () {
         sidebarCartModal.addClass('sidebar-cart-active');
         $(".sidebar-cart-overlay").addClass('show');
     });
-    $(".sidebar-cart-content .cart-close").on('click', function() {
+    $(".sidebar-cart-content .cart-close").on('click', function () {
         sidebarCartModal.removeClass('sidebar-cart-active');
         $(".sidebar-cart-overlay").removeClass('show');
     });
 
     // Search Box  JS
     var searchwrapper = $(".search-box-wrapper");
-    $(".btn-search-menu").on('click', function() {
+    $(".btn-search-menu").on('click', function () {
         searchwrapper.addClass('show');
         $("#search-input").focus();
     });
-    $(".search-close").on('click', function() {
+    $(".search-close").on('click', function () {
         searchwrapper.removeClass('show');
     });
 
@@ -163,7 +163,7 @@
         pagination: {
             el: '.swiper-pagination',
             clickable: 'true',
-            renderBullet: function(index, className) {
+            renderBullet: function (index, className) {
                 return '<span class="' + className + '">0' + (index + 1) + '</span>';
             },
         },
@@ -429,7 +429,7 @@
                 verticalSwiping: false,
                 vertical: false,
             }
-        }, ]
+        },]
     });
 
     // Fancybox Js
@@ -441,12 +441,12 @@
     // Isotope and data filter
     function isotopePortfolio() {
         var $grid = $('.masonry-grid').isotope({
-                itemSelector: '.masonry-item',
-                masonry: {
-                    columnWidth: 1
-                }
-            })
-            // Isotope Masonry
+            itemSelector: '.masonry-item',
+            masonry: {
+                columnWidth: 1
+            }
+        })
+        // Isotope Masonry
         var $gridMasonry = $('.masonry-style').isotope({
             itemSelector: '.masonry-item'
         })
@@ -454,13 +454,13 @@
 
     // Svg Icon Js
     var $svgIconBox = $('.svg-icon-style');
-    $svgIconBox.each(function() {
+    $svgIconBox.each(function () {
         var $this = $(this),
             $svgIcon = $this.find('.svg-icon'),
             $id = $svgIcon.attr('id'),
             $icon = $svgIcon.data('svg-icon');
         var $vivus = new Vivus($id, { duration: 1, file: $icon });
-        $this.on('scroll', function() {
+        $this.on('scroll', function () {
             $vivus.reset().play();
         });
     });
@@ -481,18 +481,20 @@
 
 
     //Shop review btn
-    $(".review-write-btn").on('click', function() {
+    $(".review-write-btn").on('click', function () {
         $(".product-review-form").toggle('active');
     });
 
     // Product Qty
     var proQty = $(".pro-qty");
-    proQty.append('<a href="#" class="inc qty-btn">+</a>');
-    proQty.append('<a href="#" class= "dec qty-btn">-</a>');
-    $('.qty-btn').on('click', function(e) {
+    proQty.append('<a href="#" class="inc qty-btn" >+</a>');
+    proQty.append('<a href="#" class= "dec qty-btn" >-</a>');
+    $('.qty-btn').on('click', function (e) {
         e.preventDefault();
         var $button = $(this);
+
         var oldValue = $button.parent().find('input').val();
+
         if ($button.hasClass('inc')) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
@@ -503,6 +505,9 @@
                 newVal = 1;
             }
         }
+        var elmId = $button.parent().find('input').attr("class");
+
+        getQty(newVal, elmId);
         $button.parent().find('input').val(newVal);
     });
 
@@ -510,7 +515,7 @@
     var proQty2 = $(".pro-qty2");
     proQty2.append('<a href="#" class= "dec qty-btn">(-)</a>');
     proQty2.append('<a href="#" class="inc qty-btn">(+)</a>');
-    $('.qty-btn').on('click', function(e) {
+    $('.qty-btn').on('click', function (e) {
         e.preventDefault();
         var $button2 = $(this);
         var oldValue2 = $button2.parent().find('input').val();
@@ -528,11 +533,11 @@
     });
 
     //Checkout Page Checkbox Accordion
-    $("#create_pwd").on("change", function() {
+    $("#create_pwd").on("change", function () {
         $(".account-create").slideToggle("100");
     });
 
-    $("#ship_to_different").on("change", function() {
+    $("#ship_to_different").on("change", function () {
         $(".ship-to-different").slideToggle("100");
     });
 
@@ -545,7 +550,7 @@
 
     // Scroll Top Hide Show
     var varWindow = $(window);
-    varWindow.on('scroll', function() {
+    varWindow.on('scroll', function () {
         if ($(this).scrollTop() > 250) {
             $('.scroll-to-top').fadeIn();
         } else {
@@ -564,18 +569,18 @@
     });
 
     // Search Box  JS
-    $(".search-icon").on('click', function() {
+    $(".search-icon").on('click', function () {
         $(".btn-search").addClass('show');
         $(".btn-search-content").addClass("show").focus();
     });
-    $(".search-icon-close").on('click', function() {
+    $(".search-icon-close").on('click', function () {
         $(".btn-search").removeClass("show");
         $(".btn-search-content").removeClass("show");
     });
-    $(".search-icon-close").on('click', function() {
+    $(".search-icon-close").on('click', function () {
         $(".btn-search-toggle").addClass('search-show');
     });
-    $(".search-icon").on('click', function() {
+    $(".search-icon").on('click', function () {
         $(".btn-search-toggle").removeClass("search-show");
     });
 
@@ -583,14 +588,14 @@
     var form = $('#contact-form');
     var formMessages = $('.form-message');
 
-    $(form).submit(function(e) {
+    $(form).submit(function (e) {
         e.preventDefault();
         var formData = form.serialize();
         $.ajax({
             type: 'POST',
             url: form.attr('action'),
             data: formData
-        }).done(function(response) {
+        }).done(function (response) {
             // Make sure that the formMessages div has the 'success' class.
             $(formMessages).removeClass('alert alert-danger');
             $(formMessages).addClass('alert alert-success fade show');
@@ -601,7 +606,7 @@
 
             // Clear the form.
             $('#contact-form input,#contact-form textarea').val('');
-        }).fail(function(data) {
+        }).fail(function (data) {
             // Make sure that the formMessages div has the 'error' class.
             $(formMessages).removeClass('alert alert-success');
             $(formMessages).addClass('alert alert-danger fade show');
@@ -617,7 +622,7 @@
     });
 
     //Scroll To Top
-    $('.scroll-to-top, .scroll-to-top-btn').on('click', function() {
+    $('.scroll-to-top, .scroll-to-top-btn').on('click', function () {
         $('html, body').animate({ scrollTop: 0 }, 800);
         return false;
     });
@@ -647,7 +652,7 @@
        When document is loading, do
        ========================================================================== */
 
-    varWindow.on('load', function() {
+    varWindow.on('load', function () {
         isotopePortfolio();
         AOS.init({
             once: true,

@@ -91,6 +91,7 @@
         }
 
     </style>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <!-- <body oncontextmenu="return false"> -->
@@ -236,7 +237,8 @@
                                                 <a href="{{ url('details-page/' . $prod->id) }}"
                                                     class="btn-info">more
                                                     info</a>
-                                                <a href="#" class="cart-btn">
+                                                <a href="#" class="cart-btn"
+                                                    onclick="add_to_cart({{ $prod->id }},{{ isset($prod->price) ? $prod->price : '' }},1)">
                                                     <img src="{{ asset('web/assets/img/icons/wallet-cart.png') }}"
                                                         alt="">
                                                 </a>
@@ -365,6 +367,37 @@
 
             }
         });
+
+        function add_to_cart(val, price, qty) {
+
+            var url = "{{ url('/add/to/cart') }}";
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: {
+                    'product_id': val,
+                    'price': price,
+                    'qty': qty,
+
+                },
+                success: function(data) {
+                    var response = JSON.parse(data);
+                    if (response.status == 'error') {
+                        swal({
+                            title: "",
+                            text: response.message,
+                            icon: "warning",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                            timer: 3000,
+                            icon: "warning"
+                        });
+                    } else {
+                        getCart();
+                    }
+                }
+            });
+        }
     </script>
 
 </body>

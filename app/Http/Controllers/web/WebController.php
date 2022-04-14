@@ -19,6 +19,7 @@ use App\Models\Slider;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductFeatured;
+use App\Models\CartItem;
 
 class WebController extends Controller
 {
@@ -73,7 +74,17 @@ class WebController extends Controller
     }
     function cart()
     {
-        return view('web.cart');
+        if (!empty(Auth::user()->id)) {
+            $customer_id = Auth::user()->id;
+        } else {
+            $customer_id = 0;
+        }
+        $cart = CartItem::select('cart_items.*', 'product.id as prod_id', 'product.product_name', 'product.product_gallery', 'sub_category.*')->leftjoin('product', 'product.id', '=', 'cart_items.product_id')
+            ->leftjoin('sub_category', 'sub_category.id', '=', 'product.product_category_id')
+            ->where('customer_id', $customer_id)->where('is_order', 0)->get();
+        $item_count = CartItem::where('customer_id', $customer_id)->count();
+        $shipping_type = DB::table('shipping_type')->get();
+        return view('web.cart', compact('cart', 'item_count', 'shipping_type'));
     }
     function detailsPage($id)
     {
@@ -197,6 +208,92 @@ class WebController extends Controller
         $html = '  <img src="' . asset('category_image/' . $category_image) . '" class="img-fluid men_cat_img" alt="">';
 
         return $html;
+    }
+    function add_to_cart(Request $request)
+    {
+        $customer_id = '';
+        if (!empty(Auth::user()->id)) {
+            $customer_id = Auth::user()->id;
+        }
+
+        if (empty($customer_id)) {
+            return json_encode(['status' => 'error', 'message' => 'Please Login First']);
+        } else {
+            $total = 0;
+            $data = $request->all();
+            $product_id = $data['product_id'];
+            $qty = $data['qty'];
+            $price = $data['price'];
+            $data['customer_id'] = $customer_id;
+            $check_poduct_exist = CartItem::where('product_id', $product_id)->where('customer_id', $customer_id)->first();
+            if (!empty($check_poduct_exist)) {
+                $new_qty = $qty;
+                $update_qty = CartItem::where('product_id', $product_id)->where('customer_id', $customer_id)->update(['qty' => $new_qty]);
+            } else {
+                $insert_to_cart = CartItem::create($data);
+            }
+            return json_encode(['status' => 'success', 'message' => 'Product Added to Cart']);
+        }
+    }
+
+    function getCart()
+    {
+        $customer_id = '';
+        if (!empty(Auth::user()->id)) {
+            $customer_id = Auth::user()->id;
+        }
+        $cart_items = CartItem::where('customer_id', $customer_id)->where('is_order', 0)->get();
+        $total = 0;
+        $html = '';
+        $cart_count = 0;
+        $final_total = 0;
+        $cart_count = CartItem::where('customer_id', $customer_id)->count();
+        foreach ($cart_items as $key => $cart_item) {
+            $product = Product::find($cart_item->product_id);
+            $category = Category::find($product->product_category_id);
+            $product_name = isset($product->product_name) ? $product->product_name : '';
+            $price = isset($product->price) ? $product->price : '';
+            $image = json_decode($product->product_gallery);
+            $product_image = '';
+            if (isset($image)) {
+                if (!empty($image[0])) {
+                    $product_image = " <img src='" . asset('product_image/thumbnail/' . $image[0]) . "'  alt=''>";
+                }
+            }
+            $total = ($price * $cart_item->qty);
+            $final_total += $total;
+            $html .= "          <div class='product-cart-item'>
+              <div class='product-img'>
+                               " . $product_image . "
+                            </div>
+                            <div class='product-info'>
+                                <h4 class='title'><a href='#'>" . $product->product_name . "</a></h4>
+                                <span class='info'>" . $category->sub_category_name . "</span>
+                            </div>
+                            <div class='product-quantity'>
+                                <div class='pro-qty'>
+                                    <input type='text' id='quantity' title='Quantity' value='" . $cart_item->qty . "' />
+                                </div>
+                            </div>
+                            <div class='product-price'>
+                                <h4>AED " . $total . "</h4>
+                            </div>
+
+                        </div>
+                        <hr>
+                        </div>";
+        }
+        return json_encode(['html' => $html, 'cart_count' => $cart_count, 'final_total' => $final_total]);
+    }
+
+    function removeCartitems($id)
+    {
+        $customer_id = '';
+        if (!empty(Auth::user()->id)) {
+            $customer_id = Auth::user()->id;
+        }
+        $cart_items = CartItem::where('customer_id', $customer_id)->where('product_id', $id)->delete();
+        return back();
     }
 
     /**

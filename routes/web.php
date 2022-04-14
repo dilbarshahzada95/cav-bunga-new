@@ -48,6 +48,10 @@ Route::get('/sideCart', [App\Http\Controllers\web\WebController::class, 'sideCar
 Route::get('/responsiblites', [App\Http\Controllers\web\WebController::class, 'responsiblites'])->name('responsiblites');
 Route::get('/partners', [App\Http\Controllers\web\WebController::class, 'partners'])->name('partners');
 Route::get('/category/image/{id}', [App\Http\Controllers\web\WebController::class, 'category_image'])->name('category/image');
+Route::get('/add/to/cart', [App\Http\Controllers\web\WebController::class, 'add_to_cart'])->name('add/to/cart');
+Route::get('/getCart/', [App\Http\Controllers\web\WebController::class, 'getCart'])->name('getCart');
+Route::get('/removeCartitems/{id}', [App\Http\Controllers\web\WebController::class, 'removeCartitems'])->name('removeCartitems');
+
 
 // CUSTOMER LOGIN AND REGISTRATION
 Route::post('/login/customer', [App\Http\Controllers\Auth\LoginController::class, 'loginCustomer'])->name('login/customer');

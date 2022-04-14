@@ -90,7 +90,11 @@
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($category as $cat)
-                                                            <option value="{{ $cat->id }}">
+                                                            <option value="{{ $cat->id }}" @php
+                                                                if(old('product_category_id') == $cat->id){
+                                                                    echo 'selected';
+                                                                }
+                                                            @endphp>
                                                                 {{ $cat->sub_category_name }}</option>
                                                         @endforeach
 
@@ -143,7 +147,11 @@
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($layout as $lay)
-                                                            <option value="{{ $lay->id }}">
+                                                            <option value="{{ $lay->id }}" @php
+                                                                if(old('layout_id') == $lay->id){
+                                                                    echo 'selected';
+                                                                }
+                                                            @endphp>
                                                                 {{ $lay->layout_name }}</option>
                                                         @endforeach
 
@@ -164,7 +172,7 @@
                                                         gallery</label>
                                                     <input type="file" name="product_gallery[]"
                                                         value="{{ old('product_gallery') }}" class="form-control"
-                                                        id="manufacturer-name-input" placeholder="Image" multiple>
+                                                         multiple>
                                                 </div>
 
                                                   <div class="col-md-3">
@@ -174,7 +182,11 @@
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($variation as $cat)
-                                                            <option value="{{ $cat->id }}">
+                                                            <option value="{{ $cat->id }}" @php
+                                                                if(old('variation_id') == $cat->id){
+                                                                    echo 'selected';
+                                                                }
+                                                            @endphp>
                                                                 {{ $cat->variation_name }}</option>
                                                         @endforeach
 
@@ -189,7 +201,11 @@
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($collection as $cat)
-                                                            <option value="{{ $cat->id }}">
+                                                            <option value="{{ $cat->id }}" @php
+                                                                if(old('collection_id') == $cat->id){
+                                                                    echo 'selected';
+                                                                }
+                                                            @endphp>
                                                                 {{ $cat->collection_name }}</option>
                                                         @endforeach
 
@@ -202,7 +218,7 @@
                                                         Description</label>
                                                     <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
                                                         id="meta-description-input" placeholder="Product Description"
-                                                        rows="4" autocomplete="off"></textarea>
+                                                        rows="4" autocomplete="off">{{ old('product_description') }}</textarea>
                                                 </div>
 
 

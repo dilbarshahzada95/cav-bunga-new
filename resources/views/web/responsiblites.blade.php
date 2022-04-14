@@ -231,65 +231,7 @@
         </div>
         <!--== End Aside Search Menu ==-->
 
-        <!--== Start Sidebar Cart Menu ==-->
-        @include('web.sideCart')
-        <div class="sidebar-cart-overlay"></div>
-        <!--== End Sidebar Cart Menu ==-->
 
-        <!--== Start Side Menu ==-->
-        <aside class="off-canvas-wrapper">
-            <div class="off-canvas-inner">
-                <div class="off-canvas-overlay d-none"></div>
-                <!-- Start Off Canvas Content Wrapper -->
-                <div class="off-canvas-content">
-                    <!-- Off Canvas Header -->
-                    <div class="off-canvas-header">
-                        <div class="close-action">
-                            <button class="btn-close"><i class="icofont-close-line"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="off-canvas-item">
-                        <!-- Start Mobile Menu Wrapper -->
-                        <div class="res-mobile-menu">
-                            <!-- Note Content Auto Generate By Jquery From Main Menu -->
-                        </div>
-                        <!-- End Mobile Menu Wrapper -->
-                    </div>
-                    <!-- Off Canvas Footer -->
-                    <div class="off-canvas-footer"></div>
-                </div>
-                <!-- End Off Canvas Content Wrapper -->
-            </div>
-            <div class="header-action-flag">
-                <dropdown>
-                    <input id="toggle3" type="checkbox">
-                    <label for="toggle3" class="animate"><img src="assets/img/flags/uae.png" alt=""></label>
-                    <ul class="animate m-0">
-                        <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
-                        </li>
-                        <li class="animate">
-                            <p>German</p><img src="assets/img/flags/german.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>bangaladesh</p><img src="assets/img/flags/bangaladesh.png" alt="">
-                        </li>
-                        <li class="animate">
-                            <p>Turkey</p>
-                            <img src="assets/img/flags/turkey.png" alt=" ">
-                        </li>
-                    </ul>
-                </dropdown>
-            </div>
-        </aside>
         <!--== End Side Menu ==-->
         @include('web.footer')
     </div>

@@ -84,7 +84,7 @@
                                         <h2>Shopping Cart</h2>
                                     </div>
                                     <div class="items__count d-sm-none d-lg-block d-md-block">
-                                        <h2>3 Items</h2>
+                                        <h2>{{ $item_count }} Items</h2>
                                     </div>
                                 </div>
                                 <div class="cart-table-wrap">
@@ -99,110 +99,78 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="pro-thumbnail">
-                                                        <div class="pro-info">
-                                                            <div class="pro-img">
-                                                                <a href="#"><img
-                                                                        src="{{ asset('web/assets/img/products/backpack-noshadow.png') }}"
-                                                                        alt="Moren-Shop"></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="pro-name">
-                                                            <h2>arno backpack</h2>
-                                                            <p>Backpack</p>
-                                                            <div class="btn btn-sm btn-remove"><img
-                                                                    src="{{ asset('web/assets/img/icons/remove.png') }}" />
-                                                                remove</div>
-                                                        </div>
-                                                    </td>
+                                                @php
+                                                    $final_total = 0;
 
-                                                    <td class="pro-quantity">
-                                                        <div class="action-top">
-                                                            <div class="pro-qty-area">
-                                                                <div class="pro-qty">
-                                                                    <input type="text" id="quantity" title="Quantity"
-                                                                        value="1" />
+                                                    $i = 0;
+                                                @endphp
+
+                                                @foreach ($cart as $item)
+                                                    @php
+
+                                                        $image = json_decode($item->product_gallery);
+                                                        $final_total += $item->price * $item->qty;
+                                                    @endphp
+                                                    <tr>
+                                                        <td class="pro-thumbnail">
+                                                            <div class="pro-info">
+                                                                <div class="pro-img">
+                                                                    <a href="#"><img
+                                                                            src="{{ asset('product_image/' . $image[0]) }}"
+                                                                            alt="Moren-Shop"></a>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pro-price d-sm-none d-lg-block d-md-block">
-                                                        <span>$121.50</span>
-                                                    </td>
-
-                                                    <td class="pro-subtotal text-right"><span>$121.50</span></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="pro-thumbnail">
-                                                        <div class="pro-info">
-                                                            <div class="pro-img">
-                                                                <a href="#"><img
-                                                                        src="{{ asset('web/assets/img/products/wallet.png') }}"
-                                                                        alt="Moren-Shop"></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="pro-name">
-                                                            <h2>Mario page wallet</h2>
-                                                            <p>Wallet</p>
-                                                            <div class="btn btn-sm btn-remove"><img
-                                                                    src="{{ asset('web/assets/img/icons/remove.png') }}" />
-                                                                remove</div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="pro-quantity">
-                                                        <div class="action-top">
-                                                            <div class="pro-qty-area">
-                                                                <div class="pro-qty">
-                                                                    <input type="text" id="quantity" title="Quantity"
-                                                                        value="1" />
+                                                            <div class="pro-name">
+                                                                <h2>{{ $item->product_name }}</h2>
+                                                                <p>{{ $item->sub_category_name }}</p>
+                                                                <div class="btn btn-sm btn-remove"><img
+                                                                        src="{{ asset('web/assets/img/icons/remove.png') }}" />
+                                                                    <a
+                                                                        href="{{ url('removeCartitems/' . $item->prod_id) }}">
+                                                                        remove</a>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pro-price d-sm-none d-lg-block d-md-block">
-                                                        <span>$121.50</span>
-                                                    </td>
+                                                        </td>
 
-                                                    <td class="pro-subtotal text-right"><span>$121.50</span></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="pro-thumbnail">
-                                                        <div class="pro-info">
-                                                            <div class="pro-img">
-                                                                <a href="#"><img
-                                                                        src="{{ asset('web/assets/img/products/mens-kit.png') }}"
-                                                                        alt="Moren-Shop"></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="pro-name">
-                                                            <h2>Luca vanity kit</h2>
-                                                            <p>Backpack</p>
-                                                            <div class="btn btn-sm btn-remove"><img
-                                                                    src="{{ asset('web/assets/img/icons/remove.png') }}" />
-                                                                remove</div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="pro-quantity">
-                                                        <div class="action-top">
-                                                            <div class="pro-qty-area">
-                                                                <div class="pro-qty">
-                                                                    <input type="text" id="quantity" title="Quantity"
-                                                                        value="1" />
+                                                        <td class="pro-quantity">
+                                                            <div class="action-top">
+                                                                <div class="pro-qty-area">
+                                                                    <div class="pro-qty">
+                                                                        <input type="text"
+                                                                            id="quantity_{{ $i }}"
+                                                                            class="{{ $i }}"
+                                                                            title="Quantity"
+                                                                            value="{{ $item->qty }}" />
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pro-price d-sm-none d-lg-block d-md-block">
-                                                        <span>$121.50</span>
-                                                    </td>
+                                                        </td>
+                                                        <td class="pro-price d-sm-none d-lg-block d-md-block">
+                                                            <span id="showprice_{{ $i }}">AED
+                                                                {{ $item->price }}</span>
+                                                        </td>
+                                                        <input type="hidden" name="prod_id"
+                                                            value="{{ $item->prod_id }}"
+                                                            id="prod_id_{{ $i }}">
+                                                        <input type="hidden" name="total_qty"
+                                                            id="total_qty_{{ $i }}"
+                                                            value="{{ $item->qty }}">
+                                                        <input type="hidden" name="price" value="{{ $item->price }}"
+                                                            id="price_{{ $i }}">
+                                                        <input type="hidden" name="total_price"
+                                                            value="{{ $item->price * $item->qty }}"
+                                                            id="total_price_{{ $i }}"
+                                                            class="total_price">
+                                                        <td class="pro-subtotal text-right"><span
+                                                                id="showtotal_{{ $i }}">AED
+                                                                {{ $item->price * $item->qty }}</span></td>
 
-                                                    <td class="pro-subtotal text-right"><span>$121.50</span></td>
-                                                </tr>
+                                                    </tr>
+                                                    @php
+                                                        $i++;
+                                                    @endphp
+                                                @endforeach
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -210,20 +178,12 @@
 
 
                                 <div class="arrow__back d-sm-none d-lg-block d-md-block">
-                                    <a href="shop.html"> <img src="{{ asset('web/assets/img/icons/back.png') }}"
-                                            alt=""> continue
+                                    <a href="{{ url('shopping') }}"> <img
+                                            src="{{ asset('web/assets/img/icons/back.png') }}" alt=""> continue
                                         shopping</a>
                                 </div>
 
-                                <div class="total__for__sm d-sm-block d-lg-none d-md-none">
-                                    <div class="title">
-                                        <h2>TOTAL : </h2>
-                                    </div>
-                                    <div class="title">
-                                        <h2>$121.50</h2>
-                                    </div>
 
-                                </div>
 
                             </div>
                         </div>
@@ -235,8 +195,12 @@
                                         <div class="form-group">
                                             <label>Shipping</label>
                                             <select class="form-control form-select">
-                                                <option>Standard shipping -Free</option>
-                                                <option>Standard shipping -Free</option>
+                                                @foreach ($shipping_type as $shipping_typee)
+                                                    <option value="{{ $shipping_typee->id }}">
+                                                        {{ $shipping_typee->type }}
+                                                    </option>
+                                                @endforeach
+
                                             </select>
                                         </div>
                                         <div class="form-group mt-3">
@@ -250,7 +214,7 @@
                                     <hr style="opacity: 1;">
                                     <div class="total__amount">
                                         <p>Total : </p>
-                                        <p>$297.00</p>
+                                        <p>AED <span class="final_total">{{ $final_total }}</span></p>
                                     </div>
                                     <a class="btn-theme" href="#">Checkout</a>
 
@@ -264,85 +228,6 @@
         </main>
 
 
-        <aside class="sidebar-cart-modal">
-            <div class="sidebar-cart-inner">
-                <div class="sidebar-cart-content">
-                    <a class="cart-close" href="javascript:void(0);"><i class="lastudioicon-e-remove"></i></a>
-                    <div class="sidebar-cart">
-                        <h4 class="sidebar-cart-title">Shopping Cart</h4>
-                        <hr>
-                        <div class="product-cart">
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/1.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Men Black Shoe</a></h4>
-                                    <span class="info">Backpack</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$121.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/2.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">mario page wallet</a></h4>
-                                    <span class="info">Wallet</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$62.50</h4>
-                                </div>
-                                <!-- <div class="product-delete"><a href="#/">×</a></div> -->
-                            </div>
-                            <hr>
-                            <div class="product-cart-item">
-                                <div class="product-img">
-                                    <a href="#"><img src="{{ asset('web/assets/img/shop/cart/3.png') }}" alt=""></a>
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="title"><a href="#">Lucy vanity kit</a></h4>
-                                    <span class="info">Vanity kit</span>
-                                </div>
-                                <div class="product-quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" id="quantity" title="Quantity" value="1" />
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>$113.50</h4>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="cart-total">
-                            <hr>
-                            <h4>Total: <span class="money">$297.40</span></h4>
-                        </div>
-                        <div class="cart-checkout-btn">
-                            <a class="btn-theme" href="#">Continue shopping</a>
-                            <a class="btn-theme" href="#">Go to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <div class="sidebar-cart-overlay"></div>
 
     </div>
 
@@ -392,7 +277,61 @@
             e.preventDefault();
         });
     </script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        function getQty(qty, row) {
 
+            var price = $('#price_' + row).val();
+            $('#quantity_' + row).val(qty);
+            var total = qty * price;
+            $('#showtotal_' + row).html('AED ' + total);
+            $('#total_price_' + row).val(total);
+            $('#total_qty' + row).val(qty);
+            var product_id = $('#prod_id_' + row).val();
+            var price = '';
+            var new_qty = $('#quantity_' + row).val();
+
+            add_to_cart(product_id, price, new_qty);
+            var total_price = 0;
+            $('.total_price').each(function() {
+                total_price += parseInt($(this).val());
+
+            });
+
+            $('.final_total').html(total_price);
+        }
+
+        function add_to_cart(val, price, qty) {
+
+            var url = "{{ url('/add/to/cart') }}";
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: {
+                    'product_id': val,
+                    'price': price,
+                    'qty': qty,
+
+                },
+                success: function(data) {
+                    var response = JSON.parse(data);
+                    if (response.status == 'error') {
+                        swal({
+                            title: "",
+                            text: response.message,
+                            icon: "warning",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                            timer: 3000,
+                            icon: "warning"
+                        });
+                    } else {
+                        getCart();
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

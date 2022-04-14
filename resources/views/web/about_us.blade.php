@@ -187,7 +187,7 @@
             </section>
         </main>
 
-        @include('web.sideCart')
+
 
         <section id="footer" class="cavabunga__footer__section">
             @include('web.footer')
