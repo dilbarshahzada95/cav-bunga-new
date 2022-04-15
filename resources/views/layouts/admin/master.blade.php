@@ -1091,12 +1091,14 @@
 
     <!-- listjs init -->
     <script src="{{ asset('admin/assets/js/pages/listjs.init.js') }}"></script>
-
+    <script src="{{ asset('admin/assets/js/pages/form-editor.init.js') }}"></script>
+            <script src="{{ asset('admin/assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
     <!-- listjs init -->
     <script src="{{ asset('admin/assets/js/pages/listjs.init.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
     @yield('script')
 </body>
 

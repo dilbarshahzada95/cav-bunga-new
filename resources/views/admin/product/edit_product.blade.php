@@ -128,17 +128,17 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="number" name="volume" value="{{ $product->volume }}"
-                                                        class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Tags">
+                                                    <input type="number" name="volume" step="any"
+                                                        value="{{ $product->volume }}" class="form-control"
+                                                        id="manufacturer-name-input" placeholder="Tags">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Height</label>
-                                                    <input type="number" name="wieght" value="{{ $product->wieght }}"
-                                                        class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Height">
+                                                    <input type="number" name="wieght" step="any"
+                                                        value="{{ $product->wieght }}" class="form-control"
+                                                        id="manufacturer-name-input" placeholder="Height">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -207,18 +207,19 @@
                                                 </div>
 
 
-                                                 <div class="col-md-3">
-                                                    <label class="form-label" for="manufacturer-name-input">variation</label>
-                                                    <select id="ForminputState" name="variation_id"
-                                                        class="form-select" data-choices data-choices-sorting="true">
+                                                <div class="col-md-3">
+                                                    <label class="form-label"
+                                                        for="manufacturer-name-input">variation</label>
+                                                    <select id="ForminputState" name="variation_id" class="form-select"
+                                                        data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
 
                                                         @foreach ($variation as $var)
                                                             <?php if($var->variation_name !='all') {
                                                              ?>
                                                             <option <?php if ($product->variation_id == $var->id) {
-                                                                echo 'selected';
-                                                            } ?> value="{{ $var->id }}">
+    echo 'selected';
+} ?> value="{{ $var->id }}">
                                                                 {{ $var->variation_name }}</option>
                                                             <?php } ?>
                                                         @endforeach
@@ -226,19 +227,19 @@
                                                     </select>
                                                 </div>
 
-                                                 <div class="col-md-3">
+                                                <div class="col-md-3">
                                                     <label class="form-label" for="manufacturer-name-input">
                                                         collection</label>
-                                                    <select id="ForminputState" name="collection_id"
-                                                        class="form-select" data-choices data-choices-sorting="true">
+                                                    <select id="ForminputState" name="collection_id" class="form-select"
+                                                        data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
 
                                                         @foreach ($collection as $col)
                                                             <?php if($col->collection_name !='all') {
                                                              ?>
                                                             <option <?php if ($product->collection_id == $col->id) {
-                                                                    echo 'selected';
-                                                                } ?> value="{{ $col->id }}">
+    echo 'selected';
+} ?> value="{{ $col->id }}">
                                                                 {{ $col->collection_name }}</option>
                                                             <?php } ?>
                                                         @endforeach
@@ -340,7 +341,7 @@
                                             </div>
                                             <!-- end row -->
                                             <div class="col-md-12 pull-right">
-                                                <input class="btn btn-primary" type="submit" value="Submit"/>
+                                                <input class="btn btn-primary" type="submit" value="Submit" />
                                             </div>
                                             <!-- end tab pane -->
                                         </div>

@@ -91,7 +91,7 @@
                                                         <option value="">Choose...</option>
                                                         @foreach ($category as $cat)
                                                             <option value="{{ $cat->id }}" @php
-                                                                if(old('product_category_id') == $cat->id){
+                                                                if (old('product_category_id') == $cat->id) {
                                                                     echo 'selected';
                                                                 }
                                                             @endphp>
@@ -126,17 +126,19 @@
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Volume</label>
-                                                    <input type="number" name="volume" value="{{ old('volume') }}"
-                                                        class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Volume" autocomplete="off">
+                                                    <input type="number" name="volume" step="any"
+                                                        value="{{ old('volume') }}" class="form-control"
+                                                        id="manufacturer-name-input" placeholder="Volume"
+                                                        autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
                                                     <label class="form-label"
                                                         for="manufacturer-name-input">Height</label>
-                                                    <input type="number" name="wieght" value="{{ old('wieght') }}"
-                                                        class="form-control" id="manufacturer-name-input"
-                                                        placeholder="Height" autocomplete="off">
+                                                    <input type="number" name="wieght" step="any"
+                                                        value="{{ old('wieght') }}" class="form-control"
+                                                        id="manufacturer-name-input" placeholder="Height"
+                                                        autocomplete="off">
                                                 </div>
 
                                                 <div class="col-md-3">
@@ -148,7 +150,7 @@
                                                         <option value="">Choose...</option>
                                                         @foreach ($layout as $lay)
                                                             <option value="{{ $lay->id }}" @php
-                                                                if(old('layout_id') == $lay->id){
+                                                                if (old('layout_id') == $lay->id) {
                                                                     echo 'selected';
                                                                 }
                                                             @endphp>
@@ -172,18 +174,19 @@
                                                         gallery</label>
                                                     <input type="file" name="product_gallery[]"
                                                         value="{{ old('product_gallery') }}" class="form-control"
-                                                         multiple>
+                                                        multiple>
                                                 </div>
 
-                                                  <div class="col-md-3">
-                                                    <label class="form-label" for="manufacturer-name-input">variation</label>
+                                                <div class="col-md-3">
+                                                    <label class="form-label"
+                                                        for="manufacturer-name-input">variation</label>
                                                     <select id="ForminputState" name="variation_id"
                                                         value="{{ old('variation_id') }}" class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($variation as $cat)
                                                             <option value="{{ $cat->id }}" @php
-                                                                if(old('variation_id') == $cat->id){
+                                                                if (old('variation_id') == $cat->id) {
                                                                     echo 'selected';
                                                                 }
                                                             @endphp>
@@ -194,15 +197,16 @@
                                                 </div>
 
 
-                                                     <div class="col-md-3">
-                                                    <label class="form-label" for="manufacturer-name-input">collection</label>
+                                                <div class="col-md-3">
+                                                    <label class="form-label"
+                                                        for="manufacturer-name-input">collection</label>
                                                     <select id="ForminputState" name="collection_id"
                                                         value="{{ old('collection_id') }}" class="form-select"
                                                         data-choices data-choices-sorting="true">
                                                         <option value="">Choose...</option>
                                                         @foreach ($collection as $cat)
                                                             <option value="{{ $cat->id }}" @php
-                                                                if(old('collection_id') == $cat->id){
+                                                                if (old('collection_id') == $cat->id) {
                                                                     echo 'selected';
                                                                 }
                                                             @endphp>
@@ -218,7 +222,8 @@
                                                         Description</label>
                                                     <textarea name="product_description" value="{{ old('product_description') }}" class="form-control"
                                                         id="meta-description-input" placeholder="Product Description"
-                                                        rows="4" autocomplete="off">{{ old('product_description') }}</textarea>
+                                                        rows="4"
+                                                        autocomplete="off">{{ old('product_description') }}</textarea>
                                                 </div>
 
 
