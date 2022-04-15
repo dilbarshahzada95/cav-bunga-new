@@ -123,7 +123,7 @@ class WebController extends Controller
     }
     function walletfilter(Request $request)
     {
-        $getFilterData = Product::orderBy('id', 'asc');
+        $getFilterData = Product::where('id', '!=', 0);
         if (!empty($request->popularity)) {
             if ($request->popularity == 'whats_new') {
                 $getFilterData->orderBy('id', 'desc');
@@ -151,13 +151,14 @@ class WebController extends Controller
             $product_name = isset($prod->product_name) ? $prod->product_name : '';
             $price = isset($prod->price) ? $prod->price : '';
             $image = json_decode($prod->product_gallery);
+            $product_id = isset($prod->id) ? $prod->id : '';
             $product_image = '';
             if (isset($image)) {
                 if (!empty($image[0])) {
-                    $product_image = " <img src='" . asset('product_image/thumbnail/' . $image[0]) . "' class='img-fluid' alt=''>";
+                    $product_image = " <img src='" . asset('product_image/' . $image[0]) . "' class='img-fluid' alt=''>";
                 }
             }
-            $html = " <div class='col-md-4'>
+            $html .= " <div class='col-md-4'>
                                     <div class='single__product first'>
                                         <div class='wallet__section'>
                                             <div class='imagage__sec'>
@@ -175,7 +176,7 @@ class WebController extends Controller
                                                 <a href='" . url('details-page/' . $prod->id) . "'
                                                     class='btn-info'>more
                                                     info</a>
-                                                <a href='#' class='cart-btn'>
+                                                <a href='#' class='cart-btn' onclick='add_to_cart(" . $product_id . "," . $price . ",1)'>
                                                     <img src='" . asset('web/assets/img/icons/wallet-cart.png') . "'
                                                         alt=''>
                                                 </a>

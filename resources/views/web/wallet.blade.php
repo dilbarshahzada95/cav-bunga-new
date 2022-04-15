@@ -220,7 +220,7 @@
                                             <div class="imagage__sec">
                                                 @if (isset($image))
                                                     @if (!empty($image[0]))
-                                                        <img src="{{ asset('product_image/thumbnail/' . $image[0]) }}"
+                                                        <img src="{{ asset('product_image/' . $image[0]) }}"
                                                             class="img-fluid" alt="">
                                                     @endif
                                                 @endif
@@ -311,19 +311,15 @@
     <script>
         function filterItem(val) {
 
-            if (val == 1) {
-                var popularity = $('#popularity').val();
-            }
-            if (val == 3) {
-                var variation = $('#variation').val();
+            var popularity = $('#popularity').val();
 
-            }
-            if (val == 4) {
-                var collection = $('#collection').val();
-            }
-            if (val == 2) {
-                var price = $('#price').val();
-            }
+            var variation = $('#variation').val();
+
+            var collection = $('#collection').val();
+
+
+            var price = $('#price').val();
+
 
             var url = "{{ url('/walletfilter') }}";
             $.ajax({
