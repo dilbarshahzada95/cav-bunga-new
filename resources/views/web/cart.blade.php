@@ -178,7 +178,7 @@
 
 
                                 <div class="arrow__back d-sm-none d-lg-block d-md-block">
-                                    <a href="{{ url('shopping') }}"> <img
+                                    <a href="{{ url('shoping') }}"> <img
                                             src="{{ asset('web/assets/img/icons/back.png') }}" alt=""> continue
                                         shopping</a>
                                 </div>

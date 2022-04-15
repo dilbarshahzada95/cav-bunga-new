@@ -133,11 +133,9 @@
                                             <h6>Sort :</h6>
                                             <div class="product-sorting-menu product-view-count">
 
-                                                <span class="current">Popularity <i
-                                                        class="lastudioicon-down-arrow"></i></span>
-                                                <select class="active popularity form-control" id="popularity"
-                                                    onchange="filterItem(1)">
-                                                    <option value="">please select</option>
+                                                <select class="active popularity form-control form-select selectpicker"
+                                                    id="popularity" onchange="filterItem(1)">
+                                                    <option value="" readonly>Popularity</option>
                                                     <option value="whats_new">What's
                                                         New</option>
                                                     <option value="relevence">Relevance</option>
@@ -150,29 +148,21 @@
                                             <div class="section__filter">
                                                 <div class="product-sorting-menu product-view-count">
 
-                                                    <span class="current">Price <i
-                                                            class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active price form-control" id="price"
-                                                        onchange="filterItem(2)">
-                                                        <option value="">please select</option>
+                                                    <select class="active price form-control form-select selectpicker"
+                                                        id="price" onchange="filterItem(2)">
+                                                        <option value="" readonly>Price</option>
                                                         <option value="low_to_high">Price low to high</option>
                                                         <option value="high_to_low">Price high to low</option>
                                                         <option value="discount">Discount</option>
                                                     </select>
-                                                    {{-- <ul>
-                                                        <li class="active"><a href="#" onclick="getFilter()"
-                                                                class="active">Price low to high</a></li>
-                                                        <li><a href="#" onclick="getFilter()">Price high to low</a></li>
-                                                        <li><a href="#" onclick="getFilter()">Discount</a></li>
-                                                    </ul> --}}
+
                                                 </div>
                                                 <div class="product-sorting-menu product-sorting">
-                                                    <span class="current">Color <i
-                                                            class="lastudioicon-down-arrow"></i></span>
 
-                                                    <select class="active variation form-control" id="variation"
-                                                        onchange="filterItem(3)">
-                                                        <option value="">please select</option>
+
+                                                    <select class="active variation form-control form-select"
+                                                        id="variation" onchange="filterItem(3)">
+                                                        <option value="" readonly>Color</option>
                                                         @foreach ($variation as $var)
                                                             <option value="{{ $var->id }}">
                                                                 {{ $var->variation_name }}
@@ -183,11 +173,10 @@
                                                 </div>
                                                 <div
                                                     class="product-sorting-menu product-sorting d-sm-none d-lg-block d-md-block">
-                                                    <span class="current">Collection <i
-                                                            class="lastudioicon-down-arrow"></i></span>
-                                                    <select class="active collection form-control" id="collection"
-                                                        onchange="filterItem(4)">
-                                                        <option value="">please select</option>
+
+                                                    <select class="active collection form-control form-select"
+                                                        id="collection" onchange="filterItem(4)">
+                                                        <option value="" readonly>Collection</option>
                                                         @foreach ($collection as $col)
                                                             <option value="{{ $col->id }}">
                                                                 {{ $col->collection_name }}

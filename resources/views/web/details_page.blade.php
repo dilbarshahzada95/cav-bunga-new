@@ -40,6 +40,30 @@
     <link href="{{ asset('web/assets/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/cavabunga.css') }}" rel="stylesheet" />
     <link href="{{ asset('web/assets/css/responsive.css') }}" rel="stylesheet" />
+    <style>
+        .newbg {
+            background: linear-gradient(317deg, #943811 0%, #DED1CC 100%) !important;
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+        .newbg1 {
+            background: linear-gradient(to right, #DED1CC, #C4A498) !important;
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+        .bluebg {
+
+            background: linear-gradient(317deg, #41586E 0%, #8A96A1 100%) !important;
+            background-size: cover;
+            width: 100%;
+            position: relative;
+        }
+
+    </style>
 </head>
 <!-- <body oncontextmenu="return false"> -->
 
@@ -67,7 +91,7 @@
                         <div class="header-align">
                             <div class="header-align-left">
                                 <div class="header-logo-area">
-                                    <a href="#">
+                                    <a href="{{ url('/') }}">
                                         <img class="logo-main d-none d-sm-block f-logo"
                                             src="{{ asset('web/assets/img/logo-dark.png') }}" alt="Logo" />
                                         <img class="logo-main d-sm-none" src="{{ asset('web/assets/img/logo.png') }}"
@@ -85,66 +109,8 @@
                                             <i class="lastudioicon-zoom-1"></i>
                                         </button>
                                     </div>
-                                    <div class="header-action-flag">
-                                        <dropdown>
-                                            <input id="toggle2" type="checkbox">
-                                            <label for="toggle2" class="animate"><img
-                                                    src="{{ asset('web/assets/img/flags/uae.png') }}" alt=""></label>
-                                            <ul class="animate m-0">
-                                                <li class="animate">
-                                                    <p>German</p>
-                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p>
-                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
-                                                        alt=" ">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>German</p>
-                                                    <img src="{{ asset('web/assets/img/flags/german.png') }}" alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>bangaladesh</p>
-                                                    <img src="{{ asset('web/assets/img/flags/bangaladesh.png') }}"
-                                                        alt="">
-                                                </li>
-                                                <li class="animate">
-                                                    <p>Turkey</p>
-                                                    <img src="{{ asset('web/assets/img/flags/turkey.png') }}"
-                                                        alt=" ">
-                                                </li>
-                                            </ul>
-                                        </dropdown>
-                                    </div>
-                                    <div class="header-action-login">
-                                        <button class="btn-login" onclick="window.location.href='login.html'">
-                                            <img src="{{ asset('web/assets/img/icons/user.png') }}"
-                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                            <img src="assets/img/icons/user-dark.png')}}"
-                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                        </button>
-                                    </div>
-                                    <div class="header-action-cart">
-                                        <button class="btn-cart cart-icon">
-                                            <img src="{{ asset('web/assets/img/icons/cart.png') }}"
-                                                class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                            <img src="{{ asset('web/assets/img/icons/cart-dark.png') }}"
-                                                class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                            <span class="cart-count">0 items</span>
-                                        </button>
-                                    </div>
-                                    <button class="btn-menu d-xl-none">
-                                        <img src="{{ asset('web/assets/img/icons/menu.png') }}"
-                                            class="img-fluid d-sm-none d-md-block d-lg-block" alt="">
-                                        <img src="{{ asset('web/assets/img/icons/menu-dark.png') }}"
-                                            class="img-fluid d-sm-block d-md-none d-lg-none" alt="">
-                                    </button>
+
+                                    @include('web.sidemenu')
                                 </div>
                             </div>
                         </div>
@@ -152,6 +118,7 @@
                 </div>
             </div>
         </header>
+        @include('web.sideCart')
         <!--== End Header Wrapper ==-->
         <main class="main-content site-wrapper-reveal cavabunga__single__details">
             <section class="cavabunga__product__preview">
@@ -201,6 +168,9 @@
                                     </a>
                                 </div>
                             </div>
+                            @if (!empty($data->layout_id))
+                                <input type="hidden" id="default_layout" value="{{ $data->layout_id }}">
+                            @endif
                             <div class="col-lg-6 bg-sm-shop__Details">
                                 <div class="single-product-info">
                                     <h5>{{ $data->slogan }}</h5>
@@ -246,7 +216,10 @@
                                         <div class="col-md-6">
                                             <div class="notify__me">
 
-                                                <button class="btn-fill">Add To Cart</button>
+                                                <button class="btn-fill"
+                                                    onclick="add_to_cart({{ $data->id }},{{ $data->price }},1)">Add
+                                                    To
+                                                    Cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -313,6 +286,7 @@
         <!-- Modal -->
 
 
+
     </div>
     <!--=======================Javascript============================-->
     <!--=== Modernizr Min Js ===-->
@@ -356,6 +330,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
     <script>
         $(document).ready(function() {
             $('.thumb a').click(function(e) {
@@ -375,7 +350,66 @@
 
         });
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var val = $('#default_layout').val();
 
+            if (val == 1) {
+
+                $('.cavabunga__product__preview').toggleClass('newbg1');
+                $('.home-slider-item').toggleClass('newbg1');
+
+            } else if (val == 2) {
+
+                $('.cavabunga__product__preview').toggleClass('newbg');
+                $('.home-slider-item').toggleClass('newbg');
+
+            } else if (val == 3) {
+
+                $('.cavabunga__product__preview').toggleClass('bluebg');
+                $('.home-slider-item').toggleClass('bluebg');
+
+
+            } else {
+
+                $('.cavabunga__product__preview').toggleClass('bluebg');
+
+                $('.home-slider-item').toggleClass('bluebg');
+            }
+        });
+
+        function add_to_cart(val, price, qty) {
+
+            var url = "{{ url('/add/to/cart') }}";
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: {
+                    'product_id': val,
+                    'price': price,
+                    'qty': qty,
+
+                },
+                success: function(data) {
+                    var response = JSON.parse(data);
+                    if (response.status == 'error') {
+                        swal({
+                            title: "",
+                            text: response.message,
+                            icon: "warning",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                            timer: 3000,
+                            icon: "warning"
+                        });
+                    } else {
+                        getCart();
+                    }
+                }
+            });
+        }
+    </script>
 
 </body>
 

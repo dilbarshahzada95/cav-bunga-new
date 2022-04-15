@@ -54,12 +54,30 @@
     </button>
 @elseif (url()->current() == url('cart'))
     <div class="header-action-login">
-        <button class="btn-login" onclick="window.location.href='login.html'">
-            <img src="{{ asset('web/assets/img/icons/user-dark.png') }}"
-                class="img-fluid d-lg-block d-md-block d-sm-none" alt="">
-            <img src="{{ asset('web/assets/img/icons/user.png') }}" class="img-fluid d-lg-none d-md-none d-sm-block"
-                alt="">
-        </button>
+        @if (empty(Auth::user()->id))
+            <button class="btn-login" onclick="window.location.href='login.html'">
+                <img src="{{ asset('web/assets/img/icons/user-dark.png') }}"
+                    class="img-fluid d-lg-block d-md-block d-sm-none" alt="">
+                <img src="{{ asset('web/assets/img/icons/user.png') }}"
+                    class="img-fluid d-lg-none d-md-none d-sm-block" alt="">
+            </button>
+        @else
+            <div class="log__drop">
+                <button class="logout__drop">
+                    <img src="{{ asset('web/assets/img/icons/user-dark.png') }}">
+                </button>
+
+                <div class="log__drop-content">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> Log out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    <a href="{{ url('profile') }}"> Profile</a>
+                    <a href="{{ url('order_tracking') }}"> Order Tracking</a>
+                </div>
+            </div>
+        @endif
     </div>
     <div class="header-action-cart green-gradient">
         <button class="btn-cart cart-icon">
@@ -101,9 +119,28 @@
         </dropdown>
     </div>
     <div class="header-action-login">
-        <button class="btn-login" onclick="window.location.href='{{ url('login-user') }}'">
-            <img src="{{ asset('web/assets/img/icons/user.png') }}" class="img-fluid" alt="">
-        </button>
+        @if (empty(Auth::user()->id))
+            <button class="btn-login" onclick="window.location.href='{{ url('login-user') }}'">
+                <img src="{{ asset('web/assets/img/icons/user.png') }}" class="img-fluid" alt="">
+            </button>
+        @else
+            <div class="log__drop">
+                <button class="logout__drop">
+                    <img src="{{ asset('web/assets/img/icons/user.png') }}">
+                </button>
+
+                <div class="log__drop-content">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> Log out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    <a href="{{ url('profile') }}"> Profile</a>
+                    <a href="{{ url('order_tracking') }}"> Order Tracking</a>
+                </div>
+            </div>
+        @endif
+
     </div>
     <div class="header-action-cart">
         <button class="btn-cart cart-icon">

@@ -12,7 +12,7 @@
                         <div id="cartshow"></div>
                         <div class="cart-total">
                             <hr>
-                            <h4>Total: <span class="money">AED<span id="final_total"></span></span></h4>
+                            <h4>Total: <span class="money">AED <span id="final_total"></span></span></h4>
                         </div>
                         <div class="cart-checkout-btn">
                             <a class="btn-theme" href="{{ url('shoping') }}">Continue shopping</a>
